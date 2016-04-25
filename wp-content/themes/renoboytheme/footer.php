@@ -14,24 +14,24 @@
 					<div class="item active">
 					 	<div class="col-xs-6">
 					 		<div class="col-xs-6 col-xs-offset-6 no-padding icono-legal">
-					 			<img class="va pull-right" src="img/iso14001.svg" alt="">	
+					 			<img class="va pull-right" src="<?php bloginfo('template_directory');?>/img/iso14001.svg" alt="">	
 					 		</div>
 					 	</div>
 					 	<div class="col-xs-6">
 					 		<div class="col-xs-6 no-padding icono-legal">
-					 			<img class="va pull-left" src="img/iso9001.svg" alt="">	
+					 			<img class="va pull-left" src="<?php bloginfo('template_directory');?>/img/iso9001.svg" alt="">	
 					 		</div>
 					 	</div>
 					</div>
 					<div class="item">
 						<div class="col-xs-6">
 							<div class="col-xs-6 col-xs-offset-6 no-padding icono-legal">
-					 			<img class="va pull-right" src="img/procesos.svg" alt="">	
+					 			<img class="va pull-right" src="<?php bloginfo('template_directory');?>/img/procesos.svg" alt="">	
 					 		</div>
 					 	</div>
 					 	<div class="col-xs-6">
 					 		<div class="col-xs-6 col-xs-offste-6 no-padding icono-legal">
-					 			<img class="va pull-left icono-iqnet" src="img/iqnet.svg" alt="">
+					 			<img class="va pull-left icono-iqnet" src="<?php bloginfo('template_directory');?>/img/iqnet.svg" alt="">
 					 		</div>
 					 	</div>
 					</div>
@@ -101,8 +101,7 @@
 			</div>
 		</footer>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<?php wp_footer(); ?>
 		
 		<script type="text/javascript">
 			

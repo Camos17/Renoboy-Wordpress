@@ -12,7 +12,7 @@
 				</li> -->
 				<li class="col-xs-2 col-md-12">
 					<a href="#" title="">
-						<img class="icono-fijo" src="img/botonmenuderecha2.svg" alt="">
+						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/botonmenuderecha2.svg" alt="">
 						<div class="hidden-xs hidden-sm">
 							<span>Selector de Producto</span>
 						</div>	
@@ -20,7 +20,7 @@
 				</li>
 				<li class="col-xs-2 col-md-12">
 					<a href="#" title="">
-						<img class="icono-fijo" src="img/botonmenuderecha3.svg" alt="">
+						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/botonmenuderecha3.svg" alt="">
 						<div class="hidden-xs hidden-sm">
 							<span>Encuentre su distribuidor más cercano</span>
 						</div>	
@@ -28,7 +28,7 @@
 				</li>
 				<li class="col-xs-2 col-md-12">
 					<a href="#" title="">
-						<img class="icono-fijo" src="img/CALCULADORA.svg" alt="">
+						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/CALCULADORA.svg" alt="">
 						<div class="hidden-xs hidden-sm">
 							<span>Calculadora <br> de Ahorro</span>
 						</div>	
@@ -36,7 +36,7 @@
 				</li>
 				<li class="col-xs-2 col-md-12">
 					<a href="#" title="">
-						<img class="icono-fijo" src="img/botonmenuderecha4.svg" alt="">
+						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/botonmenuderecha4.svg" alt="">
 						<div class="hidden-xs hidden-sm">
 							<span>Seguimiento en línea de la flota</span>
 						</div>	
@@ -44,7 +44,7 @@
 				</li>
 				<li class="col-xs-2 col-md-12">
 					<a href="#" title="">
-						<img class="icono-fijo" src="img/botonmenuderecha5.svg" alt="">
+						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/botonmenuderecha5.svg" alt="">
 						<div class="hidden-xs hidden-sm">	
 							<span>Más sobre nuestro reencauche</span>
 						</div>	
@@ -52,7 +52,7 @@
 				</li>
 				<li class="col-xs-2 col-md-12">
 					<a href="#" title="">
-						<img class="icono-fijo" src="img/botonmenuderecha6.svg" alt="">
+						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/botonmenuderecha6.svg" alt="">
 						<div class="hidden-xs hidden-sm">
 							<span>Visita virtual a la planta</span>
 						</div>	
