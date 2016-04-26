@@ -3539,7 +3539,7 @@ a, button{
 		}
 
 		.legalidad {
-			margin-top: 14px;
+			margin-top: 10px;
 		}
 
 		.legalidad a{
@@ -3550,6 +3550,19 @@ a, button{
 
 		.legalidad a:nth-child(1) {
 			border-right: 1px #9E9E9E solid;
+		}
+
+		.legalidad a:nth-child(1) img {
+			padding-right: 10px;			
+		}
+
+		.legalidad a:nth-child(2) {
+			border-right: 1px #9E9E9E solid;		
+			margin-top: 2px;
+		}
+
+		.legalidad a:nth-child(3) {
+			margin-top: 2px;
 		}
 }
 
@@ -3779,6 +3792,21 @@ a, button{
 		.icono-legal {
 			height: 230px;
 		}
+
+		.legalidad {
+			margin-top: 4px;
+		}
+
+		.legalidad a:nth-child(2) {
+			margin-top: 5px;
+		}
+
+		.legalidad a:nth-child(3) {
+			margin-top: 5px;
+			margin-left: 5px;
+		}
+
+
 }
 
 @media screen and (min-width: 1300px) {
