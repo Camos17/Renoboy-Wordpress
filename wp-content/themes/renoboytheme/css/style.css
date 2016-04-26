@@ -1670,6 +1670,26 @@ a, button{
 	  		word-spacing: 1px;
 	  	}
 
+	  	.btn-regresar-kilometros {
+			background-color: #007AC5;
+			margin-top: 20px;
+		}
+
+		.btn-regresar-kilometros a,
+		.btn-regresar-kilometros a:hover,
+		.btn-regresar-kilometros a:active,
+		.btn-regresar-kilometros a:focus {
+			color: #FFF;
+			font-weight: bold;
+			font-size: 1.3rem;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+
+		.btn-regresar-kilometros i {
+			margin-right: 5px;
+		}
+
 	  	.layer-imagen-trayectoria {
 	  		background-color: rgba(33, 28, 25, 0.45);
 	  		padding-top: 15px;
@@ -1921,6 +1941,20 @@ a, button{
 			padding-top: 15px;
 		}
 
+		.headline-quienes-confian {
+			margin-top: 30px;
+	  		margin-bottom: 20px;
+		}
+
+		.headline-quienes-confian h2 {
+	  		margin-top: 25px;
+	  		margin-bottom: 20px;
+	  		color: #FFF;
+	  		font-size: 2.5rem;
+	  		font-weight: bold;
+	  	}
+
+
 		.contenido-quienes-confian-renoboy
 		.iconos-quienes-confian {
 			margin-top: 20px;
@@ -1963,6 +1997,7 @@ a, button{
 			border-radius: 5px;
 			padding-top: 15px;
 			padding-bottom: 10px;
+			height: 80px;
 		}
 
 		.footer-quienes-confian {
@@ -1975,12 +2010,16 @@ a, button{
 			padding: 5px;
 			margin-top: 15px;
 			margin-bottom: 15px;
+			color: #FFF;
 		}
 
 		.btn-porque-confian a,
-		.btn-porque-confian:hover a {
+		.btn-porque-confian a:hover,
+		.btn-porque-confian:focus a,
+		.btn-porque-confian:active a {
 			color: #FFF;
-			font-size: 1.1rem;
+			font-size: 1.3rem;
+			box-shadow: none;
 		}
 
 		.footer-quienes-confian p {
@@ -1991,12 +2030,6 @@ a, button{
 			margin: 0px;
 			word-spacing: -2px;
 		}
-
-
-
-
-
-
 
 
 /********************************************
@@ -2538,6 +2571,32 @@ a, button{
 		}
 
 
+@media screen and (min-width: 360px) {
+
+
+	/********************************************
+	*********************************************
+		ESTILO KILOMETROS GENERANDO VALOR
+	*********************************************	
+	*********************************************/
+
+		/****************************************************
+			ESTILO VISTA INTERNA QUIENES CONFIAN EN RENOBOY
+		*****************************************************/
+
+			.rueda-quienes-confian p {
+				font-size: 9.5rem;
+				top: 51px;
+				right: 21%;
+			}
+
+			.rueda-quienes-confian-5 p {
+				font-size: 9.5rem;
+				top: 51px;
+				right: 31%;
+			}
+}
+
 @media screen and (min-width: 768px) {
 
 	/********************************************
@@ -2711,8 +2770,24 @@ a, button{
 			top: 23%;
 		}
 
+		/************************************************
+			ESTILO VISTA INTERNA 28 AÑOS GENERANDO VALOR
+		*************************************************/
+
+			.btn-regresar-kilometros {
+				margin-top: 0px;
+				top: 3px;
+			}
+
+			.btn-regresar-kilometros a,
+			.btn-regresar-kilometros a:hover,
+			.btn-regresar-kilometros a:active,
+			.btn-regresar-kilometros a:focus {
+				font-size: 1.2rem;
+			}
+
 		/********************************************
-		ESTILO VISTA INTERNA CERTIFICACIONES
+			ESTILO VISTA INTERNA CERTIFICACIONES
 		*********************************************/
 
 			.vista-certificaciones {
@@ -2751,6 +2826,25 @@ a, button{
 				font-size: 1.5rem;
 			}
 
+		/****************************************************
+			ESTILO VISTA INTERNA QUIENES CONFIAN EN RENOBOY
+		*****************************************************/	
+
+			.iconos-quienes-confian div:nth-child(3),
+			.iconos-quienes-confian div:nth-child(5),
+			.iconos-quienes-confian div:nth-child(7) {
+				clear: both;
+			}
+
+			.iconos-quienes-confian div:nth-child(3)
+			.icono-quienes-confian2 {
+				margin-top: -3px;
+			}
+
+			.iconos-quienes-confian div:nth-child(4)
+			.icono-quienes-confian2 {
+				margin-top: 5px;
+			}
 
 
 	/********************************************
@@ -3277,6 +3371,47 @@ a, button{
 			}
 
 
+		/****************************************************
+			ESTILO VISTA INTERNA QUIENES CONFIAN EN RENOBOY
+		*****************************************************/	
+
+			.iconos-quienes-confian div:nth-child(3),
+			.iconos-quienes-confian div:nth-child(5) {
+				clear: none;
+			}
+
+			.iconos-quienes-confian div:nth-child(4) {
+				clear: both;
+			}
+
+			.iconos-quienes-confian div:nth-child(7) {
+				margin-left: 16%;
+			}
+
+			.rueda-quienes-confian p {
+				font-size: 8.5rem;
+				top: 40px;
+				right: 20%;
+			}
+
+			.rueda-quienes-confian-5 p {
+				font-size: 8.5rem;
+				top: 40px;
+				right: 31%;
+			}
+
+			.iconos-quienes-confian div:nth-child(3)
+			.icono-quienes-confian2 {
+				margin-top: 4px;
+			}
+
+			.iconos-quienes-confian div:nth-child(4)
+			.icono-quienes-confian2 {
+				margin-top: 16px;
+			}
+
+
+
 	/********************************************
 	*********************************************
 					ESTILO ICONOS FIJOS
@@ -3559,6 +3694,41 @@ a, button{
 				bottom: 270px;
 			}
 
+
+		/****************************************************
+			ESTILO VISTA INTERNA QUIENES CONFIAN EN RENOBOY
+		*****************************************************/
+
+			.rueda-quienes-confian p {
+				font-size: 8rem;
+			}
+
+			.btn-porque-confian {
+				position: absolute;
+				right: -16.7%;
+				top: -15px;
+				padding: 15px 10px;
+			}
+
+			.btn-porque-confian:before {
+				font-family: FontAwesome;
+				content: "\f0d9";
+				position: absolute;
+				left: -14px;
+				font-size: 4rem;
+				color: #0A7AC2;
+			}
+
+			.footer-quienes-confian p {
+				color: #FFF;
+				font-size: 1.5rem;
+				text-align: center;
+				padding: 20px 10px;
+				margin: 0px;
+				word-spacing: 1px;
+			}
+
+
 	/********************************************
 	*********************************************
 			ESTILO CONTACTO
@@ -3665,6 +3835,23 @@ a, button{
 				left: 17%;
 				top: 1090px;
 			}
+
+		/****************************************************
+			ESTILO VISTA INTERNA QUIENES CONFIAN EN RENOBOY
+		*****************************************************/
+
+			.rueda-quienes-confian p {
+				font-size: 9rem;
+				top: 45px;
+				right: 21%;
+			}
+
+			.rueda-quienes-confian-5 p {
+				font-size: 9rem;
+				top: 50px;
+				right: 32%;
+			}
+
 }
 
 @media screen and (min-width: 1600px) {
