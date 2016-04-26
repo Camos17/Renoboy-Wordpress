@@ -110,7 +110,7 @@ Template Name: Quienes confian en nosotros
 								<p class="col-xs-12 leyenda-quienes-confian">Más de 5 empresas de Alimentos y Bebidas.</p>
 							</div>
 						</div>
-						<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 col-lg-2 btn-porque-confian">
+						<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 hidden-xs hidden-sm col-md-4 col-md-offset-4 col-lg-2 btn-porque-confian">
 							<a class="col-xs-6 btn btn-block" href="#" title="">¿POR QUÉ <br> CONFIAN <br> EN RENOBOY? </a>
 						</div>
 						<div class="col-xs-12 footer-quienes-confian">

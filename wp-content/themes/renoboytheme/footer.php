@@ -95,8 +95,12 @@
 					</button>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 legalidad">
-					<a class="col-xs-6 col-sm-4 col-lg-3 col-sm-offset-2 col-md-offset-4 col-lg-offset-6 no-padding text-center" href="legalidadweb.php" title="">Políticas de Privacidad</a>
-					<a class="col-xs-6 col-sm-4 col-lg-3 no-padding text-center" href="legalidadweb.php" title="">Terminos y Condiciones</a>
+					<a class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-5 col-md-3 col-md-offset-3 no-padding text-center" href="legalidadweb.php" title="">
+						<img class="img-responsive hidden-md hidden-lg" src="<?php bloginfo('template_directory');?>/img/logo_superintendencia.svg" alt="...">
+						<img class="img-responsive hidden-xs hidden-sm" src="<?php bloginfo('template_directory');?>/img/logo_superintendencia-2.svg" alt="...">
+					</a>
+					<a class="col-xs-6 col-sm-4 col-lg-3 col-sm-offset-2 col-md-3 col-md-offset-0 no-padding text-center" href="legalidadweb.php" title="">Políticas de Privacidad</a>
+					<a class="col-xs-6 col-sm-4 col-md-3 no-padding text-center" href="legalidadweb.php" title="">Terminos y Condiciones</a>
 				</div>
 			</div>
 		</footer>

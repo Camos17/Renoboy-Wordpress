@@ -1971,7 +1971,9 @@ a, button{
 			color: #0A7AC2;
 			font-size: 8.5rem;
 			top: 40px;
-			right: 46px;
+			right: 56px;
+			font-weight: bold;
+			letter-spacing: -6px;
 		}
 
 		.rueda-quienes-confian-5 p {
@@ -1979,7 +1981,9 @@ a, button{
 			color: #0A7AC2;
 			font-size: 8.5rem;
 			top: 40px;
-			right: 72px;
+			right: 80px;
+			font-weight: bold;
+			letter-spacing: -6px;
 		}
 
 		.icono-quienes-confian2 {
@@ -1989,7 +1993,7 @@ a, button{
 
 		.iconos-quienes-confian
 		.leyenda-quienes-confian {
-			background-color: #109CE2;
+			background-color: #497BBA;
 			color: #FFF;
 			font-size: 1.3rem;
 			font-weight: bold;
@@ -2570,6 +2574,10 @@ a, button{
 			color: #FFF;
 		}
 
+		.legalidad a:nth-child(1) {
+			margin-bottom: 10px;
+		}
+
 
 @media screen and (min-width: 360px) {
 
@@ -2587,13 +2595,13 @@ a, button{
 			.rueda-quienes-confian p {
 				font-size: 9.5rem;
 				top: 51px;
-				right: 21%;
+				right: 26%;
 			}
 
 			.rueda-quienes-confian-5 p {
 				font-size: 9.5rem;
 				top: 51px;
-				right: 31%;
+				right: 35%;
 			}
 }
 
@@ -3391,13 +3399,13 @@ a, button{
 			.rueda-quienes-confian p {
 				font-size: 8.5rem;
 				top: 40px;
-				right: 20%;
+				right: 25%;
 			}
 
 			.rueda-quienes-confian-5 p {
 				font-size: 8.5rem;
 				top: 40px;
-				right: 31%;
+				right: 35%;
 			}
 
 			.iconos-quienes-confian div:nth-child(3)
@@ -3842,16 +3850,15 @@ a, button{
 
 			.rueda-quienes-confian p {
 				font-size: 9rem;
-				top: 45px;
-				right: 21%;
+				top: 47px;
+				right: 26%;
 			}
 
 			.rueda-quienes-confian-5 p {
 				font-size: 9rem;
-				top: 50px;
-				right: 32%;
+				top: 52px;
+				right: 35%;
 			}
-
 }
 
 @media screen and (min-width: 1600px) {
