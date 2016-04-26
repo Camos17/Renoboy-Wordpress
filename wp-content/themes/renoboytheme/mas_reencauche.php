@@ -181,15 +181,15 @@ Template Name: Mas sobre el reencauche
 								</div>
 							</div>
 							<div class="col-xs-3 no-padding modal-mas-reencauche-iconos-legal">
-								<img  class="col-xs-11 col-sm-10" src="img/iqnet-2.svg" alt="">
-								<img  class="col-xs-11 col-sm-10" src="img/certificaciondeprocesos.svg" alt="">
-								<img  class="col-xs-11 col-sm-10" src="img/iso14001-2.svg" alt="">
-								<img  class="col-xs-11 col-sm-10" src="img/iso9001-2.svg" alt="">
+								<img  class="col-xs-11 col-sm-10" src="<?php bloginfo('template_directory');?>/img/iqnet-2.svg" alt="">
+								<img  class="col-xs-11 col-sm-10" src="<?php bloginfo('template_directory');?>/img/certificaciondeprocesos.svg" alt="">
+								<img  class="col-xs-11 col-sm-10" src="<?php bloginfo('template_directory');?>/img/iso14001-2.svg" alt="">
+								<img  class="col-xs-11 col-sm-10" src="<?php bloginfo('template_directory');?>/img/iso9001-2.svg" alt="">
 							</div>
 							<hr class="col-xs-12 no-padding">
 							<div class="col-xs-12 cartel-inversion">
 								<div class="col-xs-12 img-cartel">
-							    	<img class="img-responsive" src="img/esunainversion.svg" alt="">
+							    	<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/esunainversion.svg" alt="">
 							    </div>
 							    <div class="col-xs-12 texto-cartel">
 							    	<p>Con el reencuahe usted aprovecha al máximo el valor de la llanta, porque le permite optimizar el costo por kilómetro, del buen tratamiento  en el proceso de reencauche también depende que la llanta sea apta para ser reencauchada nuevamente.</p>
@@ -198,7 +198,7 @@ Template Name: Mas sobre el reencauche
 							<hr class="col-xs-12 no-padding">
 							<div class="col-xs-12 cartel-cliente">
 								<div class="col-xs-12 img-cartel">
-							    	<img class="img-responsive" src="img/elclientenocompra.svg" alt="">
+							    	<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/elclientenocompra.svg" alt="">
 							    </div>
 							    <div class="col-xs-12 texto-cartel">
 							    	<p>El 80% del valor se concentra en la carcasa, que es la parte fundamental de la llanta, el cuidado de este le permite sacar el máximo provecho  de la llanta. El 20% restante corresponde a la banda de rodamiento, que es la que se reemplaza en el proceso de reencauche.</p>
@@ -207,7 +207,7 @@ Template Name: Mas sobre el reencauche
 							<hr class="col-xs-12 no-padding">
 							<div class="col-xs-12 cartel-proceso">
 								<div class="col-xs-12 img-cartel">
-							    	<img class="img-responsive" src="img/elprocesoesflexible.svg" alt="">
+							    	<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/elprocesoesflexible.svg" alt="">
 							    </div>
 							    <div class="col-xs-12 texto-cartel">
 							    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -223,7 +223,7 @@ Template Name: Mas sobre el reencauche
 							<hr class="col-xs-12 no-padding">
 							<div class="col-xs-12 cartel-ahorra">
 								<div class="col-xs-12 img-cartel">
-							    	<img class="img-responsive" src="img/leahorradinero.svg" alt="">
+							    	<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/leahorradinero.svg" alt="">
 							    </div>
 							    <div class="col-xs-12 texto-cartel">
 							    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
