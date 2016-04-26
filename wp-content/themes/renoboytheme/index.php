@@ -21,7 +21,7 @@ Template Name: Inicio
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
-						<img class="hidden-md hidden-lg img-responsive" src="img/fondo_home.jpg" alt="...">
+						<img class="hidden-md hidden-lg img-responsive" src="<?php bloginfo('template_directory');?>/img/fondo_home.jpg" alt="...">
 						<div class="carousel-caption">
 							<p class="text-center texto1"><strong>tu llanta nueva de nuevo michelin</strong></p>
 							<p class="text-center texto2">1.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
@@ -31,7 +31,7 @@ Template Name: Inicio
 	      				</div>
 					</div>
 					<div class="item">
-						<img class="hidden-md hidden-lg img-responsive" src="img/fondo_home.jpg" alt="...">
+						<img class="hidden-md hidden-lg img-responsive" src="<?php bloginfo('template_directory');?>/img/fondo_home.jpg" alt="...">
 						<div class="carousel-caption">
 							<p class="text-center texto1"><strong>seguimiento en línea de la flota</strong></p>
 							<p class="text-center texto2">2.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
@@ -41,7 +41,7 @@ Template Name: Inicio
 	      				</div>
 	      			</div>
 	      			<div class="item">
-						<img class="hidden-md hidden-lg img-responsive" src="img/fondo_home.jpg" alt="...">
+						<img class="hidden-md hidden-lg img-responsive" src="<?php bloginfo('template_directory');?>/img/fondo_home.jpg" alt="...">
 						<div class="carousel-caption">
 							<p class="text-center texto1"><strong>¿Pensando en Reencauchar?</strong></p>
 							<p class="text-center texto2">3.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
@@ -65,19 +65,19 @@ Template Name: Inicio
 				<div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 home-opts">
 					
 					<a class="col-xs-12 col-sm-4 col-md-4" href="#" title="">
-						<img class="img-responsive" src="img/botónimagen1.jpg" alt="">
+						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/botónimagen1.jpg" alt="">
 						<p class="text-center"><strong>
 						</strong><br>
 						Tres vidas de tu llanta MICHELIN	
 						</p>
 					</a>
 					<a class="col-xs-12 col-sm-4 col-md-4" href="#" title="">
-						<img class="img-responsive" src="img/botónimagen2.jpg" alt="">
+						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/botónimagen2.jpg" alt="">
 						<p class="text-center"><strong>MY TYRE CARE<br> PROGRAM</strong>
 						</p>
 					</a>
 					<a class="col-xs-12 col-sm-4 col-md-4" href="#" title="">
-						<img class="img-responsive" src="img/botónimagen3.jpg" alt="">
+						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/botónimagen3.jpg" alt="">
 						<p class="text-center"><strong>¿PENSANDO EN <br> REENCAUCHAR?</strong>	
 						</p>
 					</a>	

@@ -37,25 +37,25 @@ Template Name: Buscador Servicios
 							<div class="col-xs-12 col-sm-12 iconos-servicio-recomendado">	
 								<div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-0 icono-recomendado">
 								<button type="button"class="col-xs-12 btn-servicio-regional">
-										<img class="img-responsive" src="img/REGIONAL.svg" alt="">
+										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL.svg" alt="">
 										<span class="col-xs-12 no-padding">Regional</span>	
 									</button>
 								</div>
 								<div class="col-xs-6 col-sm-4 col-md-3 icono-recomendado">
 									<button type="button" class="col-xs-12 btn-servicio-mixta">
-										<img class="img-responsive" src="img/MIXTA.svg" alt="">
+										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/MIXTA.svg" alt="">
 										<span class="col-xs-12 no-padding">Mixta</span>
 									</button>
 								</div>					
 								<div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-0 icono-recomendado">
 									<button type="button" class="col-xs-12 btn-servicio-urbano">
-										<img class="img-responsive" src="img/URBANO.svg" alt="">
+										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/URBANO.svg" alt="">
 										<span class="col-xs-12 no-padding">Urbano</span>
 									</button>					
 								</div>
 								<div class="col-xs-6 col-sm-4 col-md-3 icono-recomendado">
 									<button type="button" class="col-xs-12 btn-servicio-cantera">
-										<img class="img-responsive" src="img/CANTERA.svg" alt="">
+										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/CANTERA.svg" alt="">
 										<span class="col-xs-12 no-padding">Cantera</span>
 									</button>				
 								</div>														
@@ -116,7 +116,7 @@ Template Name: Buscador Servicios
 				<div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-6 col-md-offset-0 no-padding">
 					<a href="#" class="col-xs-6 cat-llanta" data-toggle="modal" data-target="#modal-regional">
 						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="img/1.jpg" alt="">
+							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
 							<div class="col-xs-12 no-padding layer-cat-llanta">		
 								<div class="col-xs-12 no-padding">
 									<p class="titulo-layer-llanta">WHL</p><br><br>
@@ -126,12 +126,12 @@ Template Name: Buscador Servicios
 							</div>
 						</div>
 						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="img/REGIONAL2.svg" alt="">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL2.svg" alt="">
 						</div>					
 					</a>
 					<a href="#" class="col-xs-6 cat-llanta">
 						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="img/1.jpg" alt="">
+							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
 							<div class="col-xs-12 no-padding layer-cat-llanta">
 								<div class="col-xs-12 no-padding">					
 									<p class="titulo-layer-llanta">XZE-2</p><br><br>
@@ -141,14 +141,14 @@ Template Name: Buscador Servicios
 							</div>
 						</div>
 						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="img/MIXTA2.svg" alt="">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/MIXTA2.svg" alt="">
 						</div>
 					</a>
 				</div>
 				<div class="col-xs-12 col-sm-5 col-md-6 col-md-offset-0 no-padding">
 					<a href="#" class="col-xs-6 cat-llanta">
 						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="img/1.jpg" alt="">
+							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
 							<div class="col-xs-12 no-padding layer-cat-llanta">			
 								<div class="col-xs-12 no-padding">			
 									<p class="titulo-layer-llanta">XZE-2</p><br><br>
@@ -158,12 +158,12 @@ Template Name: Buscador Servicios
 							</div>
 						</div>
 						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="img/CANTERA2.svg" alt="">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/CANTERA2.svg" alt="">
 						</div>
 					</a>
 					<a href="#" class="col-xs-6 cat-llanta">
 						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="img/1.jpg" alt="">
+							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
 							<div class="col-xs-12 no-padding layer-cat-llanta">			
 								<div class="col-xs-12 no-padding">			
 									<p class="titulo-layer-llanta">XZE-2</p><br><br>
@@ -173,14 +173,14 @@ Template Name: Buscador Servicios
 							</div>
 						</div>
 						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="img/URBANO2.svg" alt="">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/URBANO2.svg" alt="">
 						</div>
 					</a>
 				</div>
 				<div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-6 col-md-offset-0 no-padding">				
 					<a href="#" class="col-xs-6 cat-llanta">
 						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="img/1.jpg" alt="">
+							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
 							<div class="col-xs-12 no-padding layer-cat-llanta">			
 								<div class="col-xs-12 no-padding">			
 									<p class="titulo-layer-llanta">XZE-2</p><br><br>
@@ -190,12 +190,12 @@ Template Name: Buscador Servicios
 							</div>
 						</div>
 						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="img/REGIONAL2.svg" alt="">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL2.svg" alt="">
 						</div>				
 					</a>
 					<a href="#" class="col-xs-6 cat-llanta">
 						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="img/1.jpg" alt="">
+							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
 							<div class="col-xs-12 no-padding layer-cat-llanta">			
 								<div class="col-xs-12 no-padding">			
 									<p class="titulo-layer-llanta">XZE-2</p><br><br>
@@ -205,14 +205,14 @@ Template Name: Buscador Servicios
 							</div>
 						</div>
 						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="img/MIXTA2.svg" alt="">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/MIXTA2.svg" alt="">
 						</div>
 					</a>
 				</div>
 				<div class="col-xs-12 col-sm-5 col-md-6 col-md-offset-0 no-padding">	
 					<a href="#" class="col-xs-6 cat-llanta">
 						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="img/1.jpg" alt="">
+							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
 							<div class="col-xs-12 no-padding layer-cat-llanta">			
 								<div class="col-xs-12 no-padding">			
 									<p class="titulo-layer-llanta">XZE-2</p><br><br>
@@ -222,12 +222,12 @@ Template Name: Buscador Servicios
 							</div>
 						</div>
 						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="img/CANTERA2.svg" alt="">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/CANTERA2.svg" alt="">
 						</div>
 					</a>
 					<a href="#" class="col-xs-6 cat-llanta">
 						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="img/1.jpg" alt="">
+							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
 							<div class="col-xs-12 no-padding layer-cat-llanta">							
 								<div class="col-xs-12 no-padding">							
 									<p class="titulo-layer-llanta">XZE-2</p><br><br>
@@ -237,7 +237,7 @@ Template Name: Buscador Servicios
 							</div>
 						</div>
 						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="img/URBANO2.svg" alt="">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/URBANO2.svg" alt="">
 						</div>
 					</a>
 				</div>
@@ -257,7 +257,7 @@ Template Name: Buscador Servicios
 		    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contenido-ayuda1">
 		    		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-lg-10 col-lg-offset-1 no-padding contenido-ayuda2">	
 						<div class="col-xs-3 col-lg-2">
-								<img class="img-responsive" src="img/REGIONAL.svg" alt="">
+								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL.svg" alt="">
 								<span class="col-xs-12 no-padding">Regional</span>
 						</div>
 						<div class="col-xs-9 col-lg-10 no-padding">
@@ -270,7 +270,7 @@ Template Name: Buscador Servicios
 							</ul>
 						</div>
 						<div class="col-xs-3 col-lg-2">
-							<img class="img-responsive" src="img/MIXTA.svg" alt="">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/MIXTA.svg" alt="">
 							<span class="col-xs-12 no-padding">Mixta</span>
 						</div>
 						<div class="col-xs-9 col-lg-10 no-padding">
@@ -283,7 +283,7 @@ Template Name: Buscador Servicios
 							</ul>
 						</div>
 						<div class="col-xs-3 col-lg-2">
-							<img class="img-responsive" src="img/URBANO.svg" alt="">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/URBANO.svg" alt="">
 							<span class="col-xs-12 no-padding">Urbano</span>
 						</div>
 						<div class="col-xs-9 col-lg-10 no-padding">
@@ -296,7 +296,7 @@ Template Name: Buscador Servicios
 							</ul>
 						</div>
 						<div class="col-xs-3 col-lg-2">
-							<img class="img-responsive" src="img/CANTERA.svg" alt="">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/CANTERA.svg" alt="">
 							<span class="col-xs-12 no-padding">Cantera</span>
 						</div>
 						<div class="col-xs-9 col-lg-10 no-padding">
@@ -363,12 +363,12 @@ Template Name: Buscador Servicios
 		        	<h2 class="modal-title" id="myModalLabel">SPREA AXEL</h2>
 		    	</div>
 		    	<div class="hidden-xs hidden-sm col-md-6 col-md-pull-6">
-		    		<img class="img-responsive" src="img/5.jpg" alt="">		    		
+		    		<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/5.jpg" alt="">		    		
 		    	</div>
 		    	<div class="col-xs-12 col-sm-12 col-sm-offset-0 col-md-12 col-lg-12 contenido-modal-regional2">
 		    		<div class="col-xs-12 contenido-modal-regional3">
 		    			<div class="col-sm-8 col-sm-offset-2 hidden-md hidden-lg">
-			    			<img class="img-responsive llanta-desplegada" src="img/5.jpg" alt="">		    		
+			    			<img class="img-responsive llanta-desplegada" src="<?php bloginfo('template_directory');?>/img/5.jpg" alt="">		    		
 			    		</div>
 			    		<div class="col-sm-8 col-sm-offset-2 table-responsive no-padding">	
 							<table class="table table-hover">
@@ -415,7 +415,7 @@ Template Name: Buscador Servicios
 							<p>REGIONAL</p>
 						</div>		    			
 		    			<div class="col-xs-4 col-sm-3 pull-right">
-		    				<img class="img-responsive" src="img/REGIONAL.svg" alt="">
+		    				<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL.svg" alt="">
 						</div>
 					</div>
 		        	<button type="button" class="btn btn-default cerrar-ayuda2 hidden-md hidden-lg" data-dismiss="modal">Cerrar</button>

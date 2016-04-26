@@ -21,10 +21,10 @@ Template Name: Mas sobre el reencauche
 							tempor incididunt ut labore et dolore magna aliqua. </p>
 						</div>
 						<div class="col-xs-12 col-md-8 hidden-xs hidden-sm contenido-mas-reencauche2">
-							<img class="img-responsive" src="img/massobrenuestroreencauche.svg" alt="...">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/massobrenuestroreencauche.svg" alt="...">
 						</div>
 						<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 hidden-md hidden-lg contenido-mas-reencauche2">
-							<img class="img-responsive" src="img/massobrenuestroreencauche_mobile.svg" alt="...">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/massobrenuestroreencauche_mobile.svg" alt="...">
 						</div>
 					</div>
 				</div>
@@ -38,22 +38,22 @@ Template Name: Mas sobre el reencauche
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1 hidden-xs img-proceso-reencauche">
-					<img class="img-responsive" src="img/serviciodereencauche.svg" alt="">
+					<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/serviciodereencauche.svg" alt="">
 				</div>
 				<div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 hidden-sm hidden-md hidden-lg img-proceso-reencauche">
-					<img class="img-responsive" src="img/serviciodereencauche_mobile.svg" alt="">
+					<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/serviciodereencauche_mobile.svg" alt="">
 				</div>
 				<div class="col-xs-12 no-padding fondo-camino-reencauche">
-					<img class="col-xs-12 no-padding img-fondo-camino-reencauche" src="img/fondoverde.svg" alt="...">
+					<img class="col-xs-12 no-padding img-fondo-camino-reencauche" src="<?php bloginfo('template_directory');?>/img/fondoverde.svg" alt="...">
 					<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 camino-reencauche">
-						<img  class="img-responsive" src="img/carretera.svg" alt="">
+						<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/carretera.svg" alt="">
 					</div>
 					<div class="col-xs-12 no-padding frame-carretera">
 						
 					</div>
 					<div class="col-xs-2 col-xs-offset-5 no-padding ubicacion-camion-carretera">
 						<div class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4 no-padding">
-							<img class="img-responsive" src="img/camion.svg" alt="">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/camion.svg" alt="">
 						</div>
 					</div>
 					
@@ -61,24 +61,24 @@ Template Name: Mas sobre el reencauche
 						<div class="col-xs-12 contenido-cartel-mas-reencauche">
 							<div class="col-xs-9 no-padding cartel-mas-seguro">
 								<div class="col-xs-8 no-padding img-cartel">
-							    	<img class="img-responsive" src="img/esseguro.svg" alt="">
+							    	<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/esseguro.svg" alt="">
 							    </div>
 							    <div class="col-xs-12 texto-cartel">
 							    	<p>Contamos con certificacion de calidad de Icontec que respaldan nuestro proceso. <br> <br>Adicionalmente contamos con la tecnología y procesos certificdos por Michelin, esto avala el serivcio de reencauche de Renoboy.</p>
 								</div>
 							</div>
 							<div class="col-xs-3 no-padding modal-mas-reencauche-iconos-legal">
-								<img  class="col-xs-11 col-sm-10 col-lg-11" src="img/iqnet-2.svg" alt="">
-								<img  class="col-xs-11 col-sm-10 col-lg-11" src="img/certificaciondeprocesos.svg" alt="">
-								<img  class="col-xs-11 col-sm-10 col-lg-11" src="img/iso14001-2.svg" alt="">
-								<img  class="col-xs-11 col-sm-10 col-lg-11" src="img/iso9001-2.svg" alt="">
+								<img  class="col-xs-11 col-sm-10 col-lg-11" src="<?php bloginfo('template_directory');?>/img/iqnet-2.svg" alt="">
+								<img  class="col-xs-11 col-sm-10 col-lg-11" src="<?php bloginfo('template_directory');?>/img/certificaciondeprocesos.svg" alt="">
+								<img  class="col-xs-11 col-sm-10 col-lg-11" src="<?php bloginfo('template_directory');?>/img/iso14001-2.svg" alt="">
+								<img  class="col-xs-11 col-sm-10 col-lg-11" src="<?php bloginfo('template_directory');?>/img/iso9001-2.svg" alt="">
 							</div>	
 						</div>					
 					</div>
 					<div class="col-xs-4 col-lg-3 marco-cartel-mas-reencauche2 hidden-xs hidden-sm">
 						<div class="col-xs-12 contenido-cartel-mas-reencauche">
 							<div class="col-xs-12 img-cartel">
-								<img class="img-responsive" src="img/esunainversion.svg" alt="">
+								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/esunainversion.svg" alt="">
 							</div>
 							<div class="col-xs-12 texto-cartel">
 								<p>Con el reencuahe usted aprovecha al máximo el valor de la llanta, porque le permite optimizar el costo por kilómetro, del buen tratamiento  en el proceso de reencauche también depende que la llanta sea apta para ser reencauchada nuevamente.</p>
@@ -88,7 +88,7 @@ Template Name: Mas sobre el reencauche
 					<div class="col-xs-4 col-lg-3 marco-cartel-mas-reencauche3 hidden-xs hidden-sm">
 						<div class="col-xs-12 contenido-cartel-mas-reencauche">
 							<div class="col-xs-12 img-cartel">
-								<img class="img-responsive" src="img/elclientenocompra.svg" alt="">
+								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/elclientenocompra.svg" alt="">
 							</div>
 							<div class="col-xs-12 texto-cartel">
 								<p>El 80% del valor se concentra en la carcasa, que es la parte fundamental de la llanta, el cuidado de este le permite sacar el máximo provecho  de la llanta. El 20% restante corresponde a la banda de rodamiento, que es la que se reemplaza en el proceso de reencauche.</p>
@@ -98,7 +98,7 @@ Template Name: Mas sobre el reencauche
 					<div class="col-xs-4 col-lg-3 marco-cartel-mas-reencauche4 hidden-xs hidden-sm">
 						<div class="col-xs-12 contenido-cartel-mas-reencauche">
 							<div class="col-xs-12 img-cartel">
-								<img class="img-responsive" src="img/elprocesoesflexible.svg" alt="">
+								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/elprocesoesflexible.svg" alt="">
 							</div>
 							<div class="col-xs-12 texto-cartel">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -115,7 +115,7 @@ Template Name: Mas sobre el reencauche
 					<div class="col-xs-4 col-lg-3 marco-cartel-mas-reencauche5 hidden-xs hidden-sm">
 						<div class="col-xs-12 contenido-cartel-mas-reencauche">
 							<div class="col-xs-12 img-cartel">
-								<img class="img-responsive" src="img/leahorradinero.svg" alt="">
+								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/leahorradinero.svg" alt="">
 							</div>
 							<div class="col-xs-12 texto-cartel">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -134,15 +134,15 @@ Template Name: Mas sobre el reencauche
 					</div>
 
 					<div class="col-md-2 hidden-xs hidden-sm arbol-reencauche">
-						<img class="img-responsive" 	 src="img/arbol_reencauche.svg" alt="">						
+						<img class="img-responsive" 	 src="<?php bloginfo('template_directory');?>/img/arbol_reencauche.svg" alt="">						
 					</div>
 
 					<div class="col-md-2 hidden-xs hidden-sm arbol-reencauche1">
-						<img class="img-responsive" 	 src="img/arbol_reencauche.svg" alt="">
+						<img class="img-responsive" 	 src="<?php bloginfo('template_directory');?>/img/arbol_reencauche.svg" alt="">
 					</div>
 
 					<div class="col-md-2 hidden-xs hidden-sm arbol-reencauche2">
-						<img class="img-responsive" src="img/arbol_reencauche.svg" alt="">
+						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/arbol_reencauche.svg" alt="">
 					</div>
 
 					<div class="hidden-xs hidden-sm btn-regreso-arriba" id="ir-arriba">
@@ -174,7 +174,7 @@ Template Name: Mas sobre el reencauche
 						<div class="row">
 							<div class="col-xs-9 cartel-mas-seguro">
 								<div class="col-xs-12 no-padding img-cartel">
-							    	<img class="img-responsive" src="img/esseguro.svg" alt="">
+							    	<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/esseguro.svg" alt="">
 							    </div>
 							    <div class="col-xs-12 texto-cartel">
 							    	<p>Contamos con certificacion de calidad de Icontec que respaldan nuestro proceso. <br> <br>Adicionalmente contamos con la tecnología y procesos certificdos por Michelin, esto avala el serivcio de reencauche de Renoboy.</p>
