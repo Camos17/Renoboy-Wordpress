@@ -64,8 +64,8 @@ Template Name: Inicio
 				
 				<div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 home-opts">
 					
-					<a class="col-xs-12 col-sm-4 col-md-4" href="#" title="">
-						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/botónimagen1.jpg" alt="">
+					<a class="col-xs-12 col-sm-4 col-md-4" href="<?php the_field('link_slide_1'); ?>">
+						<img class="img-responsive" src="<?php echo get_field('imagen_primer_slide'); ?>" alt="">
 						<p class="text-center"><strong>
 						</strong><br>
 						Tres vidas de tu llanta MICHELIN	
