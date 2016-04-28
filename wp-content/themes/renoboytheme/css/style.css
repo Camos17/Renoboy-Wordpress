@@ -2015,16 +2015,17 @@ a, button{
 			margin-top: 15px;
 			margin-bottom: 15px;
 			color: #FFF;
+			font-size: 1.3rem;
 		}
 
-		.btn-porque-confian a,
+	/*	.btn-porque-confian a,
 		.btn-porque-confian a:hover,
 		.btn-porque-confian:focus a,
 		.btn-porque-confian:active a {
 			color: #FFF;
 			font-size: 1.3rem;
 			box-shadow: none;
-		}
+		}*/
 
 		.footer-quienes-confian p {
 			color: #FFF;
@@ -3805,8 +3806,6 @@ a, button{
 			margin-top: 5px;
 			margin-left: 5px;
 		}
-
-
 }
 
 @media screen and (min-width: 1300px) {
