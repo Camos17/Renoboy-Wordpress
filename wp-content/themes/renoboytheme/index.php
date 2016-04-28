@@ -23,9 +23,9 @@ Template Name: Inicio
 					<div class="item active">
 						<img class="hidden-md hidden-lg img-responsive" src="<?php bloginfo('template_directory');?>/img/fondo_home.jpg" alt="...">
 						<div class="carousel-caption">
-							<p class="text-center texto1"><strong>tu llanta nueva de nuevo michelin</strong></p>
-							<p class="text-center texto2">1.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-							<a class="btn btn-default btn-carousel-contenido">
+							<p class="text-center texto1"><strong><?php the_field("titulo_primer_slide"); ?></strong></p>
+							<p class="text-center texto2"><?php the_field("texto_primer_slide"); ?></p>
+							<a href="<?php the_field("link_slide_1"); ?>" class="btn btn-default btn-carousel-contenido">
 								<strong>ver más</strong>
 							</a>
 	      				</div>
@@ -33,9 +33,9 @@ Template Name: Inicio
 					<div class="item">
 						<img class="hidden-md hidden-lg img-responsive" src="<?php bloginfo('template_directory');?>/img/fondo_home.jpg" alt="...">
 						<div class="carousel-caption">
-							<p class="text-center texto1"><strong>seguimiento en línea de la flota</strong></p>
-							<p class="text-center texto2">2.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-							<a class="btn btn-default btn-carousel-contenido">
+							<p class="text-center texto1"><strong><?php the_field("titulo_segundo_slide"); ?></strong></p>
+							<p class="text-center texto2"><?php the_field("texto_segundo_slide"); ?></p>
+							<a href="<?php the_field("link_slide_2"); ?>" class="btn btn-default btn-carousel-contenido">
 								<strong>ver más</strong>
 							</a>
 	      				</div>
@@ -43,9 +43,9 @@ Template Name: Inicio
 	      			<div class="item">
 						<img class="hidden-md hidden-lg img-responsive" src="<?php bloginfo('template_directory');?>/img/fondo_home.jpg" alt="...">
 						<div class="carousel-caption">
-							<p class="text-center texto1"><strong>¿Pensando en Reencauchar?</strong></p>
-							<p class="text-center texto2">3.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-							<a class="btn btn-default btn-carousel-contenido">
+							<p class="text-center texto1"><strong><?php the_field("titulo_tercer_slide"); ?></strong></p>
+							<p class="text-center texto2"><?php the_field("texto_tercer_slide"); ?></p>
+							<a href="<?php the_field("link_slide_3"); ?>" class="btn btn-default btn-carousel-contenido">
 								<strong>ver más</strong>
 							</a>
 	      				</div>	
@@ -66,19 +66,18 @@ Template Name: Inicio
 					
 					<a class="col-xs-12 col-sm-4 col-md-4" href='<?php the_field("link_slide_1"); ?>'>
 						<img class="img-responsive" src='<?php the_field("imagen_primer_slide"); ?>' alt="">
-						<p class="text-center"><strong>
-						</strong><br>
-						Tres vidas de tu llanta MICHELIN	
+						<p class="text-center">
+							<strong><?php the_field("titulo_primer_slide"); ?></strong>	
 						</p>
 					</a>
 					<a class="col-xs-12 col-sm-4 col-md-4" href="<?php the_field("link_slide_2"); ?>" title="">
-						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/botónimagen2.jpg" alt="">
-						<p class="text-center"><strong>MY TYRE CARE<br> PROGRAM</strong>
+						<img class="img-responsive" src="<?php the_field("imagen_segundo_slide"); ?>" alt="">
+						<p class="text-center"><strong><?php the_field("titulo_segundo_slide"); ?></strong>
 						</p>
 					</a>
 					<a class="col-xs-12 col-sm-4 col-md-4" href="<?php the_field("link_slide_3"); ?>" title="">
-						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/botónimagen3.jpg" alt="">
-						<p class="text-center"><strong>¿PENSANDO EN <br> REENCAUCHAR?</strong>	
+						<img class="img-responsive" src="<?php the_field("imagen_tercer_slide"); ?>" alt="">
+						<p class="text-center"><strong><?php the_field("titulo_tercer_slide"); ?></strong>	
 						</p>
 					</a>	
 				</div>

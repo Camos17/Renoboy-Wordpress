@@ -95,12 +95,12 @@
 					</button>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 legalidad">
-					<a class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-5 col-md-3 col-md-offset-1 col-lg-3 col-lg-offset-2 no-padding text-center" href="legalidadweb.php" title="">
+					<a href="http://www.sic.gov.co" target="_blank" class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-5 col-md-3 col-md-offset-1 col-lg-3 col-lg-offset-2 no-padding text-center" href="legalidadweb.php" title="">
 						<img class="img-responsive hidden-md hidden-lg" src="<?php bloginfo('template_directory');?>/img/logo_superintendencia.svg" alt="...">
 						<img class="img-responsive hidden-xs hidden-sm" src="<?php bloginfo('template_directory');?>/img/logo_superintendencia-2.svg" alt="...">
 					</a>
-					<a class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-4 col-md-offset-0 col-lg-3 no-padding text-center" href="legalidadweb.php" title="">Políticas de Privacidad</a>
-					<a class="col-xs-6 col-sm-4 col-md-4 col-lg-3 no-padding text-center" href="legalidadweb.php" title="">Terminos y Condiciones</a>
+					<a href="<?php echo get_page_link(5); ?>" class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-4 col-md-offset-0 col-lg-3 no-padding text-center" href="legalidadweb.php" title="">Políticas de Privacidad</a>
+					<a href="<?php echo get_page_link(21); ?>" class="col-xs-6 col-sm-4 col-md-4 col-lg-3 no-padding text-center" href="legalidadweb.php" title="">Términos y Condiciones</a>
 				</div>
 			</div>
 		</footer>
