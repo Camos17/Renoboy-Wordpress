@@ -71,12 +71,12 @@ Template Name: Inicio
 						Tres vidas de tu llanta MICHELIN	
 						</p>
 					</a>
-					<a class="col-xs-12 col-sm-4 col-md-4" href="#" title="">
+					<a class="col-xs-12 col-sm-4 col-md-4" href="<?php the_field("link_slide_2"); ?>" title="">
 						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/botónimagen2.jpg" alt="">
 						<p class="text-center"><strong>MY TYRE CARE<br> PROGRAM</strong>
 						</p>
 					</a>
-					<a class="col-xs-12 col-sm-4 col-md-4" href="#" title="">
+					<a class="col-xs-12 col-sm-4 col-md-4" href="<?php the_field("link_slide_3"); ?>" title="">
 						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/botónimagen3.jpg" alt="">
 						<p class="text-center"><strong>¿PENSANDO EN <br> REENCAUCHAR?</strong>	
 						</p>

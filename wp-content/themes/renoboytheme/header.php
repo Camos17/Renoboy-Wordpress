@@ -44,7 +44,7 @@
 								</form>
 							</li>
 							<hr class="hidden-xs">						
-							<li class="col-sm-2 no-padding"><a href="<?php echo get_page_link(7); ?>">Productos</a></li>
+							<li class="col-sm-2 no-padding"><a href="<?php echo get_page_link(13); ?>">Productos</a></li>
 							<li class="col-sm-3 no-padding"><a href="<?php echo get_page_link(11); ?>">Red de Distribución</a></li>
 							<li class="col-sm-5 col-md-4 no-padding"><a href="<?php echo get_page_link(7); ?>"><img class="hidden-xs icon-header" src="<?php bloginfo('template_directory');?>/img/iconoheader3.svg" alt="">Kilometros Generando Valor</a></li>
 							<li class="col-sm-2 no-padding"><a href="<?php echo get_page_link(9); ?>">Contacto</a></li>	
