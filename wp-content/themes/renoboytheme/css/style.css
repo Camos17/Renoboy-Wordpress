@@ -1938,12 +1938,11 @@ a, button{
 		.contenido-quienes-confian-renoboy {
 			background-color: rgba(255, 255, 255, 0.80);
 			margin-bottom: 35px;
-			padding-top: 15px;
 		}
 
 		.headline-quienes-confian {
 			margin-top: 30px;
-	  		margin-bottom: 20px;
+	  		margin-bottom: 25px;
 		}
 
 		.headline-quienes-confian h2 {
@@ -2006,7 +2005,8 @@ a, button{
 
 		.footer-quienes-confian {
 			background-color: #0A7AC2;
-			bottom: 0px;
+			top: 0px;
+
 		}
 
 		.btn-porque-confian {
@@ -2015,15 +2015,8 @@ a, button{
 			margin-top: 15px;
 			margin-bottom: 15px;
 			color: #FFF;
-		}
-
-		.btn-porque-confian a,
-		.btn-porque-confian a:hover,
-		.btn-porque-confian:focus a,
-		.btn-porque-confian:active a {
-			color: #FFF;
 			font-size: 1.3rem;
-			box-shadow: none;
+			text-align: center;
 		}
 
 		.footer-quienes-confian p {
@@ -3727,8 +3720,8 @@ a, button{
 			.btn-porque-confian {
 				position: absolute;
 				right: -16.7%;
-				top: -15px;
-				padding: 15px 10px;
+				top: 100px;
+				padding: 15px 25px;
 			}
 
 			.btn-porque-confian:before {
@@ -3805,8 +3798,6 @@ a, button{
 			margin-top: 5px;
 			margin-left: 5px;
 		}
-
-
 }
 
 @media screen and (min-width: 1300px) {
