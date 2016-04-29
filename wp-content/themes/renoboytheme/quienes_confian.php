@@ -17,7 +17,7 @@ Template Name: Quienes confian en nosotros
 						</div>
 						<div class="col-xs-12 iconos-quienes-confian">
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
-								<div class="col-xs-12 rueda-quienes-confian">
+								<div class="col-xs-12 rueda-quienes-confian has-feedback">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
 									<p class="va">+35</p>
 								</div>
@@ -31,7 +31,7 @@ Template Name: Quienes confian en nosotros
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p>+30</p>
+									<p class="va">+30</p>
 								</div>
 								<div class="col-xs-10 col-xs-offset-1 icono-quienes-confian2">
 									<div class="col-xs-6 col-xs-offset-3">
@@ -43,7 +43,7 @@ Template Name: Quienes confian en nosotros
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p>+15</p>
+									<p class="va">+15</p>
 								</div>
 								<div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 icono-quienes-confian2">
 									<div class="col-xs-4 col-xs-offset-4">
@@ -55,7 +55,7 @@ Template Name: Quienes confian en nosotros
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p>+10</p>
+									<p class="va">+10</p>
 								</div>
 								<div class="col-xs-10 col-xs-offset-1 icono-quienes-confian2">
 									<div class="col-xs-6 col-xs-offset-3">
@@ -67,7 +67,7 @@ Template Name: Quienes confian en nosotros
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian-5">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p>+5</p>
+									<p class="va">+5</p>
 								</div>
 								<div class="col-xs-10 col-xs-offset-1 icono-quienes-confian2">
 									<div class="col-xs-4 col-xs-offset-4">
@@ -79,7 +79,7 @@ Template Name: Quienes confian en nosotros
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian-5">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p>+5</p>
+									<p class="va">+5</p>
 								</div>
 								<div class="col-xs-12 col-xs-offset-0 icono-quienes-confian2">
 									<div class="col-xs-4 col-xs-offset-4">
@@ -91,7 +91,7 @@ Template Name: Quienes confian en nosotros
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian-5">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p>+5</p>
+									<p class="va">+5</p>
 								</div>
 								<div class="col-xs-10 col-xs-offset-1 icono-quienes-confian2">
 									<div class="col-xs-6 col-xs-offset-3">
@@ -103,7 +103,7 @@ Template Name: Quienes confian en nosotros
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian-5">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p>+5</p>
+									<p class="va">+5</p>
 								</div>
 								<div class="col-xs-10 col-xs-offset-1 icono-quienes-confian2">
 									<div class="col-xs-6 col-xs-offset-3">

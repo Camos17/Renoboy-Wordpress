@@ -1969,7 +1969,6 @@ a, button{
 			position: absolute;
 			color: #0A7AC2;
 			font-size: 8.5rem;
-			top: 40px;
 			right: 56px;
 			font-weight: bold;
 			letter-spacing: -6px;
@@ -1979,7 +1978,6 @@ a, button{
 			position: absolute;
 			color: #0A7AC2;
 			font-size: 8.5rem;
-			top: 40px;
 			right: 80px;
 			font-weight: bold;
 			letter-spacing: -6px;
@@ -2587,13 +2585,11 @@ a, button{
 
 			.rueda-quienes-confian p {
 				font-size: 9.5rem;
-				top: 51px;
 				right: 26%;
 			}
 
 			.rueda-quienes-confian-5 p {
 				font-size: 9.5rem;
-				top: 51px;
 				right: 35%;
 			}
 }
@@ -3391,13 +3387,11 @@ a, button{
 
 			.rueda-quienes-confian p {
 				font-size: 8.5rem;
-				top: 40px;
 				right: 25%;
 			}
 
 			.rueda-quienes-confian-5 p {
 				font-size: 8.5rem;
-				top: 40px;
 				right: 35%;
 			}
 
@@ -3869,13 +3863,11 @@ a, button{
 
 			.rueda-quienes-confian p {
 				font-size: 9rem;
-				top: 21%;
 				right: 26%;
 			}
 
 			.rueda-quienes-confian-5 p {
 				font-size: 9rem;
-				top: 22%;
 				right: 35%;
 			}
 }
