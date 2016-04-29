@@ -28,9 +28,9 @@
 				</li>
 				<li class="col-xs-2 col-md-12">
 					<a href="#" title="">
-						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/CALCULADORA.svg" alt="">
+						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/pensandoenreencauchar.svg" alt="">
 						<div class="hidden-xs hidden-sm">
-							<span>Calculadora <br> de Ahorro</span>
+							<span>Pensando <br> en Reencauchar</span>
 						</div>	
 					</a>
 				</li>

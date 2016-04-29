@@ -9,9 +9,12 @@ Template Name: Quienes confian en nosotros
 			<div class="col-xs-12 no-padding fondo-quienes-confian-renoboy">
 				<div class="col-xs-12 layer-fondo-quienes-confian-renoboy">
 					<div class="col-xs-12 text-center headline-quienes-confian">
-						<h2>QUIENES CONFIAN <br> EN RENOBOY</h2>
+						<h2><?php the_field("titulo"); ?></h2>
 					</div>
 					<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 contenido-quienes-confian-renoboy no-padding">
+						<div class="col-xs-12 footer-quienes-confian">
+							<p>Contamos con <strong>93 Centros de Servicio de la Red  de Distribución  Michelin  a nivel nacional</strong>, los cuales atienden la línea de camión y garantizan la presencia del servicio de reencauche de Renoboy. </p>
+						</div>
 						<div class="col-xs-12 iconos-quienes-confian">
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian">
@@ -112,9 +115,6 @@ Template Name: Quienes confian en nosotros
 						</div>
 						<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 hidden-xs hidden-sm hidden-md col-md-4 col-md-offset-4 col-lg-2 btn-porque-confian">
 							<!-- <a class="col-xs-6 btn btn-block" href="#" title=""> -->¿POR QUÉ <br> CONFIAN <br> EN RENOBOY?<!--  </a> -->
-						</div>
-						<div class="col-xs-12 footer-quienes-confian">
-							<p>Contamos con <strong>93 Centros de Servicio de la Red  de Distribución  Michelin  a nivel nacional</strong>, los cuales atienden la línea de camión y garantizan la presencia del servicio de reencauche de Renoboy. </p>
 						</div>
 					</div>
 				</div>
