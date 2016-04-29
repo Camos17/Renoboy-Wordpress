@@ -33,8 +33,8 @@ Template Name: Noticias
 												<div class="col-xs-12">
 													<hr>	
 												</div>					
-												<p><?php the_field("descripcion_corta_noticia"); ?><br><span><i class="fa fa-clock-o"></i>Actualizado hace 3 horas</span>
-												<a href="noticiasdesplegadas.php" title="">Leer más</a>	
+												<p><?php the_field("descripcion_corta_noticia"); ?><br><span><i class="fa fa-clock-o"></i>Actualizado el <?php echo get_the_date( 'Y-m-d' ); ?></span>
+												<a class="visible-xs" href="noticiasdesplegadas.php">Leer más</a>	
 												</p>
 											</div>
 									
