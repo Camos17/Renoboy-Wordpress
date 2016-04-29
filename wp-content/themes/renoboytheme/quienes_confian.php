@@ -19,7 +19,7 @@ Template Name: Quienes confian en nosotros
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p>+35</p>
+									<p class="va">+35</p>
 								</div>
 								<div class="col-xs-10 col-xs-offset-1 icono-quienes-confian2">
 									<div class="col-xs-4 col-xs-offset-4">
