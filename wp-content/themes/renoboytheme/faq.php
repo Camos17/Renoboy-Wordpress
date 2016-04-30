@@ -6,10 +6,10 @@ Template Name: Pensando en reencauchar
 
 	<?php include "header.php";?>
 		<div class="col-xs-12 no-padding fondo-faq">
-			<div class="col-xs-12">
+			<div class="col-xs-12 text-center">
 				<h1 class="text-center">¿PENSANDO EN REENCAUCHAR?</h1>
 			</div>
-			<div class="col-sm-10 col-sm-offset-1 faq-wrapper">				
+			<div class="col-xs-12 col-sm-10 col-sm-offset-1 faq-wrapper">				
 			
 				<?php 
 
