@@ -34,7 +34,7 @@
 									<img  class="hidden-xs icon-header" src="<?php bloginfo('template_directory');?>/img/iconoheader1.svg" alt="">Acceso a Distribuidores
 								</a>
 							</li>
-							<li class="col-md-4 col-lg-3 no-padding"><a href="<?php echo get_page_link(7); ?>"><img class="hidden-xs icon-header" src="<?php bloginfo('template_directory');?>/img/iconoheader2.svg" alt="">Pensando en Reencauchar</a></li>
+							<li class="col-md-4 col-lg-3 no-padding"><a href="<?php echo get_page_link(89); ?>"><img class="hidden-xs icon-header" src="<?php bloginfo('template_directory');?>/img/iconoheader2.svg" alt="">Pensando en Reencauchar</a></li>
 							<li class="col-lg-4 no-padding hidden-xs hidden-sm hidden-md">
 								<form class="col-md-12 no-padding" role="search">
 									<button type="submit" class="col-lg-2 btn btn-default btn-header-busqueda"><img src="<?php bloginfo('template_directory');?>/img/iconoheader-buscar.svg" alt=""></button>
