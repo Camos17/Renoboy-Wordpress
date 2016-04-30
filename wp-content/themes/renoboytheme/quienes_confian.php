@@ -13,104 +13,104 @@ Template Name: Quienes confian en nosotros
 					</div>
 					<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 contenido-quienes-confian-renoboy no-padding">
 						<div class="col-xs-12 footer-quienes-confian">
-							<p>Contamos con <strong>93 Centros de Servicio de la Red  de Distribución  Michelin  a nivel nacional</strong>, los cuales atienden la línea de camión y garantizan la presencia del servicio de reencauche de Renoboy. </p>
+							<p><?php the_field("texto_encabezado"); ?></p>
 						</div>
 						<div class="col-xs-12 iconos-quienes-confian">
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian has-feedback">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p class="va">+35</p>
+									<p class="va">+<?php the_field("numero_rueda_1"); ?></p>
 								</div>
 								<div class="col-xs-10 col-xs-offset-1 icono-quienes-confian2">
 									<div class="col-xs-4 col-xs-offset-4">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/icono_35.svg" alt="">
 									</div>					
 								</div>
-								<p class="col-xs-12 leyenda-quienes-confian">Más de 35 empresas de transporte de pasajeros Masivo, Regional y Urbano.</p>
+								<p class="col-xs-12 leyenda-quienes-confian"><?php the_field("texto_rueda_1"); ?></p>
 							</div>
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p class="va">+30</p>
+									<p class="va">+<?php the_field("numero_rueda_2"); ?></p>
 								</div>
 								<div class="col-xs-10 col-xs-offset-1 icono-quienes-confian2">
 									<div class="col-xs-6 col-xs-offset-3">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/icono_30.svg" alt="">
 									</div>					
 								</div>
-								<p class="col-xs-12 leyenda-quienes-confian">Más de 30 empresas de Transporte de Carga Seca (No alimentos).</p>
+								<p class="col-xs-12 leyenda-quienes-confian"><?php the_field("texto_rueda_2"); ?></p>
 							</div>
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p class="va">+15</p>
+									<p class="va">+<?php the_field("numero_rueda_3"); ?></p>
 								</div>
 								<div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 icono-quienes-confian2">
 									<div class="col-xs-4 col-xs-offset-4">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/icono_15.svg" alt="">
 									</div>					
 								</div>
-								<p class="col-xs-12 leyenda-quienes-confian">Más de 15 empresas de Soluciones de Infraestructura.</p>
+								<p class="col-xs-12 leyenda-quienes-confian"><?php the_field("texto_rueda_3"); ?></p>
 							</div>
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p class="va">+10</p>
+									<p class="va">+<?php the_field("numero_rueda_4"); ?></p>
 								</div>
 								<div class="col-xs-10 col-xs-offset-1 icono-quienes-confian2">
 									<div class="col-xs-6 col-xs-offset-3">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/icono_10.svg" alt="">
 									</div>					
 								</div>
-								<p class="col-xs-12 leyenda-quienes-confian">Más de 10 empresas de Vehículos para carga de equipos complementarios.</p>
+								<p class="col-xs-12 leyenda-quienes-confian"><?php the_field("texto_rueda_4"); ?></p>
 							</div>
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian-5">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p class="va">+5</p>
+									<p class="va">+<?php the_field("numero_rueda_5"); ?></p>
 								</div>
 								<div class="col-xs-10 col-xs-offset-1 icono-quienes-confian2">
 									<div class="col-xs-4 col-xs-offset-4">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/icono_5_1.svg" alt="">
 									</div>					
 								</div>
-								<p class="col-xs-12 leyenda-quienes-confian">Más de 5 empresas del Sector Agropecuario y Petrolero.</p>
+								<p class="col-xs-12 leyenda-quienes-confian"><?php the_field("texto_rueda_5"); ?></p>
 							</div>
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian-5">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p class="va">+5</p>
+									<p class="va">+<?php the_field("numero_rueda_6"); ?></p>
 								</div>
 								<div class="col-xs-12 col-xs-offset-0 icono-quienes-confian2">
 									<div class="col-xs-4 col-xs-offset-4">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/icono_5_2.svg" alt="">
 									</div>					
 								</div>
-								<p class="col-xs-12 leyenda-quienes-confian">Más de 5 empresas del Sector Logístico.</p>
+								<p class="col-xs-12 leyenda-quienes-confian"><?php the_field("texto_rueda_6"); ?></p>
 							</div>
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian-5">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p class="va">+5</p>
+									<p class="va">+<?php the_field("numero_rueda_7"); ?></p>
 								</div>
 								<div class="col-xs-10 col-xs-offset-1 icono-quienes-confian2">
 									<div class="col-xs-6 col-xs-offset-3">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/icono_5_3.svg" alt="">
 									</div>					
 								</div>
-								<p class="col-xs-12 leyenda-quienes-confian">Más de 5 empresas de Transporte de carga líquida.</p>
+								<p class="col-xs-12 leyenda-quienes-confian"><?php the_field("texto_rueda_7"); ?></p>
 							</div>
 							<div class="col-xs-12 col-sm-6 col-md-4 icono-quienes-confian">
 								<div class="col-xs-12 rueda-quienes-confian-5">
 									<img class="img-resposive" src="<?php bloginfo('template_directory');?>/img/ruedaquienesconfian.svg" alt="...">
-									<p class="va">+5</p>
+									<p class="va">+<?php the_field("numero_rueda_8"); ?></p>
 								</div>
 								<div class="col-xs-10 col-xs-offset-1 icono-quienes-confian2">
 									<div class="col-xs-6 col-xs-offset-3">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/icono_5_4.svg" alt="">
 									</div>					
 								</div>
-								<p class="col-xs-12 leyenda-quienes-confian">Más de 5 empresas de Alimentos y Bebidas.</p>
+								<p class="col-xs-12 leyenda-quienes-confian"><?php the_field("texto_rueda_8"); ?></p>
 							</div>
 						</div>
 						<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 hidden-xs hidden-sm hidden-md col-md-4 col-md-offset-4 col-lg-2 btn-porque-confian">
