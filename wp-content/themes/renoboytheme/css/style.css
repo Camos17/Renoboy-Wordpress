@@ -8,25 +8,6 @@ a, button{
 	outline:0 !important;
 }
 
-/*body .modal-open {
-	overflow: hidden;
-}*/
-
-/*video {
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	bottom: 0;
-	height: auto;
-	min-height: 100%;
-	min-width: 100%;
-	position: fixed;
-	right: 0;
-	width: auto;
-	z-index: -100;
-}*/
-
 .no-padding {
 	padding-left: 0px;
 	padding-right: 0px;
@@ -135,6 +116,101 @@ a, button{
 	color:#FFF;
 	padding:5px;
 }
+
+/********************************************
++		ESTILO VISITA VIRTUAL
++*********************************************/
+.visitavirtual{
+	background-color: rgba(255,255,255,0.6);
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.videocolumn {
+	background-color: #FFF;	
+	height:100%;
+}
+
+.videocolumn h2{
+	color: #2B80B8;
+	text-transform: uppercase;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.videocolumn p{
+	padding: 0 20px ;
+	margin-bottom: 30px;
+}
+
+.videocolumn video{
+	margin-bottom: 110px;
+}
+
+.interactiveplanta button{
+	position: absolute;
+	color:#FFF;
+	background-color: #0D7ABF;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border:none;
+	padding: 4px 10px;
+}
+
+.interactiveplanta #button1{
+	top: 65%;
+	left: 55%;
+}
+
+.interactiveplanta #button2{
+	top: 57%;
+	left: 64%;
+}
+
+.interactiveplanta #button3{
+	top: 48%;
+	left: 72%;
+}
+
+.interactiveplanta #button4{
+	top: 41%;
+	left: 79%;
+}
+
+.interactiveplanta #button5{
+	top: 24%;
+	left: 64%;
+}
+
+.interactiveplanta #button6{
+	top: 15%;
+	left: 43%;
+}
+
+.interactiveplanta #button7{
+	top: 34%;
+	left: 48%;
+}
+
+.interactiveplanta #button8{
+	top: 39%;
+	left: 30%;
+}
+
+.interactiveplanta #button9{
+	top: 24%;
+	left: 26%;
+}
+
+.interactiveplanta #button10{
+	top: 31%;
+	left: 17%;
+	height: 28px;
+	width: 28px;
+	padding: 0;
+}
+
 
 /********************************************
 *********************************************

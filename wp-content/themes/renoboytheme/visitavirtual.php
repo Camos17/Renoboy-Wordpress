@@ -23,7 +23,7 @@ Template Name: Visita Virtual a la planta
 					</div>
 				</div>
 				<div class="col-sm-8 has-feedback interactiveplanta">
-					<img class="img-responsive" src="img/planta.svg">
+					<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/planta.svg">
 					<button id="button1">1</button>
 					<button id="button2">2</button>
 					<button id="button3">3</button>

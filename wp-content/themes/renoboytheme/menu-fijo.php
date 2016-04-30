@@ -11,7 +11,7 @@
 					</a>
 				</li> -->
 				<li class="col-xs-2 col-md-12">
-					<a href="#" title="">
+					<a href="<?php echo get_page_link(13); ?>">
 						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/botonmenuderecha2.svg" alt="">
 						<div class="hidden-xs hidden-sm">
 							<span>Selector de Producto</span>
@@ -19,7 +19,7 @@
 					</a>
 				</li>
 				<li class="col-xs-2 col-md-12">
-					<a href="#" title="">
+					<a href="<?php echo get_page_link(11); ?>" title="">
 						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/botonmenuderecha3.svg" alt="">
 						<div class="hidden-xs hidden-sm">
 							<span>Encuentre su distribuidor más cercano</span>
@@ -27,7 +27,7 @@
 					</a>
 				</li>
 				<li class="col-xs-2 col-md-12">
-					<a href="#" title="">
+					<a href="<?php echo get_page_link(89); ?>" title="">
 						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/pensandoenreencauchar.svg" alt="">
 						<div class="hidden-xs hidden-sm">
 							<span>Pensando <br> en Reencauchar</span>
@@ -35,7 +35,7 @@
 					</a>
 				</li>
 				<li class="col-xs-2 col-md-12">
-					<a href="#" title="">
+					<a href="http://renoboy.herokuapp.com" target="_blank">
 						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/botonmenuderecha4.svg" alt="">
 						<div class="hidden-xs hidden-sm">
 							<span>Seguimiento en línea de la flota</span>
@@ -43,7 +43,7 @@
 					</a>
 				</li>
 				<li class="col-xs-2 col-md-12">
-					<a href="#" title="">
+					<a href="<?php echo get_page_link(19); ?>" title="">
 						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/botonmenuderecha5.svg" alt="">
 						<div class="hidden-xs hidden-sm">	
 							<span>Más sobre nuestro reencauche</span>
@@ -51,7 +51,7 @@
 					</a>
 				</li>
 				<li class="col-xs-2 col-md-12">
-					<a href="#" title="">
+					<a href="<?php echo get_page_link(123); ?>" title="">
 						<img class="icono-fijo" src="<?php bloginfo('template_directory');?>/img/botonmenuderecha6.svg" alt="">
 						<div class="hidden-xs hidden-sm">
 							<span>Visita virtual a la planta</span>
