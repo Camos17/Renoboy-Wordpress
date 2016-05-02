@@ -18,7 +18,7 @@ Template Name: Red de Distribuidores
 						<a class="btn btn-default btn-buscar-coords col-xs-12" id='anchorCoords'>BUSCAR MAS CERCANO</a> -->
 						<form class="col-xs-12 col-md-12 no-padding" role="search">
 							<button type="submit" class="col-xs-2 col-lg-2 btn btn-default btn-busqueda-coordenadas">
-								<img class="img-responsive" src="img/iconobuscar-coord.svg" alt="">
+								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/iconobuscar-coord.svg" alt="">
 							</button>
 							<div class="col-xs-10 col-lg-10 searchinput">
 								<input type="text" class="form-control" placeholder="Buscar...">

@@ -1367,6 +1367,10 @@ a, button{
 
   	.fondo-kilometros1:hover p {
 		background-color: #0170BF;
+		-webkit-transition: all 1.2s ease-in-out;
+		-moz-transition: all 1.2s ease-in-out;
+		-o-transition: all 1.2s ease-in-out;
+		transition: all 1.2s ease-in-out;
   	}
 
   	.fondo-kilometros1:hover 
@@ -1418,6 +1422,10 @@ a, button{
 	.fondo-mision a:hover 
 	.layer-kilometros-mision p {
 		background-color: #0170BF;
+		-webkit-transition: all 1.2s ease-in-out;
+		-moz-transition: all 1.2s ease-in-out;
+		-o-transition: all 1.2s ease-in-out;
+		transition: all 1.2s ease-in-out;
 	}
 
   	.layer-kilometros-certificaciones {
@@ -1452,6 +1460,10 @@ a, button{
   	.fondo-certificaciones:hover
   	.layer-kilometros-certificaciones p {
   		background-color: #0170BF;
+  		-webkit-transition: all 1.2s ease-in-out;
+		-moz-transition: all 1.2s ease-in-out;
+		-o-transition: all 1.2s ease-in-out;
+		transition: all 1.2s ease-in-out;
   	}
 
   	.fondo-kilometros3 {
@@ -1488,6 +1500,10 @@ a, button{
   	.fondo-kilometros3:hover
   	.contenido-kilometros3 {
   		background-color: #0170BF;
+  		-webkit-transition: all 1.2s ease-in-out;
+		-moz-transition: all 1.2s ease-in-out;
+		-o-transition: all 1.2s ease-in-out;
+		transition: all 1.2s ease-in-out;
   	}
 
   	.fondo-kilometros3:hover
@@ -1553,6 +1569,10 @@ a, button{
   	.fondo-quienes-confian:hover
   	.contenido-kilometros4 {
   		background-color: #0170BF;
+  		-webkit-transition: all 1.2s ease-in-out;
+		-moz-transition: all 1.2s ease-in-out;
+		-o-transition: all 1.2s ease-in-out;
+		transition: all 1.2s ease-in-out;
   	}
 
   	.fondo-nuestro-reencauche:hover
