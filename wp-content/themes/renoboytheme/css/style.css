@@ -874,13 +874,6 @@ a, button{
 			font-size: 11px;
 		}
 
-		.modal-regional-wrapper
-		/*.modal-content*/ {
-			border: none;
-			border-radius: 0px;
-			background-color: rgba(182, 191, 198, 0.75);
-		}
-
 		/*.modal-regional-wrapper*/
 		.contenido-modal {
 			padding: 0px;
@@ -894,30 +887,61 @@ a, button{
 		}
 
 		.headline-modal-regional {
-			color: #0372C3;
-			background-color: #FFF;
-			border-bottom: 1px solid #007AC5;
+			color: #FFF;
+			background-color: #007AC3;
+			border: none;
+			font-size: 2rem;
+			letter-spacing: 2px;
+			margin: 15px 15px 0px 15px;
+		}
+
+		.headline-modal-regional button {
+			position: absolute;
+			right: 6px;
+			top: 5px;
 		}
 
 		.headline-modal-regional span {
 			text-align: center;
-			color: #0372C3;
-			font-size: 32px;
+			color: #FFF;
+			font-size: 20px;
 		}
 
 		.headline-modal-regional h2 {
 			font-size: 2.5rem;
 			text-align: center;
 			border: none;
+			margin-top: 9px;
 		}
 
 		.contenido-modal-regional2 {
-			padding-top: 20px;
+			padding-top: 0px;
 		}
 
 		.contenido-modal-regional3 {
 			background-color: #FFF;
 		}
+
+		.contenido-modal-regional3
+		.texto-modal-regional h3 {
+			color: #007AC3;
+			font-size: 1.8rem;
+			text-transform: uppercase;
+		}
+
+		.contenido-modal-regional3
+		.texto-modal-regional hr {
+			border-top: 0.5px solid #007AC3;
+			margin-bottom: 15px;
+			margin-top: 0px;
+		}
+
+		.contenido-modal-regional3
+		.texto-modal-regional p {
+			text-align: justify;
+			font-size: 1.4rem;
+			margin-bottom: 20px;
+		}	
 
 		.table-responsive {
 			border: none;
@@ -926,6 +950,12 @@ a, button{
 
 		.table th, td {
 			text-align: center;
+		}
+
+		.texto-modal-regional2
+		.texto-convenciones img {
+			padding-left: 2px;
+			padding-right: 2px;
 		}
 
 		.botones-modal-regional {
