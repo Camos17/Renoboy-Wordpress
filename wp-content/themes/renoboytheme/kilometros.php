@@ -81,18 +81,18 @@ Template Name: Kilometros Generando valor
 						</div>
 						<div class="col-xs-12 no-padding contenido-certificaciones">
 							<div class="col-xs-12 no-padding">
-								<img class="col-xs-3 col-md-2" src="img/iso14001.svg" alt="">
+								<img class="col-xs-3 col-md-2" src="<?php bloginfo('template_directory');?>/img/iso14001.svg" alt="">
 								<ul class="col-xs-9">
 									<li>En el  2009 se obtiene la recertificación de calidad iso 9001: 2008 otorgada por icontec.</li>
 									<li>En el 2003  se obtiene la cetificación iso 9001: 2001 otorgada por icontec.</li>
 								</ul>
 							</div>
 							<div class="col-xs-12 no-padding">
-								<img class="col-xs-3 col-md-2" src="img/iso14001.svg" alt="">
+								<img class="col-xs-3 col-md-2" src="<?php bloginfo('template_directory');?>/img/iso14001.svg" alt="">
 								<p class="col-xs-9">En el 2006 se obtiene la certificación iso 14001:2004 otorgada por icontec, siendo la primer reencauchadora en el país en obtener esta certificación.</p>
 							</div>
 							<div class="col-xs-12 no-padding">
-								<img class="col-xs-3 col-md-2" src="img/iso14001.svg" alt="">
+								<img class="col-xs-3 col-md-2" src="<?php bloginfo('template_directory');?>/img/iso14001.svg" alt="">
 								<p class="col-xs-9">En el  2009 se obtiene la certificación de procesos bajo la nct5384 (2013) otorgada por icontec y la resolución 0481 del 4 marzo de 2009 del ministerio  de comercio, industria y turismo.</p>
 							</div>
 						</div>						
