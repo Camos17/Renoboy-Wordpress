@@ -45,6 +45,7 @@ Template Name: Noticias
 							<?php endif; ?>
 						</div>
 					</div>
+					<?php $latest_post = new WP_Query("post_type=post&posts_per_page=1&orderby=date&order=DESC");  ?>
 					<div class="hidden-xs col-sm-6 col-md-4 c2-noticias">
 						<img class="img-responsive" src="http://placehold.it/225x350" alt="">	
 					</div>

@@ -21,6 +21,7 @@ function theme_js() {
 
 	wp_enqueue_script( 'jquery_js', get_template_directory_uri() . '/js/jquery-1.12.1.min.js', array('jquery'), '', true );
 	wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '', true );
+	wp_enqueue_script( 'clamp_min_js', get_template_directory_uri() . '/js/clamp.min.js', array('jquery'), '', true );
 	wp_enqueue_script( 'mCustomScrollBar_js', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js', array('jquery'), '', true );
 }
 
@@ -72,5 +73,18 @@ function post_remove ()
    remove_menu_page('edit.php');
 } 
 add_action('admin_menu', 'post_remove');
+
+function custom_upload_mimes ( $existing_mimes=array() ) {
+
+	// add the file extension to the array
+
+	$existing_mimes['svg'] = 'mime/type';
+
+        // call the modified list of extensions
+
+	return $existing_mimes;
+
+}
+add_filter('upload_mimes', 'custom_upload_mimes');
 
 ?>

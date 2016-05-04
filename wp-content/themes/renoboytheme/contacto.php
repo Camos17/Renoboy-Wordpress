@@ -9,14 +9,15 @@ Template Name: Contacto
 		<div class="col-xs-12 layer-fondo-contacto">
 			<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 contenido-contacto">
 							
-				<form class="col-xs-12 no-padding contenido-contacto-cliente">
+				<form id="clienteform" method="post" action="<?php bloginfo('template_url'); ?>/mailer.php"  class="col-xs-12 no-padding contenido-contacto-cliente">
 					<div class="col-xs-12 headline-contacto-cliente">
 						<h2>Contacto Cliente / Distribuidor</h2>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 no-padding contenido-contacto-cliente1">
+						<div id="form-messages"></div>
 						<div class="col-xs-12 no-padding dropdown filtro-asunto">
 							<div class="col-xs-12 select">
-								<select class="col-xs-6 form-control">
+								<select class="col-xs-6 form-control" name="asunto">
 									<option>
 										Asunto
 									</option>
@@ -52,39 +53,39 @@ Template Name: Contacto
 						</div>									
 						<div class="col-xs-12 no-padding formulario-contacto-cliente">
 							<div class="form-group">
-								<input type="" class="form-control" id="razon-social" placeholder="Razón Social*">
+								<input type="text" class="form-control" id="razon-social" name="razonsocial" placeholder="Razón Social*">
 							</div>
 							<div class="form-group">
-								<input type="" class="form-control" id="nombres-apellidos" placeholder="Contacto (Nombre y Apellidos)*">
+								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Contacto (Nombre y Apellidos)*">
 							</div>
 							<div class="form-group">
-								<input type="" class="form-control" id="ciudad" placeholder="Ciudad*">
+								<input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad*">
 							</div>
 							<div class="form-group">
-								<input type="" class="form-control" id="e-mail" placeholder="E-mail*">
+								<input type="text" class="form-control" id="e-mail" name="email" placeholder="E-mail*">
 							</div>
 							<div class="form-group">
-								<input type="" class="form-control" id="telefono" placeholder="Número de Teléfono">
+								<input type="text" class="form-control" id="telefono" name="telefono" placeholder="Número de Teléfono">
 							</div>
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 no-padding contenido-contacto-cliente2">
 						<div class="col-xs-12 col-sm-10 no-padding">
-							<textarea class="form-control" name="" rows="7" placeholder="MENSAJE"></textarea>
+							<textarea class="form-control" name="mensaje" rows="7" placeholder="MENSAJE"></textarea>
 						</div>
 						<p class="col-xs-12 parrafo1 no-padding">Limite de carácteres 0 a 250</p>
 
 						<div class="col-xs-12 checkbox-terminos-condiciones">
-							<input id="checkbox-4" class="col-xs-1 checkbox-buscar" name="checkbox-4" type="checkbox" checked="">
+							<input id="checkbox-4" class="col-xs-1 checkbox-buscar" name="terminos" type="checkbox" checked="">
         					<label for="checkbox-4" class="col-xs-11 checkbox-custom-label">
         						Aceptas los <a href="#" title="">terminos y condiciones</a></p>
         					</label>
         				</div>
 						<div class="col-xs-12 checkbox-promociones">
-							<input id="checkbox-5" class="col-xs-1 checkbox-buscar" name="checkbox-5" type="checkbox" checked="">
+							<input id="checkbox-5" class="col-xs-1 checkbox-buscar" name="ofertasnoticias" type="checkbox" checked="">
         					<label for="checkbox-5" class="col-xs-11 checkbox-custom-label">Deseo recibir, ofertas especiales y noticias <span class="span1">Renoboy</span>.<br>Tu información está protegida por la estricta Política de Privacidad <span class="span2">Renoboy S.A.</span> y no será entregada a terceros bajo ninguna circunstancia.</label>
         				</div>
-        				<button type="button" class="col-xs-4 col-xs-push-8 col-sm-3 col-sm-push-0 btn btn-default btn-enviar-formulario">
+        				<button id="btnenvio" type="submit" class="col-xs-4 col-xs-push-8 col-sm-3 col-sm-push-0 btn btn-default btn-enviar-formulario">
         					Enviar
         				</button>
 					</div>
@@ -185,7 +186,7 @@ Template Name: Contacto
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 no-padding contenido-contacto-cliente2">
 						<div class="col-xs-12 col-sm-10 no-padding">
-							<textarea class="form-control" name="" rows="7" placeholder="MENSAJE"></textarea>
+							<textarea id="mensaje" class="form-control" name="mensaje" rows="7" placeholder="MENSAJE"></textarea>
 						</div>
 						<p class="col-xs-12 parrafo1 no-padding">Limite de carácteres 0 a 250</p>		
 						<div class="col-xs-12 checkbox-terminos-condiciones">
@@ -291,4 +292,61 @@ Template Name: Contacto
 				});
 			});
 
+	
+	    $(function() {
+	        // Get the form.
+	        var form = $('#clienteform');
+
+	        // Get the messages div.
+	        var formMessages = $('#form-messages');
+
+	        // Set up an event listener for the contact form.
+	        $(form).submit(function(event) {
+	            // Stop the browser from submitting the form.
+	            event.preventDefault();
+
+	            console.log('enviado');
+
+	            $('#btnenvio').prop('disabled', true);
+
+	            var formData = $(form).serialize();
+	            $.ajax({
+	                type: 'POST',
+	                url: $(form).attr('action'),
+	                data: formData
+	            })
+	            .done(function(response) {
+	                // Make sure that the formMessages div has the 'success' class.
+	                $(formMessages).removeClass('error');
+	                $(formMessages).addClass('success');
+
+	                // Set the message text.
+	                $(formMessages).text(response);
+
+	                // Clear the form.
+	                $('#razon-social').val('');
+	                $('#nombre').val('');
+	                $('#ciudad').val('');
+	                $('#e-mail').val('');
+	                $('#telefono').val('');
+	                $('#mensaje').val('');
+	                $('#btnenvio').prop('disabled', false);
+	            })
+	            .fail(function(data) {
+	                console.log('error');
+	                console.log(data);
+	                // Make sure that the formMessages div has the 'error' class.
+	                $(formMessages).removeClass('success');
+	                $(formMessages).addClass('error');
+
+	                // Set the message text.
+	                if (data.responseText !== '') {
+	                    $(formMessages).text(data.responseText);
+	                } else {
+	                    $(formMessages).text('Oops! An error occured and your message could not be sent.');
+	                }
+	            });
+	        });
+	    });
+	    
 	</script>
