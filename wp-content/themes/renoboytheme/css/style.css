@@ -874,7 +874,6 @@ a, button{
 			font-size: 11px;
 		}
 
-		/*.modal-regional-wrapper*/
 		.contenido-modal {
 			padding: 0px;
 			background-color: #FFF;
@@ -914,12 +913,55 @@ a, button{
 			margin-top: 9px;
 		}
 
+		.modal-regional
+		.modal-body {
+			padding-top: 0px;
+		}
+		
+		.modal-body
+		.imagen-llanta {
+			background-color: #FFF;
+		}
+
+		.modal-body
+		.imagen-llanta img {
+			padding: 5px;
+		}
+
 		.contenido-modal-regional2 {
 			padding-top: 0px;
 		}
 
 		.contenido-modal-regional3 {
 			background-color: #FFF;
+		}
+
+		.contenido-modal-regional3
+		.logo-recamic {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+
+		.contenido-modal-regional3
+		.img-aplicacion {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.contenido-modal-regional3
+		.img-aplicacion p {
+			position: absolute;
+			z-index: 1;
+			text-transform: uppercase;
+			font-weight: bold;
+			color: #FFF;
+			font-size: 1.5rem;
+			margin-bottom: 25px;
+			left: 30%;
+		}
+
+		.texto-modal-regional {
+			margin-top: 25px;
 		}
 
 		.contenido-modal-regional3
@@ -948,44 +990,81 @@ a, button{
 			margin-bottom: 0px;
 		}
 
+		.tabla-modal-producto {
+			padding-top: 15px;
+			padding-bottom: 20px;
+			border-color: #007AC3;
+		}
+
+		.tabla-modal-producto
+		.table thead {
+			background-color: #007AC3;
+			color: #FFF;
+		}
+
+		.tabla-modal-producto
+		.table thead > tr > th {
+			border-bottom: none;
+		}
+
+		.table,
+		.table tr > td {
+			border: 2px solid #007AC3;
+			color: #007AC3;
+		}
+
 		.table th, td {
 			text-align: center;
 		}
 
-		.texto-modal-regional2
-		.texto-convenciones img {
-			padding-left: 2px;
-			padding-right: 2px;
-		}
-
-		.botones-modal-regional {
-			background-color: #FFF;
-			padding-top: 15px;
-		}
-
-		.btn-compra-modal-regional2 {
+		.texto-modal-regional2 {
+			margin-top: 20px;
 			margin-bottom: 20px;
 		}
 
-		.btn-compra-modal-regional1 button,
-		.btn-compra-modal-regional2 button {
-			color: #007AC5;
-			margin: 5px 0px;
-			font-size: 1rem;
-			background-color: #FFF;
+		.texto-modal-regional2
+		.texto-convenciones i {
+			font-size: 1.6rem;
+			margin-top: 10px;
+			text-align: center;
+		}
+
+		.texto-modal-regional2
+		.texto-convenciones
+		.icono-documento {
+			font-size: 1.4rem;
+		}
+
+		.texto-modal-regional2
+		.texto-convenciones p {
+			font-size: 13px;
 			font-weight: bold;
-			border-radius: 0px;
-			-webkit-box-shadow: 3px 5px 4px 0px rgba(212,212,212,1);
-			-moz-box-shadow: 3px 5px 4px 0px rgba(212,212,212,1);
-			box-shadow: 3px 5px 4px 0px rgba(212,212,212,1);;
+		}
+
+		.btn-modal-regional-comprar {
+			background-color: #007AC3;
+			margin-bottom: 20px;
+		}
+
+		.btn-modal-regional-comprar a,
+		.btn-modal-regional-comprar a:hover,
+		.btn-modal-regional-comprar a:active,
+		.btn-modal-regional-comprar a:focus {
+			color: #FFF;
+			font-size: 1.6rem
+			font-weight: bold;
+		}
+
+		.btn-modal-regional-comprar img {
+			margin-right: 10px;
+		}
+
+		.btn-modal-regional-comprar p {
+			font-size: 1.6rem;
 		}
 
 		.ayuda-modal-footer {
 			border: none;
-		}
-
-		.ayuda-modal-footer div:nth-child(1) {
-			background-color: #007AC5;
 		}
 
 		.ayuda-modal-footer p {
@@ -2943,6 +3022,70 @@ a, button{
 			margin-top: 0px;
 		}
 
+		.modal-regional
+		.modal-body {
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-left: 0px;
+		}
+
+		.modal-body 
+		.imagen-llanta img {
+		    padding: 15px 45px;
+		}
+
+		.headline-modal-regional {
+			margin: 25px 15px 0px 50px;
+		}
+
+		.headline-modal-regional h2 {
+			font-size: 4.2rem;
+			letter-spacing: 2px;
+			margin-top: 15px;
+		}
+
+		.texto-modal-regional2 
+		.texto-convenciones i {
+			font-size: 1.8rem;
+			margin: 4px 0px;
+		}
+
+		.texto-modal-regional2 
+		.texto-convenciones p {
+			margin: 3px 0px;
+		}
+
+		.texto-modal-regional2 
+		.texto-convenciones 
+		.icono-documento {
+			font-size: 1.6rem;
+		}
+
+		.contenido-modal-regional3 
+		.img-aplicacion p {
+			font-size: 1.8rem;
+		}
+
+		.contenido-modal-regional3 
+		.texto-modal-regional h3 {
+			font-size: 2rem;
+		}
+
+		.btn-modal-regional-comprar {
+			margin-top: 20px;
+		}
+
+		.btn-modal-regional-comprar img {
+			margin-top: 5px;
+			margin-right: 0px;
+			margin-left: 15px;
+		}
+
+		.btn-modal-regional-comprar p {
+			margin-top: 10px;
+			font-size: 2.2rem;
+		}	
+
 		.ayuda-modal-footer p {
 			font-size: 3rem;
 			margin-top: 25px;
@@ -3243,6 +3386,70 @@ a, button{
 
 		.cat-llantas {
 			margin-top: 85px;
+		}
+
+		.contenido-modal-regional{
+			padding: 30px;
+			height: 1000px;
+		}
+
+		.modal-regional 
+		.modal-body {
+			padding-bottom: 0px;
+		}
+
+		.contenido-modal-regional
+		.modal-body {
+			margin-top: 0px;
+		}
+
+		.contenido-modal-regional 
+		.imagen-llanta {
+			background-color: #FFF;
+			height: 790px;
+			position: absolute;
+			top: 150px;
+			left: 0px;
+		}
+
+		.contenido-modal-regional 
+		.imagen-llanta img {
+		    padding: 0px;
+		}
+
+		.headline-modal-regional {
+			margin: 0px;
+		}
+
+		.headline-modal-regional h2 {
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+
+
+
+
+		.contenido-modal-regional3 
+		.logo-recamic {
+			margin-bottom: 0px;
+			margin-top: 35px;
+		}
+
+		.contenido-modal-regional3 
+		.img-aplicacion {
+			margin-top: 13px;
+			margin-bottom: 0px;
+		}
+
+		.contenido-modal-regional3 
+		.img-aplicacion p {
+			font-size: 1.5rem;
+			margin-bottom: 0px;
+		}
+
+		.btn-modal-regional-comprar p {
+			margin-top: 8px;
+			font-size: 1.9rem;
 		}
 
 
@@ -3610,7 +3817,6 @@ a, button{
 			}
 
 
-
 	/********************************************
 	*********************************************
 					ESTILO ICONOS FIJOS
@@ -3839,6 +4045,14 @@ a, button{
 		.layer-cat-llanta div:nth-child(1) {
 			padding-top: 20%;
 		}
+
+		.headline-modal-regional h2 {
+			margin-top: 30px;
+			margin-bottom: 20px;
+			font-size: 5rem;
+		}
+
+
 	
 
 	/********************************************
