@@ -352,7 +352,7 @@ Template Name: Buscador Servicios
 		  </div>
 		</div>
 		<div class="modal fade modal-regional" id="modal-regional" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		  <div class="modal-dialog modal-lg" role="document">
+		  <div class="modal-dialog" role="document">
 		    <div class="modal-content contenido-modal-regional">
 		    	<div class="col-sm-10 col-sm-offset-1 col-md-6 col-lg-5 modal-header headline-modal-regional">
 		        	<button type="button" class="close cerrar-ayuda hidden-md hidden-lg" data-dismiss="modal" aria-label="Close">
@@ -382,14 +382,14 @@ Template Name: Buscador Servicios
 				        		</span>
 				        	</button>
 
-			    			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 logo-recamic">
+			    			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 col-lg-5 col-lg-offset-1 logo-recamic">
 			    				<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/logo_recamic.jpg" alt="...">
 			    			</div>
-			    			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 img-aplicacion">
+			    			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 col-lg-5 img-aplicacion">
 			    				<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/aplicacionrecomendada.svg" alt="...">
 			    				<p class="va">aplicación <br> recomendada</p>
 			    			</div>
-			    			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-6 img-aplicacion">
+			    			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-6 col-lg-5 img-aplicacion">
 			    				<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/aplicacionaceptada.svg" alt="...">
 			    				<p class="va">aplicación <br> aceptada</p>
 			    			</div>
@@ -455,7 +455,7 @@ Template Name: Buscador Servicios
 								</div>
 							</div>
 
-							<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-4 btn-modal-regional-comprar">
+							<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-4 col-lg-5 col-lg-offset-6 btn-modal-regional-comprar">
 								<a class="col-xs-12 btn btn-block no-padding" href="#" title="">
 									<img class="col-xs-2 no-padding" src="<?php bloginfo('template_directory');?>/img/carritodecompras.svg" alt="...">
 									<p>Quiero Comprar</p>

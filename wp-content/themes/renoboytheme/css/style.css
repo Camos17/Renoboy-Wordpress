@@ -3388,6 +3388,11 @@ a, button{
 			margin-top: 85px;
 		}
 
+		.modal-regional
+		.modal-dialog {
+			width: 85%;
+		}
+
 		.contenido-modal-regional{
 			padding: 30px;
 			height: 1000px;
@@ -3406,7 +3411,7 @@ a, button{
 		.contenido-modal-regional 
 		.imagen-llanta {
 			background-color: #FFF;
-			height: 790px;
+			height: 758px;
 			position: absolute;
 			top: 150px;
 			left: 0px;
@@ -3425,9 +3430,6 @@ a, button{
 			margin-top: 30px;
 			margin-bottom: 30px;
 		}
-
-
-
 
 		.contenido-modal-regional3 
 		.logo-recamic {
@@ -4046,10 +4048,29 @@ a, button{
 			padding-top: 20%;
 		}
 
+		.contenido-modal-regional {
+			height: 920px;
+		}
+
 		.headline-modal-regional h2 {
 			margin-top: 30px;
 			margin-bottom: 20px;
 			font-size: 5rem;
+		}
+
+		.contenido-modal-regional 
+		.imagen-llanta {
+			height: 705px;
+		}
+
+		.contenido-modal-regional3 
+		.logo-recamic {
+			margin-top: 15px;
+		}
+
+		.contenido-modal-regional3 
+		.img-aplicacion {
+			margin-top: 24px;
 		}
 
 
