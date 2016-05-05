@@ -880,75 +880,48 @@ a, button{
 			margin: 15px 15px 0 15px;
 		}
 
-		.contenido-modal-regional {
-			background-color: rgba(182, 191, 198, 0.75);
+		.modal-producto
+		.modal-content {
+			background-color: rgba(255, 255, 255, 0.75);
+			padding: 15px;
 			border-radius: 0px;
 		}
 
-		.headline-modal-regional {
+		.modal-producto
+		.modal-body {
+			padding-top: 15px;
+			background-color: #FFF;
+		}
+
+		.headline-modal-producto2 {
 			color: #FFF;
 			background-color: #007AC3;
 			border: none;
-			font-size: 2rem;
 			letter-spacing: 2px;
-			margin: 15px 15px 0px 15px;
 		}
 
-		.headline-modal-regional button {
-			position: absolute;
-			right: 6px;
-			top: 5px;
+		.headline-modal-producto2 h2 {
+			margin: 22px 0px;
 		}
 
-		.headline-modal-regional span {
-			text-align: center;
-			color: #FFF;
-			font-size: 20px;
+		.headline-modal-producto2
+		.icono-header {
+			margin: 10px 0px;
 		}
 
-		.headline-modal-regional h2 {
-			font-size: 2.5rem;
-			text-align: center;
-			border: none;
-			margin-top: 9px;
-		}
-
-		.modal-regional
-		.modal-body {
-			padding-top: 0px;
-		}
-		
-		.modal-body
-		.imagen-llanta {
-			background-color: #FFF;
-		}
-
-		.modal-body
-		.imagen-llanta img {
-			padding: 5px;
-		}
-
-		.contenido-modal-regional2 {
-			padding-top: 0px;
-		}
-
-		.contenido-modal-regional3 {
-			background-color: #FFF;
-		}
-
-		.contenido-modal-regional3
+		.contenido-modal-producto
 		.logo-recamic {
 			margin-top: 15px;
 			margin-bottom: 15px;
 		}
 
-		.contenido-modal-regional3
+		.contenido-modal-producto
 		.img-aplicacion {
 			margin-top: 10px;
 			margin-bottom: 10px;
 		}
 
-		.contenido-modal-regional3
+		.contenido-modal-producto
 		.img-aplicacion p {
 			position: absolute;
 			z-index: 1;
@@ -960,30 +933,30 @@ a, button{
 			left: 30%;
 		}
 
-		.texto-modal-regional {
+		.texto-modal-producto {
 			margin-top: 25px;
 		}
 
-		.contenido-modal-regional3
-		.texto-modal-regional h3 {
+		.contenido-modal-producto
+		.texto-modal-producto h3 {
 			color: #007AC3;
 			font-size: 1.8rem;
 			text-transform: uppercase;
 		}
 
-		.contenido-modal-regional3
-		.texto-modal-regional hr {
+		.contenido-modal-producto
+		.texto-modal-producto hr {
 			border-top: 0.5px solid #007AC3;
 			margin-bottom: 15px;
 			margin-top: 0px;
 		}
 
-		.contenido-modal-regional3
-		.texto-modal-regional p {
+		.contenido-modal-producto
+		.texto-modal-producto p {
 			text-align: justify;
 			font-size: 1.4rem;
 			margin-bottom: 20px;
-		}	
+		}
 
 		.table-responsive {
 			border: none;
@@ -1005,6 +978,7 @@ a, button{
 		.tabla-modal-producto
 		.table thead > tr > th {
 			border-bottom: none;
+			min-width: 250px;
 		}
 
 		.table,
@@ -1017,50 +991,57 @@ a, button{
 			text-align: center;
 		}
 
-		.texto-modal-regional2 {
+		.texto-modal-producto2 {
 			margin-top: 20px;
 			margin-bottom: 20px;
 		}
 
-		.texto-modal-regional2
+		.texto-modal-producto2
 		.texto-convenciones i {
 			font-size: 1.6rem;
 			margin-top: 10px;
 			text-align: center;
 		}
 
-		.texto-modal-regional2
+		.texto-modal-producto2
 		.texto-convenciones
 		.icono-documento {
 			font-size: 1.4rem;
 		}
 
-		.texto-modal-regional2
+		.texto-modal-producto2
 		.texto-convenciones p {
 			font-size: 13px;
 			font-weight: bold;
 		}
 
-		.btn-modal-regional-comprar {
+		.btn-modal-producto-comprar {
 			background-color: #007AC3;
 			margin-bottom: 20px;
 		}
 
-		.btn-modal-regional-comprar a,
-		.btn-modal-regional-comprar a:hover,
-		.btn-modal-regional-comprar a:active,
-		.btn-modal-regional-comprar a:focus {
+		.btn-modal-producto-comprar a,
+		.btn-modal-producto-comprar a:hover,
+		.btn-modal-producto-comprar a:active,
+		.btn-modal-producto-comprar a:focus {
 			color: #FFF;
 			font-size: 1.6rem
 			font-weight: bold;
 		}
 
-		.btn-modal-regional-comprar img {
+		.btn-modal-producto-comprar img {
 			margin-right: 10px;
 		}
 
-		.btn-modal-regional-comprar p {
+		.btn-modal-producto-comprar p {
 			font-size: 1.6rem;
+		}
+
+
+
+
+		.btn-cerrar-modal {
+			position: absolute;
 		}
 
 		.ayuda-modal-footer {
@@ -3386,6 +3367,11 @@ a, button{
 
 		.cat-llantas {
 			margin-top: 85px;
+		}
+
+		.modal-producto
+		.modal-xl {
+			width: 85%;
 		}
 
 		.modal-regional
