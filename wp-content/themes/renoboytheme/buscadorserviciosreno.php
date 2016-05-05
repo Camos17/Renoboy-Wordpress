@@ -374,15 +374,15 @@ Template Name: Buscador Servicios
 									</div>	
 								</div>
 
-								<div class="col-xs-12 no-padding contenido-modal-producto">
-									<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 col-lg-5 col-lg-offset-1 logo-recamic">
+								<div class="col-xs-12 col-md-8 no-padding contenido-modal-producto">
+									<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-1 col-lg-5 col-lg-offset-1 logo-recamic">
 			    						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/logo_recamic.jpg" alt="...">
 			    					</div>
-			    					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 col-lg-4 img-aplicacion">
+			    					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-0 col-lg-4 img-aplicacion">
 			    						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/aplicacionrecomendada.svg" alt="...">
 			    						<p class="va">aplicación <br> recomendada</p>
 			    					</div>
-			    					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-6 col-lg-4 img-aplicacion">
+			    					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-6 col-lg-4 img-aplicacion">
 			    						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/aplicacionaceptada.svg" alt="...">
 			    						<p class="va">aplicación <br> aceptada</p>
 			    					</div>
