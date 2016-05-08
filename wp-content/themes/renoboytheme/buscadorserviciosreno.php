@@ -358,31 +358,36 @@ Template Name: Buscador Servicios
 					<div class="modal-body">
 						<div class="container-fluid no-padding">
 							<div class="col-xs-12 modal-producto-wrapper no-padding">
-								<button type="button" class="close btn-cerrar-modal" data-dismiss="modal" aria-label="Close">
+								<button type="button" class="close btn-cerrar-modal hidden-md hidden-lg" data-dismiss="modal" aria-label="Close">
 									<i class="fa fa-times-circle" aria-hidden="true"></i>
 								</button>
+								<button type="button" class="close btn-cerrar-modal2 hidden-xs hidden-sm" data-dismiss="modal" aria-label="Close">
+									<i class="ion-android-close" aria-hidden="true"></i>
+								</button>
 								
-								<div class="col-xs-12 col-md-4 no-padding headline-modal-producto">
+								<div class="col-xs-12 col-md-5 col-lg-4 no-padding headline-modal-producto">
 									<div class="col-xs-12 no-padding headline-modal-producto2">
-										<h2 class="modal-title col-xs-8">REGIONAL</h2>
-							        	<div class="col-xs-4 col-sm-3 col-md-4 pull-right-1 icono-header">
-						    				<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL.svg" alt="">
+										<h2 class="col-xs-7 col-xs-offset-1 col-sm-6 col-sm-offset-2 col-md-7 col-md-offset-1">REGIONAL</h2>
+							        	<div class="col-xs-3 col-sm-3 col-md-4  pull-right-1 icono-header">
+							        		<div class="col-xs-10 col-sm-8 col-lg-12 no-padding">
+							        			<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL.svg" alt="">	
+							        		</div>			
 										</div>
 									</div>
-									<div class="col-xs-12 imagen-llanta">
+									<div class="col-xs-12 col-sm-10 col-sm-offset-1 imagen-llanta">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/5.jpg" alt="">
 									</div>	
 								</div>
 
-								<div class="col-xs-12 col-md-8 no-padding contenido-modal-producto">
-									<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-1 col-lg-5 col-lg-offset-1 logo-recamic">
+								<div class="col-xs-12 col-md-7 col-lg-8 no-padding contenido-modal-producto">
+									<div class="col-xs-6 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1 logo-recamic">
 			    						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/logo_recamic.jpg" alt="...">
 			    					</div>
-			    					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-0 col-lg-4 img-aplicacion">
+			    					<div class="col-xs-6 col-md-5 col-md-offset-0 col-lg-4 col-lg-offset-1 img-aplicacion">
 			    						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/aplicacionrecomendada.svg" alt="...">
 			    						<p class="va">aplicación <br> recomendada</p>
 			    					</div>
-			    					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-6 col-lg-4 img-aplicacion">
+			    					<div class="col-xs-6 col-md-5 col-md-offset-6 col-lg-4 col-lg-offset-6 img-aplicacion img-aplicacion2">
 			    						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/aplicacionaceptada.svg" alt="...">
 			    						<p class="va">aplicación <br> aceptada</p>
 			    					</div>
@@ -433,23 +438,23 @@ Template Name: Buscador Servicios
 
 									<div class="col-xs-12 texto-modal-producto2">
 										<div class="col-xs-12 texto-convenciones">
-											<i class="col-xs-1 no-padding fa fa-usd" aria-hidden="true"></i>
-											<p class="col-xs-11">PRECIO: Consulte con su distribuidor.</p>
+											<i class="col-xs-1 col-sm-offset-1 no-padding fa fa-usd" aria-hidden="true"></i>
+											<p class="col-xs-11 col-sm-10">PRECIO: Consulte con su distribuidor.</p>
 										</div>
 										<div class="col-xs-12 texto-convenciones">
-											<i class="col-xs-1 no-padding fa fa-file-text icono-documento" aria-hidden="true"></i>
-											<p class="col-xs-11">INVENTARIO: Producto sujeto a disponibilidad.</p>
+											<i class="col-xs-1 col-sm-offset-1 no-padding fa fa-file-text icono-documento" aria-hidden="true"></i>
+											<p class="col-xs-11 col-sm-10">INVENTARIO: Producto sujeto a disponibilidad.</p>
 										</div>
 										<div class="col-xs-12 texto-convenciones">
-											<i class="col-xs-1 no-padding fa fa-check-circle" aria-hidden="true"></i>
-											<p class="col-xs-11">GARANTÍA Y CONDICIONES DE USO: Link a PDF.</p>
+											<i class="col-xs-1 col-sm-offset-1 no-padding fa fa-check-circle" aria-hidden="true"></i>
+											<p class="col-xs-11 col-sm-10">GARANTÍA Y CONDICIONES DE USO: Link a PDF.</p>
 										</div>
 									</div>
 
-									<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-4 col-lg-5 col-lg-offset-6 btn-modal-producto-comprar">
+									<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-5 col-lg-4 col-lg-offset-7 btn-modal-producto-comprar">
 										<a class="col-xs-12 btn btn-block no-padding" href="#" title="">
-											<img class="col-xs-2 no-padding" src="<?php bloginfo('template_directory');?>/img/carritodecompras.svg" alt="...">
-											<p>Quiero Comprar</p>
+											<img class="va col-xs-2 no-padding" src="<?php bloginfo('template_directory');?>/img/carritodecompras.svg" alt="...">
+											<p class="va">Quiero Comprar</p>
 										</a>
 									</div>
 								</div>

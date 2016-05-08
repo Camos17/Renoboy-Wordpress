@@ -120,96 +120,96 @@ a, button{
 /********************************************
 +		ESTILO VISITA VIRTUAL
 +*********************************************/
-.visitavirtual{
-	background-color: rgba(255,255,255,0.6);
-	margin-top: 40px;
-	margin-bottom: 40px;
-}
+	.visitavirtual{
+		background-color: rgba(255,255,255,0.6);
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
 
-.videocolumn {
-	background-color: #FFF;	
-	height:100%;
-}
+	.videocolumn {
+		background-color: #FFF;	
+		height:100%;
+	}
 
-.videocolumn h2{
-	color: #2B80B8;
-	text-transform: uppercase;
-	margin-top: 40px;
-	margin-bottom: 40px;
-}
+	.videocolumn h2{
+		color: #2B80B8;
+		text-transform: uppercase;
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
 
-.videocolumn p{
-	padding: 0 20px ;
-	margin-bottom: 30px;
-}
+	.videocolumn p{
+		padding: 0 20px ;
+		margin-bottom: 30px;
+	}
 
-.videocolumn video{
-	margin-bottom: 110px;
-}
+	.videocolumn video{
+		margin-bottom: 110px;
+	}
 
-.interactiveplanta button{
-	position: absolute;
-	color:#FFF;
-	background-color: #0D7ABF;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-	border:none;
-	padding: 4px 10px;
-}
+	.interactiveplanta button{
+		position: absolute;
+		color:#FFF;
+		background-color: #0D7ABF;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		border:none;
+		padding: 4px 10px;
+	}
 
-.interactiveplanta #button1{
-	top: 65%;
-	left: 55%;
-}
+	.interactiveplanta #button1{
+		top: 65%;
+		left: 55%;
+	}
 
-.interactiveplanta #button2{
-	top: 57%;
-	left: 64%;
-}
+	.interactiveplanta #button2{
+		top: 57%;
+		left: 64%;
+	}
 
-.interactiveplanta #button3{
-	top: 48%;
-	left: 72%;
-}
+	.interactiveplanta #button3{
+		top: 48%;
+		left: 72%;
+	}
 
-.interactiveplanta #button4{
-	top: 41%;
-	left: 79%;
-}
+	.interactiveplanta #button4{
+		top: 41%;
+		left: 79%;
+	}
 
-.interactiveplanta #button5{
-	top: 24%;
-	left: 64%;
-}
+	.interactiveplanta #button5{
+		top: 24%;
+		left: 64%;
+	}
 
-.interactiveplanta #button6{
-	top: 15%;
-	left: 43%;
-}
+	.interactiveplanta #button6{
+		top: 15%;
+		left: 43%;
+	}
 
-.interactiveplanta #button7{
-	top: 34%;
-	left: 48%;
-}
+	.interactiveplanta #button7{
+		top: 34%;
+		left: 48%;
+	}
 
-.interactiveplanta #button8{
-	top: 39%;
-	left: 30%;
-}
+	.interactiveplanta #button8{
+		top: 39%;
+		left: 30%;
+	}
 
-.interactiveplanta #button9{
-	top: 24%;
-	left: 26%;
-}
+	.interactiveplanta #button9{
+		top: 24%;
+		left: 26%;
+	}
 
-.interactiveplanta #button10{
-	top: 31%;
-	left: 17%;
-	height: 28px;
-	width: 28px;
-	padding: 0;
-}
+	.interactiveplanta #button10{
+		top: 31%;
+		left: 17%;
+		height: 28px;
+		width: 28px;
+		padding: 0;
+	}
 
 
 /********************************************
@@ -881,16 +881,36 @@ a, button{
 		}
 
 		.modal-producto
+		.modal-dialog {
+			margin: 0px;
+		}
+
+		.modal-producto
 		.modal-content {
-			background-color: rgba(255, 255, 255, 0.75);
-			padding: 15px;
+			background-color: rgba(255, 255, 255, 0.65);
 			border-radius: 0px;
 		}
 
 		.modal-producto
 		.modal-body {
-			padding-top: 15px;
 			background-color: #FFF;
+			padding: 0px;
+		}
+
+		.modal-producto
+		.btn-cerrar-modal {
+			opacity: 0.8;
+			top: 6px;
+			z-index: 5;
+			position: absolute;
+			right: 10px;
+			font-size: 3rem;
+		}
+
+		.modal-producto
+		.btn-cerrar-modal i {
+			color: #FFF;
+			opacity: 1;
 		}
 
 		.headline-modal-producto2 {
@@ -900,13 +920,13 @@ a, button{
 			letter-spacing: 2px;
 		}
 
-		.headline-modal-producto2 h2 {
-			margin: 22px 0px;
-		}
-
 		.headline-modal-producto2
 		.icono-header {
 			margin: 10px 0px;
+		}
+
+		.contenido-modal-producto {
+			padding: 15px;
 		}
 
 		.contenido-modal-producto
@@ -917,8 +937,8 @@ a, button{
 
 		.contenido-modal-producto
 		.img-aplicacion {
-			margin-top: 10px;
-			margin-bottom: 10px;
+			margin-top: 20px;
+			margin-bottom: 5px;
 		}
 
 		.contenido-modal-producto
@@ -928,7 +948,7 @@ a, button{
 			text-transform: uppercase;
 			font-weight: bold;
 			color: #FFF;
-			font-size: 1.5rem;
+			font-size: 1.2rem;
 			margin-bottom: 25px;
 			left: 30%;
 		}
@@ -1025,7 +1045,7 @@ a, button{
 		.btn-modal-producto-comprar a:active,
 		.btn-modal-producto-comprar a:focus {
 			color: #FFF;
-			font-size: 1.6rem
+			font-size: 1.6rem;
 			font-weight: bold;
 		}
 
@@ -1034,11 +1054,8 @@ a, button{
 		}
 
 		.btn-modal-producto-comprar p {
-			font-size: 1.6rem;
+			font-size: 1.8rem;
 		}
-
-
-
 
 		.btn-cerrar-modal {
 			position: absolute;
@@ -3003,69 +3020,40 @@ a, button{
 			margin-top: 0px;
 		}
 
-		.modal-regional
-		.modal-body {
-			padding-top: 0px;
-			padding-right: 0px;
-			padding-left: 0px;
+		.modal-producto
+		.modal-dialog {
+			margin: 30px auto;
 		}
 
-		.modal-body 
-		.imagen-llanta img {
-		    padding: 15px 45px;
+		.modal-producto
+		.modal-content {
+			padding: 45px;
 		}
 
-		.headline-modal-regional {
-			margin: 25px 15px 0px 50px;
+		.headline-modal-producto2 h2 {
+			margin-top: 30px;
+			font-size: 4rem;
 		}
 
-		.headline-modal-regional h2 {
-			font-size: 4.2rem;
-			letter-spacing: 2px;
-			margin-top: 15px;
+		.texto-modal-producto {
+			padding: 0px 35px;
 		}
 
-		.texto-modal-regional2 
+		.texto-modal-producto2 {
+			margin-top: 35px;
+			margin-bottom: 35px;
+		}
+
+		.texto-modal-producto2 
 		.texto-convenciones i {
-			font-size: 1.8rem;
-			margin: 4px 0px;
+		    font-size: 1.8rem;
+		    margin-top: 2px;
 		}
 
-		.texto-modal-regional2 
-		.texto-convenciones p {
-			margin: 3px 0px;
+		.btn-modal-producto-comprar a {
+			height: 55px;
 		}
 
-		.texto-modal-regional2 
-		.texto-convenciones 
-		.icono-documento {
-			font-size: 1.6rem;
-		}
-
-		.contenido-modal-regional3 
-		.img-aplicacion p {
-			font-size: 1.8rem;
-		}
-
-		.contenido-modal-regional3 
-		.texto-modal-regional h3 {
-			font-size: 2rem;
-		}
-
-		.btn-modal-regional-comprar {
-			margin-top: 20px;
-		}
-
-		.btn-modal-regional-comprar img {
-			margin-top: 5px;
-			margin-right: 0px;
-			margin-left: 15px;
-		}
-
-		.btn-modal-regional-comprar p {
-			margin-top: 10px;
-			font-size: 2.2rem;
-		}	
 
 		.ayuda-modal-footer p {
 			font-size: 3rem;
@@ -3371,76 +3359,65 @@ a, button{
 
 		.modal-producto
 		.modal-xl {
-			width: 85%;
+			width: 90%;
 		}
 
-		.modal-regional
-		.modal-dialog {
-			width: 85%;
+		.headline-modal-producto {
+			height: 770px;
 		}
 
-		.contenido-modal-regional{
-			padding: 30px;
-			height: 1000px;
+		.headline-modal-producto2 h2 {
+			margin-top: 35px;
+			font-size: 3.5rem;
+			margin-bottom: 35px;
 		}
 
-		.modal-regional 
-		.modal-body {
+		.contenido-modal-producto {
+			-webkit-box-shadow: inset 6px 0px 5px 0px rgba(235,230,235,1);
+			-moz-box-shadow: inset 6px 0px 5px 0px rgba(235,230,235,1);
+			box-shadow: 8px 0px 25px 0px rgb(235, 230, 235) inset;
+		}
+
+		.modal-producto 
+		.imagen-llanta {
+			padding: 0px;
+			margin-top: 25px;
+		}
+
+		.contenido-modal-producto
+		.img-aplicacion2 {
+			margin-top: 10px;
+		}
+
+		.tabla-modal-producto {
 			padding-bottom: 0px;
 		}
 
-		.contenido-modal-regional
-		.modal-body {
-			margin-top: 0px;
+		.table-modal-producto 
+		.table > thead > tr > th {
+			padding: 3px;
 		}
 
-		.contenido-modal-regional 
-		.imagen-llanta {
-			background-color: #FFF;
-			height: 758px;
+		.texto-modal-producto2 {
+		    margin-top: 10px;
+		    margin-bottom: 20px;
+		}
+
+		.btn-cerrar-modal2,
+		.btn-cerrar-modal2:hover {
 			position: absolute;
-			top: 150px;
-			left: 0px;
+			top: 10px;
+			right: 15px;
+			opacity: 1;
+			z-index: 1;
 		}
 
-		.contenido-modal-regional 
-		.imagen-llanta img {
-		    padding: 0px;
+		.btn-cerrar-modal2 i {
+			color: #007AC3;
+			font-size: 4rem;
 		}
 
-		.headline-modal-regional {
-			margin: 0px;
-		}
-
-		.headline-modal-regional h2 {
-			margin-top: 30px;
-			margin-bottom: 30px;
-		}
-
-		.contenido-modal-regional3 
-		.logo-recamic {
-			margin-bottom: 0px;
-			margin-top: 35px;
-		}
-
-		.contenido-modal-regional3 
-		.img-aplicacion {
-			margin-top: 13px;
-			margin-bottom: 0px;
-		}
-
-		.contenido-modal-regional3 
-		.img-aplicacion p {
-			font-size: 1.5rem;
-			margin-bottom: 0px;
-		}
-
-		.btn-modal-regional-comprar p {
-			margin-top: 8px;
-			font-size: 1.9rem;
-		}
-
-
+		
 	/********************************************
 	*********************************************
 			ESTILO CONTACTO
@@ -4034,7 +4011,33 @@ a, button{
 			padding-top: 20%;
 		}
 
-		.contenido-modal-regional {
+		.headline-modal-producto {
+		    height: 735px;
+		}
+
+		.headline-modal-producto h2 {
+			margin-top: 45px;
+		}
+
+		.contenido-modal-producto 
+		.img-aplicacion p {
+			font-size: 1.5rem;
+		}
+
+		.tabla-modal-producto 
+		.table thead > tr > th {
+			padding: 3px;
+		}
+
+		.texto-modal-prducto2 {
+			margin-bottom: 5px;
+		}	
+
+
+
+
+
+		/*.contenido-modal-regional {
 			height: 920px;
 		}
 
@@ -4057,7 +4060,7 @@ a, button{
 		.contenido-modal-regional3 
 		.img-aplicacion {
 			margin-top: 24px;
-		}
+		}*/
 
 
 	

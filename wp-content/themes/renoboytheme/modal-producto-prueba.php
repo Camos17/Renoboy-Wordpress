@@ -9,7 +9,7 @@
 		        			<i class="ion-android-close"></i>
 		        		</span>
 		        	</button>
-		        	<h2 class="modal-title col-xs-8" id="myModalLabel">REGIONAL</h2>
+		        	<h2 class="modal-title col-xs-7" id="myModalLabel">REGIONAL</h2>
 		        	<div class="col-xs-4 col-sm-3 col-md-4 pull-right-1">
 	    				<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL.svg" alt="">
 					</div>
