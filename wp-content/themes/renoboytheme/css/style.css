@@ -4029,6 +4029,11 @@ a, button{
 			padding: 3px;
 		}
 
+		.tabla-modal-producto 
+		.table tbody > tr > td {
+			padding: 4px;
+		}
+
 		.texto-modal-prducto2 {
 			margin-bottom: 5px;
 		}	
