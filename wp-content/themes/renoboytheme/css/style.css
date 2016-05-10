@@ -513,7 +513,7 @@ a, button{
 			color: #000;
 			text-align: justify;
 			text-justify: distribute;
-			padding: 25px 25px 5px 25px;
+			padding: 5px 25px;
 			font-size: 12px;
 		}
 
@@ -3007,6 +3007,8 @@ a, button{
 
 			.wrapper-noticia-desplegada {
 				overflow-y: auto;
+				background-color: #FFF;
+				padding-top: 20px;
 			}
 
 
