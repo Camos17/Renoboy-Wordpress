@@ -542,6 +542,12 @@ a, button{
 			margin: 10px 10px;
 		}
 
+		.img-noticia-desplegada {
+			margin-top: 20px;
+			overflow: hidden;
+			height: 250px;
+		}
+
 
 /********************************************
 *********************************************
@@ -2999,6 +3005,8 @@ a, button{
 			.img-noticia-desplegada {
 				right: -15px;
 				margin-top: 20px;
+				height: auto;
+				overflow: none;
 			}
 
 			.noticia-desplegada {
