@@ -34,7 +34,7 @@ Template Name: Noticias
 													<hr>	
 												</div>					
 												<p><?php the_field("descripcion_corta_noticia"); ?><br><span><i class="fa fa-clock-o"></i>Actualizado el <?php echo get_the_date( 'Y-m-d' ); ?></span>
-												<a class="visible-xs" href="noticiasdesplegadas.php">Leer más</a>	
+												<a class="visible-xs" href="<?php echo get_permalink( $post->ID ); ?>">Leer más</a>	
 												</p>
 											</div>
 									
@@ -98,25 +98,27 @@ Template Name: Noticias
 			};
 
 			$( ".noticia" ).click(function() {
-			  $(this).css("cursor", "wait");
-			  var pid = $(this).data('postid');
-			  console.log(pid);
-			  var data = {
-			      'action': 'load_custom_post',
-			      'postid': pid
-			  };
-			  // since 2.8 ajaxurl is aways defined in the admin header and points to admin-ajax.php
-			  $.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
-			      $('.noticia').css("cursor", "pointer");
-			      
-			      var r = JSON.parse(response);
-			      console.log(r);
-			      $('#img-noticia').attr("src", r.imagen_noticia);
-			      $('#noticia-titulo').html(r.titulo);
-			      $('#noticias-desplegada').html(r.texto_noticia);
+			  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.width <= 768) {
 
-			  });
-			});
+			  } else {
+				  $(this).css("cursor", "wait");
+				  var pid = $(this).data('postid');
+				  var data = {
+				      'action': 'load_custom_post',
+				      'postid': pid
+				  };
+				  // since 2.8 ajaxurl is aways defined in the admin header and points to admin-ajax.php
+				  $.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
+				      $('.noticia').css("cursor", "pointer");
+				      
+				      var r = JSON.parse(response);
+				      $('#img-noticia').attr("src", r.imagen_noticia);
+				      $('#noticia-titulo').html(r.titulo);
+				      $('#noticias-desplegada').html(r.texto_noticia);
+
+				  });
+		      }
+		    });
 		</script>
 	</body>	
 </html>	
