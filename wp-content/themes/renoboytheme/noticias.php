@@ -17,7 +17,8 @@ Template Name: Noticias
 
 								// get posts
 								$posts = get_posts(array(
-									'post_type'			=> 'noticias'
+									'post_type'			=> 'noticias',
+									'posts_per_page'   => 20
 								));
 
 								if( $posts ): ?>
@@ -43,7 +44,9 @@ Template Name: Noticias
 									<?php wp_reset_postdata(); ?>
 
 							<?php endif; ?>
-							<a id="more_posts">Cargar Más</a>
+							<div class="col-xs-12 col-sm-8 col-sm-offset-2 hidden">
+								<a class="btn btn-info btn-block" id="more_posts">Cargar Más</a>
+							</div>
 						</div>
 					</div>
 					
@@ -101,7 +104,7 @@ Template Name: Noticias
 				resizewindow();
 			};
 
-			$( ".noticia" ).click(function() {
+			$( ".noticia" ).click(function() {$_POST['ptype'];
 			  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.width <= 768) {
 
 			  } else {
@@ -132,17 +135,27 @@ Template Name: Noticias
 			function load_posts(){
 			    pageNumber++;
 			    var data = {
-                    'action': 'load_custom_post',
+                    'action': 'get_custom_posts',
                     'ptype':  ptype,
                     'ppp': ppp,
                     'pageNumber': pageNumber
                 };
                 // since 2.8 ajaxurl is aways defined in the admin header and points to admin-ajax.php
                 $.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {                   
-                    
+             
                     var r = JSON.parse(response);
+                    console.log(r);
+                    
                     $("#more_posts").attr("disabled",false);
                     pageNumber++;
+
+                    $("#noticias-wrapper").append('<div class="col-xs-12 noticia" data-postid="'+r.ID+'">'+
+														'<h2>'+r.titulo+'</h2>'+
+														'<div class="col-xs-12"><hr></div>'+					
+														'<p>'+r.descripcion_corta_noticia+'<br><span><i class="fa fa-clock-o"></i>Actualizado el'+ "dsc"+'</span>'+
+														'<a class="visible-xs" href="<?php echo get_permalink( $post->ID ); ?>">Leer más</a>'+	
+														'</p>'+
+													'</div>');
 
                 });
 			    

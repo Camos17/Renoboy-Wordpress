@@ -66,6 +66,28 @@ function load_custom_post(){
 	wp_die(); // this is required to terminate immediately and return a proper response
 }
 
+//GET CUSTOM POSTS
+add_action("wp_ajax_get_custom_posts", "get_custom_posts");
+add_action("wp_ajax_nopriv_get_custom_posts", "get_custom_posts");
+
+function get_custom_posts(){
+	$ptype=$_POST['ptype'];
+	$ppp = $_POST['ppp'];
+	$pageNumber = $_POST['pageNumber'];
+
+	$args = array(
+		'posts_per_page'   => $ppp,
+		'offset'           => $ppp*($pageNumber-1),
+		'orderby'          => 'date',
+		'post_type'        => $ptype,
+		'post_status'      => 'publish'
+	);
+
+	$posts_array = new WP_Query($args);
+
+	echo json_encode($posts_array);
+	wp_die();	
+}
 
 // REMOVE POST FROM ADMIN NAVBAR
 function post_remove () 
