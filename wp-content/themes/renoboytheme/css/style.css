@@ -2990,6 +2990,7 @@ a, button{
 		.noticia {
 			margin-top: -20px;
 			padding-right: 0;
+			cursor:pointer;
 		}
 
 		.noticias i {

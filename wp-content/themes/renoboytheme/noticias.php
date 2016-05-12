@@ -45,24 +45,27 @@ Template Name: Noticias
 							<?php endif; ?>
 						</div>
 					</div>
-					<?php $latest_post = new WP_Query("post_type=post&posts_per_page=1&orderby=date&order=DESC");  ?>
-					<div class="hidden-xs col-sm-6 col-md-4 c2-noticias">
-						<img id="img-noticia" class="img-responsive" src="http://placehold.it/225x350" alt="">	
-					</div>
-					<div class="col-xs-12 col-sm-4 hidden-xs hidden-sm noticia-desplegada">
-						<h2 id="noticia-titulo">Tu llanta nueva de nuevo</h2>
-						<div class="col-xs-12 col-sm-12 separador">
-							<hr>	
-						</div>
-						<div id="noticias-desplegada" class="col-xs-12 col-sm-12 no-padding wrapper-noticia-desplegada mCustomScrollbar" data-mcs-theme="rounded-dark">
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis.	<br>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis.	<br>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis.	<br>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis.	<br>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis.	<br><br>
-							</p>
-						</div>			
-					</div>
+					
+					<?php
+							$args = array( 'post_type'=>'noticias', 'numberposts' => '1' );
+							$recent_posts = get_posts( $args );
+							foreach( $recent_posts as $recent ){
+
+								echo '<div class="hidden-xs col-sm-6 col-md-4 c2-noticias">';
+									echo '<img id="img-noticia" class="img-responsive" src="'.get_field('imagen_noticia', $recent->ID).'" alt="'.get_field('titulo', $recent->ID).'">';	
+								echo '</div>';
+
+								echo '<div class="col-xs-12 col-sm-4 hidden-xs hidden-sm noticia-desplegada">';
+									
+											echo '<h2 id="noticia-titulo">'.get_field('titulo', $recent->ID).'</h2>';
+											echo '<div class="col-xs-12 col-sm-12 separador"><hr></div>';
+											echo '<div id="noticias-desplegada" class="col-xs-12 col-sm-12 no-padding wrapper-noticia-desplegada mCustomScrollbar" data-mcs-theme="rounded-dark">'.get_field('texto_noticia', $recent->ID).'</div>';
+										
+								echo '</div>';
+
+							}
+					?>		
+
 				</div>
 			</div>
 		</div>
