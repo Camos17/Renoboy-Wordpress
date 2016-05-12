@@ -138,8 +138,8 @@ Template Name: Buscador Servicios
 											<div class="col-xs-12 no-padding">
 												<p class="titulo-layer-llanta">WHL</p><br><br>
 											</div>			
-											<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
-											<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											<!-- <p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
+											<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
 										</div>
 									</div>
 									<div class="col-xs-4 img-abajo-derecha">
