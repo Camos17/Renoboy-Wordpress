@@ -43,6 +43,7 @@ Template Name: Noticias
 									<?php wp_reset_postdata(); ?>
 
 							<?php endif; ?>
+							<a id="more_posts">Cargar Más</a>
 						</div>
 					</div>
 					
@@ -122,6 +123,36 @@ Template Name: Noticias
 				  });
 		      }
 		    });
+
+		    var ppp = 3; // Post per page
+			var ptype = 'noticias'; // Post type
+			var pageNumber = 1;
+
+
+			function load_posts(){
+			    pageNumber++;
+			    var data = {
+                    'action': 'load_custom_post',
+                    'ptype':  ptype,
+                    'ppp': ppp,
+                    'pageNumber': pageNumber
+                };
+                // since 2.8 ajaxurl is aways defined in the admin header and points to admin-ajax.php
+                $.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {                   
+                    
+                    var r = JSON.parse(response);
+                    $("#more_posts").attr("disabled",false);
+                    pageNumber++;
+
+                });
+			    
+			    return false;
+			}
+
+			$("#more_posts").on("click",function(){ // When btn is pressed.
+			    $("#more_posts").attr("disabled",true); // Disable the button, temp.
+			    load_posts();
+			});
 		</script>
 	</body>	
 </html>	

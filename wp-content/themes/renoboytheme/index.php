@@ -8,11 +8,11 @@ Template Name: Inicio
 
 		
 		<div class="col-xs-12 no-padding content-wrapper">
-			<video class="hidden-xs hidden-sm img-responsive video_home"  preload="auto" poster="img/fondo_video_home.jpg" autoplay loop>
-				<source src="https://s3-us-west-2.amazonaws.com/cannedhead.renoboy/videohome.mp4" type="video/mp4">
-				<source src="https://s3-us-west-2.amazonaws.com/cannedhead.renoboy/videohome.webm" type="video/webm">
-				<source src="https://s3-us-west-2.amazonaws.com/cannedhead.renoboy/videohome.ogv" type="video/ogv">
-				Your browser does not support the video tag.
+			<video class="hidden-xs hidden-sm img-responsive video_home"  preload="auto" poster="<?php bloginfo('template_directory');?>/videos/videobg.png" autoplay loop>
+				<source src="<?php bloginfo('template_directory');?>/videos/videobg.mp4" type="video/mp4">
+				<source src="<?php bloginfo('template_directory');?>/videos/videobg.webm" type="video/webm">
+				<source src="<?php bloginfo('template_directory');?>/videos/videobg.ogv" type="video/ogv">
+				Este navegador no soporta este video tag.
 			</video> 
 			<!-- <div class="hidden-xs hidden-sm col-xs-12 no-padding" data-vide-bg="https://s3-us-west-2.amazonaws.com/cannedhead.optica/optica" data-vide-options="loop: true, muted: false, position: 0% 0%">
 			</div> -->
