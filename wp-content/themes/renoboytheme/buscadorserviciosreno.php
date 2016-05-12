@@ -114,100 +114,48 @@ Template Name: Buscador Servicios
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-7 cat-llantas">
 				<div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-6 col-md-offset-0 no-padding">
-					<a href="#" class="col-xs-6 cat-llanta" data-toggle="modal" data-target="#modal-producto">
-						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
-							<div class="col-xs-12 no-padding layer-cat-llanta">		
-								<div class="col-xs-12 no-padding">
-									<p class="titulo-layer-llanta">WHL</p><br><br>
-								</div>			
-								<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
-								<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							</div>
-						</div>
-						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL2.svg" alt="">
-						</div>					
-					</a>
-					<a href="#" class="col-xs-6 cat-llanta">
-						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
-							<div class="col-xs-12 no-padding layer-cat-llanta">
-								<div class="col-xs-12 no-padding">					
-									<p class="titulo-layer-llanta">XZE-2</p><br><br>
-								</div>
-								<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
-								<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							</div>
-						</div>
-						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/MIXTA2.svg" alt="">
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-12 col-sm-5 col-md-6 col-md-offset-0 no-padding">
-					<a href="#" class="col-xs-6 cat-llanta">
-						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
-							<div class="col-xs-12 no-padding layer-cat-llanta">			
-								<div class="col-xs-12 no-padding">			
-									<p class="titulo-layer-llanta">XZE-2</p><br><br>
-								</div>
-								<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
-								<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							</div>
-						</div>
-						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/CANTERA2.svg" alt="">
-						</div>
-					</a>
-					<a href="#" class="col-xs-6 cat-llanta">
-						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
-							<div class="col-xs-12 no-padding layer-cat-llanta">			
-								<div class="col-xs-12 no-padding">			
-									<p class="titulo-layer-llanta">XZE-2</p><br><br>
-								</div>
-								<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
-								<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							</div>
-						</div>
-						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/URBANO2.svg" alt="">
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-6 col-md-offset-0 no-padding">				
-					<a href="#" class="col-xs-6 cat-llanta">
-						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
-							<div class="col-xs-12 no-padding layer-cat-llanta">			
-								<div class="col-xs-12 no-padding">			
-									<p class="titulo-layer-llanta">XZE-2</p><br><br>
-								</div>
-								<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
-								<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							</div>
-						</div>
-						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL2.svg" alt="">
-						</div>				
-					</a>
-					<a href="#" class="col-xs-6 cat-llanta">
-						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
-							<div class="col-xs-12 no-padding layer-cat-llanta">			
-								<div class="col-xs-12 no-padding">			
-									<p class="titulo-layer-llanta">XZE-2</p><br><br>
-								</div>
-								<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
-								<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							</div>
-						</div>
-						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/MIXTA2.svg" alt="">
-						</div>
-					</a>
+
+					<?php 
+
+						// get posts
+						$posts = get_posts(array(
+							'post_type'			=> 'productos'
+						));
+
+						if( $posts ): ?>
+							
+								
+							<?php foreach( $posts as $post ): 
+								
+								setup_postdata( $post )
+								
+								?>
+									
+								<a href="#" class="col-xs-6 cat-llanta" data-toggle="modal" data-target="#modal-producto">
+									<div class="col-xs-12 no-padding cat-llanta-wrapper">
+										<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
+										<div class="col-xs-12 no-padding layer-cat-llanta">		
+											<div class="col-xs-12 no-padding">
+												<p class="titulo-layer-llanta">WHL</p><br><br>
+											</div>			
+											<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
+											<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										</div>
+									</div>
+									<div class="col-xs-4 img-abajo-derecha">
+										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL2.svg" alt="">
+									</div>					
+								</a>
+
+							
+							<?php endforeach; ?>
+							
+							<?php wp_reset_postdata(); ?>
+
+					<?php endif; ?>
+
+
+					
 				</div>
 				<div class="col-xs-12 col-sm-5 col-md-6 col-md-offset-0 no-padding">	
 					<a href="#" class="col-xs-6 cat-llanta">
