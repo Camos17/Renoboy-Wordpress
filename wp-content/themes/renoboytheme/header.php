@@ -5,27 +5,6 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>RENOBOY</title>
 
-		<style type="text/css" media="screen">
-			
-			article {
-				height: 150px;
-			}
-
-			article div:nth-child(1) {
-				padding: 0px;
-			}
-
-			article div:nth-child(1),
-			article div:nth-child(2) {
-				position: relative;
-				top: 50%;
-				-ms-transform: translateY(-50%);  
-				-webkit-transform: translateY(-50%);
-				transform: translateY(-50%);
-			}
-
-		</style>
-		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('template_directory');?>/favicon/apple-icon-57x57.png">
