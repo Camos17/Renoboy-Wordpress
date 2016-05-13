@@ -767,10 +767,34 @@ a, button{
 		.cat-llanta 
 		.layer-cat-llanta {
 			position: absolute;
-			z-index: 10;
-			top: 80%;
+			z-index: 11;
+			top: 78%;
 			height: 100%;
+		}
+		
+		.cat-llanta 
+		.layer-cat-llanta.regional{
+			background-color: rgba(0, 122, 197, 0.75);
+		}
+
+		.cat-llanta 
+		.layer-cat-llanta.mixta{
 			background-color: rgba(200,200,0,0.85);
+		}
+
+		.cat-llanta 
+		.layer-cat-llanta.urbano {
+    		background-color: rgba(143, 53, 72, 0.75);
+		}
+
+		.cat-llanta 
+		.layer-cat-llanta.cantera {
+		    background-color: rgba(169, 94, 51, 0.75);
+		}
+		
+		.cat-llanta 
+		.layer-cat-llanta.otro {
+		    background-color: rgba(0, 0, 0, 0.85);
 		}
 
 		.cat-llanta 
@@ -779,8 +803,8 @@ a, button{
 			position: absolute;
 			color: #FFF;
 			font-weight: bold;
-			font-size: 20px;
-			width: 0%;
+			font-size: 15px;
+			width: 100%;
 			margin-bottom: 0px;
 			padding: 5px 10px;
 			text-align: center;

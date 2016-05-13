@@ -89,6 +89,32 @@ function get_custom_posts(){
 	wp_die();	
 }
 
+//FILTER DISEÑOS
+add_action("wp_ajax_filter_designs", "filter_designs");
+add_action("wp_ajax_nopriv_filter_designs", "filter_designs");
+
+function filter_designs(){
+	$ptype=$_POST['ptype'];
+	$ppp = $_POST['ppp'];
+	$pageNumber = $_POST['pageNumber'];
+
+	$args = array(
+		'posts_per_page'   => $ppp,
+		'offset'           => $ppp*($pageNumber-1),
+		'orderby'          => 'date',
+		'post_type'        => $ptype,
+		'post_status'      => 'publish'
+	);
+
+	$posts_array = new WP_Query($args);
+
+	echo json_encode($posts_array);
+	wp_die();	
+}
+
+//FILTER PRODUCTS
+
+
 // REMOVE POST FROM ADMIN NAVBAR
 function post_remove () 
 { 

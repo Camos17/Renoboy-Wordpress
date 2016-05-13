@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-area content-wrapper container">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -12,7 +12,6 @@
 			<?php
 			// Start the loop.
 			while ( have_posts() ) : the_post(); ?>
-
 				<?php
 				/*
 				 * Run the loop for the search to output the results.
@@ -33,8 +32,7 @@
 
 		// If no content, include the "No posts found" template.
 		else :
-			get_template_part( 'content', 'none' );
-
+			echo '<div class="container"><h1>No se encontraron resultados</h1></div>';
 		endif;
 		?>
 

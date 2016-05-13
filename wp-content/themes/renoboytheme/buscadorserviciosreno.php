@@ -113,13 +113,13 @@ Template Name: Buscador Servicios
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-7 cat-llantas">
-				<div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-6 col-md-offset-0 no-padding">
-
 					<?php 
 
 						// get posts
 						$posts = get_posts(array(
-							'post_type'			=> 'productos'
+							'post_type'			=> 'd_bandas',
+							'posts_per_page'   => 40
+
 						));
 
 						if( $posts ): ?>
@@ -131,19 +131,75 @@ Template Name: Buscador Servicios
 								
 								?>
 									
-								<a href="#" class="col-xs-6 cat-llanta" data-toggle="modal" data-target="#modal-producto">
+								<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-toggle="modal" data-target="#modal-producto">
 									<div class="col-xs-12 no-padding cat-llanta-wrapper">
-										<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
-										<div class="col-xs-12 no-padding layer-cat-llanta">		
+										<?php 
+											$value = get_field( "imagen" );
+											if($value){
+												echo '<img class="img-responsive" src="'.get_field('imagen').'" alt="">';
+											}else{
+												echo '<img class="img-responsive" src="'.get_template_directory_uri ().'/img/1.jpg" alt="diseño no disponible">';
+											}
+										?>
+
+										<?php 
+											$value = get_field( "utilizacion_recomendada" );
+
+											if( $value == 'REGIONAL' ) {
+											    
+											    echo '<div class="col-xs-12 no-padding layer-cat-llanta regional">';
+
+											} elseif($value == 'MIXTA'){
+
+												echo '<div class="col-xs-12 no-padding layer-cat-llanta mixta">';
+
+											}elseif($value == 'URBANO'){
+
+												echo '<div class="col-xs-12 no-padding layer-cat-llanta urbano">';
+
+											} elseif($value == 'CANTERA'){
+
+												echo '<div class="col-xs-12 no-padding layer-cat-llanta cantera">';
+
+											} else {
+
+											    echo '<div class="col-xs-12 no-padding layer-cat-llanta otro">';
+											    
+											}
+										?>
+
 											<div class="col-xs-12 no-padding">
-												<p class="titulo-layer-llanta">WHL</p><br><br>
+												<p class="titulo-layer-llanta"><?php the_field("diseño_de_banda"); ?></p><br><br>
 											</div>			
-											<!-- <p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
-											<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+											<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
+											<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
 										</div>
 									</div>
 									<div class="col-xs-4 img-abajo-derecha">
-										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL2.svg" alt="">
+										<?php 
+											$value = get_field( "utilizacion_recomendada" );
+											if( $value == 'REGIONAL' ) {
+											    
+											    echo '<img class="img-responsive" src="'.get_template_directory_uri ().'/img/REGIONAL2.svg" alt="Regional">';
+
+											} elseif($value == 'MIXTA'){
+
+												echo '<img class="img-responsive" src="'.get_template_directory_uri ().'/img/MIXTA2.svg" alt="sin diseño">';
+
+											}elseif($value == 'URBANO'){
+
+												echo '<img class="img-responsive" src="'.get_template_directory_uri ().'/img/URBANO2.svg" alt="sin diseño">';
+
+											} elseif($value == 'CANTERA'){
+
+												echo '<img class="img-responsive" src="'.get_template_directory_uri ().'/img/CANTERA2.svg" alt="sin diseño">';
+
+											} else {
+
+											    echo '<img class="img-responsive" src="'.get_template_directory_uri ().'/img/1.jpg" alt="sin diseño">';
+											    
+											}
+										?>
 									</div>					
 								</a>
 
@@ -154,41 +210,6 @@ Template Name: Buscador Servicios
 
 					<?php endif; ?>
 
-
-					
-				</div>
-				<div class="col-xs-12 col-sm-5 col-md-6 col-md-offset-0 no-padding">	
-					<a href="#" class="col-xs-6 cat-llanta">
-						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
-							<div class="col-xs-12 no-padding layer-cat-llanta">			
-								<div class="col-xs-12 no-padding">			
-									<p class="titulo-layer-llanta">XZE-2</p><br><br>
-								</div>
-								<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
-								<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							</div>
-						</div>
-						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/CANTERA2.svg" alt="">
-						</div>
-					</a>
-					<a href="#" class="col-xs-6 cat-llanta">
-						<div class="col-xs-12 no-padding cat-llanta-wrapper">
-							<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/1.jpg" alt="">
-							<div class="col-xs-12 no-padding layer-cat-llanta">							
-								<div class="col-xs-12 no-padding">							
-									<p class="titulo-layer-llanta">XZE-2</p><br><br>
-								</div>
-								<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
-								<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							</div>
-						</div>
-						<div class="col-xs-4 img-abajo-derecha">
-							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/URBANO2.svg" alt="">
-						</div>
-					</a>
-				</div>
 			</div>
 		</div>
 		<div class="modal fade" id="ayuda-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
