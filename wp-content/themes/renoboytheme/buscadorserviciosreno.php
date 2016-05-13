@@ -25,7 +25,7 @@ Template Name: Buscador Servicios
 									UTILIZACIÓN
 								</li>
 								<li class="col-xs-6 seleccionartodas">
-									<input id="checkbox-1" class="checkbox-custom" name="checkbox-1" type="checkbox" checked="">
+									<input id="checkbox-1" class="checkbox-custom" name="checkbox-1" type="checkbox">
         							<label for="checkbox-1" class="checkbox-custom-label">Seleccionar todas</label>
 								</li>					
 							</div>
@@ -34,27 +34,27 @@ Template Name: Buscador Servicios
 									<i class="col-xs-2 col-xs-offset-10 fa fa-question-circle"></i>
 								</a>
 							</div>
-							<div class="col-xs-12 col-sm-12 iconos-servicio-recomendado">	
+							<div id="iconos-servicios" class="col-xs-12 col-sm-12 iconos-servicio-recomendado">	
 								<div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-0 icono-recomendado">
-								<button type="button"class="col-xs-12 btn-servicio-regional">
+									<button id="btn-regional" data-servicio="regional" type="button"class="col-xs-12 btn-servicio-regional">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL.svg" alt="">
 										<span class="col-xs-12 no-padding">Regional</span>	
 									</button>
 								</div>
-								<div class="col-xs-6 col-sm-4 col-md-3 icono-recomendado">
-									<button type="button" class="col-xs-12 btn-servicio-mixta">
+								<div data-servicio="mixta" class="col-xs-6 col-sm-4 col-md-3 icono-recomendado">
+									<button id="btn-mixta" type="button" class="col-xs-12 btn-servicio-mixta">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/MIXTA.svg" alt="">
 										<span class="col-xs-12 no-padding">Mixta</span>
 									</button>
 								</div>					
-								<div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-0 icono-recomendado">
-									<button type="button" class="col-xs-12 btn-servicio-urbano">
+								<div data-servicio="urbano" class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-0 icono-recomendado">
+									<button id="btn-urbano" type="button" class="col-xs-12 btn-servicio-urbano">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/URBANO.svg" alt="">
 										<span class="col-xs-12 no-padding">Urbano</span>
 									</button>					
 								</div>
-								<div class="col-xs-6 col-sm-4 col-md-3 icono-recomendado">
-									<button type="button" class="col-xs-12 btn-servicio-cantera">
+								<div data-servicio="cantera" class="col-xs-6 col-sm-4 col-md-3 icono-recomendado">
+									<button id="btn-cantera" type="button" class="col-xs-12 btn-servicio-cantera">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/CANTERA.svg" alt="">
 										<span class="col-xs-12 no-padding">Cantera</span>
 									</button>				
@@ -67,12 +67,11 @@ Template Name: Buscador Servicios
 							<li class="col-xs-4 titulo-seccion">
 									POSICIÓN
 							</li>
-							<li class="col-xs-4 col-xs-offset-2">
+							<li class="col-xs-4 col-xs-offset-1">
 								 <select>
-									<option value="volvo">Tracción</option>
-									<option value="saab">Saab</option>
-									<option value="mercedes">Mercedes</option>
-									<option value="audi">Audi</option>
+									<option value="TRACCION">Tracción</option>
+									<option value="EJE LIBRE">Eje libre</option>
+									<option value="EJE LIBRE / TRACCIÓN">Eje Libre / Tracción</option>
 								</select>
 							</li>
 							<li class="col-xs-2 pull-right">
@@ -106,7 +105,7 @@ Template Name: Buscador Servicios
 								</select>
 							</li>
 							<li class="col-xs-8 col-xs-offset-2 col-sm-5 col-sm-offset-6 col-md-6 col-md-offset-5 no-padding btn-buscar-servicio">
-								<button class="btn btn-default btn-buscar-servicio col-xs-12" type="submit">BUSCAR MI SERVICIO</button>
+								<button id="dbanda-btn" class="btn btn-default btn-buscar-servicio col-xs-12" type="submit">BUSCAR MI SERVICIO</button>
 							</li>
 						</div>
 					</div>
@@ -315,7 +314,7 @@ Template Name: Buscador Servicios
 					</div>
 		    	</div>		    		
 		      <div class="modal-footer ayuda-modal-footer">
-		    	<button type="button" class="btn btn-default cerrar-ayuda2" data-dismiss="modal">Cerrar</button>
+		    	<button id="dbanda-btn" type="button" class="btn btn-default cerrar-ayuda2" data-dismiss="modal">Cerrar</button>
 		      </div>
 		    </div>
 		  </div>
@@ -437,6 +436,90 @@ Template Name: Buscador Servicios
 		<?php include "menu-fijo.php";?>
 		<script src="js/clamp.min.js"></script>
 		<?php include "footer.php";?>
+		<script type="text/javascript">
+			$("#iconos-servicios button").click(function(){
+	
+				var buttonservice = $(this).data('servicio');
+
+				if($(this).hasClass("active")){
+					$(this).removeClass("active");
+				} else {
+					$(this).addClass("active");
+					$("#checkbox-1").prop( "checked", false );
+				}
+
+			});
+
+			$("#checkbox-1").click( function(){
+			   if( $(this).is(':checked') ){
+			   	 $("#iconos-servicios button").addClass("active");
+			   } else {
+			   	$("#iconos-servicios button").removeClass("active");
+			   }
+			});
+
+			$("#dbanda-btn").click( function(){
+				var utilizacion = '';			
+
+				if($("#btn-regional").hasClass("active")){
+					utilizacion="'REGIONAL'"; 
+				} 
+				if($("#btn-mixta").hasClass("active")){
+					if(!utilizacion){
+						utilizacion = "'MIXTA'";
+					} else {
+						utilizacion += ", 'MIXTA'" ;
+					}
+				} 
+				if($("#btn-urbano").hasClass("active")){
+					if(!utilizacion){
+						utilizacion = "'URBANO','AUTOPISTA / REGIONAL / URBANO'";
+					} else {
+						utilizacion += ", 'URBANO'" ;
+					}
+				} 
+				if($("#btn-cantera").hasClass("active")){
+					if(!utilizacion){
+						utilizacion = "'CANTERA'";
+					} else {
+						utilizacion += ", 'CANTERA'" ;
+					}
+				} 
+
+				if($("#btn-regional").hasClass("active") || $("#btn-urbano").hasClass("active")){
+					if(!utilizacion){
+						utilizacion = "'AUTOPISTA / REGIONAL / URBANO', 'REGIONAL / URBANO'";
+					} else {
+						utilizacion += ", 'AUTOPISTA / REGIONAL / URBANO', 'REGIONAL / URBANO'" ;
+					}
+				} 
+
+				if($("#btn-mixta").hasClass("active") || $("#btn-urbano").hasClass("active") ){
+					if(!utilizacion){
+						utilizacion = "'MIXTA / CANTERA'";
+					} else {
+						utilizacion += ", 'MIXTA / CANTERA'" ;
+					}
+				} 
+
+
+
+				var data = {
+				   'action': 'filter_designs',
+				   'utilizacion': utilizacion
+				};
+				
+				console.log(data);
+				/*$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
+				    
+				      
+				      var r = JSON.parse(response);
+
+				});*/
+				
+			});
+
+		</script>
 		
 	</body>	
 </html>	

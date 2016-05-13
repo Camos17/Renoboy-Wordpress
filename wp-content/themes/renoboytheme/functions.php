@@ -112,7 +112,6 @@ function filter_designs(){
 	wp_die();	
 }
 
-//FILTER PRODUCTS
 
 
 // REMOVE POST FROM ADMIN NAVBAR
