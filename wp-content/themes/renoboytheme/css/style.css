@@ -118,8 +118,8 @@ a, button{
 	}
 
 /********************************************
-+		ESTILO VISITA VIRTUAL
-+*********************************************/
+		ESTILO VISITA VIRTUAL
+*********************************************/
 	.visitavirtual{
 		background-color: rgba(255,255,255,0.6);
 		margin-top: 40px;
@@ -212,8 +212,8 @@ a, button{
 	}
 
 /********************************************
-		ESTILO RESULTAFDOS BUSQUEDA
-*********************************************/
+		ESTILO RESULTADOS BUSQUEDA
+********************************************/
 	
 	.resultado-busqueda {
 		height: 150px;
@@ -387,12 +387,23 @@ a, button{
 			padding-bottom: 11px;
 		}
 
+		.home-opts a {
+			transition: transform 0.5s;
+			-webkit-transition: transform 0.5s;
+			-moz-transition: transform 0.5s;
+			-o-transition: transform 0.5s;
+			transition: transform 0.5s;
+		}
+
 		.home-opts a:hover p {
 			background-color: #017DC3;
 		}
 
 		.home-opts a:hover  {
 			text-decoration: none;
+			-ms-transform: scale(1.1); /* IE 9 */
+		    -webkit-transform: scale(1.1); /* Chrome, Safari, Opera */
+		    transform: scale(1.1);
 		}
 
 		.layer-video-home {
