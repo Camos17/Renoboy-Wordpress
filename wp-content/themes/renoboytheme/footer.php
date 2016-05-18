@@ -12,26 +12,26 @@
 			  <!-- Wrapper for slides -->
 				<div class="carousel-inner">
 					<div class="item active">
-					 	<div class="col-xs-6">
-					 		<div class="col-xs-6 col-xs-offset-6 no-padding icono-legal">
-					 			<img class="va pull-right" src="<?php bloginfo('template_directory');?>/img/iso14001.svg" alt="">	
+					 	<div class="col-sm-6 col-sm-offset-3 col-md-10 col-md-offset-1">
+					 		<div class="col-xs-3 col-xs-offset-2 col-md-4 col-md-offset-0 no-padding icono-legal">
+					 			<img class="va img-responsive" src="<?php bloginfo('template_directory');?>/img/iso14001.svg" alt="">	
 					 		</div>
-					 	</div>
-					 	<div class="col-xs-6">
-					 		<div class="col-xs-6 no-padding icono-legal">
-					 			<img class="va pull-left" src="<?php bloginfo('template_directory');?>/img/iso9001.svg" alt="">	
+					 	<!-- </div> -->
+					 	<!-- <div class="col-xs-6"> -->
+					 		<div class="col-xs-3 col-md-4 no-padding icono-legal">
+					 			<img class="va img-responsive" src="<?php bloginfo('template_directory');?>/img/iso9001.svg" alt="">	
+					 		</div>
+					 	<!-- </div> -->
+					 	<!-- <div class="col-xs-6"> -->
+							<div class="col-xs-3 col-md-4 no-padding icono-legal">
+					 			<img class="va img-responsive" src="<?php bloginfo('template_directory');?>/img/procesos.svg" alt="">	
 					 		</div>
 					 	</div>
 					</div>
 					<div class="item">
-						<div class="col-xs-6">
-							<div class="col-xs-6 col-xs-offset-6 no-padding icono-legal">
-					 			<img class="va pull-right" src="<?php bloginfo('template_directory');?>/img/procesos.svg" alt="">	
-					 		</div>
-					 	</div>
-					 	<div class="col-xs-6">
-					 		<div class="col-xs-6 col-xs-offste-6 no-padding icono-legal">
-					 			<img class="va pull-left icono-iqnet" src="<?php bloginfo('template_directory');?>/img/iqnet.svg" alt="">
+						<div class="col-xs-12">
+					 		<div class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-5 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 icono-iqnet">
+					 			<img class="va img-responsive" src="<?php bloginfo('template_directory');?>/img/iqnet.svg" alt="">
 					 		</div>
 					 	</div>
 					</div>

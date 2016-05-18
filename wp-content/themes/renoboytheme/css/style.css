@@ -2865,12 +2865,20 @@ a, button{
 			background-image: none;
 		}
 
-		.icono-legal{
+		.icono-legal {
 			height: 165px;
 		}
 
-		.icono-legal img{
+		.icono-iqnet {
+			height: 165px;
+		}
+
+		.icono-legal img {
 			width: 56px;
+		}
+
+		.icono-iqnet img {
+			width: auto;
 		}
 
 		.icono-legal .icono-iqnet {
@@ -2955,7 +2963,7 @@ a, button{
 		}
 
 		.navbar .container-fluid .navbar-brand {
-			margin-left: -22px
+			margin-left: -10px
 		}
 
 		.navbar-collapse {
@@ -3846,7 +3854,7 @@ a, button{
 
 	/********************************************
 	*********************************************
-					ESTILO ICONOS FIJOS
+			ESTILO ICONOS FIJOS
 	*********************************************	
 	*********************************************/
 
@@ -3931,6 +3939,12 @@ a, button{
 
 		.icono-legal {
 			height: 200px;
+		    padding-right: 2.5px;
+			padding-left: 2.5px;
+		}
+
+		.icono-iqnet {
+		    height: 200px;
 		}
 
 		.texto-sedes {
@@ -4128,8 +4142,6 @@ a, button{
 		.img-aplicacion {
 			margin-top: 24px;
 		}*/
-
-
 	
 
 	/********************************************
@@ -4273,6 +4285,16 @@ a, button{
 
 		.icono-legal {
 			height: 230px;
+			padding-right: 6.5px;
+			padding-left: 6.5px;
+		}
+
+		.icono-legal img {
+		    width: auto;
+		}
+
+		.icono-iqnet {
+		    height: 230px;
 		}
 
 		.legalidad {
