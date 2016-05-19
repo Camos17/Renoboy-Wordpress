@@ -52,8 +52,8 @@ Template Name: Contacto
 							</div>							
 						</div>									
 						<div class="col-xs-12 no-padding formulario-contacto-cliente">
-							<div class="form-group">
-								<input type="text" class="form-control" id="razon-social" name="razonsocial" placeholder="Razón Social*">
+							<div class="form-group">								
+								<input type="text" class="form-control" id="razon-social" name="razonsocial" placeholder="Nombre Empresa*">
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Contacto (Nombre y Apellidos)*">
@@ -142,7 +142,12 @@ Template Name: Contacto
 								<input type="" class="form-control" id="apellidos" placeholder="Apellidos*">
 							</div>
 							<div class="form-group">
-								<input type="" class="form-control" id="razon-social" placeholder="Razón Social*">
+								<p class="col-xs-5">Empresa?</p>
+								<div class="col-xs-6 col-sm-4 btns-opciones">
+									<a class="col-xs-3 col-xs-push-5 col-sm-push-1 btn btn-opcion-si" href="#" title="">Si</a>
+									<a class="col-xs-3 col-xs-push-5 col-sm-push-1 btn btn-opcion-no" href="#" title="">No</a>
+								</div>
+								<!-- <input type="" class="form-control" id="razon-social" placeholder="Razón Social*"> -->
 							</div>
 							<div class="form-group">
 								<input type="" class="form-control" id="direccion" placeholder="Dirección*">

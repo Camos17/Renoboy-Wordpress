@@ -51,8 +51,30 @@ Template Name: Pensando en reencauchar
 			  var answer = container.find(".faq-a");
 			  var trigger = container.find(".faq-t");
 			  
-			  answer.slideToggle(200);
-			  
+			  	answer.slideDown(500);
+
+			  	$(document).mouseup(function (e)
+				{			    
+
+				   if (!answer.is(e.target) // if the target of the click isn't the container...
+				        && answer.has(e.target).length === 0) // ... nor a descendant of the container
+				    {
+				        answer.slideUp(500);
+				    }
+				});
+
+				$(document).bind( "mouseup touchend", function(e) {
+
+					if (!answer.is(e.target) // if the target of the click isn't the container...
+				        && answer.has(e.target).length === 0) // ... nor a descendant of the container
+				    {
+				        answer.slideUp(500);
+				    }
+				});
+
+				
+			  // answer.slideToggle(200);
+			 
 			  if (trigger.hasClass("faq-o")) {
 			    trigger.removeClass("faq-o");
 			  }
@@ -61,6 +83,8 @@ Template Name: Pensando en reencauchar
 			  }
 			});
 		});
+
+		
 	</script>
 	</body>	
 </html>	

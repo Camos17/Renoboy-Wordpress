@@ -105,7 +105,7 @@ Template Name: Mas sobre el reencauche
 								tempor incididunt ut labore et dolore magna aliqua.</p>
 							</div>
 							<div class="col-xs-10 col-xs-offset-2 col-sm-8 col-sm-offset-4">
-								<a class="btn btn-block btn-cartel" href="#" title="" >
+								<a class="btn btn-block btn-cartel" href="<?php echo get_page_link(123); ?>" title="" >
 								<i  class="fa fa-mouse-pointer"></i>
 									¿Cómo lo hacemos?
 								</a>
@@ -124,12 +124,12 @@ Template Name: Mas sobre el reencauche
 								consequat. <br> Duis aute irure dolor in reprehenderit in voluptate velit esse
 								cillum dolore eu fugiat nulla pariatur.</p>
 							</div>
-							<div class="col-xs-10 col-xs-offset-2 col-sm-8 col-sm-offset-4">
+							<!-- <div class="col-xs-10 col-xs-offset-2 col-sm-8 col-sm-offset-4">
 								<a class=" btn btn-block btn-cartel" href="#" title="" >
 									<i  class="fa fa-mouse-pointer"></i>
 									¿Cuánto podría ahorrar?
 								</a>
-							</div>
+							</div> -->
 						</div>					
 					</div>
 
