@@ -76,7 +76,7 @@
 					<p class="text-center"><strong>Planta Renoboy Girón</strong><br>
 					Carrera 13 N° 70 - 154 Km 6 Autopista Girón<br>
 					<a href="tel: (+577) 697 2696">Tel: (+577) 697 2696</a><br><br>
-					<strong>Planta Renoboy Sabaleta</strong><br>
+					<strong>Planta Renoboy Sabaneta</strong><br>
 					Carrera 47 E N° 78C Sur - 95 Ciudadela Industrial ACIC<br>
 					<a href="tel: (+574) 604 0368">Tel: (+574) 604 0368</a><br><br>
 					<strong>Planta Renoboy Tubará</strong><br>

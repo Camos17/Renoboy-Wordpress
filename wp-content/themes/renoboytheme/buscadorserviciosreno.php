@@ -34,27 +34,27 @@ Template Name: Buscador Servicios
 									<i class="col-xs-2 col-xs-offset-10 fa fa-question-circle"></i>
 								</a>
 							</div>
-							<div class="col-xs-12 col-sm-12 iconos-servicio-recomendado">	
+							<div id="iconos-servicios" class="col-xs-12 col-sm-12 iconos-servicio-recomendado">	
 								<div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-0 icono-recomendado">
-								<button type="button"class="col-xs-12 btn-servicio-regional">
+									<button id="btn-regional" data-servicio="regional" type="button"class="col-xs-12 btn-servicio-regional active">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL.svg" alt="">
 										<span class="col-xs-12 no-padding">Regional</span>	
 									</button>
 								</div>
-								<div class="col-xs-6 col-sm-4 col-md-3 icono-recomendado">
-									<button type="button" class="col-xs-12 btn-servicio-mixta">
+								<div data-servicio="mixta" class="col-xs-6 col-sm-4 col-md-3 icono-recomendado">
+									<button id="btn-mixta" type="button" class="col-xs-12 btn-servicio-mixta active">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/MIXTA.svg" alt="">
 										<span class="col-xs-12 no-padding">Mixta</span>
 									</button>
 								</div>					
-								<div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-0 icono-recomendado">
-									<button type="button" class="col-xs-12 btn-servicio-urbano">
+								<div data-servicio="urbano" class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-0 icono-recomendado">
+									<button id="btn-urbano" type="button" class="col-xs-12 btn-servicio-urbano active">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/URBANO.svg" alt="">
 										<span class="col-xs-12 no-padding">Urbano</span>
 									</button>					
 								</div>
-								<div class="col-xs-6 col-sm-4 col-md-3 icono-recomendado">
-									<button type="button" class="col-xs-12 btn-servicio-cantera">
+								<div data-servicio="cantera" class="col-xs-6 col-sm-4 col-md-3 icono-recomendado">
+									<button id="btn-cantera" type="button" class="col-xs-12 btn-servicio-cantera active">
 										<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/CANTERA.svg" alt="">
 										<span class="col-xs-12 no-padding">Cantera</span>
 									</button>				
@@ -67,12 +67,11 @@ Template Name: Buscador Servicios
 							<li class="col-xs-4 titulo-seccion">
 									POSICIÓN
 							</li>
-							<li class="col-xs-4 col-xs-offset-2">
-								 <select>
-									<option value="volvo">Tracción</option>
-									<option value="saab">Saab</option>
-									<option value="mercedes">Mercedes</option>
-									<option value="audi">Audi</option>
+							<li class="col-xs-4 col-xs-offset-1">
+								 <select id="posicionselect">
+									<option value="TRACCION">Tracción</option>
+									<option value="EJE LIBRE">Eje libre</option>
+									<option value="EJE LIBRE / TRACCIÓN">Eje Libre / Tracción</option>
 								</select>
 							</li>
 							<li class="col-xs-2 pull-right">
@@ -86,7 +85,7 @@ Template Name: Buscador Servicios
 								DIMENSIÓN
 							</li>
 							<li class="col-xs-7 pull-right">
-								 <select class="col-xs-12">
+								 <select id="dimensionselect" class="col-xs-12">
 									<option value="volvo">295/80 R 22.5</option>
 									<option value="saab">Saab</option>
 									<option value="mercedes">Mercedes</option>
@@ -99,20 +98,23 @@ Template Name: Buscador Servicios
 								CATEGORÍA
 							</li>
 							<li class="col-xs-12 no-padding">
-								<select multiple class="form-control">
-									<option>Tu llanta NUEVA de NUEVO</option>
-									<option>Línea Premium</option>
-									<option>Línea Básica</option>
+								<select id="categoriaselect" class="form-control">
+									<option value="TU LLANTA NUEVA DE NUEVO MICHELIN">TU LLANTA NUEVA DE NUEVO MICHELIN</option>
+									<option value="LÍNEA PREMIUM RECAMIC">LÍNEA PREMIUM RECAMIC</option>
+									<option value="LÍNEA PRE-Q">LÍNEA PRE-Q</option>
 								</select>
 							</li>
 							<li class="col-xs-8 col-xs-offset-2 col-sm-5 col-sm-offset-6 col-md-6 col-md-offset-5 no-padding btn-buscar-servicio">
-								<button class="btn btn-default btn-buscar-servicio col-xs-12" type="submit">BUSCAR MI SERVICIO</button>
+								<button id="dbanda-btn" class="btn btn-default btn-buscar-servicio col-xs-12" type="submit">BUSCAR MI SERVICIO</button>
 							</li>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-7 cat-llantas">
+			<div id="loader" class="col-xs-12 col-sm-12 col-md-7 hidden" style="margin-top: 100px;">
+				<div class="loading-spinner"></div>
+			</div>
+			<div id="cat-llantas" class="col-xs-12 col-sm-12 col-md-7 cat-llantas">
 					<?php 
 
 						// get posts
@@ -315,7 +317,7 @@ Template Name: Buscador Servicios
 					</div>
 		    	</div>		    		
 		      <div class="modal-footer ayuda-modal-footer">
-		    	<button type="button" class="btn btn-default cerrar-ayuda2" data-dismiss="modal">Cerrar</button>
+		    	<button id="dbanda-btn" type="button" class="btn btn-default cerrar-ayuda2" data-dismiss="modal">Cerrar</button>
 		      </div>
 		    </div>
 		  </div>
@@ -437,6 +439,174 @@ Template Name: Buscador Servicios
 		<?php include "menu-fijo.php";?>
 		<script src="js/clamp.min.js"></script>
 		<?php include "footer.php";?>
+		<script type="text/javascript">
+			$("#iconos-servicios button").click(function(){
+	
+				var buttonservice = $(this).data('servicio');
+
+				if($(this).hasClass("active")){
+					$(this).removeClass("active");
+				} else {
+					$(this).addClass("active");
+					$("#checkbox-1").prop( "checked", false );
+				}
+
+			});
+
+			$("#checkbox-1").click( function(){
+			   if( $(this).is(':checked') ){
+			   	 $("#iconos-servicios button").addClass("active");
+			   } else {
+			   	$("#iconos-servicios button").removeClass("active");
+			   }
+			});
+
+			$("#dbanda-btn").click( function(){
+
+				if(!$("#checkbox-1").is(':checked') && !$("#btn-regional").hasClass("active") && !$("#btn-mixta").hasClass("active") && !$("#btn-urbano").hasClass("active") && !$("#btn-cantera").hasClass("active") ) {
+					alert("Por favor seleccione una utilización");
+				} else {
+
+					$("#loader").removeClass("hidden");
+					$("#cat-llantas").addClass("hidden");
+					var utilizacion = '';	
+				
+					var e = document.getElementById("posicionselect");
+					var	posicion = e.options[e.selectedIndex].value;
+
+					var d = document.getElementById("dimensionselect");
+					var	dimension = d.options[d.selectedIndex].value;		
+
+					var c = document.getElementById("categoriaselect");
+					var	categoria = c.options[c.selectedIndex].value;			
+
+					if($("#btn-regional").hasClass("active") || $("#checkbox-1").is(':checked') ){
+						utilizacion="REGIONAL"; 
+					} 
+					if($("#btn-mixta").hasClass("active") || $("#checkbox-1").is(':checked')){
+						if(!utilizacion){
+							utilizacion = "MIXTA";
+						} else {
+							utilizacion += ",MIXTA" ;
+						}
+					} 
+					if($("#btn-urbano").hasClass("active") || $("#checkbox-1").is(':checked')){
+						if(!utilizacion){
+							utilizacion = "URBANO,AUTOPISTA / REGIONAL / URBANO";
+						} else {
+							utilizacion += ", 'URBANO'" ;
+						}
+					} 
+					if($("#btn-cantera").hasClass("active") || $("#checkbox-1").is(':checked')){
+						if(!utilizacion){
+							utilizacion = "CANTERA";
+						} else {
+							utilizacion += ",CANTERA" ;
+						}
+					} 
+
+					if($("#btn-regional").hasClass("active") || $("#btn-urbano").hasClass("active") || $("#checkbox-1").is(':checked')){
+						if(!utilizacion){
+							utilizacion = "AUTOPISTA / REGIONAL / URBANO,REGIONAL / URBANO";
+						} else {
+							utilizacion += ",AUTOPISTA / REGIONAL / URBANO,REGIONAL / URBANO" ;
+						}
+					} 
+
+					if($("#btn-mixta").hasClass("active") || $("#btn-urbano").hasClass("active") || $("#checkbox-1").is(':checked') ){
+						if(!utilizacion){
+							utilizacion = "MIXTA / CANTERA";
+						} else {
+							utilizacion += ",MIXTA / CANTERA" ;
+						}
+					} 
+				   
+					var data = {
+					   'action': 'filter_designs',
+					   'utilizacion': utilizacion,
+					   'posicion': posicion,
+					   'dimension': dimension,
+					   'categoria': categoria
+					};
+					
+					console.log('QUERY VALUES:');
+					console.log(data);
+					$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
+					    
+					    console.log('RESPONSE:');  
+					   
+
+					    var r = JSON.parse(response);
+					    console.log(r); 
+						
+						$("#cat-llantas").html("");
+					    
+					    var utilizacion = '';
+					    var utilizacions = '';
+					    var imgutilizacion = '';
+					  
+					    for (i = 0; i < r.length; i++) {
+
+					    	utilizacion = r[i].utilizacion_recomendada;
+
+							if( utilizacion == 'REGIONAL' ) {
+							    
+							   utilizacions = '<div class="col-xs-12 no-padding layer-cat-llanta regional">';
+							   imgutilizacion = '<img class="img-responsive" src="http://localhost/renoboy/wp-content/themes/renoboytheme/img/REGIONAL2.svg" alt="Regional">';
+
+							} else if(utilizacion == 'MIXTA'){
+
+								utilizacions = '<div class="col-xs-12 no-padding layer-cat-llanta mixta">';
+								imgutilizacion = '<img class="img-responsive" src="http://localhost/renoboy/wp-content/themes/renoboytheme/img/MIXTA2.svg" alt="Regional">';
+
+							}else if(utilizacion == 'URBANO'){
+
+								utilizacions = '<div class="col-xs-12 no-padding layer-cat-llanta urbano">';
+								imgutilizacion = '<img class="img-responsive" src="http://localhost/renoboy/wp-content/themes/renoboytheme/img/URBANO2.svg" alt="Regional">';
+
+							} else if(utilizacion == 'CANTERA'){
+
+								utilizacions = '<div class="col-xs-12 no-padding layer-cat-llanta cantera">';
+								imgutilizacion = '<img class="img-responsive" src="http://localhost/renoboy/wp-content/themes/renoboytheme/img/CANTERA2.svg" alt="Regional">';
+
+							} else {
+
+							    utilizacions ='<div class="col-xs-12 no-padding layer-cat-llanta otro">';
+							    imgutilizacion = '<img class="img-responsive" src="http://localhost/renoboy/wp-content/themes/renoboytheme/img/1.jpg" alt="Regional">';
+							    
+							}
+
+						    $("#cat-llantas").append('<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-toggle="modal" data-target="#modal-producto">'+
+						    							'<div class="col-xs-12 no-padding cat-llanta-wrapper">'+
+						    								
+						    								'<img class="img-responsive" src="'+r[i].imagen+'" alt="">";'+
+						    								utilizacions+
+						    									'<div class="col-xs-12 no-padding">'+
+																	'<p class="titulo-layer-llanta">'+r[i].diseño_de_banda+'</p><br><br>'+
+																'</div>'+	
+																'<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>'+
+																'<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'+	
+						    								'</div>'+
+
+
+						    							'</div>'+
+
+						    							'<div class="col-xs-4 img-abajo-derecha">'+
+						    								imgutilizacion+
+						    							'</div>'+
+						    						'</a>');
+
+						}
+
+						$("#loader").addClass("hidden");
+						$("#cat-llantas").removeClass("hidden");
+					    
+					});
+				
+				}
+			});
+
+		</script>
 		
 	</body>	
 </html>	
