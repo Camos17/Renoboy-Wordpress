@@ -94,24 +94,45 @@ add_action("wp_ajax_filter_designs", "filter_designs");
 add_action("wp_ajax_nopriv_filter_designs", "filter_designs");
 
 function filter_designs(){
-	$ptype=$_POST['ptype'];
-	$ppp = $_POST['ppp'];
-	$pageNumber = $_POST['pageNumber'];
+	$utilizacion=$_POST['utilizacion'];
+	$utilizacionarray = explode(",", $utilizacion);
+	$posicion = $_POST['posicion'];
+	$dimension = $_POST['dimension'];
+	$categoria = $_POST['categoria'];
 
 	$args = array(
-		'posts_per_page'   => $ppp,
-		'offset'           => $ppp*($pageNumber-1),
-		'orderby'          => 'date',
-		'post_type'        => $ptype,
-		'post_status'      => 'publish'
+		'numberposts'	=> -1,
+		'post_type'		=> 'd_bandas',
+		'meta_query'	=> array(
+			'relation'		=> 'AND',
+			array(
+				'key'		=> 'categoria',
+				'value'		=> $categoria,
+				'compare'	=> 'LIKE'
+			),
+			array(
+				'key'		=> 'utilizacion_recomendada',
+				'value'		=> $utilizacionarray,
+				'compare'	=> 'IN'
+			)
+		)
 	);
 
 	$posts_array = new WP_Query($args);
 
-	echo json_encode($posts_array);
+	$posts_json = json_encode($posts_array);
+
+	$posts_json = json_decode($posts_json, true);
+
+	$divs = [];
+	
+	foreach ($posts_json['posts'] as $post) {
+		array_push($divs,get_fields($post['ID']));	    
+	}
+
+	echo json_encode($divs);
 	wp_die();	
 }
-
 
 
 // REMOVE POST FROM ADMIN NAVBAR
