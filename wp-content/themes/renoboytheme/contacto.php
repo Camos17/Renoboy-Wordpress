@@ -142,12 +142,12 @@ Template Name: Contacto
 								<input type="" class="form-control" id="apellidos" placeholder="Apellidos*">
 							</div>
 							<div class="form-group">
-								<p class="col-xs-5">Empresa?</p>
-								<div class="col-xs-6 col-sm-4 btns-opciones">
-									<a class="col-xs-3 col-xs-push-5 col-sm-push-1 btn btn-opcion-si" href="#" title="">Si</a>
-									<a class="col-xs-3 col-xs-push-5 col-sm-push-1 btn btn-opcion-no" href="#" title="">No</a>
-								</div>
-								<!-- <input type="" class="form-control" id="razon-social" placeholder="Razón Social*"> -->
+								 <div class="checkbox">
+									<label>
+										<input type="checkbox"> Empresa?
+									</label>
+								</div>	
+								<input type="" class="form-control hidden" id="razon-social" placeholder="Nombre de la Empresa*">
 							</div>
 							<div class="form-group">
 								<input type="" class="form-control" id="direccion" placeholder="Dirección*">
@@ -196,10 +196,10 @@ Template Name: Contacto
 						<p class="col-xs-12 parrafo1 no-padding">Limite de carácteres 0 a 250</p>		
 						<div class="col-xs-12 checkbox-terminos-condiciones">
 							<input id="checkbox-6" class="col-xs-1 checkbox-buscar" name="checkbox-6" type="checkbox" checked="">
-        					<label for="checkbox-6" class="col-xs-11 checkbox-custom-label">
-        						Aceptas los <a href="#" title="">terminos y condiciones</a></p>
-        					</label>
-        				</div>
+							<label for="checkbox-6" class="col-xs-11 checkbox-custom-label">
+								Aceptas los <a href="<?php echo get_page_link(21); ?>" title="">términos y condiciones</a></p>
+							</label>
+						</div>
 						<div class="col-xs-12 checkbox-promociones">
 							<input id="checkbox-7" class="col-xs-1 checkbox-buscar" name="checkbox-7" type="checkbox" checked="">
         					<label for="checkbox-7" class="col-xs-11 checkbox-custom-label">Deseo recibir, ofertas especiales y noticias <span class="span1">Renoboy</span>.<br>Tu información está protegida por la estricta Política de Privacidad <span class="span2">Renoboy S.A.</span> y no será entregada a terceros bajo ninguna circunstancia.</label>

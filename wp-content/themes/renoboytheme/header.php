@@ -61,7 +61,7 @@
 								</a>
 							</li>
 							<li class="col-md-3 col-lg-3 no-padding">
-								<a href="http://renoboy.herokuapp.com" target="_blank">
+								<a href="http://seguimiento-renoboy.herokuapp.com" target="_blank">
 									<img  class="hidden-xs icon-header" src="<?php bloginfo('template_directory');?>/img/iconoheader1.svg" alt="">Acceso a Distribuidores
 								</a>
 							</li>
