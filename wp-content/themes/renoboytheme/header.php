@@ -44,8 +44,8 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li class="col-sm-5 col-md-4 col-lg-3 no-padding"><a href="<?php echo get_page_link(7); ?>"><img class="hidden-xs icon-header" src="<?php bloginfo('template_directory');?>/img/iconoheader3.svg" alt="">Kilometros Generando Valor</a></li>
-							<li class="col-sm-2 col-md-4 col-lg-2 no-padding"><a href="<?php echo get_page_link(13); ?>">Productos</a></li>
+							<li class="col-sm-5 col-md-4 col-lg-4 no-padding"><a href="<?php echo get_page_link(7); ?>"><img class="hidden-xs icon-header" src="<?php bloginfo('template_directory');?>/img/iconoheader3.svg" alt="">Kilometros Generando Valor</a></li>
+							<li class="col-sm-2 col-md-4 col-lg-1 no-padding"><a href="<?php echo get_page_link(13); ?>">Productos</a></li>
 							<li class="col-sm-3 col-md-4 col-lg-3 no-padding"><a href="<?php echo get_page_link(11); ?>">Red de Distribución</a></li>
 							<li class="col-lg-4 no-padding hidden-xs hidden-sm hidden-md">
 								<?php get_search_form(); ?>
