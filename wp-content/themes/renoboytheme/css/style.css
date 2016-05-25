@@ -2687,6 +2687,11 @@ a, button{
 			margin-top: 25px;
 		}
 
+		.contenido-contacto-nocliente
+		.formulario-contacto-cliente div:nth-child(3) input {
+			display: block;
+		}
+
 		.btn-regresar-contacto {
 			background-color: #007AC5;
 			margin-top: 20px;

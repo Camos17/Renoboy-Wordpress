@@ -17,7 +17,7 @@ Template Name: Inicio
 			<!-- <div class="hidden-xs hidden-sm col-xs-12 no-padding" data-vide-bg="https://s3-us-west-2.amazonaws.com/cannedhead.optica/optica" data-vide-options="loop: true, muted: false, position: 0% 0%">
 			</div> -->
 
-			<div id="carousel-contenido" class="col-xs-12 carousel slide no-padding" data-ride="carousel" data-interval="false">		
+			<div id="carousel-contenido" class="col-xs-12 carousel slide no-padding" data-ride="carousel" data-interval="false">	
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
