@@ -996,7 +996,7 @@ a, button{
 
 		.headline-modal-producto2
 		.icono-header {
-			margin: 10px 0px;
+			margin: 15px 0px 10px 10px;
 		}
 
 		.contenido-modal-producto {
@@ -1010,9 +1010,16 @@ a, button{
 		}
 
 		.contenido-modal-producto
-		.img-aplicacion {
+		.img-aplicacion,
+		.contenido-modal-producto
+		.img-cpt {
 			margin-top: 20px;
 			margin-bottom: 5px;
+		}
+
+		.contenido-modal-producto
+		.img-aplicacion2 img {
+			padding-top: 3px;
 		}
 
 		.contenido-modal-producto
@@ -1022,7 +1029,7 @@ a, button{
 			text-transform: uppercase;
 			font-weight: bold;
 			color: #FFF;
-			font-size: 1.2rem;
+			font-size: 1.1rem;
 			margin-bottom: 25px;
 			left: 30%;
 		}
@@ -1048,7 +1055,7 @@ a, button{
 		.contenido-modal-producto
 		.texto-modal-producto p {
 			text-align: justify;
-			font-size: 1.4rem;
+			font-size: 1.2rem;
 			margin-bottom: 20px;
 		}
 
@@ -1073,12 +1080,17 @@ a, button{
 		.table thead > tr > th {
 			border-bottom: none;
 			min-width: 250px;
+			padding: 4px;
 		}
 
 		.table,
 		.table tr > td {
 			border: 2px solid #007AC3;
 			color: #007AC3;
+		}
+
+		.table > tbody > tr > td {
+			padding: 4px;			
 		}
 
 		.table th, td {
@@ -1121,6 +1133,7 @@ a, button{
 			color: #FFF;
 			font-size: 1.6rem;
 			font-weight: bold;
+			height: 40px;
 		}
 
 		.btn-modal-producto-comprar img {
@@ -1129,6 +1142,7 @@ a, button{
 
 		.btn-modal-producto-comprar p {
 			font-size: 1.8rem;
+			margin-bottom: 0px;
 		}
 
 		.btn-cerrar-modal {
@@ -2687,6 +2701,11 @@ a, button{
 			margin-top: 25px;
 		}
 
+		.contenido-contacto-nocliente
+		.formulario-contacto-cliente div:nth-child(3) input {
+			display: block;
+		}
+
 		.btn-regresar-contacto {
 			background-color: #007AC5;
 			margin-top: 20px;
@@ -3137,7 +3156,10 @@ a, button{
 		    margin-top: 2px;
 		}
 
-		.btn-modal-producto-comprar a {
+		.btn-modal-producto-comprar a,
+		.btn-modal-producto-comprar a:hover,
+		.btn-modal-producto-comprar a:active,
+		.btn-modal-producto-comprar a:focus {
 			height: 55px;
 		}
 
@@ -3457,6 +3479,7 @@ a, button{
 			margin-top: 35px;
 			font-size: 3.5rem;
 			margin-bottom: 35px;
+			margin-left: 15px;
 		}
 
 		.contenido-modal-producto {
@@ -4423,7 +4446,7 @@ a, button{
 
 
 
- @-webkit-keyframes rotate-forever {
+@-webkit-keyframes rotate-forever {
   0% {
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);

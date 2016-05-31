@@ -340,7 +340,7 @@ Template Name: Buscador Servicios
 									<div class="col-xs-12 no-padding headline-modal-producto2">
 										<h2 class="col-xs-7 col-xs-offset-1 col-sm-6 col-sm-offset-2 col-md-7 col-md-offset-1">REGIONAL</h2>
 							        	<div class="col-xs-3 col-sm-3 col-md-4  pull-right-1 icono-header">
-							        		<div class="col-xs-10 col-sm-8 col-lg-12 no-padding">
+							        		<div class="col-xs-10 col-sm-8 col-md-10 col-lg-12 no-padding">
 							        			<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/REGIONAL.svg" alt="">	
 							        		</div>			
 										</div>
@@ -351,17 +351,28 @@ Template Name: Buscador Servicios
 								</div>
 
 								<div class="col-xs-12 col-md-7 col-lg-8 no-padding contenido-modal-producto">
-									<div class="col-xs-6 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1 logo-recamic">
-			    						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/logo_recamic.jpg" alt="...">
-			    					</div>
-			    					<div class="col-xs-6 col-md-5 col-md-offset-0 col-lg-4 col-lg-offset-1 img-aplicacion">
-			    						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/aplicacionrecomendada.svg" alt="...">
-			    						<p class="va">aplicación <br> recomendada</p>
-			    					</div>
-			    					<div class="col-xs-6 col-md-5 col-md-offset-6 col-lg-4 col-lg-offset-6 img-aplicacion img-aplicacion2">
-			    						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/aplicacionaceptada.svg" alt="...">
-			    						<p class="va">aplicación <br> aceptada</p>
-			    					</div>
+									<div class="col-xs-12 col-sm-8 col-sm-offset-2 no-padding">
+										<div class="col-xs-6 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1 logo-recamic">
+				    						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/logo_recamic.jpg" alt="...">
+				    					</div>
+				    					<div class="col-xs-6 col-md-6 col-md-offset-0 col-lg-4 col-lg-offset-1 img-aplicacion">
+				    						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/aplicacionrecomendada.svg" alt="...">
+				    						<p class="va">aplicación <br> recomendada</p>
+				    					</div>
+									</div>
+									
+									<div class="col-xs-12 col-sm-8 col-sm-offset-2 no-padding">
+										<div class="col-xs-6 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-6 img-cpt">
+				    						<img class="img-responsive" src="http://placehold.it/350x150" alt="...">
+				    					</div>
+				    					<div class="col-xs-6 col-md-6 col-lg-4 col-lg-offset-6 img-aplicacion img-aplicacion2">
+				    						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/aplicacionaceptada.svg" alt="...">
+				    						<p class="va">aplicación <br> aceptada</p>
+				    					</div>
+									</div>
+
+				    					
+
 			    					<div class="col-xs-12 texto-modal-producto">
 				    					<h3>carácteristicas y beneficios</h3>
 				    					<div class="col-xs-12 no-padding">

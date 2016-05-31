@@ -142,12 +142,12 @@ Template Name: Contacto
 								<input type="" class="form-control" id="apellidos" placeholder="Apellidos*">
 							</div>
 							<div class="form-group">
-								 <div class="checkbox">
+								 <div class="checkbox" >
 									<label>
-										<input type="checkbox"> Empresa?
+										<input type="checkbox" id="checkbox-empresas"> Empresa?
 									</label>
 								</div>	
-								<input type="" class="form-control hidden" id="razon-social" placeholder="Nombre de la Empresa*">
+								<input type="text" class="form-control" id="nombre-empresa" placeholder="Nombre de la Empresa*">
 							</div>
 							<div class="form-group">
 								<input type="" class="form-control" id="direccion" placeholder="Dirección*">
@@ -275,6 +275,22 @@ Template Name: Contacto
 						EVENTS
 		*********************************************	
 		*********************************************/
+
+
+			$("#checkbox-empresas").click( function(){
+			   if( $(this).is(':checked') ){
+			   	 $("#nombre-empresa").fadeIn(600);
+			   	 // $("#nombre-empresa").removeClass("hidden");
+			   } else {
+			   	$("#nombre-empresa").fadeOut(600);
+			   	// $("#nombre-empresa").addClass("hidden");
+			   }
+			});
+
+			// $("checkbox-empresas").onchange = function() {
+			//     // Check if the checkbox is checked, and show/hide the text field.
+			//     $("nombre-empresa").hidden = this.checked ? false : true;
+			// };		
 
 			$(".btn-regresar-contacto2").click(function(){
 				$(".contenido-contacto-cliente").fadeOut(1000, function(){
