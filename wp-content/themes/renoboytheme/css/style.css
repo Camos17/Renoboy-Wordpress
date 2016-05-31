@@ -1055,7 +1055,7 @@ a, button{
 		.contenido-modal-producto
 		.texto-modal-producto p {
 			text-align: justify;
-			font-size: 1.2rem;
+			font-size: 1.15rem;
 			margin-bottom: 20px;
 		}
 
@@ -1080,7 +1080,7 @@ a, button{
 		.table thead > tr > th {
 			border-bottom: none;
 			min-width: 250px;
-			padding: 4px;
+			padding: 3px;
 		}
 
 		.table,
@@ -1090,7 +1090,7 @@ a, button{
 		}
 
 		.table > tbody > tr > td {
-			padding: 4px;			
+			padding: 3px;			
 		}
 
 		.table th, td {
@@ -1117,7 +1117,7 @@ a, button{
 
 		.texto-modal-producto2
 		.texto-convenciones p {
-			font-size: 13px;
+			font-size: 1.2rem;
 			font-weight: bold;
 		}
 
@@ -3160,7 +3160,7 @@ a, button{
 		.btn-modal-producto-comprar a:hover,
 		.btn-modal-producto-comprar a:active,
 		.btn-modal-producto-comprar a:focus {
-			height: 55px;
+			height: 45px;
 		}
 
 
@@ -3472,7 +3472,7 @@ a, button{
 		}
 
 		.headline-modal-producto {
-			height: 770px;
+			height: 685px;
 		}
 
 		.headline-modal-producto2 h2 {
@@ -3495,6 +3495,11 @@ a, button{
 		}
 
 		.contenido-modal-producto
+		.img-cpt {
+			margin-top: 15px;
+		}
+
+		.contenido-modal-producto
 		.img-aplicacion2 {
 			margin-top: 10px;
 		}
@@ -3503,9 +3508,9 @@ a, button{
 			padding-bottom: 0px;
 		}
 
-		.table-modal-producto 
+		.tabla-modal-producto 
 		.table > thead > tr > th {
-			padding: 3px;
+			padding: 2px;
 		}
 
 		.texto-modal-producto2 {
@@ -4128,7 +4133,7 @@ a, button{
 		}
 
 		.headline-modal-producto {
-		    height: 735px;
+		    height: 685px;
 		}
 
 		.headline-modal-producto h2 {
@@ -4137,7 +4142,12 @@ a, button{
 
 		.contenido-modal-producto 
 		.img-aplicacion p {
-			font-size: 1.5rem;
+			font-size: 1.2rem;
+		}
+
+		.contenido-modal-producto 
+		.img-aplicacion2 {
+		    margin-top: 15px;
 		}
 
 		.tabla-modal-producto 
