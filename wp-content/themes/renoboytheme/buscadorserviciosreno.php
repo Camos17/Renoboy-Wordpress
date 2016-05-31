@@ -300,7 +300,7 @@ Template Name: Buscador Servicios
 		    	</div>
 		    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contenido-ayuda1">
 					<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-10 col-lg-offset-1 no-padding posicion">
-						<img class="img-responsive" src="http://placehold.it/400x250" alt="">
+						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/ejelibre.jpg" alt="Eje Libre">
 						<div class="col-xs-4 col-xs-offset-4 no-padding posicion2">				
 							<label class="col-xs-12">
 								<p>Eje Libre</p>
@@ -308,7 +308,7 @@ Template Name: Buscador Servicios
 						</div>						
 					</div>
 					<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-10 col-lg-offset-1 no-padding posicion">
-						<img class="img-responsive" src="http://placehold.it/400x250" alt="">
+						<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/traccion.jpg" alt="Tracción">
 						<div class="col-xs-4 col-xs-offset-4 no-padding posicion2">
 							<label class="col-xs-12"> 
 								<p>Tracción</p>
