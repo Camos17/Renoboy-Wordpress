@@ -124,8 +124,9 @@ function filter_designs(){
 
 	$posts_json = json_decode($posts_json, true);
 
-	$divs = [];
-	
+	//$divs = [];
+	$divs = array();
+
 	foreach ($posts_json['posts'] as $post) {
 		array_push($divs,get_fields($post['ID']));	    
 	}
