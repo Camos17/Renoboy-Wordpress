@@ -298,9 +298,11 @@ a, button{
 		}
 
 		.navbar-toggle{
+			top: -1px;
+			right: -1px;
 			background-color: #1975AA;
 			margin: 0px;
-			padding: 19px 18px;
+			padding: 20px 18px;
 			border: none;
 			border-radius: 0px;
 		}
@@ -2402,6 +2404,9 @@ a, button{
 *********************************************	
 *********************************************/
   	
+	#form-messages{
+		font-size: 1.4em;
+	}
 
   	.fondo-contacto {
   		background: url('../img/fondo_noticias.jpg') no-repeat center center fixed;
