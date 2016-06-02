@@ -255,7 +255,7 @@ Template Name: Contacto
 					<div class="col-xs-8 col-xs-offset-1 col-sm-9 col-sm-offset-0">
 						<div class="col-xs-12 no-padding texto-contenido">
 							<p>Ubicar un Centro de  Servicio</p>
-							<p>Encuentre su distribuidor más cercano <a href="reddedistribuidores.php" title="">aquí</a></p>
+							<p>Encuentre su distribuidor más cercano <a href="/red-de-distribuidores" title="">aquí</a></p>
 						</div>
 					</div>
 				</div>

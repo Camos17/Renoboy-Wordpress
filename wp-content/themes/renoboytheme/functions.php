@@ -150,17 +150,11 @@ function post_remove ()
 } 
 add_action('admin_menu', 'post_remove');
 
-function custom_upload_mimes ( $existing_mimes=array() ) {
 
-	// add the file extension to the array
-
-	$existing_mimes['svg'] = 'mime/type';
-
-        // call the modified list of extensions
-
-	return $existing_mimes;
-
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
 }
-add_filter('upload_mimes', 'custom_upload_mimes');
+add_filter('upload_mimes', 'cc_mime_types');
 
 ?>

@@ -2105,10 +2105,14 @@ a, button{
 			margin: 0px;
 		}
 
+		.headline-mas-reencauche1{
+			margin-bottom: 40px;
+		}
+		
 		.contenido-mas-reencauche1 p {
 			color: #000;
-			padding: 30px;
-			margin-top: 92px;
+			padding-left: 30px;
+			padding-right: 30px;
 			text-align: justify;
 			word-spacing: 1px;
 		}

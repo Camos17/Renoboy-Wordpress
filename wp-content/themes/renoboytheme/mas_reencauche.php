@@ -10,21 +10,15 @@ Template Name: Mas sobre el reencauche
 					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 contenido-mas-reencauche no-padding">
 						<div class="col-xs-12 col-md-4 no-padding contenido-mas-reencauche1">
 							<div class="col-xs-12 no-padding headline-mas-reencauche1">
-								<h2>MÁS SOBRE NUESTRO REEENCAUCHE</h2>
+								<h2><?php the_field("titulo_superior"); ?></h2>
 							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. </p>
+							<?php the_field("texto_mas_reencauche"); ?>
 						</div>
 						<div class="col-xs-12 col-md-8 hidden-xs hidden-sm contenido-mas-reencauche2">
-							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/massobrenuestroreencauche.svg" alt="...">
+							<img class="img-responsive" src='<?php the_field("imagen_nuestro_reencauche_desktop"); ?>' alt="Mas sobre nuestro Reencauche">
 						</div>
 						<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 hidden-md hidden-lg contenido-mas-reencauche2">
-							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/massobrenuestroreencauche_mobile.svg" alt="...">
+							<img class="img-responsive" src='<?php the_field("imagen_nuestro_reencauche_movil"); ?>' alt="Mas sobre nuestro Reencauche Movil">
 						</div>
 					</div>
 				</div>
@@ -38,10 +32,10 @@ Template Name: Mas sobre el reencauche
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1 hidden-xs img-proceso-reencauche">
-					<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/serviciodereencauche.svg" alt="">
+					<img class="img-responsive" src='<?php the_field("imagen_servicio_de_reencauche_desktop"); ?>' alt="Servicio de Reencauche">
 				</div>
 				<div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 hidden-sm hidden-md hidden-lg img-proceso-reencauche">
-					<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/serviciodereencauche_mobile.svg" alt="">
+					<img class="img-responsive" src='<?php the_field("imagen_servicio_de_reencauche_movil"); ?>' alt="Servicio de Reencauche movil">
 				</div>
 				<div class="col-xs-12 no-padding fondo-camino-reencauche">
 					<img class="col-xs-12 no-padding img-fondo-camino-reencauche" src="<?php bloginfo('template_directory');?>/img/fondoverde.svg" alt="...">
@@ -64,8 +58,8 @@ Template Name: Mas sobre el reencauche
 							    	<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/esseguro.svg" alt="">
 							    </div>
 							    <div class="col-xs-12 texto-cartel">
-							    	<p>Contamos con certificacion de calidad de Icontec que respaldan nuestro proceso. <br> <br>Adicionalmente contamos con la tecnología y procesos certificdos por Michelin, esto avala el serivcio de reencauche de Renoboy.</p>
-								</div>
+							    	<?php the_field("texto_es_seguro"); ?>
+							    </div>
 							</div>
 							<div class="col-xs-3 no-padding modal-mas-reencauche-iconos-legal">
 								<img  class="col-xs-11 col-sm-10 col-lg-11" src="<?php bloginfo('template_directory');?>/img/iqnet-2.svg" alt="">
@@ -81,7 +75,7 @@ Template Name: Mas sobre el reencauche
 								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/esunainversion.svg" alt="">
 							</div>
 							<div class="col-xs-12 texto-cartel">
-								<p>Con el reencuahe usted aprovecha al máximo el valor de la llanta, porque le permite optimizar el costo por kilómetro, del buen tratamiento  en el proceso de reencauche también depende que la llanta sea apta para ser reencauchada nuevamente.</p>
+								<?php the_field("texto_es_una_inversion"); ?>
 							</div>
 						</div>					
 					</div>
@@ -91,7 +85,7 @@ Template Name: Mas sobre el reencauche
 								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/elclientenocompra.svg" alt="">
 							</div>
 							<div class="col-xs-12 texto-cartel">
-								<p>El 80% del valor se concentra en la carcasa, que es la parte fundamental de la llanta, el cuidado de este le permite sacar el máximo provecho  de la llanta. El 20% restante corresponde a la banda de rodamiento, que es la que se reemplaza en el proceso de reencauche.</p>
+								<?php the_field("texto_un_cliente_compra_carcasa"); ?>	
 							</div>
 						</div>					
 					</div>
@@ -101,8 +95,7 @@ Template Name: Mas sobre el reencauche
 								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/elprocesoesflexible.svg" alt="">
 							</div>
 							<div class="col-xs-12 texto-cartel">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua.</p>
+								<?php the_field("texto_el_proceso_es_flexible"); ?>
 							</div>
 							<div class="col-xs-10 col-xs-offset-2 col-sm-8 col-sm-offset-4">
 								<a class="btn btn-block btn-cartel" href="<?php echo get_page_link(123); ?>" title="" >
@@ -118,11 +111,7 @@ Template Name: Mas sobre el reencauche
 								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/leahorradinero.svg" alt="">
 							</div>
 							<div class="col-xs-12 texto-cartel">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. <br> Duis aute irure dolor in reprehenderit in voluptate velit esse
-								cillum dolore eu fugiat nulla pariatur.</p>
+								<?php the_field("texto_le_ahorra_dinero"); ?>
 							</div>
 							<!-- <div class="col-xs-10 col-xs-offset-2 col-sm-8 col-sm-offset-4">
 								<a class=" btn btn-block btn-cartel" href="#" title="" >
@@ -192,7 +181,7 @@ Template Name: Mas sobre el reencauche
 							    	<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/esunainversion.svg" alt="">
 							    </div>
 							    <div class="col-xs-12 texto-cartel">
-							    	<p>Con el reencuahe usted aprovecha al máximo el valor de la llanta, porque le permite optimizar el costo por kilómetro, del buen tratamiento  en el proceso de reencauche también depende que la llanta sea apta para ser reencauchada nuevamente.</p>
+							    	<p>Con el reencuache usted aprovecha al máximo el valor de la llanta, porque le permite optimizar el costo por kilómetro, del buen tratamiento  en el proceso de reencauche también depende que la llanta sea apta para ser reencauchada nuevamente.</p>
 								</div>
 							</div>
 							<hr class="col-xs-12 no-padding">
@@ -276,6 +265,12 @@ Template Name: Mas sobre el reencauche
 					});
 					
 				});
+
+				$(document).scroll(function() {
+				    checkOffset();
+				});
+
+
 
 		</script>
 
