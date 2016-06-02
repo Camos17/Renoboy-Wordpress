@@ -5,7 +5,10 @@ Template Name: Red de Distribuidores
 ?>
 		<?php include "header.php";?>
 		<?php include "menu-fijo.php";?>
-
+		<?php
+			global $wpdb;
+			$results = $wpdb->get_results( 'SELECT * FROM markers', OBJECT );
+		?>
 		<div class="col-xs-12 col-sm-12 col-md-12 content-wrapper wrapper-red-distribucion no-padding">
 			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 no-padding wrapper-red-distribucion1">
 				<div class="col-xs-12 col-sm-12 col-md 12 no-padding headline-red-distribucion">	
@@ -97,7 +100,8 @@ Template Name: Red de Distribuidores
 			</div>
 		</div>	
 		<script type="text/javascript">
-			
+
+		
 		/********************************************
 		*********************************************
 						FUNCTIONS
@@ -114,16 +118,33 @@ Template Name: Red de Distribuidores
 			      zoom: 7
 			    });			
 
-			    // Marker : Bogota
-				var markerBog = new google.maps.Marker({
-				  position: {lat: 4.6479, lng: -74.1236},
-				  map: map,
-				  icon: iconBase + 'schools_maps.png'
-				});
-				var infoBog = new google.maps.InfoWindow({
-				  content:"Calle 17A 69F-56, Bogotá, Colombia"
-		  		});
 
+				// set arrays of markers and infos
+				var registers = <?php echo json_encode($results); ?>;
+				var markers = [];
+				var infos = [];
+
+				$.each(registers, function(i,v){
+					markers[i] = new google.maps.Marker({
+					  position: {lat: parseFloat(v.lat), lng: parseFloat(v.lng)},
+					  map: map,
+					  icon: iconBase + 'schools_maps.png'
+					});
+					
+					infos[i] = new google.maps.InfoWindow({
+					  content: v.name_dist + ', ' + v.address
+			  		});
+				});
+
+		  		/*
+				// Click event on marker
+				google.maps.event.addListener(markerBog,'click',function() {
+					map.setZoom(14);
+					map.setCenter(markerBog.getPosition());
+					infoBog.open(map,markerBog);
+				});
+				*/
+			    /*
 			    // Marker : Medellin
 				var markerMed = new google.maps.Marker({
 				  position: {lat: 6.149459, lng: -75.625685},
@@ -143,20 +164,7 @@ Template Name: Red de Distribuidores
 				var infoYum = new google.maps.InfoWindow({
 				  content:"Carrera 20G N° 14B - 36 Yumbo, Colombia"
 				  });
-
-				// Click event on marker
-				google.maps.event.addListener(markerBog,'click',function() {
-					map.setZoom(14);
-					map.setCenter(markerBog.getPosition());
-					infoBog.open(map,markerBog);
-				});
-
-				// set arrays of markers and infos
-				var markers = [markerBog, markerMed, markerYum];
-				var infos = [infoBog, infoMed, infoYum];
-				var marker = new google.maps.Marker({
-					map: map
-				});
+				*/
 
 				// Click event on map
 				google.maps.event.addListener(map, 'click', function(event){
@@ -167,7 +175,7 @@ Template Name: Red de Distribuidores
 				    findClosest(lat,lng);
 				});
 
-				// Click event on buscar
+				// Click event on buscar por coords
 				$('#anchorCoords').click(function(event){
 					event.preventDefault();
 				    // set variables 
@@ -177,6 +185,7 @@ Template Name: Red de Distribuidores
 				    findClosest(lat,lng);
 				});
 
+				// Find Closest
 				function findClosest(lat,lng){
 				    
 				    if(lat != '' && lng != ''){
@@ -215,14 +224,13 @@ Template Name: Red de Distribuidores
 						alert('Los campos de latitud y longitud no deben estar vacios');
 					}
 				}
-
 			}
 
-			/********************************************
-			*********************************************
-							EVENTS
-			*********************************************	
-			*********************************************/
+		/********************************************
+		*********************************************
+						EVENTS
+		*********************************************	
+		*********************************************/
 
 		</script>		
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB19HfuwZ8B4Qtlrb8N38C_tTyUwCpa7m8&callback=initMap&libraries=geometry"
