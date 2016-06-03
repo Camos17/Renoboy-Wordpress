@@ -26,7 +26,7 @@ Template Name: Mas sobre el reencauche
 
 			<div class="col-xs-12 no-padding fondo-mas-reencauche2">
 				<div class="col-xs-12 text-center no-padding headline-mas-reencauche2">
-					<h2>MÁS SOBRE NUESTRO REENCAUCHE</h2>
+					<h2><?php the_field("titulo_superior"); ?></h2>
 					<div class="col-xs-12 col-sm-10 col-sm-offset-1 no-padding">
 						<hr>
 					</div>
@@ -37,7 +37,7 @@ Template Name: Mas sobre el reencauche
 				<div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 hidden-sm hidden-md hidden-lg img-proceso-reencauche">
 					<img class="img-responsive" src='<?php the_field("imagen_servicio_de_reencauche_movil"); ?>' alt="Servicio de Reencauche movil">
 				</div>
-				<div class="col-xs-12 no-padding fondo-camino-reencauche">
+				<div id="camioncontainer" class="col-xs-12 no-padding fondo-camino-reencauche">
 					<img class="col-xs-12 no-padding img-fondo-camino-reencauche" src="<?php bloginfo('template_directory');?>/img/fondoverde.svg" alt="...">
 					<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 camino-reencauche">
 						<img  class="img-responsive" src="<?php bloginfo('template_directory');?>/img/carretera.svg" alt="">
@@ -45,7 +45,7 @@ Template Name: Mas sobre el reencauche
 					<div class="col-xs-12 no-padding frame-carretera">
 						
 					</div>
-					<div class="col-xs-2 col-xs-offset-5 no-padding ubicacion-camion-carretera">
+					<div id="camion" class="col-xs-2 col-xs-offset-5 no-padding ubicacion-camion-carretera">
 						<div class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4 no-padding">
 							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/camion.svg" alt="">
 						</div>
@@ -140,7 +140,7 @@ Template Name: Mas sobre el reencauche
 						</a>
 					</div>
 
-					<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 btn-modal-reencauche hidden-md hidden-lg">
+					<div id="fin" class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 btn-modal-reencauche hidden-md hidden-lg">
 						<a class="btn btn-block" data-toggle="modal" data-target="#reencaucheModal">
 						Conoce más de <br> nuestro reencauche
 						</a>
@@ -269,6 +269,15 @@ Template Name: Mas sobre el reencauche
 				$(document).scroll(function() {
 				    checkOffset();
 				});
+
+				function checkOffset() {
+				    if($('#camion').offset().top + $('#social-float').height() >= $('#fin').offset().top - 10){
+				        $('#social-float').css('position', 'absolute');
+				    }
+				    if($(document).scrollTop() + window.innerHeight < $('#fin').offset().top){
+				        $('#camion').css('position', 'fixed'); // restore when you scroll up
+				    }
+				}
 
 
 
