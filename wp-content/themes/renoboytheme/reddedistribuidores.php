@@ -19,26 +19,32 @@ Template Name: Red de Distribuidores
 						<!-- <input type="text" class="form-control" name="latitud" id='latitud' placeholder="Latitud">
 						<input type="text" class="form-control" name="longitud" id='longitud' placeholder="Longitud">
 						<a class="btn btn-default btn-buscar-coords col-xs-12" id='anchorCoords'>BUSCAR MAS CERCANO</a> -->
-						<form class="col-xs-12 col-md-12 no-padding" role="search">
-							<button type="submit" class="col-xs-2 col-lg-2 btn btn-default btn-busqueda-coordenadas">
-								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/iconobuscar-coord.svg" alt="">
-							</button>
-							<div class="col-xs-10 col-lg-10 searchinput">
-								<input type="text" id="autocomplete" class="form-control" placeholder="Ingresa tu dirección, ciudad, departamento">
-							</div>
-						</form>
-						<div class="col-xs-12 checkbox-buscar-coord">
-							<input id="checkbox-2" class="col-xs-1 checkbox-buscar" name="checkbox-2" type="checkbox" checked="">
-        					<label for="checkbox-2" class="col-xs-11 checkbox-custom-label">Dirección, ciudad, departamento</label>
-        				</div>
+						
+						<button type="submit" class="col-xs-2 col-lg-2 btn btn-default btn-busqueda-coordenadas">
+							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/iconobuscar-coord.svg" alt="">
+						</button>
+						
+						<div class="col-xs-10 col-lg-10 searchinput">
+							<input type="text" id="autocomplete" class="form-control" placeholder="Ingresa tu dirección, ciudad, departamento">
+							<input type="text" id='latitud' name='latitud' class='form-control' value='4.6287833' placeholder="Latitud">
+							<input type='text' id='longitud' name='longitud' class='form-control' value='-74.073143' placeholder='Longitud'>
+						</div>
+
+
         				<div class="col-xs-12 checkbox-buscar-coord">
-							<input id="checkbox-3" class="col-xs-1 checkbox-buscar" name="checkbox-3" type="checkbox" checked="">
-        					<label for="checkbox-3" class="col-xs-11 checkbox-custom-label">Latitud, Lonitud</label>
+							<input id='check2' class="col-xs-1 checkbox-buscar" name="opcion" type="radio">
+        					<label for="checkbox-3" class="col-xs-11 checkbox-custom-label">Latitud, Longitud</label>
         				</div>
+						<div class="col-xs-12 checkbox-buscar-coord">
+							<input id='check1' class="col-xs-1 checkbox-buscar" name="opcion" type="radio" checked='checked'>
+        					<label for="checkbox-3" class="col-xs-11 checkbox-custom-label">Dirección, ciudad, departamento</label>
+        				</div>
+
+        				
         				<div class="col-xs-12 linea-nacional-distribucion">
         					<p>LÍNEA NACIONAL: <a href="tel: #########" title="">########</a></p>
         				</div>
-        				<div class="col-xs-6 select-distancia">
+        				<div class="col-xs-6 select-distancia hidden">
         					<select class="form-control">
 								<option class="text-center">20 Km</option>
 								<option class="text-center">50 Km</option>
@@ -99,15 +105,8 @@ Template Name: Red de Distribuidores
 				</div>
 			</div>
 		</div>	
-		<script type="text/javascript">
-
 		
-		/********************************************
-		*********************************************
-						FUNCTIONS
-		*********************************************	
-		*********************************************/
-
+		<script type="text/javascript">
 			function initMap(){
 			    var mapDiv = document.getElementById('map');
 			    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
@@ -173,16 +172,6 @@ Template Name: Red de Distribuidores
 				    findClosest(lat,lng);
 				});
 
-				// Click event on buscar por coords
-				$('#anchorCoords').click(function(event){
-					event.preventDefault();
-				    // set variables 
-				    var lat = parseFloat($('#latitud').val());
-				    var lng = parseFloat($('#longitud').val());
-
-				    findClosest(lat,lng);
-				});
-
 				// Find Closest
 				function findClosest(lat,lng){
 				    
@@ -215,6 +204,7 @@ Template Name: Red de Distribuidores
 
 					    // show closer location
 						map.setCenter(markers[closest].getPosition());
+						map.setZoom(14);
 						markers[closest].setAnimation(google.maps.Animation.BOUNCE);
 						infos[closest].open(map,markers[closest]);
 					}
@@ -222,14 +212,44 @@ Template Name: Red de Distribuidores
 						alert('Los campos de latitud y longitud no deben estar vacios');
 					}
 				}
+
+				// other jquery functions
+				(function($) {
+					$( document ).ready(function() {
+						$('#latitud').hide();
+						$('#longitud').hide();	
+					});
+					
+					/********************************************
+					*********************************************
+									EVENTS
+					*********************************************	
+					*********************************************/
+
+					$('input[type=radio][name=opcion]').change(function(){
+						$('#autocomplete').toggle();
+						$('#latitud').toggle();
+						$('#longitud').toggle();
+					});
+
+
+					$('input[type=text][name=latitud]').change(function(){
+					    // set variables 
+					    var lat = parseFloat($('#latitud').val());
+					    var lng = parseFloat($('#longitud').val());
+
+					    findClosest(lat,lng);
+					});
+					$('input[type=text][name=longitud]').change(function(){
+					    // set variables 
+					    var lat = parseFloat($('#latitud').val());
+					    var lng = parseFloat($('#longitud').val());
+
+					    findClosest(lat,lng);
+					});
+
+				})( jQuery );
 			}
-
-		/********************************************
-		*********************************************
-						EVENTS
-		*********************************************	
-		*********************************************/
-
 		</script>		
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB19HfuwZ8B4Qtlrb8N38C_tTyUwCpa7m8&callback=initMap&libraries=geometry,places"
          async defer></script>
