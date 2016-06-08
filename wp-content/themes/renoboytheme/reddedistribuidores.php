@@ -24,7 +24,7 @@ Template Name: Red de Distribuidores
 								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/iconobuscar-coord.svg" alt="">
 							</button>
 							<div class="col-xs-10 col-lg-10 searchinput">
-								<input type="text" class="form-control" placeholder="Buscar...">
+								<input type="text" id="autocomplete" class="form-control" placeholder="Ingresa tu dirección, ciudad, departamento">
 							</div>
 						</form>
 						<div class="col-xs-12 checkbox-buscar-coord">
@@ -116,17 +116,22 @@ Template Name: Red de Distribuidores
 			    var map = new google.maps.Map(mapDiv, {
 			      center: {lat: 4.6479, lng: -74.1236},
 			      zoom: 7
-			    });			
+			    });
 
+			    //Initialize marker
+				var marker = new google.maps.Marker({
+				  position: {lat: 4.6287833, lng: -74.073143},
+				  map: map
+				});			    
 
 				// set arrays of markers and infos
 				var registers = <?php echo json_encode($results); ?>;
 				var markers = [];
 				var infos = [];
-
 				$.each(registers, function(i,v){
 					markers[i] = new google.maps.Marker({
 					  position: {lat: parseFloat(v.lat), lng: parseFloat(v.lng)},
+					  animation: google.maps.Animation.DROP,
 					  map: map,
 					  icon: iconBase + 'schools_maps.png'
 					});
@@ -136,39 +141,32 @@ Template Name: Red de Distribuidores
 			  		});
 				});
 
-		  		/*
-				// Click event on marker
-				google.maps.event.addListener(markerBog,'click',function() {
-					map.setZoom(14);
-					map.setCenter(markerBog.getPosition());
-					infoBog.open(map,markerBog);
-				});
-				*/
-			    /*
-			    // Marker : Medellin
-				var markerMed = new google.maps.Marker({
-				  position: {lat: 6.149459, lng: -75.625685},
-				  map: map,
-				  icon: iconBase + 'schools_maps.png'
-				});
-				var infoMed = new google.maps.InfoWindow({
-				  content:"Carrera 47 E N° 78C Sur - 95, Sabaneta, Colombia"
-				  });
+				// Create the autocomplete object and associate it with the UI input control.
+				// Restrict the search to the default country, and to place type "cities".
+				autocomplete = new google.maps.places.Autocomplete(
+			    	/** @type {!HTMLInputElement} */ (
+			        document.getElementById('autocomplete')),
+			    	{
+			        componentRestrictions: {'country': 'col'}
+		      	});
+			  	autocomplete.addListener('place_changed', onPlaceChanged);
 
-			    // Marker : Yumbo
-				var markerYum = new google.maps.Marker({
-				  position: {lat: 3.5533536, lng: -76.5002322},
-				  map: map,
-				  icon: iconBase + 'schools_maps.png'
-				});
-				var infoYum = new google.maps.InfoWindow({
-				  content:"Carrera 20G N° 14B - 36 Yumbo, Colombia"
-				  });
-				*/
+				// When the user selects a city, get the place details for the city and
+				// zoom the map in on the city.
+				function onPlaceChanged() {
+				  var place = autocomplete.getPlace();
+				  
+				  if (place.geometry) {
+					var lat = place.geometry.location.lat();
+					var lng = place.geometry.location.lng();
+					findClosest(lat,lng);  
+				  } else {
+				    document.getElementById('autocomplete').placeholder = 'Ingresa tu dirección, ciudad o departamento';
+				  }
+				}
 
 				// Click event on map
 				google.maps.event.addListener(map, 'click', function(event){
-
 				    // set variables 
 				    var lat = event.latLng.lat();
 				    var lng = event.latLng.lng();
@@ -233,7 +231,7 @@ Template Name: Red de Distribuidores
 		*********************************************/
 
 		</script>		
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB19HfuwZ8B4Qtlrb8N38C_tTyUwCpa7m8&callback=initMap&libraries=geometry"
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB19HfuwZ8B4Qtlrb8N38C_tTyUwCpa7m8&callback=initMap&libraries=geometry,places"
          async defer></script>
 
 		<?php include "footer.php";?>
