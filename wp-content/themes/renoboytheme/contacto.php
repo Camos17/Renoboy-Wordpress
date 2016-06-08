@@ -53,16 +53,16 @@ Template Name: Contacto
 						</div>									
 						<div class="col-xs-12 no-padding formulario-contacto-cliente">
 							<div class="form-group">								
-								<input type="text" class="form-control" id="razon-social" name="razonsocial" placeholder="Nombre Empresa*">
+								<input type="text" class="form-control" id="razon-social" name="razonsocial" placeholder="Nombre Empresa*" required>
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Contacto (Nombre y Apellidos)*">
+								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Contacto (Nombre y Apellidos)*" required>
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad*">
+								<input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad*" required>
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" id="e-mail" name="email" placeholder="E-mail*">
+								<input type="text" class="form-control" id="e-mail" name="email" placeholder="E-mail*" required>
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control" id="telefono" name="telefono" placeholder="Número de Teléfono">
@@ -71,14 +71,14 @@ Template Name: Contacto
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 no-padding contenido-contacto-cliente2">
 						<div class="col-xs-12 col-sm-10 no-padding">
-							<textarea class="form-control" name="mensaje" rows="7" placeholder="MENSAJE"></textarea>
+							<textarea id="mensajeone" class="form-control" name="mensaje" rows="7" placeholder="MENSAJE"></textarea>
 						</div>
 						<p class="col-xs-12 parrafo1 no-padding">Limite de carácteres 0 a 250</p>
 
 						<div class="col-xs-12 checkbox-terminos-condiciones">
-							<input id="checkbox-4" class="col-xs-1 checkbox-buscar" name="terminos" type="checkbox" checked="">
+							<input id="checkbox-4" class="col-xs-1 checkbox-buscar" name="terminos" type="checkbox" checked="" required>
         					<label for="checkbox-4" class="col-xs-11 checkbox-custom-label">
-        						Aceptas los <a href="#" title="">terminos y condiciones</a></p>
+        						Aceptas los <a href="/terminos-y-condiciones" title="">terminos y condiciones</a></p>
         					</label>
         				</div>
 						<div class="col-xs-12 checkbox-promociones">
@@ -93,9 +93,10 @@ Template Name: Contacto
 						<a class="col-xs-12 no-padding btn btn-regresar-contacto2" href="#" title=""><span> <i class="fa fa-angle-left" aria-hidden="true"></i> REGRESAR A CONTÁCTENOS</span></a>
 					</div>				
 				</form>
-				<form class="col-xs-12 no-padding contenido-contacto-nocliente">
+				<form id="noclienteform" method="post" action="<?php bloginfo('template_url'); ?>/nomailer.php" class="col-xs-12 no-padding contenido-contacto-nocliente">
 					<div class="col-xs-12 headline-contacto-cliente">
 						<h2>Contacto</h2>
+						<div id="form-messages"></div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 no-padding contenido-contacto-cliente1">
 						<div class="col-xs-12 no-padding dropdown filtro-asunto">
@@ -254,7 +255,7 @@ Template Name: Contacto
 					<div class="col-xs-8 col-xs-offset-1 col-sm-9 col-sm-offset-0">
 						<div class="col-xs-12 no-padding texto-contenido">
 							<p>Ubicar un Centro de  Servicio</p>
-							<p>Encuentre su distribuidor más cercano <a href="reddedistribuidores.php" title="">aquí</a></p>
+							<p>Encuentre su distribuidor más cercano <a href="/red-de-distribuidores" title="">aquí</a></p>
 						</div>
 					</div>
 				</div>
@@ -269,6 +270,7 @@ Template Name: Contacto
 	<?php include "footer.php";?>
 
 	<script type="text/javascript">
+		(function($) {
 	
 		/********************************************
 		*********************************************
@@ -313,8 +315,8 @@ Template Name: Contacto
 				});
 			});
 
-	
-	    $(function() {
+			/*FORM CLIENTE*/
+	   
 	        // Get the form.
 	        var form = $('#clienteform');
 
@@ -350,7 +352,7 @@ Template Name: Contacto
 	                $('#ciudad').val('');
 	                $('#e-mail').val('');
 	                $('#telefono').val('');
-	                $('#mensaje').val('');
+	                $('#mensajeone').val('');
 	                $('#btnenvio').prop('disabled', false);
 	            })
 	            .fail(function(data) {
@@ -368,6 +370,63 @@ Template Name: Contacto
 	                }
 	            });
 	        });
-	    });
+
+			/*FORM CLIENTE*/
+	   
+	        // Get the form.
+	        var formnocliente = $('#noclienteform');
+
+	        // Get the messages div.
+	        var formMessages = $('#form-messages-no');
+
+	        // Set up an event listener for the contact form.
+	        $(formnocliente).submit(function(event) {
+	            // Stop the browser from submitting the form.
+	            event.preventDefault();
+
+	            console.log('enviado');
+
+	            $('#btnenvio').prop('disabled', true);
+
+	            var formData = $(form).serialize();
+	            $.ajax({
+	                type: 'POST',
+	                url: $(form).attr('action'),
+	                data: formData
+	            })
+	            .done(function(response) {
+	                // Make sure that the formMessages div has the 'success' class.
+	                $(formMessages).removeClass('error');
+	                $(formMessages).addClass('success');
+
+	                // Set the message text.
+	                $(formMessages).text(response);
+
+	                // Clear the form.
+	                $('#razon-social').val('');
+	                $('#nombre').val('');
+	                $('#ciudad').val('');
+	                $('#e-mail').val('');
+	                $('#telefono').val('');
+	                $('#mensajeone').val('');
+	                $('#btnenvio').prop('disabled', false);
+	            })
+	            .fail(function(data) {
+	                console.log('error');
+	                console.log(data);
+	                // Make sure that the formMessages div has the 'error' class.
+	                $(formMessages).removeClass('success');
+	                $(formMessages).addClass('error');
+
+	                // Set the message text.
+	                if (data.responseText !== '') {
+	                    $(formMessages).text(data.responseText);
+	                } else {
+	                    $(formMessages).text('Oops! An error occured and your message could not be sent.');
+	                }
+	            });
+	        });
+
+	    })( jQuery );
 	    
 	</script>

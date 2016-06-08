@@ -97,11 +97,12 @@ function filter_designs(){
 	$utilizacion=$_POST['utilizacion'];
 	$utilizacionarray = explode(",", $utilizacion);
 	$posicion = $_POST['posicion'];
+	$posicionarray = explode(",", $posicion);
 	$dimension = $_POST['dimension'];
 	$categoria = $_POST['categoria'];
 
 	$args = array(
-		'numberposts'	=> -1,
+		'posts_per_page'	=> -1,
 		'post_type'		=> 'd_bandas',
 		'meta_query'	=> array(
 			'relation'		=> 'AND',
@@ -113,6 +114,11 @@ function filter_designs(){
 			array(
 				'key'		=> 'utilizacion_recomendada',
 				'value'		=> $utilizacionarray,
+				'compare'	=> 'IN'
+			),
+			array(
+				'key'		=> 'posicion_recomendada',
+				'value'		=> $posicionarray,
 				'compare'	=> 'IN'
 			)
 		)
@@ -132,6 +138,7 @@ function filter_designs(){
 	}
 
 	echo json_encode($divs);
+	//echo json_encode($args);
 	wp_die();	
 }
 
@@ -143,17 +150,11 @@ function post_remove ()
 } 
 add_action('admin_menu', 'post_remove');
 
-function custom_upload_mimes ( $existing_mimes=array() ) {
 
-	// add the file extension to the array
-
-	$existing_mimes['svg'] = 'mime/type';
-
-        // call the modified list of extensions
-
-	return $existing_mimes;
-
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
 }
-add_filter('upload_mimes', 'custom_upload_mimes');
+add_filter('upload_mimes', 'cc_mime_types');
 
 ?>

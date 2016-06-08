@@ -104,38 +104,39 @@
 		<?php wp_footer(); ?>
 		
 		<script type="text/javascript">
+			(function($) {
 			
-			$(document).ready(function(){
-				var sucursalesabierto = false;
-				$( "#btn-mas-sedes" ).click(function() {
-					var $contenedor = $('#mas-sedes')
-					$("#mas-sedes").slideToggle(700);
-					$('html,body').animate({scrollTop: $("#ancla").offset().top}, 700);
-					$("#btn-mas-sedes .glyphicon-chevron-up").toggle();
-			    	$("#btn-mas-sedes .glyphicon-chevron-down").toggle();
-			    	if (sucursalesabierto) {
-						$("#menos-sucursales").text("Más Plantas");
-			    	} else {
-			    		$("#menos-sucursales").text("Menos Plantas");
-			    	}
-			    	sucursalesabierto = !sucursalesabierto;
+				$(document).ready(function(){
+					var sucursalesabierto = false;
+					$( "#btn-mas-sedes" ).click(function() {
+						var $contenedor = $('#mas-sedes')
+						$("#mas-sedes").slideToggle(700);
+						$('html,body').animate({scrollTop: $("#ancla").offset().top}, 700);
+						$("#btn-mas-sedes .glyphicon-chevron-up").toggle();
+				    	$("#btn-mas-sedes .glyphicon-chevron-down").toggle();
+				    	if (sucursalesabierto) {
+							$("#menos-sucursales").text("Más Plantas");
+				    	} else {
+				    		$("#menos-sucursales").text("Menos Plantas");
+				    	}
+				    	sucursalesabierto = !sucursalesabierto;
+					});
+					$('.texto-layer-llanta').each(function(index, element) {
+	   					$clamp(element, { clamp: 3, useNativeClamp: false });
+					});			
 				});
-				$('.texto-layer-llanta').each(function(index, element) {
-   					$clamp(element, { clamp: 3, useNativeClamp: false });
-				});			
-			});
 
-			/********************************************
-			*********************************************
-							FUNCTIONS
-			*********************************************	
-			*********************************************/
+				/********************************************
+				*********************************************
+								FUNCTIONS
+				*********************************************	
+				*********************************************/
 
-			/********************************************
-			*********************************************
-							EVENTS
-			*********************************************	
-			*********************************************/
+				/********************************************
+				*********************************************
+								EVENTS
+				*********************************************	
+				*********************************************/
 
 				$("#ayuda-utilizacion").click(function(){
 					$(".ayuda-buscador-servicios").fadeIn(1000);
@@ -145,6 +146,6 @@
 					$(".ayuda-buscador-servicios").fadeOut(1000);
 				});
 			
-
+			})( jQuery );
 
 		</script>

@@ -21,7 +21,7 @@ Template Name: Inicio
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
-						<img class="hidden-md hidden-lg img-responsive" src="<?php bloginfo('template_directory');?>/img/fondo_home.jpg" alt="...">
+						<img class="hidden-md hidden-lg img-responsive" src="<?php the_field("imagen_movil_primer_slide"); ?>" alt="...">
 						<div class="carousel-caption">
 							<p class="text-center texto1"><strong><?php the_field("titulo_primer_slide"); ?></strong></p>
 							<p class="text-center texto2"><?php the_field("texto_primer_slide"); ?></p>
@@ -31,7 +31,7 @@ Template Name: Inicio
 	      				</div>
 					</div>
 					<div class="item">
-						<img class="hidden-md hidden-lg img-responsive" src="<?php bloginfo('template_directory');?>/img/fondo_home.jpg" alt="...">
+						<img class="hidden-md hidden-lg img-responsive" src="<?php the_field("imagen_movil_segundo_slide"); ?>" alt="...">
 						<div class="carousel-caption">
 							<p class="text-center texto1"><strong><?php the_field("titulo_segundo_slide"); ?></strong></p>
 							<p class="text-center texto2"><?php the_field("texto_segundo_slide"); ?></p>
@@ -41,7 +41,7 @@ Template Name: Inicio
 	      				</div>
 	      			</div>
 	      			<div class="item">
-						<img class="hidden-md hidden-lg img-responsive" src="<?php bloginfo('template_directory');?>/img/fondo_home.jpg" alt="...">
+						<img class="hidden-md hidden-lg img-responsive" src="<?php the_field("imagen_movil_tercer_slide"); ?>" alt="...">
 						<div class="carousel-caption">
 							<p class="text-center texto1"><strong><?php the_field("titulo_tercer_slide"); ?></strong></p>
 							<p class="text-center texto2"><?php the_field("texto_tercer_slide"); ?></p>
