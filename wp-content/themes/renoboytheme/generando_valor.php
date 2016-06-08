@@ -14,7 +14,7 @@ Template Name: Generando Valor
 						<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0 contenido-generando-valor1">
 							<div class="row">
 								<div class="col-xs-8 col-xs-offset-2 no-padding imagen-titulo">
-									<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/logorenoboy.svg" alt="">
+									<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/logorenoboy.svg" alt="Logo Renoboy">
 								</div>
 							</div>
 							<p class="col-xs-12"><?php the_field('descripcion'); ?></p>
