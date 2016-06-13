@@ -462,6 +462,8 @@ Template Name: Buscador Servicios
 		<script type="text/javascript">
 			(function($) {
 
+				console.log(document.cookie);
+
 				$("#iconos-servicios button").click(function(){
 		
 					var buttonservice = $(this).data('servicio');
@@ -545,18 +547,20 @@ Template Name: Buscador Servicios
 					   
 					
 						var data = {
-						   'action': 'filter_designs',
+						   'action': 'getproducts',
 						   'utilizacion': utilizacion,
 						   'posicion': posicion,
 						   'dimension': dimension,
 						   'categoria': categoria
 						};
-						
-						console.log('QUERY VALUES:');
-						console.log(data);
+
+									
 						$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
-						    
-						    console.log('RESPONSE:');  
+
+							console.log(response);
+
+						   /*
+						   console.log('RESPONSE:');  
 						   
 
 						    var r = JSON.parse(response);
@@ -623,7 +627,7 @@ Template Name: Buscador Servicios
 
 							$("#loader").addClass("hidden");
 							$("#cat-llantas").removeClass("hidden");
-						    
+						    */
 						});
 					
 					}

@@ -158,54 +158,70 @@ a, button{
 		padding: 4px 10px;
 	}
 
-	.interactiveplanta #button1{
-		top: 65%;
-		left: 55%;
+	.interactiveplanta .button1{
+		top: 68%;
+		left: 52%;
 	}
 
-	.interactiveplanta #button2{
-		top: 57%;
-		left: 64%;
+	.interactiveplanta .button2{
+		top: 59%;
+		left: 60%;
 	}
 
-	.interactiveplanta #button3{
-		top: 48%;
-		left: 72%;
+	.interactiveplanta .button3{
+		top: 51%;
+		left: 67%;
 	}
 
-	.interactiveplanta #button4{
-		top: 41%;
-		left: 79%;
+	.interactiveplanta .button4{
+		top: 43%;
+		left: 73%;
 	}
 
-	.interactiveplanta #button5{
-		top: 24%;
-		left: 64%;
+	.interactiveplanta .button5{
+		top: 32%;
+		left: 83%;
 	}
 
-	.interactiveplanta #button6{
-		top: 15%;
-		left: 43%;
+	.interactiveplanta .button6{
+		top: 30%;
+		left: 63%;
 	}
 
-	.interactiveplanta #button7{
-		top: 34%;
+	.interactiveplanta .button7{
+		top: 42%;
 		left: 48%;
 	}
 
-	.interactiveplanta #button8{
-		top: 39%;
-		left: 30%;
+	.interactiveplanta .button8{
+		top: 56%;
+		left: 34%;
 	}
 
-	.interactiveplanta #button9{
-		top: 24%;
-		left: 26%;
+	.interactiveplanta .button9{
+		top: 54%;
+		left: 23%;
 	}
 
-	.interactiveplanta #button10{
-		top: 31%;
+	.interactiveplanta .button10{
+		top: 28%;
+		left: 42%;
+		height: 28px;
+		width: 28px;
+		padding: 0;
+	}
+
+	.interactiveplanta .button11{
+		top: 45%;
 		left: 17%;
+		height: 28px;
+		width: 28px;
+		padding: 0;
+	}
+
+	.interactiveplanta .button12{
+		top: 24%;
+		left: 8%;
 		height: 28px;
 		width: 28px;
 		padding: 0;
@@ -295,6 +311,7 @@ a, button{
 
 		.navbar .container-fluid {
 			padding-right: 0px;
+			padding-left:0px;
 		}
 
 		.navbar-toggle{
@@ -3008,7 +3025,7 @@ a, button{
 		}
 
 		.navbar .container-fluid .navbar-brand {
-			margin-left: -10px
+			float: right;
 		}
 
 		.navbar-collapse {
@@ -3045,6 +3062,10 @@ a, button{
 
 		.navbar-default .navbar-nav > li:active > a, .navbar-default .navbar-nav > li:focus > a {
 			color: #1B71A1;
+		}
+
+		.navbar-default .navbar-collapse{
+			padding:0;
 		}
 
 

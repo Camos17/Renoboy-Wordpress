@@ -107,6 +107,7 @@ Template Name: Red de Distribuidores
 		</div>	
 		
 		<script type="text/javascript">
+		
 			function initMap(){
 			    var mapDiv = document.getElementById('map');
 			    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';

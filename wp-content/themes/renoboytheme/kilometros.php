@@ -11,7 +11,7 @@ Template Name: Kilometros Generando valor
 			<div class="col-xs-12 col-md-10 col-md-offset-1 contenido-kilometros-generando-valor no-padding">
 				<a class="col-xs-12 col-sm-6 col-md-3 col-lg-3 no-padding fondo-kilometros1" href="<?php echo get_page_link(127); ?>">
 					<div class="col-xs-12 no-padding layer-kilometros">
-						<p class="col-xs-12 text-center">28 AÑOS <br> GENERANDO VALOR</p>
+						<p class="col-xs-12 text-center">29 AÑOS <br> GENERANDO VALOR</p>
 					</div>
 				</a>
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 no-padding fondo-kilometros2">
@@ -137,71 +137,75 @@ Template Name: Kilometros Generando valor
 	<?php include "footer.php";?>
 
 	<script type="text/javascript">
+
+		(function($) {
 	
-		/********************************************
-		*********************************************
-						EVENTS
-		*********************************************	
-		*********************************************/
+			/********************************************
+			*********************************************
+							EVENTS
+			*********************************************	
+			*********************************************/
 
-			$("#mision").click(function(){
-				$(".vista-mision").fadeIn( 1000, "linear");
-				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-					$('html,body').animate({scrollTop: $("#certificaciones").offset().top}, 700);
-				}
-				$(".vista-vision").fadeOut( 1000, "swing");
-				$(".vista-valores").fadeOut( 1000, "swing");
-			});
+				$("#mision").click(function(){
+					$(".vista-mision").fadeIn( 1000, "linear");
+					if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+						$('html,body').animate({scrollTop: $("#certificaciones").offset().top}, 700);
+					}
+					$(".vista-vision").fadeOut( 1000, "swing");
+					$(".vista-valores").fadeOut( 1000, "swing");
+				});
 
-			$(".btn-cerrar-vista-interna").click(function(){
-				$(".vista-mision").fadeOut( 1000, "swing");
-				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-					$('html,body').animate({scrollTop: $(".fondo-kilometros-generando-valor").offset().top}, 700);
-				}
-			});
+				$(".btn-cerrar-vista-interna").click(function(){
+					$(".vista-mision").fadeOut( 1000, "swing");
+					if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+						$('html,body').animate({scrollTop: $(".fondo-kilometros-generando-valor").offset().top}, 700);
+					}
+				});
 
-			$("#vision").click(function(){
-				$(".vista-vision").fadeIn( 1000, "linear");
-				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-					$('html,body').animate({scrollTop: $("#certificaciones").offset().top}, 700);
-				}
-				$(".vista-valores").fadeOut( 1000, "swing");
-			});
+				$("#vision").click(function(){
+					$(".vista-vision").fadeIn( 1000, "linear");
+					if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+						$('html,body').animate({scrollTop: $("#certificaciones").offset().top}, 700);
+					}
+					$(".vista-valores").fadeOut( 1000, "swing");
+				});
 
-			$(".btn-cerrar-vista-interna").click(function(){
-				$(".vista-vision").fadeOut( 1000, "swing");
-				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-					$('html,body').animate({scrollTop: $(".fondo-kilometros-generando-valor").offset().top}, 700);
-				}
-			});
+				$(".btn-cerrar-vista-interna").click(function(){
+					$(".vista-vision").fadeOut( 1000, "swing");
+					if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+						$('html,body').animate({scrollTop: $(".fondo-kilometros-generando-valor").offset().top}, 700);
+					}
+				});
 
-			$("#valores").click(function(){
-				$(".vista-valores").fadeIn( 1000, "linear");
-				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-					$('html,body').animate({scrollTop: $("#certificaciones").offset().top}, 700);
-				}
-			});
+				$("#valores").click(function(){
+					$(".vista-valores").fadeIn( 1000, "linear");
+					if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+						$('html,body').animate({scrollTop: $("#certificaciones").offset().top}, 700);
+					}
+				});
 
-			$(".btn-cerrar-vista-interna").click(function(){
-				$(".vista-valores").fadeOut( 1000, "swing");
-				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-					$('html,body').animate({scrollTop: $(".fondo-kilometros-generando-valor").offset().top}, 700);
-				}
-			});
+				$(".btn-cerrar-vista-interna").click(function(){
+					$(".vista-valores").fadeOut( 1000, "swing");
+					if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+						$('html,body').animate({scrollTop: $(".fondo-kilometros-generando-valor").offset().top}, 700);
+					}
+				});
 
-			$("#certificaciones").click(function(){
-				$(".vista-certificaciones").fadeIn( 1000, "linear");
-				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-					$('html,body').animate({scrollTop: $(".fondo-kilometros3").offset().top}, 700);
-				}
-			});
+				$("#certificaciones").click(function(){
+					$(".vista-certificaciones").fadeIn( 1000, "linear");
+					if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+						$('html,body').animate({scrollTop: $(".fondo-kilometros3").offset().top}, 700);
+					}
+				});
 
-			$(".btn-cerrar-vista-interna").click(function(){
-				$(".vista-certificaciones").fadeOut( 1000, "swing");
-				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-					$('html,body').animate({scrollTop: $(".fondo-kilometros-generando-valor").offset().top}, 700);
-				}
-			});
+				$(".btn-cerrar-vista-interna").click(function(){
+					$(".vista-certificaciones").fadeOut( 1000, "swing");
+					if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+						$('html,body').animate({scrollTop: $(".fondo-kilometros-generando-valor").offset().top}, 700);
+					}
+				});
+
+			})( jQuery );
 
 	</script>
 

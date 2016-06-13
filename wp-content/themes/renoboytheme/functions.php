@@ -142,6 +142,46 @@ function filter_designs(){
 	wp_die();	
 }
 
+//JOIN DISEÑOS Y PRODUCTOS
+add_action("wp_ajax_getproducts", "getproducts");
+add_action("wp_ajax_nopriv_getproducts", "getproducts");
+
+function getproducts(){
+
+	global $wpdb;
+	
+	/*$query = "
+	SELECT wp_posts.*, meta. AS url
+	FROM wp_posts
+	LEFT JOIN $wpdb->postmeta as meta ON ($wpdb->posts.ID = $wpdb->postmeta.post_id)
+	WHERE post_type = 'd_bandas'
+	LIMIT 10";*/
+
+	$key = ''; 
+	$type = 'd_bandas';
+	$status = 'publish';
+
+	 $query = "
+        SELECT  wp_posts.*, mt1.meta_value as categoria, mt2.meta_value as diseño_de_banda, mt3.meta_value as utilizacion_recomendada, mt4.meta_value as posicion_recomendada  
+		FROM wp_posts  
+		LEFT JOIN wp_postmeta AS mt1 ON (wp_posts.ID = mt1.post_id AND mt1.meta_key='categoria')
+		LEFT JOIN wp_postmeta AS mt2 ON (wp_posts.ID = mt2.post_id  AND mt2.meta_key='diseño_de_banda') 
+		LEFT JOIN wp_postmeta AS mt3 ON (wp_posts.ID = mt3.post_id  AND mt3.meta_key='utilizacion_recomendada') 
+		LEFT JOIN wp_postmeta AS mt4 ON (wp_posts.ID = mt4.post_id  AND mt4.meta_key='posicion_recomendada') 
+		WHERE wp_posts.post_type = 'd_bandas' 
+		AND (wp_posts.post_status = 'publish'  OR wp_posts.post_status = 'private')  
+		AND ((mt1.meta_key = 'categoria') OR (mt2.meta_key = 'diseño_de_banda') OR (mt3.meta_key = 'utilizacion_recomendada') OR (mt4.meta_key = 'posicion_recomendada')) 
+		GROUP BY wp_posts.ID ORDER BY wp_posts.post_date DESC
+		LIMIT 10";
+	 
+	$results = $wpdb->get_results($query);
+
+    header("Content-type: application/json"); 
+    echo json_encode( $results );
+
+    wp_die();
+
+}
 
 // REMOVE POST FROM ADMIN NAVBAR
 function post_remove () 
@@ -156,5 +196,16 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+
+// SETTING UP COOKIE
+add_action( 'init', 'setcookie_plantavirtual' );
+function setcookie_plantavirtual() {
+	if(!isset($_COOKIE['plantavirtual'])) {
+		setcookie('plantavirtual', "false", 1 * DAY_IN_SECONDS, COOKIEPATH, COOKIE_DOMAIN );
+	} else {
+
+	}
+}
 
 ?>
