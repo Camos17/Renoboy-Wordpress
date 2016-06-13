@@ -109,113 +109,113 @@ Template Name: Red de Distribuidores
 		<script type="text/javascript">
 		
 			function initMap(){
-			    var mapDiv = document.getElementById('map');
-			    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-
-			    // Initialize map with center
-			    var map = new google.maps.Map(mapDiv, {
-			      center: {lat: 4.6479, lng: -74.1236},
-			      zoom: 7
-			    });
-
-			    //Initialize marker
-				var marker = new google.maps.Marker({
-				  position: {lat: 4.6287833, lng: -74.073143},
-				  map: map
-				});			    
-
-				// set arrays of markers and infos
-				var registers = <?php echo json_encode($results); ?>;
-				var markers = [];
-				var infos = [];
-				$.each(registers, function(i,v){
-					markers[i] = new google.maps.Marker({
-					  position: {lat: parseFloat(v.lat), lng: parseFloat(v.lng)},
-					  animation: google.maps.Animation.DROP,
-					  map: map,
-					  icon: iconBase + 'schools_maps.png'
-					});
-					
-					infos[i] = new google.maps.InfoWindow({
-					  content: v.name_dist + ', ' + v.address
-			  		});
-				});
-
-				// Create the autocomplete object and associate it with the UI input control.
-				// Restrict the search to the default country, and to place type "cities".
-				autocomplete = new google.maps.places.Autocomplete(
-			    	/** @type {!HTMLInputElement} */ (
-			        document.getElementById('autocomplete')),
-			    	{
-			        componentRestrictions: {'country': 'col'}
-		      	});
-			  	autocomplete.addListener('place_changed', onPlaceChanged);
-
-				// When the user selects a city, get the place details for the city and
-				// zoom the map in on the city.
-				function onPlaceChanged() {
-				  var place = autocomplete.getPlace();
-				  
-				  if (place.geometry) {
-					var lat = place.geometry.location.lat();
-					var lng = place.geometry.location.lng();
-					findClosest(lat,lng);  
-				  } else {
-				    document.getElementById('autocomplete').placeholder = 'Ingresa tu dirección, ciudad o departamento';
-				  }
-				}
-
-				// Click event on map
-				google.maps.event.addListener(map, 'click', function(event){
-				    // set variables 
-				    var lat = event.latLng.lat();
-				    var lng = event.latLng.lng();
-				    findClosest(lat,lng);
-				});
-
-				// Find Closest
-				function findClosest(lat,lng){
-				    
-				    if(lat != '' && lng != ''){
-					    var latlng = new google.maps.LatLng(lat,lng);
-					    var distances = [];
-					    var closest = -1;
-
-					    // position marker
-						marker.setPosition(latlng);
-					    
-					    // search for closer among markers
-					    for( i=0; i< markers.length; i++ ) {
-					        var mlatlng = new google.maps.LatLng(markers[i].position.lat(),markers[i].position.lng());
-					        distances[i] = parseInt(google.maps.geometry.spherical.computeDistanceBetween(mlatlng, latlng));
-
-					        if ( closest == -1 ) {
-					            closest = i;
-					        	markers[i].setAnimation(google.maps.Animation.DROP);	
-					        	infos[i].close();
-					        }
-					        else if(distances[i] < distances[closest]){	
-					            closest = i;
-					        }
-					        else{
-					        	markers[i].setAnimation(google.maps.Animation.DROP);	
-					        	infos[i].close();
-					        }
-					    }
-
-					    // show closer location
-						map.setCenter(markers[closest].getPosition());
-						map.setZoom(14);
-						markers[closest].setAnimation(google.maps.Animation.BOUNCE);
-						infos[closest].open(map,markers[closest]);
-					}
-					else{
-						alert('Los campos de latitud y longitud no deben estar vacios');
-					}
-				}
-
 				// other jquery functions
 				(function($) {
+				    var mapDiv = document.getElementById('map');
+				    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+
+				    // Initialize map with center
+				    var map = new google.maps.Map(mapDiv, {
+				      center: {lat: 4.6479, lng: -74.1236},
+				      zoom: 7
+				    });
+
+				    //Initialize marker
+					var marker = new google.maps.Marker({
+					  position: {lat: 14.6287833, lng: -74.073143},
+					  map: map
+					});			    
+
+					// set arrays of markers and infos
+					var registers = <?php echo json_encode($results); ?>;
+					var markers = [];
+					var infos = [];
+					$.each(registers, function(i,v){
+						markers[i] = new google.maps.Marker({
+						  position: {lat: parseFloat(v.lat), lng: parseFloat(v.lng)},
+						  animation: google.maps.Animation.DROP,
+						  map: map,
+						  icon: iconBase + 'schools_maps.png'
+						});
+						
+						infos[i] = new google.maps.InfoWindow({
+						  content: v.name_dist + ', ' + v.address
+				  		});
+					});
+
+					// Create the autocomplete object and associate it with the UI input control.
+					// Restrict the search to the default country, and to place type "cities".
+					autocomplete = new google.maps.places.Autocomplete(
+				    	/** @type {!HTMLInputElement} */ (
+				        document.getElementById('autocomplete')),
+				    	{
+				        componentRestrictions: {'country': 'col'}
+			      	});
+				  	autocomplete.addListener('place_changed', onPlaceChanged);
+
+					// When the user selects a city, get the place details for the city and
+					// zoom the map in on the city.
+					function onPlaceChanged() {
+					  var place = autocomplete.getPlace();
+					  
+					  if (place.geometry) {
+						var lat = place.geometry.location.lat();
+						var lng = place.geometry.location.lng();
+						findClosest(lat,lng);  
+					  } else {
+					    document.getElementById('autocomplete').placeholder = 'Ingresa tu dirección, ciudad o departamento';
+					  }
+					}
+
+					// Click event on map
+					google.maps.event.addListener(map, 'click', function(event){
+					    // set variables 
+					    var lat = event.latLng.lat();
+					    var lng = event.latLng.lng();
+					    findClosest(lat,lng);
+					});
+
+					// Find Closest
+					function findClosest(lat,lng){
+					    
+					    if(lat != '' && lng != ''){
+						    var latlng = new google.maps.LatLng(lat,lng);
+						    var distances = [];
+						    var closest = -1;
+
+						    // position marker
+							marker.setPosition(latlng);
+						    
+						    // search for closer among markers
+						    for( i=0; i< markers.length; i++ ) {
+						        var mlatlng = new google.maps.LatLng(markers[i].position.lat(),markers[i].position.lng());
+						        distances[i] = parseInt(google.maps.geometry.spherical.computeDistanceBetween(mlatlng, latlng));
+
+						        if ( closest == -1 ) {
+						            closest = i;
+						        	markers[i].setAnimation(google.maps.Animation.DROP);	
+						        	infos[i].close();
+						        }
+						        else if(distances[i] < distances[closest]){	
+						            closest = i;
+						        }
+						        else{
+						        	markers[i].setAnimation(google.maps.Animation.DROP);	
+						        	infos[i].close();
+						        }
+						    }
+
+						    // show closer location
+							map.setCenter(markers[closest].getPosition());
+							map.setZoom(14);
+							markers[closest].setAnimation(google.maps.Animation.BOUNCE);
+							infos[closest].open(map,markers[closest]);
+						}
+						else{
+							alert('Los campos de latitud y longitud no deben estar vacios');
+						}
+					}
+
 					$( document ).ready(function() {
 						$('#latitud').hide();
 						$('#longitud').hide();	
@@ -233,7 +233,6 @@ Template Name: Red de Distribuidores
 						$('#longitud').toggle();
 					});
 
-
 					$('input[type=text][name=latitud]').change(function(){
 					    // set variables 
 					    var lat = parseFloat($('#latitud').val());
@@ -241,6 +240,7 @@ Template Name: Red de Distribuidores
 
 					    findClosest(lat,lng);
 					});
+
 					$('input[type=text][name=longitud]').change(function(){
 					    // set variables 
 					    var lat = parseFloat($('#latitud').val());
