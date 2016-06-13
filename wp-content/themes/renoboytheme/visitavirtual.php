@@ -21,10 +21,10 @@ Template Name: Visita Virtual a la planta
 								<source src="<?php bloginfo('template_directory');?><?php echo get_field( "video_link", 1085 );?>.ogv" type="video/ogv">
 								Your browser does not support the video tag.
 							</video> 
-						</div>	
-						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#subscribeModal">
-						  Launch demo modal
-						</button>					
+						</div>		
+						<div id="loader" class="col-xs-12 hidden" style="margin-top: 100px;">
+							<div class="loading-spinner"></div>
+						</div>				
 					</div>
 				</div>
 				<div class="col-sm-8 has-feedback interactiveplanta">
@@ -55,14 +55,14 @@ Template Name: Visita Virtual a la planta
 	        <h4 class="modal-title" id="myModalLabel">¿Desea continuar realizando la visita virtual a la planta?</h4>
 	      </div>
 	      <div class="modal-body">
-	      	<form class="form">
+	      	<form id="registrationform" class="form">
 	        <label>Por favor registre su correo electronico</label>
-	        <input class="form-control" type="text" placeholder="ingrese su email"> 
+	        <input id="emailregister" class="form-control" type="text" placeholder="Ingrese su email"> 
 	      	</form>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
+	        <button id="closeSubscribe" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+	        <button id="submitregistration" type="button" class="btn btn-primary">Registrar</button>
 	      </div>
 	    </div>
 	  </div>
@@ -74,27 +74,89 @@ Template Name: Visita Virtual a la planta
 		(function($) {
 
 			var dir = "<?php bloginfo('template_directory');?>";
+			var postid;
 
 			$(".interactiveplanta button").click(function(){
-				var postid = $(this).data('postid');	
+				$("#loader").removeClass("hidden");
+				$("#videoplanta").addClass("hidden");
+				postid = $(this).data('postid');	
 				
 				var data = {
-				    'action': 'load_custom_post',
+				    'action': 'load_custom_planta',
 				    'postid': postid
 				};
 
 				$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
-			    
-				    var r = JSON.parse(response);	
-				    $("#tituloplanta").html(r.titulo);   
-				    $("#textoplanta").html(r.texto_descriptivo);    
 
-				    $("#videoplanta").html('');
-				    $("#videoplanta").prepend('<video class="img-responsive"  preload="auto" poster="'+dir+'/img/fondo_video_home.jpg" controls></video>');
-					$("#videoplanta video").append('<source src="'+dir+r.video_link+'.mp4" type="video/mp4">"');
-					$("#videoplanta video").append('<source src="'+dir+r.video_link+'.ogg" type="video/ogv">');
-					$("#videoplanta video").append('<source src="'+dir+r.video_link+'.webm" type="video/webm">');
+			    	if(response.trim() == '"The cookie is false."' || response.trim() == '"1:The cookie is not set."' || response.trim() == '"2:The cookie is not set."'){
+			    		console.log(response);
+			    		$('#subscribeModal').modal('show');
+			    		$("#loader").removeClass("hidden");
+						$("#videoplanta").addClass("hidden");
+			    	} else {
+				    	var r = JSON.parse(response);	
+					    $("#tituloplanta").html(r.titulo);   
+					    $("#textoplanta").html(r.texto_descriptivo);    
 
+					    $("#videoplanta").html('');
+					    $("#videoplanta").prepend('<video class="img-responsive"  preload="auto" poster="'+dir+'/img/fondo_video_home.jpg" controls></video>');
+						$("#videoplanta video").append('<source src="'+dir+r.video_link+'.mp4" type="video/mp4">"');
+						$("#videoplanta video").append('<source src="'+dir+r.video_link+'.ogg" type="video/ogv">');
+						$("#videoplanta video").append('<source src="'+dir+r.video_link+'.webm" type="video/webm">');
+
+						$("#loader").addClass("hidden");
+						$("#videoplanta").removeClass("hidden");
+					}
+
+				});
+
+			});
+
+			$('#closeSubscribe').click(function(){
+			  	$("#loader").addClass("hidden");
+				$("#videoplanta").removeClass("hidden");
+			});
+
+			$("#submitregistration").click(function(){
+				var email = $("#emailregister").val();	
+				
+				var data = {
+				    'action': 'subscribe_planta',
+				    'email': email
+				};
+
+				$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
+
+			    	console.log(response);
+			    	$('#subscribeModal').modal('hide');
+
+			    	var data = {
+					    'action': 'load_custom_planta',
+					    'postid': postid
+					};
+
+					$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
+
+				    	if(response.trim() == '"The cookie is false."' || response.trim() == '"1:The cookie is not set."' || response.trim() == '"2:The cookie is not set."'){
+				    		console.log(response);
+				    		$('#subscribeModal').modal('show');
+				    	} else {
+					    	var r = JSON.parse(response);	
+						    $("#tituloplanta").html(r.titulo);   
+						    $("#textoplanta").html(r.texto_descriptivo);    
+
+						    $("#videoplanta").html('');
+						    $("#videoplanta").prepend('<video class="img-responsive"  preload="auto" poster="'+dir+'/img/fondo_video_home.jpg" controls></video>');
+							$("#videoplanta video").append('<source src="'+dir+r.video_link+'.mp4" type="video/mp4">"');
+							$("#videoplanta video").append('<source src="'+dir+r.video_link+'.ogg" type="video/ogv">');
+							$("#videoplanta video").append('<source src="'+dir+r.video_link+'.webm" type="video/webm">');
+
+							$("#loader").addClass("hidden");
+							$("#videoplanta").removeClass("hidden");
+						}
+
+					});
+			    	
 				});
 
 			});

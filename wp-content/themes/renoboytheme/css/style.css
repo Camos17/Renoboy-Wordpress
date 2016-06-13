@@ -136,6 +136,7 @@ a, button{
 		text-transform: uppercase;
 		margin-top: 40px;
 		margin-bottom: 40px;
+		font-size: 20px;
 	}
 
 	.videocolumn p{
@@ -3416,6 +3417,10 @@ a, button{
 			.btn-regresar-contacto a:focus {
 				font-size: 1.2rem;
 			}
+		/*================== VIDEO ===== */
+		.videocolumn {
+		    min-height: 600px;
+		}
 }
 
 @media screen and (min-width: 992px) {
@@ -4077,6 +4082,10 @@ a, button{
 		.legalidad a:nth-child(3) {
 			margin-top: 2px;
 		}
+
+		.videocolumn h2 {
+		    font-size: 25px;
+		}
 }
 
 @media screen and (min-width: 1200px) {
@@ -4549,7 +4558,7 @@ a, button{
   animation-timing-function: linear;
   height: 30px;
   width: 30px;
-  border: 8px solid #ffffff;
+  border: 8px solid #2B80B8;
   border-right-color: transparent;
   border-radius: 50%;
   display: inline-block;

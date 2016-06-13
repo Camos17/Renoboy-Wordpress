@@ -66,6 +66,61 @@ function load_custom_post(){
 	wp_die(); // this is required to terminate immediately and return a proper response
 }
 
+// function to call custom post entities with ajax  
+add_action('wp_ajax_load_custom_planta','load_custom_planta');
+add_action('wp_ajax_nopriv_load_custom_planta','load_custom_planta');
+
+function load_custom_planta(){
+	
+	$postid=$_POST['postid'];
+
+	if($postid == "1085" OR $postid == "1087" OR $postid == "1088" ){
+		$mypost = get_fields($postid);
+		echo json_encode($mypost);
+	} else {
+		if(!isset($_COOKIE['plantavirtual'])) {
+		  	setcookie('plantavirtual', "false",   (time()+3600), "/");
+		  	echo json_encode("1:The cookie is not set.");
+		} else {
+			$cookie =  $_COOKIE['plantavirtual'];
+			if($cookie == 'true' ){		  	
+				$mypost = get_fields($postid);
+				echo json_encode($mypost);
+			} else if($cookie == 'false'){
+				echo json_encode("The cookie is false.");
+			} else {
+				setcookie('plantavirtual', "false", (time()+3600), "/");
+				echo json_encode("2:The cookie is not set.");
+			}
+		}
+	}	
+
+	wp_die(); // this is required to terminate immediately and return a proper response
+}
+
+
+// function to subscribe email 
+add_action('wp_ajax_subscribe_planta','subscribe_planta');
+add_action('wp_ajax_nopriv_subscribe_planta','subscribe_planta');
+
+function subscribe_planta(){
+	global $wpdb;
+
+	$email=$_POST['email'];
+
+	$wpdb->insert('reno_subscribers', array(
+	    'email' => $email
+	));
+
+  	unset( $_COOKIE['plantavirtual'] );
+  	setcookie( 'plantavirtual', '', time() - ( 15 * 60 ) );
+	setcookie('plantavirtual', "true", (time()+3600), "/");
+
+	echo json_encode("registrado");
+	wp_die();
+	
+}
+
 //GET CUSTOM POSTS
 add_action("wp_ajax_get_custom_posts", "get_custom_posts");
 add_action("wp_ajax_nopriv_get_custom_posts", "get_custom_posts");
@@ -199,13 +254,12 @@ add_filter('upload_mimes', 'cc_mime_types');
 
 
 // SETTING UP COOKIE
-add_action( 'init', 'setcookie_plantavirtual' );
-function setcookie_plantavirtual() {
-	if(!isset($_COOKIE['plantavirtual'])) {
-		setcookie('plantavirtual', "false", 1 * DAY_IN_SECONDS, COOKIEPATH, COOKIE_DOMAIN );
-	} else {
+function set_user_cookie() {
+    setcookie('plantavirtual', "false",   (time()+3600), "/");
 
-	}
+    //setcookie('plantavirtual', "false",false, '/', '',false);
+
 }
+add_action( 'init', 'set_user_cookie');
 
 ?>
