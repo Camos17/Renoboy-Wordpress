@@ -40,7 +40,7 @@ Template Name: Red de Distribuidores
 	        				</div>
 	        				
 	        				<div class="col-xs-12 linea-nacional-distribucion">
-	        					<p>LÍNEA NACIONAL: <a href="tel: #########" title="">########</a></p>
+	        					<p>LÍNEA NACIONAL: <a href="tel:018000510141" title="">01 8000 510141</a></p>
 	        				</div>
 
 	        				<div class="col-xs-12 select-distancia">
