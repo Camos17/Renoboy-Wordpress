@@ -14,12 +14,10 @@ Template Name: Red de Distribuidores
 				<div class="col-xs-12 col-sm-12 col-md 12 no-padding headline-red-distribucion">	
 					<h2>ENCUENTRE SU PUNTO DE DISTRIBUCIÓN MÁS CERCANO</h2>
 				</div>
+				<!-- Buscador -->
 				<div class="col-sm-12 col-sm-12 col-md-5 buscar-coordenadas">
 					<div class="col-xs-12 col-sm-12 col-lg-12 no-padding searchcoords">
-						<!-- <input type="text" class="form-control" name="latitud" id='latitud' placeholder="Latitud">
-						<input type="text" class="form-control" name="longitud" id='longitud' placeholder="Longitud">
-						<a class="btn btn-default btn-buscar-coords col-xs-12" id='anchorCoords'>BUSCAR MAS CERCANO</a> -->
-						
+						<!-- Campos de Busqueda -->
 						<div class='search-container col-xs-12 col-sm-6'>
 							<button type="submit" class="col-xs-2 col-lg-2 btn btn-default btn-busqueda-coordenadas hidden-xs" style='cursor: default;'>
 								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/iconobuscar-coord.svg" alt="">
@@ -53,8 +51,9 @@ Template Name: Red de Distribuidores
 								</select>
 							</div>
 						</div>
+						<!-- Resultados -->
 						<div class='detail-container col-xs-12 col-sm-6'>
-							<div class='row'>
+							<div class='row' id='detail-row'>
 								<!-- container of the detail info 1 -->
 								<div class='detail-box col-xs-12 col-sm-12'>
 									<div class='row'>
@@ -66,18 +65,18 @@ Template Name: Red de Distribuidores
 										</div>
 									</div>
 								</div>
-								<!-- container of the detail info 1 -->
+								<!-- container of the detail info 2 -->
 								<div class='detail-box col-xs-12 col-sm-12'>
 									<div class='row'>
 										<div class='detail-fa col-xs-2 col-sm-2'>
 											<span class='fa fa-2x fa-map-marker'></span>
 										</div>
 										<div class='detail-text col-xs-10 col-sm-10'>
-											<p>Lubrillantas El Dorado S.A. / Terminal<br>Terminal de Transportes - Bogota Salitre<br>5708722<br>Bogota, Cundinamarca<br>www.lubrillantaseldorado.com</p>
+											<p>Inversiones MVR Ltda.<br>Cll 45 No 16 - 40<br>2453767<br>Bogota, Cundinamarca<br></p>
 										</div>
 									</div>
 								</div>
-								<!-- container of the detail info 1 -->
+								<!-- container of the detail info 3 -->
 								<div class='detail-box col-xs-12 col-sm-12'>
 									<div class='row'>
 										<div class='detail-fa col-xs-2 col-sm-2'>
@@ -92,7 +91,7 @@ Template Name: Red de Distribuidores
 						</div>
 					</div>
 				</div>
-
+				<!-- Mapa -->
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-0 no-padding mapa-red-distribucion">
 					<div id='map'></div>
 				</div>
@@ -132,6 +131,17 @@ Template Name: Red de Distribuidores
 						  map: map,
 						  icon: iconBase + 'schools_maps.png'
 						});
+						
+						google.maps.event.addListener(markers[i],'click',function() {
+							for (var j=0; j<markers.length; j++){
+							    if( map.getBounds().contains(markers[j].getPosition()) ){
+									markers[j].setAnimation(google.maps.Animation.DROP);
+									infos[j].close(map,markers[j]);
+							    }
+							}
+							markers[i].setAnimation(google.maps.Animation.BOUNCE);
+							infos[i].open(map,markers[i]);
+						});						
 						
 						infos[i] = new google.maps.InfoWindow({
 						  content: v.name_dist + ', ' + v.address
@@ -174,10 +184,11 @@ Template Name: Red de Distribuidores
 
 					// info current map
 					function printInfo(){
+						$('#detail-row').html('');
 						for (var i=0; i<markers.length; i++){
 						    if( map.getBounds().contains(markers[i].getPosition()) ){
 						        // code for showing your object, associated with markers[i]
-						        console.log(detail[i]);
+						        $('#detail-row').append("<div class='detail-box col-xs-12 col-sm-12'><div class='row'><div class='detail-fa col-xs-2 col-sm-2 col-md-2'><span class='fa fa-2x fa-map-marker'></span></div><div class='detail-text col-xs-10 col-sm-10 col-md-10'>" + detail[i] + "</div></div></div>");
 						    }
 						}
 					}
