@@ -14,93 +14,86 @@ Template Name: Red de Distribuidores
 				<div class="col-xs-12 col-sm-12 col-md 12 no-padding headline-red-distribucion">	
 					<h2>ENCUENTRE SU PUNTO DE DISTRIBUCIÓN MÁS CERCANO</h2>
 				</div>
-				<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-0 col-lg-4 buscar-coordenadas">
-					<div class="col-xs-12 col-lg-12 no-padding searchcoords">
+				<div class="col-sm-12 col-sm-12 col-md-5 buscar-coordenadas">
+					<div class="col-xs-12 col-sm-12 col-lg-12 no-padding searchcoords">
 						<!-- <input type="text" class="form-control" name="latitud" id='latitud' placeholder="Latitud">
 						<input type="text" class="form-control" name="longitud" id='longitud' placeholder="Longitud">
 						<a class="btn btn-default btn-buscar-coords col-xs-12" id='anchorCoords'>BUSCAR MAS CERCANO</a> -->
 						
-						<button type="submit" class="col-xs-2 col-lg-2 btn btn-default btn-busqueda-coordenadas">
-							<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/iconobuscar-coord.svg" alt="">
-						</button>
-						
-						<div class="col-xs-10 col-lg-10 searchinput">
-							<input type="text" id="autocomplete" class="form-control" placeholder="Ingresa tu dirección, ciudad, departamento">
-							<input type="text" id='latitud' name='latitud' class='form-control' value='4.6287833' placeholder="Latitud">
-							<input type='text' id='longitud' name='longitud' class='form-control' value='-74.073143' placeholder='Longitud'>
+						<div class='search-container col-xs-12 col-sm-6'>
+							<button type="submit" class="col-xs-2 col-lg-2 btn btn-default btn-busqueda-coordenadas hidden-xs" style='cursor: default;'>
+								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/iconobuscar-coord.svg" alt="">
+							</button>
+							
+							<div class="col-xs-12 searchinput">
+								<input type="text" id="autocomplete" class="form-control" placeholder="Ingresa tu dirección, ciudad, departamento">
+								<input type="text" id='latitud' name='latitud' class='form-control' value='4.6287833' placeholder="Latitud">
+								<input type='text' id='longitud' name='longitud' class='form-control' value='-74.073143' placeholder='Longitud'>
+							</div>
+
+	        				<div class="col-xs-12 checkbox-buscar-coord">
+								<input id='check2' class="col-xs-1 checkbox-buscar" name="opcion" type="radio">
+	        					<label for="checkbox-3" class="col-xs-11 checkbox-custom-label">Latitud, Longitud</label>
+	        				</div>
+
+							<div class="col-xs-12 checkbox-buscar-coord">
+								<input id='check1' class="col-xs-1 checkbox-buscar" name="opcion" type="radio" checked='checked'>
+	        					<label for="checkbox-3" class="col-xs-11 checkbox-custom-label">Dirección, ciudad, departamento</label>
+	        				</div>
+	        				
+	        				<div class="col-xs-12 linea-nacional-distribucion">
+	        					<p>LÍNEA NACIONAL: <a href="tel: #########" title="">########</a></p>
+	        				</div>
+
+	        				<div class="col-xs-12 select-distancia">
+	        					<select id='select-distancia' class="form-control">
+									<option class="text-center" value="20">20 Km</option>
+									<option class="text-center" value="40">40 Km</option>
+									<option class="text-center" value="100">100 Km</option>
+								</select>
+							</div>
 						</div>
-
-
-        				<div class="col-xs-12 checkbox-buscar-coord">
-							<input id='check2' class="col-xs-1 checkbox-buscar" name="opcion" type="radio">
-        					<label for="checkbox-3" class="col-xs-11 checkbox-custom-label">Latitud, Longitud</label>
-        				</div>
-						<div class="col-xs-12 checkbox-buscar-coord">
-							<input id='check1' class="col-xs-1 checkbox-buscar" name="opcion" type="radio" checked='checked'>
-        					<label for="checkbox-3" class="col-xs-11 checkbox-custom-label">Dirección, ciudad, departamento</label>
-        				</div>
-
-        				
-        				<div class="col-xs-12 linea-nacional-distribucion">
-        					<p>LÍNEA NACIONAL: <a href="tel: #########" title="">########</a></p>
-        				</div>
-        				<div class="col-xs-6 select-distancia hidden">
-        					<select class="form-control">
-								<option class="text-center">20 Km</option>
-								<option class="text-center">50 Km</option>
-								<option class="text-center">60 Km</option>
-							</select>
+						<div class='detail-container col-xs-12 col-sm-6'>
+							<div class='row'>
+								<!-- container of the detail info 1 -->
+								<div class='detail-box col-xs-12 col-sm-12'>
+									<div class='row'>
+										<div class='detail-fa col-xs-2 col-sm-2 col-md-2'>
+											<span class='fa fa-2x fa-map-marker'></span>
+										</div>
+										<div class='detail-text col-xs-10 col-sm-10 col-md-10'>
+											<p>Lubrillantas El Dorado S.A. / Terminal<br>Terminal de Transportes - Bogota Salitre<br>5708722<br>Bogota, Cundinamarca<br>www.lubrillantaseldorado.com</p>
+										</div>
+									</div>
+								</div>
+								<!-- container of the detail info 1 -->
+								<div class='detail-box col-xs-12 col-sm-12'>
+									<div class='row'>
+										<div class='detail-fa col-xs-2 col-sm-2'>
+											<span class='fa fa-2x fa-map-marker'></span>
+										</div>
+										<div class='detail-text col-xs-10 col-sm-10'>
+											<p>Lubrillantas El Dorado S.A. / Terminal<br>Terminal de Transportes - Bogota Salitre<br>5708722<br>Bogota, Cundinamarca<br>www.lubrillantaseldorado.com</p>
+										</div>
+									</div>
+								</div>
+								<!-- container of the detail info 1 -->
+								<div class='detail-box col-xs-12 col-sm-12'>
+									<div class='row'>
+										<div class='detail-fa col-xs-2 col-sm-2'>
+											<span class='fa fa-2x fa-map-marker'></span>
+										</div>
+										<div class='detail-text col-xs-10 col-sm-10'>
+											<p>Lubrillantas El Dorado S.A. / Terminal<br>Terminal de Transportes - Bogota Salitre<br>5708722<br>Bogota, Cundinamarca<br>www.lubrillantaseldorado.com</p>
+										</div>
+									</div>
+								</div>
+							</div>	
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 col-lg-3 col hidden-xs hidden-sm no-padding ubicaciones-sugeridas">
-					<a class="col-md-12 no-padding ubicacion-sugerida" href="#" title="">
-						<div class="col-md-2">
-							<i class="fa fa-map-marker img-responsive"></i>
-						</div>
-						<div class="col-md-10 no-padding info-ubicacion-sugerida">
-							<ul class="col-md-12">
-								<li>Renoboy Distribuidor 1</li>
-								<li>A 10Km de Dsitancia</li>
-								<li>calle 63 #45-6</li>
-								<li>Tel: 400 27 61</li>
-								<li>Barrio: Chapinero</li>
-								<li>www.renoboyd1.com</li>
-							</ul>
-						</div>
-					</a>
-					<a class="col-md-12 no-padding ubicacion-sugerida" href="#" title="">
-						<div class="col-md-2">
-							<i class="fa fa-map-marker img-responsive"></i>
-						</div>
-						<div class="col-md-10 no-padding info-ubicacion-sugerida">
-							<ul class="col-md-12">
-								<li>Renoboy Distribuidor 1</li>
-								<li>A 10Km de Dsitancia</li>
-								<li>calle 63 #45-6</li>
-								<li>Tel: 400 27 61</li>
-								<li>Barrio: Chapinero</li>
-								<li>www.renoboyd1.com</li>
-							</ul>
-						</div>
-					</a>
-					<a class="col-md-12 no-padding ubicacion-sugerida" href="#" title="">
-						<div class="col-md-2">
-							<i class="fa fa-map-marker img-responsive"></i>
-						</div>
-						<div class="col-md-10 no-padding info-ubicacion-sugerida">
-							<ul class="col-md-12">
-								<li>Renoboy Distribuidor 1</li>
-								<li>A 10Km de Dsitancia</li>
-								<li>calle 63 #45-6</li>
-								<li>Tel: 400 27 61</li>
-								<li>Barrio: Chapinero</li>
-								<li>www.renoboyd1.com</li>
-							</ul>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-1 no-padding mapa-red-distribucion">
+
+				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-0 no-padding mapa-red-distribucion">
 					<div id='map'></div>
 				</div>
 			</div>
@@ -117,7 +110,8 @@ Template Name: Red de Distribuidores
 				    // Initialize map with center
 				    var map = new google.maps.Map(mapDiv, {
 				      center: {lat: 4.6479, lng: -74.1236},
-				      zoom: 7
+				      zoom: 7,
+				      scaleControl:true
 				    });
 
 				    //Initialize marker
@@ -130,6 +124,7 @@ Template Name: Red de Distribuidores
 					var registers = <?php echo json_encode($results); ?>;
 					var markers = [];
 					var infos = [];
+					var detail = [];
 					$.each(registers, function(i,v){
 						markers[i] = new google.maps.Marker({
 						  position: {lat: parseFloat(v.lat), lng: parseFloat(v.lng)},
@@ -141,6 +136,8 @@ Template Name: Red de Distribuidores
 						infos[i] = new google.maps.InfoWindow({
 						  content: v.name_dist + ', ' + v.address
 				  		});
+
+				  		detail[i] = '<p>'+v.name_dist+'<br>'+v.address+'<br>'+v.phone+'<br>'+v.city+', '+v.department+'<br>'+v.url+'</p>';
 					});
 
 					// Create the autocomplete object and associate it with the UI input control.
@@ -175,6 +172,34 @@ Template Name: Red de Distribuidores
 					    findClosest(lat,lng);
 					});
 
+					// info current map
+					function printInfo(){
+						for (var i=0; i<markers.length; i++){
+						    if( map.getBounds().contains(markers[i].getPosition()) ){
+						        // code for showing your object, associated with markers[i]
+						        console.log(detail[i]);
+						    }
+						}
+					}
+
+					// set zoom
+					function setZoom(){
+					    var radio = $('#select-distancia').val();
+					    if(radio == 20){
+							map.setZoom(13);
+							printInfo();
+						}else if(radio == 40){
+							map.setZoom(12);
+							printInfo();
+						}else{
+							map.setZoom(11);
+							printInfo();
+						}
+					}
+					$('#select-distancia').change(function(){
+						setZoom();
+					});
+
 					// Find Closest
 					function findClosest(lat,lng){
 					    
@@ -207,9 +232,12 @@ Template Name: Red de Distribuidores
 
 						    // show closer location
 							map.setCenter(markers[closest].getPosition());
-							map.setZoom(14);
 							markers[closest].setAnimation(google.maps.Animation.BOUNCE);
 							infos[closest].open(map,markers[closest]);
+
+						    // set zoom
+						    setZoom();
+
 						}
 						else{
 							alert('Los campos de latitud y longitud no deben estar vacios');

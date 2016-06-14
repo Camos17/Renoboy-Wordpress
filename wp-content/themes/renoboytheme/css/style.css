@@ -1393,6 +1393,31 @@ a, button{
   		margin-bottom: 20px;
   	}
 
+  	.search-container{
+  		padding: 5px;
+  	}
+
+  	.detail-container{
+  		height: 150px;
+  		overflow-y: scroll; 
+  	}
+
+  	.detail-box{
+  		color: #fff;
+  	}
+
+  	.detail-fa{
+  		padding: 5px 15px;
+  	}
+
+  	.detail-text{
+  		padding: 2px;
+  	}
+
+  	.detail-box:hover{
+  		background-color: #007AC3; 
+  	}
+
 	.searchcoords {
 		background-color: rgba(27, 27, 27, 0.55);
 	}
@@ -1488,7 +1513,7 @@ a, button{
 	}
 
 	.select-distancia {
-		margin: 10px 0px 100px;
+		margin: 10px 0px 50px;
 	}
 
 	.select-distancia select,
@@ -2984,6 +3009,16 @@ a, button{
 
 	/********************************************
 	*********************************************
+			ESTILO RED DE DISTRIBUIDORES
+	*********************************************	
+	*********************************************/
+		
+	  	.detail-container{
+	  		height: 265px;
+	  	}
+
+	/********************************************
+	*********************************************
 		ESTILO KILOMETROS GENERANDO VALOR
 	*********************************************	
 	*********************************************/
@@ -3200,6 +3235,15 @@ a, button{
 			margin-top: 25px;
 		}
 
+	/********************************************
+	*********************************************
+			ESTILO RED DE DISTRIBUIDORES
+	*********************************************	
+	*********************************************/
+		
+	  	.detail-container{
+	  		height: 400px;
+	  	}
 
 	/********************************************
 	*********************************************
@@ -3421,6 +3465,7 @@ a, button{
 		.videocolumn {
 		    min-height: 600px;
 		}
+
 }
 
 @media screen and (min-width: 992px) {
@@ -3567,6 +3612,16 @@ a, button{
 			font-size: 4rem;
 		}
 
+	/********************************************
+	*********************************************
+			ESTILO RED DE DISTRIBUIDORES
+	*********************************************	
+	*********************************************/
+		
+	  	.detail-text{
+	  		padding: 5px;
+	  		font-size: 12px;
+	  	}
 		
 	/********************************************
 	*********************************************
