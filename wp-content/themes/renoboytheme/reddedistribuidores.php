@@ -15,7 +15,7 @@ Template Name: Red de Distribuidores
 					<h2>ENCUENTRE SU PUNTO DE DISTRIBUCIÓN MÁS CERCANO</h2>
 				</div>
 				<!-- Buscador -->
-				<div class="col-sm-12 col-sm-12 col-md-5 buscar-coordenadas">
+				<div class="col-sm-12 col-sm-12 col-md-6 buscar-coordenadas">
 					<div class="col-xs-12 col-sm-12 col-lg-12 no-padding searchcoords">
 						<!-- Campos de Busqueda -->
 						<div class='search-container col-xs-12 col-sm-6'>
@@ -23,8 +23,8 @@ Template Name: Red de Distribuidores
 								<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/iconobuscar-coord.svg" alt="">
 							</button>
 							
-							<div class="col-xs-12 searchinput">
-								<input type="text" id="autocomplete" class="form-control" placeholder="Ingresa tu dirección, ciudad, departamento">
+							<div class="col-xs-10 searchinput">
+								<input type="text" id="autocomplete" class="form-control" placeholder="Ingresa tu dirección, ciudad">
 								<input type="text" id='latitud' name='latitud' class='form-control' value='4.6287833' placeholder="Latitud">
 								<input type='text' id='longitud' name='longitud' class='form-control' value='-74.073143' placeholder='Longitud'>
 							</div>
@@ -50,6 +50,7 @@ Template Name: Red de Distribuidores
 									<option class="text-center" value="100">100 Km</option>
 								</select>
 							</div>
+
 						</div>
 						<!-- Resultados -->
 						<div class='detail-container col-xs-12 col-sm-6'>
@@ -92,8 +93,11 @@ Template Name: Red de Distribuidores
 					</div>
 				</div>
 				<!-- Mapa -->
-				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-0 no-padding mapa-red-distribucion">
+				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 no-padding mapa-red-distribucion">
 					<div id='map'></div>
+					<div class='map-publicity col-xs-12 col-sm-12'>
+						<p>Contamos con 93 Centros de Servicio de la Red de Distribución Michelin a nivel Nacional, los cuales atienden la línea de camión y garantizan la presencia del servicio de reencauche de Renoboy.</p>
+					</div>
 				</div>
 			</div>
 		</div>	
@@ -106,12 +110,22 @@ Template Name: Red de Distribuidores
 				    var mapDiv = document.getElementById('map');
 				    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
-				    // Initialize map with center
+					var startPos;
+					var geoSuccess = function(position) {
+					    startPos = position;
+						findClosest(startPos.coords.latitude, startPos.coords.longitude);	
+					};
+					// checks that the navigator supports geopos
+					if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(geoSuccess);
+					}
+
+				    // Initialize map 
 				    var map = new google.maps.Map(mapDiv, {
 				      center: {lat: 4.6479, lng: -74.1236},
 				      zoom: 7,
 				      scaleControl:true
-				    });
+			    	});
 
 				    //Initialize marker
 					var marker = new google.maps.Marker({
@@ -197,13 +211,13 @@ Template Name: Red de Distribuidores
 					function setZoom(){
 					    var radio = $('#select-distancia').val();
 					    if(radio == 20){
-							map.setZoom(13);
-							printInfo();
-						}else if(radio == 40){
 							map.setZoom(12);
 							printInfo();
+						}else if(radio == 40){
+							map.setZoom(10);
+							printInfo();
 						}else{
-							map.setZoom(11);
+							map.setZoom(9);
 							printInfo();
 						}
 					}
