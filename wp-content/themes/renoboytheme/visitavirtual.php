@@ -16,9 +16,9 @@ Template Name: Visita Virtual a la planta
 						</div>
 						<div id="videoplanta" class="col-xs-12 no-padding">
 							<video class="img-responsive"  preload="auto" poster="<?php bloginfo('template_directory');?>/img/fondo_video_home.jpg" controls>
-								<source src="<?php bloginfo('template_directory');?><?php echo get_field( "video_link", 1085 );?>.mp4" type="video/mp4">
-								<source src="<?php bloginfo('template_directory');?><?php echo get_field( "video_link", 1085 );?>.webm" type="video/webm">
-								<source src="<?php bloginfo('template_directory');?><?php echo get_field( "video_link", 1085 );?>.ogv" type="video/ogv">
+								<source src="<?php bloginfo('template_directory');?><?php echo get_field( "video_link", 1101 );?>.mp4" type="video/mp4">
+								<source src="<?php bloginfo('template_directory');?><?php echo get_field( "video_link", 1102 );?>.webm" type="video/webm">
+								<source src="<?php bloginfo('template_directory');?><?php echo get_field( "video_link", 1103 );?>.ogv" type="video/ogv">
 								Your browser does not support the video tag.
 							</video> 
 						</div>		
@@ -29,18 +29,14 @@ Template Name: Visita Virtual a la planta
 				</div>
 				<div class="col-sm-8 has-feedback interactiveplanta">
 					<img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/planta.svg">
-					<button data-postid="1085" class="button1">1</button>
-					<button data-postid="1087" class="button2">2</button>
-					<button data-postid="1088" class="button3">3</button>
-					<button data-postid="1089" class="button4">4</button>
-					<button data-postid="1090" class="button5">5</button>
-					<button data-postid="1091" class="button6">6</button>
-					<button data-postid="1092" class="button7">7</button>
-					<button data-postid="1093" class="button8">8</button>
-					<button data-postid="1094" class="button9">9</button>
-					<button data-postid="1096" class="button10">10</button>
-					<button data-postid="1097" class="button11">11</button>
-					<button data-postid="1098" class="button12">12</button>
+					<button data-postid="1101" class="button1">1</button>
+					<button data-postid="1102" class="button2">2</button>
+					<button data-postid="1103" class="button3">3</button>
+					<button data-postid="1104" class="button4">4</button>
+					<button data-postid="1107" class="button5">5</button>
+					<button data-postid="1109" class="button6">6</button>
+					<button data-postid="1110" class="button7">7</button>
+					<button data-postid="1111" class="button8">8</button>
 				</div>
 			</div>
 		</div>
@@ -48,43 +44,88 @@ Template Name: Visita Virtual a la planta
 
 	<!-- Modal -->
 	<div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog" role="document">
+	  <div class="modal-dialog modal-lg" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">¿Desea continuar realizando la visita virtual a la planta?</h4>
+	        <h4 class="modal-title" id="myModalLabel">Registra tus datos para continuar realizando la visita virtual a la planta</h4>
 	      </div>
 	      <div class="modal-body">
-	      	<form id="registrationform" class="form">
-	      		<div class="form-group">
-		      	    <label for="nombresapellidos">Nombres y Apellidos</label>
-		      	    <input type="text" class="form-control" id="nombresapellidos" placeholder="Nombres y Apellidos" name="nombresapellidos">
-		      	</div>
-		      	<div class="form-group">
-		      	    <label for="nombreempresa">Si usted hace parte de una empresa, por favor ingrese el nombre de ella.</label>
-		      	    <input type="text" class="form-control" id="nombreempresa" placeholder="Nombre Empresa" name="nombreempresa">
-		      	</div>
-		      	<div class="form-group">
-		      	    <label for="exampleInputEmail1">Email address</label>
-		      	    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-		      	</div>
-	      	  <div class="form-group">
-	      	    <label for="exampleInputPassword1">Password</label>
-	      	    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-	      	  </div>
-	      	  <div class="form-group">
-	      	    
-	      	  </div>
-	      	  <div class="checkbox">
-	      	    <label>
-	      	      <input type="checkbox"> Check me out
-	      	    </label>
-	      	  </div>
-	      	</form>
-	      </div>
-	      <div class="modal-footer">
-	        <button id="closeSubscribe" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-	        <button id="submitregistration" type="button" class="btn btn-primary">Registrar</button>
+	      	<div class="row">
+		      	<form id="registrationform" class="form">
+		      		<div class="col-sm-6">
+			      		<div class="form-group">
+				      	    <label for="nombresapellidos">Nombres y Apellidos</label>
+				      	    <input type="text" class="form-control" id="nombresapellidos" placeholder="Nombres y Apellidos" name="nombresapellidos">
+				      	</div>
+				      	<div class="form-group">
+				      	    <label for="nombreempresa">Si usted hace parte de una empresa, por favor ingrese el nombre de ella.</label>
+				      	    <input type="text" class="form-control" id="nombreempresa" placeholder="Nombre Empresa" name="empresa" required>
+				      	</div>
+				      	<div class="form-group">
+				      	    <label for="ciudad">Ciudad</label>
+				      	    <input type="text" class="form-control" id="ciudad" placeholder="Ciudad" name="ciudad" required>
+				      	</div>
+				      	<div class="form-group">
+				      	    <label for="email">Email</label>
+				      	    <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+				      	</div>
+				      	
+			      	</div>
+			      	<div class="col-sm-6">
+			      		<div class="form-group">
+				      	    <label for="telefono">Teléfono</label>
+				      	    <input type="text" class="form-control" id="telefono" placeholder="Teléfono" name="telefono" required>
+				      	</div>
+				      	<div class="form-group select">
+				      		<select name="cantidadvehiculos">
+				      			<option>
+				      				¿Cuántos vehículos tiene?
+				      			</option>
+				      			<option>
+				      				Menos de 10
+				      			</option>
+				      			<option>
+				      				Más de 10
+				      			</option>
+				      		</select>
+				      	</div>
+				      	<div class="form-group select">
+				      		<select name="tipovehiculos">
+				      			<option>
+				      				Tipo de Vehículo
+				      			</option>
+				      			<option>
+				      				Buses
+				      			</option>
+				      			<option>
+				      				Camiones
+				      			</option>
+				      		</select>
+				      	</div>
+				      	<div class="form-group">
+				      	    <label for="exampleInputPassword1">Contraseña</label>
+				      	    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
+				      	</div>
+				      	<div class="form-group">
+				      	    <label for="exampleInputPassword2">Confirmar contraseña</label>
+				      	    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+				      	</div>
+				      	<div class="form-group">
+					      	<div class="col-xs-12 checkbox-terminos-condiciones no-padding">
+								<input id="checkbox-6" class="col-xs-1 checkbox-buscar" name="checkbox" type="checkbox" required>
+								<label for="checkbox-6" class="col-xs-11 checkbox-custom-label no-padding">
+									Acepto los <a href="<?php echo get_page_link(21); ?>" target="_blank">términos y condiciones</a></p>
+								</label>
+							</div>
+						</div>
+						<div class="pull-right">
+							<button id="closeSubscribe" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+		        			<button type="submit" class="btn btn-primary">Registrar</button>
+						</div>
+					</div>
+		      	</form>
+	      	</div>
 	      </div>
 	    </div>
 	  </div>
@@ -139,18 +180,20 @@ Template Name: Visita Virtual a la planta
 				$("#videoplanta").removeClass("hidden");
 			});
 
-			$("#submitregistration").click(function(){
-				var email = $("#emailregister").val();	
+			 $('#registrationform').submit(function(evt) {
+            	evt.preventDefault();
+				
+				var data = $( this ).serialize();
 				
 				var data = {
 				    'action': 'subscribe_planta',
-				    'email': email
+				    'data': data
 				};
 
 				$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
 
 			    	console.log(response);
-			    	$('#subscribeModal').modal('hide');
+			    	/*$('#subscribeModal').modal('hide');
 
 			    	var data = {
 					    'action': 'load_custom_planta',
@@ -177,10 +220,16 @@ Template Name: Visita Virtual a la planta
 							$("#videoplanta").removeClass("hidden");
 						}
 
-					});
+					});*/
 			    	
 				});
 
+			});
+
+			$("form").validate({
+			  	submitHandler: function(form) {
+			    	form.submit();
+			  	}
 			});
 
 		})( jQuery );

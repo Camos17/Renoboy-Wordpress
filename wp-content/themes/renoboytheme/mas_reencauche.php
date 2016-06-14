@@ -276,19 +276,6 @@ Template Name: Mas sobre el reencauche
 					
 				});
 
-				/*$(document).scroll(function() {
-				    checkOffset();
-				});
-
-				function checkOffset() {
-				    if($('#camion').offset().top + $('#social-float').height() >= $('#fin').offset().top - 10){
-				        $('#social-float').css('position', 'absolute');
-				    }
-				    if($(document).scrollTop() + window.innerHeight < $('#fin').offset().top){
-				        $('#camion').css('position', 'fixed'); // restore when you scroll up
-				    }
-				}*/
-
 			})( jQuery );
 
 		</script>

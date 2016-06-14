@@ -160,72 +160,43 @@ a, button{
 	}
 
 	.interactiveplanta .button1{
+		top: 79%;
+    	left: 67%;
+	}
+
+	.interactiveplanta .button2{
 		top: 68%;
 		left: 52%;
 	}
 
-	.interactiveplanta .button2{
-		top: 59%;
+	.interactiveplanta .button3{
+		top: 58%;
 		left: 60%;
 	}
 
-	.interactiveplanta .button3{
-		top: 51%;
-		left: 67%;
-	}
-
 	.interactiveplanta .button4{
-		top: 43%;
-		left: 73%;
+		top: 37%;
+		left: 76%;
 	}
 
 	.interactiveplanta .button5{
-		top: 32%;
-		left: 83%;
-	}
-
-	.interactiveplanta .button6{
-		top: 30%;
-		left: 63%;
-	}
-
-	.interactiveplanta .button7{
 		top: 42%;
 		left: 48%;
 	}
 
-	.interactiveplanta .button8{
+	.interactiveplanta .button6{
 		top: 56%;
 		left: 34%;
 	}
 
-	.interactiveplanta .button9{
-		top: 54%;
-		left: 23%;
+	.interactiveplanta .button7{
+		top: 30%;
+		left: 38%;
 	}
 
-	.interactiveplanta .button10{
-		top: 28%;
-		left: 42%;
-		height: 28px;
-		width: 28px;
-		padding: 0;
-	}
-
-	.interactiveplanta .button11{
-		top: 45%;
-		left: 17%;
-		height: 28px;
-		width: 28px;
-		padding: 0;
-	}
-
-	.interactiveplanta .button12{
-		top: 24%;
-		left: 8%;
-		height: 28px;
-		width: 28px;
-		padding: 0;
+	.interactiveplanta .button8{
+		top: 30%;
+		left: 16%;
 	}
 
 /********************************************
@@ -2628,7 +2599,7 @@ a, button{
 		.select:before {
 			font-family: "icons";
 			speak: none;
-			color: #FFF;
+			color: #ccc;
 			font-size: 18px;
 			font-style: normal;
 			font-weight: bold;

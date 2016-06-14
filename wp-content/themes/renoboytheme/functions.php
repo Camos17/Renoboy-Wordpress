@@ -20,6 +20,7 @@ function theme_js() {
 	$wp_scripts->add_data( 'respond_js', 'conditional', 'lt IE 9' );
 
 	wp_enqueue_script( 'jquery_js', get_template_directory_uri() . '/js/jquery-1.12.1.min.js', array('jquery'), '', true );
+	wp_enqueue_script( 'jquery_js', get_template_directory_uri() . '/js/jquery.validate.min.js', array('jquery'), '', true );
 	wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '', true );
 	wp_enqueue_script( 'clamp_min_js', get_template_directory_uri() . '/js/clamp.min.js', array('jquery'), '', true );
 	wp_enqueue_script( 'mCustomScrollBar_js', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js', array('jquery'), '', true );
@@ -105,18 +106,34 @@ add_action('wp_ajax_nopriv_subscribe_planta','subscribe_planta');
 
 function subscribe_planta(){
 	global $wpdb;
+	$data = $_POST['data']; 
+	parse_str($data);
 
-	$email=$_POST['email'];
-
-	$wpdb->insert('reno_subscribers', array(
-	    'email' => $email
+	$hashedPassword = wp_hash_password($password);
+	$token = sha1(uniqid());
+	$wpdb->insert('reno_subscribers', array(		
+	    'email' => $email,
+	    'nombresapellidos' => $nombresapellidos,
+	    'empresa' => $empresa,
+	    'ciudad' => $ciudad,
+	    'telefono' => $telefono,
+	    'cantidadvehiculos' => $cantidadvehiculos,
+	    'tipovehiculos' => $tipovehiculos,
+	    'token' => $token,
+	    'usrpswd' => $hashedPassword
 	));
 
-  	unset( $_COOKIE['plantavirtual'] );
-  	setcookie( 'plantavirtual', '', time() - ( 15 * 60 ) );
-	setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/?page_id=123");
+	$headers[] = 'Content-Type: text/html; charset=UTF-8';
+	$headers[] = 'From: Renoboy <noreply@renoboy>';	
 
-	echo json_encode("registrado");
+	$message = 'Thank you. Please <a href="http://prueba.renoboy.com/?page_id=123&token=%s">confirm</a> to continue';
+	wp_mail($email,'Confirmación E-mail', sprintf($message, $token), $headers);
+
+  	/*unset( $_COOKIE['plantavirtual'] );
+  	setcookie( 'plantavirtual', '', time() - ( 15 * 60 ) );
+	setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/?page_id=123");*/
+
+	echo json_encode($hashedPassword);
 	wp_die();
 	
 }
