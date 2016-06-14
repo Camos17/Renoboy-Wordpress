@@ -114,7 +114,7 @@ function subscribe_planta(){
 
   	unset( $_COOKIE['plantavirtual'] );
   	setcookie( 'plantavirtual', '', time() - ( 15 * 60 ) );
-	setcookie('plantavirtual', "true", (time()+3600), "/");
+	setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/?page_id=123");
 
 	echo json_encode("registrado");
 	wp_die();

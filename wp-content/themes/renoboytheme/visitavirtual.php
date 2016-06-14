@@ -56,8 +56,30 @@ Template Name: Visita Virtual a la planta
 	      </div>
 	      <div class="modal-body">
 	      	<form id="registrationform" class="form">
-	        <label>Por favor registre su correo electronico</label>
-	        <input id="emailregister" class="form-control" type="text" placeholder="Ingrese su email"> 
+	      		<div class="form-group">
+		      	    <label for="nombresapellidos">Nombres y Apellidos</label>
+		      	    <input type="text" class="form-control" id="nombresapellidos" placeholder="Nombres y Apellidos" name="nombresapellidos">
+		      	</div>
+		      	<div class="form-group">
+		      	    <label for="nombreempresa">Si usted hace parte de una empresa, por favor ingrese el nombre de ella.</label>
+		      	    <input type="text" class="form-control" id="nombreempresa" placeholder="Nombre Empresa" name="nombreempresa">
+		      	</div>
+		      	<div class="form-group">
+		      	    <label for="exampleInputEmail1">Email address</label>
+		      	    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+		      	</div>
+	      	  <div class="form-group">
+	      	    <label for="exampleInputPassword1">Password</label>
+	      	    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+	      	  </div>
+	      	  <div class="form-group">
+	      	    
+	      	  </div>
+	      	  <div class="checkbox">
+	      	    <label>
+	      	      <input type="checkbox"> Check me out
+	      	    </label>
+	      	  </div>
 	      	</form>
 	      </div>
 	      <div class="modal-footer">

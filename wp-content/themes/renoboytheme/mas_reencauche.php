@@ -242,6 +242,8 @@ Template Name: Mas sobre el reencauche
 		<?php include "footer.php";?>
 
 		<script type="text/javascript">
+
+			(function($) {
 	
 			/********************************************
 			*********************************************
@@ -253,9 +255,17 @@ Template Name: Mas sobre el reencauche
 					$(window).scroll(function(){
 						if ($(this).scrollTop() > 800) {
 							$('#ir-arriba').fadeIn();
+							
 							// $(".btn-regreso-arriba").css({"bottom": "250px"});
 						} else {
 							$('#ir-arriba').fadeOut();
+							
+						}
+
+						if($(this).scrollTop() > $('#camioncontainer').offset().top && $(this).scrollTop()-20 < $('#camioncontainer').offset().top +$('#camioncontainer').height()-120 ){
+							$("#camion").css("position","fixed");
+						} else {
+							$("#camion").css("position","absolute");
 						}
 					});
 
@@ -266,7 +276,7 @@ Template Name: Mas sobre el reencauche
 					
 				});
 
-				$(document).scroll(function() {
+				/*$(document).scroll(function() {
 				    checkOffset();
 				});
 
@@ -277,9 +287,9 @@ Template Name: Mas sobre el reencauche
 				    if($(document).scrollTop() + window.innerHeight < $('#fin').offset().top){
 				        $('#camion').css('position', 'fixed'); // restore when you scroll up
 				    }
-				}
+				}*/
 
-
+			})( jQuery );
 
 		</script>
 

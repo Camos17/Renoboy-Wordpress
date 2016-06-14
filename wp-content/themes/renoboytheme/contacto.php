@@ -96,7 +96,7 @@ Template Name: Contacto
 				<form id="noclienteform" method="post" action="<?php bloginfo('template_url'); ?>/nomailer.php" class="col-xs-12 no-padding contenido-contacto-nocliente">
 					<div class="col-xs-12 headline-contacto-cliente">
 						<h2>Contacto</h2>
-						<div id="form-messages"></div>
+						<div id="formno-messages"></div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 no-padding contenido-contacto-cliente1">
 						<div class="col-xs-12 no-padding dropdown filtro-asunto">
@@ -127,7 +127,7 @@ Template Name: Contacto
 										Información de Garantía
 									</option>
 									<option>
-										Contacto Súper Intendencia Industria y Comercio: http://www.sic.gov.co/drupal/proteccion-del-consumidor (este es un link al sitio de la SIC)3
+										Contacto Súper Intendencia Industria y Comercio: (Por favor dirijase a la parte inferior del sitio)
 									</option>
 									<option>
 										Otros
@@ -328,7 +328,7 @@ Template Name: Contacto
 	            // Stop the browser from submitting the form.
 	            event.preventDefault();
 
-	            console.log('enviado');
+	            
 
 	            $('#btnenvio').prop('disabled', true);
 
@@ -339,12 +339,13 @@ Template Name: Contacto
 	                data: formData
 	            })
 	            .done(function(response) {
+	                console.log(response);
 	                // Make sure that the formMessages div has the 'success' class.
 	                $(formMessages).removeClass('error');
 	                $(formMessages).addClass('success');
 
 	                // Set the message text.
-	                $(formMessages).text(response);
+	                $(formMessages).text('Gracias! Tu mensaje ha sido enviado.');
 
 	                // Clear the form.
 	                $('#razon-social').val('');
