@@ -6,6 +6,7 @@ Template Name: Buscador Servicios
 		<?php include "header.php";?>
 
 		<div class="col-xs-12 no-padding content-wrapper fondo-buscador">
+			<input type="text" style="display:none" id="hiddenVal"/>
 			<div class="col-xs-12 col-md-12 headline-buscador-servicios">
 				<h1>buscador de servicio renoboy</h1>
 				<h2>Usa nuestra búsqueda guiada para encontrar el servicio perfecto que se adapte a tus necesidades
@@ -69,9 +70,9 @@ Template Name: Buscador Servicios
 							</li>
 							<li class="col-xs-4 col-xs-offset-1">
 								 <select id="posicionselect">
-								 	<option value="EJE LIBRE,TRACCIÓN,EJE LIBRE / TRACCIÓN">Eje Libre / Tracción</option>
-									<option value="TRACCIÓN,EJE LIBRE / TRACCIÓN">Tracción</option>
-									<option value="EJE LIBRE,EJE LIBRE / TRACCIÓN">Eje libre</option>
+								 	<option value="EJE LIBRE / TRACCIÓN">Eje Libre / Tracción</option>
+									<option value="TRACCIÓN">Tracción</option>
+									<option value="EJE LIBRE">Eje libre</option>
 								</select>
 							</li>
 							<li class="col-xs-2 pull-right">
@@ -86,8 +87,9 @@ Template Name: Buscador Servicios
 							</li>
 							<li class="col-xs-7 pull-right">
 								 <select id="dimensionselect" class="col-xs-12">
-									<option value="volvo">295/80 R 22.5</option>
-									<option value="saab">Saab</option>
+									<option value="%">Todas</option>
+									<option value="295/80 R22.5">295/80 R22.5</option>
+									<option value="7.50-16">7.50-16</option>
 									<option value="mercedes">Mercedes</option>
 									<option value="audi">Audi</option>
 								</select>
@@ -220,9 +222,9 @@ Template Name: Buscador Servicios
 							<?php wp_reset_postdata(); ?>
 
 					<?php endif; ?>
-
 			</div>
 		</div>
+		
 		<div class="modal fade" id="ayuda-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content contenido-ayuda">
@@ -296,6 +298,7 @@ Template Name: Buscador Servicios
 		    </div>
 		  </div>
 		</div>
+		
 		<div class="modal fade" id="ayuda-modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content contenido-ayuda">
@@ -525,10 +528,9 @@ Template Name: Buscador Servicios
 							if(!utilizacion){
 								utilizacion = "CANTERA";
 							} else {
-								utilizacion += ",CANTERA" ;
+								utilizacion += ",CANTERA";
 							}
 						} 
-
 						if($("#btn-regional").hasClass("active") || $("#btn-urbano").hasClass("active") || $("#checkbox-1").is(':checked')){
 							if(!utilizacion){
 								utilizacion = "AUTOPISTA / REGIONAL / URBANO,REGIONAL / URBANO";
@@ -536,7 +538,6 @@ Template Name: Buscador Servicios
 								utilizacion += ",AUTOPISTA / REGIONAL / URBANO,REGIONAL / URBANO" ;
 							}
 						} 
-
 						if($("#btn-mixta").hasClass("active") || $("#btn-cantera").hasClass("active") || $("#checkbox-1").is(':checked') ){
 							if(!utilizacion){
 								utilizacion = "MIXTA / CANTERA";
@@ -545,6 +546,7 @@ Template Name: Buscador Servicios
 							}
 						} 
 					   
+					   utilizacion = "'MIXTA','REGIONAL'";
 					
 						var data = {
 						   'action': 'getproducts',
@@ -557,13 +559,7 @@ Template Name: Buscador Servicios
 									
 						$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
 
-							console.log(response);
-
-						   /*
-						   console.log('RESPONSE:');  
-						   
-
-						    var r = JSON.parse(response);
+						    var r = response;
 						    console.log(r); 
 							
 							$("#cat-llantas").html("");
@@ -627,7 +623,6 @@ Template Name: Buscador Servicios
 
 							$("#loader").addClass("hidden");
 							$("#cat-llantas").removeClass("hidden");
-						    */
 						});
 					
 					}
