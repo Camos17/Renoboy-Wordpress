@@ -99,7 +99,6 @@ function load_custom_planta(){
 	wp_die(); // this is required to terminate immediately and return a proper response
 }
 
-
 // function to subscribe email 
 add_action('wp_ajax_subscribe_planta','subscribe_planta');
 add_action('wp_ajax_nopriv_subscribe_planta','subscribe_planta');
@@ -135,7 +134,6 @@ function subscribe_planta(){
 
 	echo json_encode($hashedPassword);
 	wp_die();
-	
 }
 
 //GET CUSTOM POSTS
@@ -214,11 +212,11 @@ function filter_designs(){
 	wp_die();	
 }
 
-//JOIN DISEÑOS Y PRODUCTOS
-add_action("wp_ajax_getproducts", "getproducts");
-add_action("wp_ajax_nopriv_getproducts", "getproducts");
+// GET DISENOS
+add_action("wp_ajax_getdisenos", "getdisenos");
+add_action("wp_ajax_nopriv_getdisenos", "getdisenos");
 
-function getproducts(){
+function getdisenos(){
 
 	global $wpdb;
 	
@@ -256,6 +254,47 @@ function getproducts(){
 		AND (wp_posts.post_status = 'publish' OR wp_posts.post_status = 'private')  
 		GROUP BY wp_posts.ID ORDER BY wp_posts.post_date DESC
 		LIMIT 12";
+	 
+	$results = $wpdb->get_results($query);
+
+    header("Content-type: application/json"); 
+    echo json_encode( $results);
+
+    wp_die();
+}
+
+// GET PRODUCTOS
+add_action("wp_ajax_getproductos", "getproductos");
+add_action("wp_ajax_nopriv_getproductos", "getproductos");
+
+function getproductos(){
+	global $wpdb;
+	
+	/*$query = "
+	SELECT wp_posts.*, meta. AS url
+	FROM wp_posts
+	LEFT JOIN $wpdb->postmeta as meta ON ($wpdb->posts.ID = $wpdb->postmeta.post_id)
+	WHERE post_type = 'd_bandas'
+	LIMIT 10";*/
+
+	$key = ''; 
+	$type = 'productos';
+	$diseno = $_POST['diseno'];
+
+	 $query = "
+        SELECT  wp_posts.*, mt1.meta_value as categoria, mt2.meta_value as diseno_banda, mt3.meta_value as p_dimension, mt4.meta_value as ancho, mt5.meta_value as profundidad, mt6.meta_value as correspon
+		FROM wp_posts  
+		LEFT JOIN wp_postmeta AS mt1 ON (wp_posts.ID = mt1.post_id AND mt1.meta_key='categoria')
+		LEFT JOIN wp_postmeta AS mt2 ON (wp_posts.ID = mt2.post_id  AND mt2.meta_key='diseno_banda') 
+		LEFT JOIN wp_postmeta AS mt3 ON (wp_posts.ID = mt3.post_id  AND mt3.meta_key='p_dimension') 
+		LEFT JOIN wp_postmeta AS mt4 ON (wp_posts.ID = mt4.post_id  AND mt4.meta_key='ancho') 
+		LEFT JOIN wp_postmeta AS mt5 ON (wp_posts.ID = mt5.post_id  AND mt5.meta_key='profundidad')
+		LEFT JOIN wp_postmeta AS mt6 ON (wp_posts.ID = mt6.post_id  AND mt5.meta_key='correspon')
+		WHERE (wp_posts.post_type = 'productos')
+		AND (mt2.meta_value = '".$diseno."') 
+		AND (wp_posts.post_status = 'publish' OR wp_posts.post_status = 'private')  
+		GROUP BY wp_posts.ID ORDER BY wp_posts.post_date DESC
+		LIMIT 10";
 	 
 	$results = $wpdb->get_results($query);
 
