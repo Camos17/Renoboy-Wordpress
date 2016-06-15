@@ -144,7 +144,7 @@ Template Name: Buscador Servicios
 								
 								?>
 									
-								<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-toggle="modal" data-diseno="<?php the_field("diseño_de_banda");?>" data-target="#modal-producto">
+								<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-diseno="<?php the_field("diseño_de_banda");?>">
 									<div class="col-xs-12 no-padding cat-llanta-wrapper">
 										<?php 
 											$value = get_field( "imagen" );
@@ -407,7 +407,7 @@ Template Name: Buscador Servicios
 													<th>CORRESPONDENCIA (CARCASA)</th>
 												</tr>
 											</thead>
-											<tbody>
+											<tbody id='llantas-body'>
 												<tr>
 													<td>data</td>
 													<td>data</td>
@@ -490,16 +490,28 @@ Template Name: Buscador Servicios
 				// al abrir diseno
 				$(document).on('click', '.cat-llanta', function(){
 
-						var diseno = $(this).data('diseno');
-						console.log(diseno);
-						var data = {
-						   'action': 'getproductos',
-						   'diseno': diseno
-						};
-									
-						$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
-						    console.log(response);
-						});
+					var diseno = $(this).data('diseno');
+					$("#loader").removeClass("hidden");
+
+					var data = {
+					   'action': 'getproductos',
+					   'diseno': diseno
+					};
+								
+					$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
+					    var r = response;
+					    console.log(r); 
+						
+						$("#llantas-body").html("");
+					  
+					    for (i = 0; i < r.length; i++) {
+					    	$("#llantas-body").append('<tr><td>' + r[i].p_dimension + '</td><td>' + r[i].ancho + '</td><td>' + r[i].profundidad + '</td><td>' + r[i].correspon + '</td></tr>')
+					    }
+
+					    $("#loader").addClass("hidden");
+					    $('#modal-producto').modal('show');
+
+					});
 				});
 
 				// al filtro : buscar mi servicio
@@ -614,7 +626,7 @@ Template Name: Buscador Servicios
 								    
 								}
 
-							    $("#cat-llantas").append('<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-diseno="' + r[i].diseño_de_banda + '" data-toggle="modal" data-target="#modal-producto">'+
+							    $("#cat-llantas").append('<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-diseno="' + r[i].diseño_de_banda + '" >'+
 							    							'<div class="col-xs-12 no-padding cat-llanta-wrapper">'+
 							    								
 							    								'<img class="img-responsive" src="'+r[i].imagen+'" alt="">";'+
