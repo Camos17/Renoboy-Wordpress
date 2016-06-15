@@ -198,6 +198,37 @@ a, button{
 		top: 30%;
 		left: 16%;
 	}
+	
+	.success-check i{
+		font-size: 5em;
+		color:#35AA47;
+		margin-bottom: 15px;
+	}
+
+	.success-check{
+		font-weight: bold;
+		margin-top: 45px;
+		margin-bottom: 45px;
+		font-size: 1.2em;
+	}
+
+	.error-check i{
+		font-size: 5em;
+		color:#CA2735;
+		margin-bottom: 15px;
+	}
+
+	.error-check{
+		font-weight: bold;
+		margin-top: 45px;
+		margin-bottom: 45px;
+		font-size: 1.2em;
+	}
+
+	.error-check a, .error-check button{
+		font-size: 0.9em;
+	}
+	
 
 /********************************************
 		ESTILO RESULTADOS BUSQUEDA

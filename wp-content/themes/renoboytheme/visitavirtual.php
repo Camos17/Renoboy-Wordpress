@@ -10,15 +10,15 @@ Template Name: Visita Virtual a la planta
 			<div class="col-xs-12 no-padding visitavirtual">
 				<div class="col-sm-4 no-padding videocolumn">
 					<div class="video-info">
-						<h2 id="tituloplanta" class="text-center"><?php echo get_field( "titulo", 1085 );?></h2>
+						<h2 id="tituloplanta" class="text-center"><?php echo get_field( "titulo", 1101 );?></h2>
 						<div class="col-xs-12">
-							<p id="textoplanta"><?php echo get_field( "texto_descriptivo", 1085 );?></p>
+							<p id="textoplanta"><?php echo get_field( "texto_descriptivo", 1101 );?></p>
 						</div>
 						<div id="videoplanta" class="col-xs-12 no-padding">
-							<video class="img-responsive"  preload="auto" poster="<?php bloginfo('template_directory');?>/img/fondo_video_home.jpg" controls>
+							<video class="img-responsive"  preload="auto" poster="<?php bloginfo('template_directory');?><?php echo get_field( "video_link", 1101 );?>.jpg" controls>
 								<source src="<?php bloginfo('template_directory');?><?php echo get_field( "video_link", 1101 );?>.mp4" type="video/mp4">
-								<source src="<?php bloginfo('template_directory');?><?php echo get_field( "video_link", 1102 );?>.webm" type="video/webm">
-								<source src="<?php bloginfo('template_directory');?><?php echo get_field( "video_link", 1103 );?>.ogv" type="video/ogv">
+								<source src="<?php bloginfo('template_directory');?><?php echo get_field( "video_link", 1101 );?>.webm" type="video/webm">
+								<source src="<?php bloginfo('template_directory');?><?php echo get_field( "video_link", 1101 );?>.ogv" type="video/ogv">
 								Your browser does not support the video tag.
 							</video> 
 						</div>		
@@ -41,26 +41,128 @@ Template Name: Visita Virtual a la planta
 			</div>
 		</div>
 	</div>
-
-	<!-- Modal -->
+	<!-- Login Modal -->
+	<div id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;     </button>
+	        <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+	        <h4 class="modal-title"> <img src="<?php bloginfo('template_directory');?>/img/logorenoboy.svg" alt="Renoboy"/></h4>
+	        </div>
+	      </div>
+	      <div class="modal-body">
+	        <form id="loginForm"  method="post" role="form">
+	          <div class="row">
+	            <div class="col-md-6 col-md-offset-3">
+	              <div class="form-group">  
+	                <label for="loginEmail">Email                          </label>
+	                <input id="loginEmail" type="email" name="email" placeholder="Email" class="form-control"/>
+	              </div>
+	              <div class="form-group">
+	                <label for="loginPassword">Contraseña</label>
+	                <input id="loginPassword" type="password" name="password" placeholder="Contraseña" class="form-control"/>
+	              </div>
+	              <div class="form-group">
+	                <a data-toggle="modal" data-target="#forgotPswdModal" href="/#" data-dismiss="modal">¿Olvidó su contraseña?</a>
+	              </div>
+	              <div class="input-group col-md-12">
+	                <input type="submit" value="Iniciar sesión" class="col-md-12 btn btn-primary btn-lg"/>
+	              </div>
+	            </div>
+	          </div>
+	        </form>
+	      </div>
+	      <div class="modal-footer">
+	        <div class="textleft">¿Aun no estas registrado? <a data-toggle="modal" data-target="#subscribeModal" href="/#" data-dismiss="modal">Registrate</a></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- Forgot Password Modal -->
+	<div id="forgotPswdModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;     </button>
+	        <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+	        	<h4 class="modal-title"> <img src="<?php bloginfo('template_directory');?>/img/logorenoboy.svg" alt="Renoboy"/></h4>
+	        </div>
+	      </div>
+	      <div class="modal-body">
+	        <form  method="post" role="form">
+	          <div class="form-group">
+	            <div class="row">
+	              <div class="col-md-10 col-md-offset-1">
+	                <p class="forgot-heading">¿Olvidó su contraseña?, Ingresa el email asociado a tu cuenta, nosotros enviaremos un link para reestablecer tu contraseña.</p>
+	              </div>
+	            </div>
+	            <div class="row">
+	              <div class="col-md-6 col-md-offset-3">                                  
+	                <div class="form-group">  
+	                  <label for="loginInputEmail">Email</label>
+	                  <input id="forgotInputEmail" type="email" name="email" placeholder="Email" class="form-control"/>
+	                </div><br/>
+	                <div class="input-group col-md-12">
+	                  <input type="submit" value="Reestablecer" class="col-md-12 btn btn-mefira btn-lg"/>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </form>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- Registration Modal -->
 	<div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog modal-lg" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">Registra tus datos para continuar realizando la visita virtual a la planta</h4>
+	        <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+	        	<div class="col-sm-10 col-sm-offset-1">
+	        		<h4 class="modal-title"> <img src="<?php bloginfo('template_directory');?>/img/logorenoboy.svg" alt="Renoboy"/></h4>
+	        	</div>
+	        </div>
 	      </div>
 	      <div class="modal-body">
 	      	<div class="row">
+	      		<div id="subscribesuccess" class="col-xs-12 col-md-6 col-md-offset-3 hidden">
+	      			<p class="text-center success-check">
+	      				<i class="fa fa-check-circle" aria-hidden="true"></i>
+	      				<br>
+	      				En unos minutos recibirás un correo con las instrucciones para continuar.
+	      			</p>
+	      			<button id="closeSubscribe" type="button" class="btn btn-primary center-block" data-dismiss="modal">Cerrar</button>
+	      		</div>
+	      		<div id="subscribeerror" class="col-xs-12 col-md-6 col-md-offset-3 hidden">
+	      			<p class="text-center error-check">
+	      				<i class="fa fa-lock" aria-hidden="true"></i>
+	      				<br>
+	      				Lo sentimos, verifica que no te encuentres ya registrado.
+	      				<br>
+	      				<br>
+	      				<a id="backtoregistration" href="#"><span class="fa fa-long-arrow-left"></span> Regresar al formulario</a>
+	      				<br>
+	      				<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal">Click aqui para loggearse</a>
+	      				<br>
+	      				<a data-toggle="modal" data-target="#forgotPswdModal" href="/#" data-dismiss="modal">¿Olvidó su contraseña?</a>	      				
+	      			</p>
+					<button id="closeSubscribe" type="button" class="btn btn-default center-block" data-dismiss="modal">Cerrar</button>		        			
+	      		</div>
 		      	<form id="registrationform" class="form">
+		      		<div class="col-xs-12">
+		      			<h5>Registra tus datos para continuar realizando la visita virtual a la planta<br><br></h5>
+		      		</div>
 		      		<div class="col-sm-6">
 			      		<div class="form-group">
 				      	    <label for="nombresapellidos">Nombres y Apellidos</label>
-				      	    <input type="text" class="form-control" id="nombresapellidos" placeholder="Nombres y Apellidos" name="nombresapellidos">
+				      	    <input type="text" class="form-control" id="nombresapellidos" placeholder="Nombres y Apellidos" name="nombresapellidos" required>
 				      	</div>
 				      	<div class="form-group">
-				      	    <label for="nombreempresa">Si usted hace parte de una empresa, por favor ingrese el nombre de ella.</label>
-				      	    <input type="text" class="form-control" id="nombreempresa" placeholder="Nombre Empresa" name="empresa" required>
+				      	    <label for="nombreempresa">¿Hace parte usted de una empresa?*</label>
+				      	    <input type="text" class="form-control" id="nombreempresa" placeholder="Nombre Empresa [opcional]" name="empresa">
 				      	</div>
 				      	<div class="form-group">
 				      	    <label for="ciudad">Ciudad</label>
@@ -104,12 +206,12 @@ Template Name: Visita Virtual a la planta
 				      		</select>
 				      	</div>
 				      	<div class="form-group">
-				      	    <label for="exampleInputPassword1">Contraseña</label>
-				      	    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
+				      	    <label for="pswd">Contraseña</label>
+				      	    <input type="password" class="form-control" id="pswd" placeholder="Contraseña" name="password" name="password" required>
 				      	</div>
 				      	<div class="form-group">
-				      	    <label for="exampleInputPassword2">Confirmar contraseña</label>
-				      	    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+				      	    <label for="cpswd">Confirmar contraseña</label>
+				      	    <input type="password" class="form-control" id="cpswd" placeholder="Confirmación contraseña" name="cpassword" required>
 				      	</div>
 				      	<div class="form-group">
 					      	<div class="col-xs-12 checkbox-terminos-condiciones no-padding">
@@ -122,10 +224,13 @@ Template Name: Visita Virtual a la planta
 						<div class="pull-right">
 							<button id="closeSubscribe" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 		        			<button type="submit" class="btn btn-primary">Registrar</button>
-						</div>
+						</div>						
 					</div>
 		      	</form>
 	      	</div>
+	      </div>
+	      <div class="modal-footer">
+	        <div class="textleft">¿Ya estas registrado?<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal"> Haz click aqui para loggearte</a></div>
 	      </div>
 	    </div>
 	  </div>
@@ -162,7 +267,7 @@ Template Name: Visita Virtual a la planta
 					    $("#textoplanta").html(r.texto_descriptivo);    
 
 					    $("#videoplanta").html('');
-					    $("#videoplanta").prepend('<video class="img-responsive"  preload="auto" poster="'+dir+'/img/fondo_video_home.jpg" controls></video>');
+					    $("#videoplanta").prepend('<video class="img-responsive"  preload="auto" poster="'+dir+r.video_link+'.jpg" controls></video>');
 						$("#videoplanta video").append('<source src="'+dir+r.video_link+'.mp4" type="video/mp4">"');
 						$("#videoplanta video").append('<source src="'+dir+r.video_link+'.ogg" type="video/ogv">');
 						$("#videoplanta video").append('<source src="'+dir+r.video_link+'.webm" type="video/webm">');
@@ -175,54 +280,83 @@ Template Name: Visita Virtual a la planta
 
 			});
 
-			$('#closeSubscribe').click(function(){
-			  	$("#loader").addClass("hidden");
-				$("#videoplanta").removeClass("hidden");
+			$("#backtoregistration").click(function(){
+			    $("#subscribeerror").addClass("hidden");
+			    $('#registrationform').removeClass("hidden");
 			});
 
-			 $('#registrationform').submit(function(evt) {
+			$('#subscribeModal').on('hidden.bs.modal', function (e) {
+			  	$("#loader").addClass("hidden");
+				$("#videoplanta").removeClass("hidden");
+				$('#registrationform').removeClass("hidden");
+			    $("#subscribeerror").addClass("hidden");
+			    $("#subscribesuccess").addClass("hidden");
+			});
+
+			$('#registrationform').submit(function(evt) {
             	evt.preventDefault();
+
+            	var pass1 = $("#pswd").val(); 
+				var pass2 = $("#cpswd").val(); 
+					
+				if(pass1 == pass2 && pass1.length !== 0 && pass2.length !== 0){
+
 				
-				var data = $( this ).serialize();
-				
-				var data = {
-				    'action': 'subscribe_planta',
-				    'data': data
-				};
-
-				$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
-
-			    	console.log(response);
-			    	/*$('#subscribeModal').modal('hide');
-
-			    	var data = {
-					    'action': 'load_custom_planta',
-					    'postid': postid
+					var data = $( this ).serialize();
+					
+					var data = {
+					    'action': 'subscribe_planta',
+					    'data': data
 					};
 
 					$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
-
-				    	if(response.trim() == '"The cookie is false."' || response.trim() == '"1:The cookie is not set."' || response.trim() == '"2:The cookie is not set."'){
-				    		console.log(response);
-				    		$('#subscribeModal').modal('show');
+						var r = JSON.parse(response);	
+				    	console.log(r);
+				    	if(r == "registro exitoso"){
+				    		console.log("opcion1");
+				    		$('#registrationform').addClass("hidden");
+				    		$("#subscribesuccess").removeClass("hidden");
+				    	} else if(r == "ya se encuentra registrado"){
+				    		console.log("opcion2");
+				    		$('#registrationform').addClass("hidden");
+				    		$("#subscribeerror").removeClass("hidden");
 				    	} else {
-					    	var r = JSON.parse(response);	
-						    $("#tituloplanta").html(r.titulo);   
-						    $("#textoplanta").html(r.texto_descriptivo);    
+				    		console.log("opcion3");
+				    		$('#registrationform').addClass("hidden");
+				    		$("#subscribeerror").removeClass("hidden");
+				    	}
 
-						    $("#videoplanta").html('');
-						    $("#videoplanta").prepend('<video class="img-responsive"  preload="auto" poster="'+dir+'/img/fondo_video_home.jpg" controls></video>');
-							$("#videoplanta video").append('<source src="'+dir+r.video_link+'.mp4" type="video/mp4">"');
-							$("#videoplanta video").append('<source src="'+dir+r.video_link+'.ogg" type="video/ogv">');
-							$("#videoplanta video").append('<source src="'+dir+r.video_link+'.webm" type="video/webm">');
+				    	/*$('#subscribeModal').modal('hide');
 
-							$("#loader").addClass("hidden");
-							$("#videoplanta").removeClass("hidden");
-						}
+				    	var data = {
+						    'action': 'load_custom_planta',
+						    'postid': postid
+						};
 
-					});*/
-			    	
-				});
+						$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
+
+					    	if(response.trim() == '"The cookie is false."' || response.trim() == '"1:The cookie is not set."' || response.trim() == '"2:The cookie is not set."'){
+					    		console.log(response);
+					    		$('#subscribeModal').modal('show');
+					    	} else {
+						    	var r = JSON.parse(response);	
+							    $("#tituloplanta").html(r.titulo);   
+							    $("#textoplanta").html(r.texto_descriptivo);    
+
+							    $("#videoplanta").html('');
+							    $("#videoplanta").prepend('<video class="img-responsive"  preload="auto" poster="'+dir+'/img/fondo_video_home.jpg" controls></video>');
+								$("#videoplanta video").append('<source src="'+dir+r.video_link+'.mp4" type="video/mp4">"');
+								$("#videoplanta video").append('<source src="'+dir+r.video_link+'.ogg" type="video/ogv">');
+								$("#videoplanta video").append('<source src="'+dir+r.video_link+'.webm" type="video/webm">');
+
+								$("#loader").addClass("hidden");
+								$("#videoplanta").removeClass("hidden");
+							}
+
+						});*/
+				    	
+					});
+				}
 
 			});
 
