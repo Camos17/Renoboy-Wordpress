@@ -20,7 +20,7 @@ function theme_js() {
 	$wp_scripts->add_data( 'respond_js', 'conditional', 'lt IE 9' );
 
 	wp_enqueue_script( 'jquery_js', get_template_directory_uri() . '/js/jquery-1.12.1.min.js', array('jquery'), '', true );
-	wp_enqueue_script( 'jquery_js', get_template_directory_uri() . '/js/jquery.validate.min.js', array('jquery'), '', true );
+	wp_enqueue_script( 'validate_js', get_template_directory_uri() . '/js/jquery.validate.min.js', array('jquery'), '', true );
 	wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '', true );
 	wp_enqueue_script( 'clamp_min_js', get_template_directory_uri() . '/js/clamp.min.js', array('jquery'), '', true );
 	wp_enqueue_script( 'mCustomScrollBar_js', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js', array('jquery'), '', true );
@@ -98,36 +98,110 @@ function load_custom_planta(){
 
 	wp_die(); // this is required to terminate immediately and return a proper response
 }
+
+//Validate token function
+add_action('wp_ajax_validate_token','validate_token');
+add_action('wp_ajax_nopriv_validate_token','validate_token');
+function validate_token(){
+	
+	global $wpdb;
+	header("Content-type: application/json"); 
+
+	$email = $_POST['email'];
+	$token = $_POST['token']; 
+
+	$query = $wpdb->prepare( 
+		"
+			SELECT token 
+			FROM reno_subscribers
+			WHERE ID = %s
+		", 
+	    $email
+	); 
+
+	$myresults = $wpdb->get_results($query);
+
+	if($myresults){
+		foreach ($myresults as $row){
+	    	$dbtoken = $row->token;	    	
+	    	if($token == $dbtoken){
+
+	    		$secondquery = $wpdb->prepare( 
+					"
+						UPDATE reno_subscribers
+						SET verificado='SI'
+						WHERE ID = %s 
+					", 
+				    $email
+				); 
+
+				$mysecondresults = $wpdb->query($secondquery);
+
+	    		unset( $_COOKIE['plantavirtual'] );
+				setcookie( 'plantavirtual', '', time() - ( 15 * 60 ) );
+				setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/?page_id=123");
+				
+				echo json_encode('match');	
+			} else {
+				echo json_encode('no match');
+			}
+	    }
+	} else {
+		echo json_encode('Verique que si se encuentra registrado.');		
+	}
+    
+	wp_die();
+	
+}
+
 //LOGIN function
 add_action('wp_ajax_login_planta','login_planta');
 add_action('wp_ajax_nopriv_login_planta','login_planta');
 function login_planta(){
 	
 	global $wpdb;
-	$data = $_POST['email']; 
+	header("Content-type: application/json"); 
+
+	$data = $_POST['data']; 
 	parse_str($data);
 
 
 	$query = $wpdb->prepare( 
 		"
-			SELECT usrpswd 
+			SELECT usrpswd, verificado 
 			FROM reno_subscribers
 			WHERE email = %s
 		", 
 	    $email
 	); 
 
-	$password_hashed = $wpdb->query($query);
+	$myresults = $wpdb->get_results($query);
 
-	if($wp_hasher->CheckPassword($password, $password_hashed)) {
-		unset( $_COOKIE['plantavirtual'] );
-	  	setcookie( 'plantavirtual', '', time() - ( 15 * 60 ) );
-		setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/?page_id=123");
-	    echo json_encode("YES, Matched");
+	if($myresults){
+		foreach ($myresults as $row){
+	    	$verificado = $row->verificado;
+	    	$password_hashed = $row->usrpswd;
+
+	    	require_once( ABSPATH . WPINC . '/class-phpass.php');
+	    	$wp_hasher = new PasswordHash(8, TRUE);
+
+	    	if($verificado == 'NO'){
+				echo json_encode('Usuario no verificado. Verifique su cuenta de correo electrónico');	
+			} else {
+				if($wp_hasher->CheckPassword($password, $password_hashed)) {
+					unset( $_COOKIE['plantavirtual'] );
+				  	setcookie( 'plantavirtual', '', time() - ( 15 * 60 ) );
+					setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/?page_id=123");
+				    echo json_encode("YES, Matched");
+				} else {
+				    echo json_encode("Lo sentimos, por favor verifique el email o la contraseña ingresadas.");
+				}
+			}
+	    }
 	} else {
-	    echo json_encode("No, Wrong Password");
+		echo json_encode('Verique que si se encuentra registrado.');		
 	}
-	
+    
 	wp_die();
 	
 }
@@ -169,23 +243,18 @@ function subscribe_planta(){
 		    'cantidadvehiculos' => $cantidadvehiculos,
 		    'tipovehiculos' => $tipovehiculos,
 		    'token' => $token,
-		    'usrpswd' => $hashedPassword
+		    'usrpswd' => $hashedPassword,
+		    'verificado' => 'NO'
 		));
 
 		$headers[] = 'Content-Type: text/html; charset=UTF-8';
-		$headers[] = 'From: Renoboy <noreply@renoboy>';	
+		$headers[] = 'From: Renoboy <noreply@renoboy.com>';	
 
-		$email = htmlentities($email);
+		$emailencoded = $wpdb->insert_id;
 
-		$message = 'Gracias por registrarte. Para continuar visitando nuestra planta virtual por favor da click en el siguiente <a href="http://prueba.renoboy.com/?page_id=123&email=%d&token=%s">link</a>.';
-		wp_mail($email,'Registro Renoboy', sprintf($message, $email, $token), $headers);
-
-	  	/*unset( $_COOKIE['plantavirtual'] );
-	  	setcookie( 'plantavirtual', '', time() - ( 15 * 60 ) );
-		setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/?page_id=123");*/
-
+		$message = 'Gracias por registrarte. Para continuar visitando nuestra planta virtual por favor da click en el siguiente <a href="http://prueba.renoboy.com/?page_id=123&email=%s&token=%s">link</a>.';
+		wp_mail($email,'Registro Renoboy', html_entity_decode(sprintf($message, $emailencoded,$token), ENT_QUOTES,'UTF-8'), $headers);
 		echo json_encode("registro exitoso");
-
 	}
 	
 	wp_die();

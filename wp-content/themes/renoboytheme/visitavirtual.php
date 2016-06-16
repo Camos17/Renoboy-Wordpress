@@ -52,8 +52,9 @@ Template Name: Visita Virtual a la planta
 	        </div>
 	      </div>
 	      <div class="modal-body">
-	        <form id="loginForm"  method="post" role="form">
+	        <form id="loginform" role="form">
 	          <div class="row">
+	          	<div id="loginmessage"></div>
 	            <div class="col-md-6 col-md-offset-3">
 	              <div class="form-group">  
 	                <label for="loginEmail">Email                          </label>
@@ -74,7 +75,7 @@ Template Name: Visita Virtual a la planta
 	        </form>
 	      </div>
 	      <div class="modal-footer">
-	        <div class="textleft">¿Aun no estas registrado? <a data-toggle="modal" data-target="#subscribeModal" href="/#" data-dismiss="modal">Registrate</a></div>
+	        <div class="textleft">¿Aun no esta registrado? <a data-toggle="modal" data-target="#subscribeModal" href="/#" data-dismiss="modal">Registrate</a></div>
 	      </div>
 	    </div>
 	  </div>
@@ -104,12 +105,52 @@ Template Name: Visita Virtual a la planta
 	                  <input id="forgotInputEmail" type="email" name="email" placeholder="Email" class="form-control"/>
 	                </div><br/>
 	                <div class="input-group col-md-12">
-	                  <input type="submit" value="Reestablecer" class="col-md-12 btn btn-mefira btn-lg"/>
+	                  <input type="submit" value="Reestablecer" class="col-md-12 btn btn-primary btn-lg"/>
 	                </div>
 	              </div>
 	            </div>
 	          </div>
 	        </form>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- Registration Modal -->
+	<div class="modal fade" id="validationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+	        	<div class="col-sm-10 col-sm-offset-1">
+	        		<h4 class="modal-title"> <img src="<?php bloginfo('template_directory');?>/img/logorenoboy.svg" alt="Renoboy"/></h4>
+	        	</div>
+	        </div>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="row">
+	      		<div id="validationsuccess" class="col-xs-12 col-md-6 col-md-offset-3 hidden">
+	      			<p class="text-center success-check">
+	      				<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+	      				<br>
+	      				Gracias! Hemos verificado tu correo, ya puedes continuar navegando en nuestra planta virtual.
+	      			</p>
+	      			<button id="closeSubscribe" type="button" class="btn btn-primary btn-lg center-block" data-dismiss="modal">Cerrar</button>
+	      		</div>
+	      		<div id="validationerror" class="col-xs-12 col-md-6 col-md-offset-3 hidden">
+	      			<p class="text-center error-check">
+	      				<i class="fa fa-lock" aria-hidden="true"></i>
+	      				<br>
+	      				Lo sentimos, tu link pudo haber caducado.
+	      				<br>
+	      				<br>
+	      				<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal">Click aqui para loggearse<span class="fa fa-long-arrow-left"></a>
+	      				<br>
+	      				<a data-toggle="modal" data-target="#forgotPswdModal" href="/#" data-dismiss="modal">¿Olvidó su contraseña?</a>	      				
+	      			</p>
+					<button id="closeSubscribe" type="button" class="btn btn-default center-block" data-dismiss="modal">Cerrar</button>		        			
+	      		</div>		      	
+	      	</div>
 	      </div>
 	    </div>
 	  </div>
@@ -132,15 +173,15 @@ Template Name: Visita Virtual a la planta
 	      			<p class="text-center success-check">
 	      				<i class="fa fa-check-circle" aria-hidden="true"></i>
 	      				<br>
-	      				En unos minutos recibirás un correo con las instrucciones para continuar.
+	      				En unos minutos recibirá un correo con las instrucciones para continuar.
 	      			</p>
-	      			<button id="closeSubscribe" type="button" class="btn btn-primary center-block" data-dismiss="modal">Cerrar</button>
+	      			<button id="closeSubscribe" type="button" class="btn btn-primary btn-lg center-block" data-dismiss="modal">Cerrar</button>
 	      		</div>
 	      		<div id="subscribeerror" class="col-xs-12 col-md-6 col-md-offset-3 hidden">
 	      			<p class="text-center error-check">
 	      				<i class="fa fa-lock" aria-hidden="true"></i>
 	      				<br>
-	      				Lo sentimos, verifica que no te encuentres ya registrado.
+	      				Lo sentimos, verifique que no se encuentre ya registrado.
 	      				<br>
 	      				<br>
 	      				<a id="backtoregistration" href="#"><span class="fa fa-long-arrow-left"></span> Regresar al formulario</a>
@@ -153,7 +194,7 @@ Template Name: Visita Virtual a la planta
 	      		</div>
 		      	<form id="registrationform" class="form">
 		      		<div class="col-xs-12">
-		      			<h5>Registra tus datos para continuar realizando la visita virtual a la planta<br><br></h5>
+		      			<h5>Registre sus datos para continuar realizando la visita virtual a la planta<br><br></h5>
 		      		</div>
 		      		<div class="col-sm-6">
 			      		<div class="form-group">
@@ -161,7 +202,7 @@ Template Name: Visita Virtual a la planta
 				      	    <input type="text" class="form-control" id="nombresapellidos" placeholder="Nombres y Apellidos" name="nombresapellidos" required>
 				      	</div>
 				      	<div class="form-group">
-				      	    <label for="nombreempresa">¿Hace parte usted de una empresa?*</label>
+				      	    <label for="nombreempresa">¿Hace parte usted de alguna empresa?*</label>
 				      	    <input type="text" class="form-control" id="nombreempresa" placeholder="Nombre Empresa [opcional]" name="empresa">
 				      	</div>
 				      	<div class="form-group">
@@ -212,6 +253,7 @@ Template Name: Visita Virtual a la planta
 				      	<div class="form-group">
 				      	    <label for="cpswd">Confirmar contraseña</label>
 				      	    <input type="password" class="form-control" id="cpswd" placeholder="Confirmación contraseña" name="cpassword" required>
+				      	     <p id="help" class="help-block" style="display:none;">Verificar que ambas contraseñas concuerden.</p>
 				      	</div>
 				      	<div class="form-group">
 					      	<div class="col-xs-12 checkbox-terminos-condiciones no-padding">
@@ -222,15 +264,14 @@ Template Name: Visita Virtual a la planta
 							</div>
 						</div>
 						<div class="pull-right">
-							<button id="closeSubscribe" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-		        			<button type="submit" class="btn btn-primary">Registrar</button>
+		        			<button type="submit" class="btn btn-primary btn-lg">Registrar</button>
 						</div>						
 					</div>
 		      	</form>
 	      	</div>
 	      </div>
 	      <div class="modal-footer">
-	        <div class="textleft">¿Ya estas registrado?<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal"> Haz click aqui para loggearte</a></div>
+	        <div class="textleft">¿Ya se encuentra registrado?<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal"> Hacer click aqui para loggearse</a></div>
 	      </div>
 	    </div>
 	  </div>
@@ -240,6 +281,42 @@ Template Name: Visita Virtual a la planta
 	<?php include "footer.php";?>
 	<script type="text/javascript">
 		(function($) {
+			var emailparam = '-';
+			var tokenparam = '-';
+
+			$(document).ready(function() { 
+	            emailparam = getParameterByName('email');
+	            tokenparam = getParameterByName('token');
+	            console.log(emailparam+"-"+tokenparam);
+	            if(tokenparam != '-' && emailparam != '-'){
+
+	            	var data = {
+					    'action': 'validate_token',
+					    'email': emailparam,
+					    'token': tokenparam
+					};
+
+	            	$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
+
+	            		console.log(response);
+	            		if(response.trim() == 'match'){
+	            			$('#validationsuccess').removeClass("hidden");
+	            		} else {
+	            			$('#validationerror').removeClass("hidden");
+	            		}
+	            		$('#validationModal').modal('show');    	
+
+	            	});
+	            	
+	            }
+	        });
+
+	        function getParameterByName(name) {
+	            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	                results = regex.exec(location.search);
+	            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	        }
 
 			var dir = "<?php bloginfo('template_directory');?>";
 			var postid;
@@ -257,7 +334,6 @@ Template Name: Visita Virtual a la planta
 				$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
 
 			    	if(response.trim() == '"The cookie is false."' || response.trim() == '"1:The cookie is not set."' || response.trim() == '"2:The cookie is not set."'){
-			    		console.log(response);
 			    		$('#subscribeModal').modal('show');
 			    		$("#loader").removeClass("hidden");
 						$("#videoplanta").addClass("hidden");
@@ -301,7 +377,6 @@ Template Name: Visita Virtual a la planta
 					
 				if(pass1 == pass2 && pass1.length !== 0 && pass2.length !== 0){
 
-				
 					var data = $( this ).serialize();
 					
 					var data = {
@@ -316,6 +391,9 @@ Template Name: Visita Virtual a la planta
 				    		console.log("opcion1");
 				    		$('#registrationform').addClass("hidden");
 				    		$("#subscribesuccess").removeClass("hidden");
+				    		document.getElementById("registrationform").reset();
+				    		$("#help").fadeOut("slow");
+
 				    	} else if(r == "ya se encuentra registrado"){
 				    		console.log("opcion2");
 				    		$('#registrationform').addClass("hidden");
@@ -325,44 +403,57 @@ Template Name: Visita Virtual a la planta
 				    		$('#registrationform').addClass("hidden");
 				    		$("#subscribeerror").removeClass("hidden");
 				    	}
-
-				    	/*$('#subscribeModal').modal('hide');
-
-				    	var data = {
-						    'action': 'load_custom_planta',
-						    'postid': postid
-						};
-
-						$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
-
-					    	if(response.trim() == '"The cookie is false."' || response.trim() == '"1:The cookie is not set."' || response.trim() == '"2:The cookie is not set."'){
-					    		console.log(response);
-					    		$('#subscribeModal').modal('show');
-					    	} else {
-						    	var r = JSON.parse(response);	
-							    $("#tituloplanta").html(r.titulo);   
-							    $("#textoplanta").html(r.texto_descriptivo);    
-
-							    $("#videoplanta").html('');
-							    $("#videoplanta").prepend('<video class="img-responsive"  preload="auto" poster="'+dir+'/img/fondo_video_home.jpg" controls></video>');
-								$("#videoplanta video").append('<source src="'+dir+r.video_link+'.mp4" type="video/mp4">"');
-								$("#videoplanta video").append('<source src="'+dir+r.video_link+'.ogg" type="video/ogv">');
-								$("#videoplanta video").append('<source src="'+dir+r.video_link+'.webm" type="video/webm">');
-
-								$("#loader").addClass("hidden");
-								$("#videoplanta").removeClass("hidden");
-							}
-
-						});*/
 				    	
 					});
+				} else {
+					$("#cpswd").focus();
+					$("#help").fadeIn("slow");
 				}
 
 			});
 
+			$('#loginform').submit(function(evt) {
+            	
+            	evt.preventDefault();
+
+    	    	var data = {
+    			    'action': 'login_planta',
+    			    'data': $( this ).serialize()
+    			};
+
+    			$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
+    				if(response.trim() == '"YES, Matched"'){
+    					$('#loginModal').modal('hide');
+    				} else {
+    					console.log(response);
+    					$("#loginmessage").html("<p class='text-center text-danger form-group'>"+response+"</p>");
+    				}
+
+    		    	/*if(response.trim() == '"The cookie is false."' || response.trim() == '"1:The cookie is not set."' || response.trim() == '"2:The cookie is not set."'){
+    		    		console.log(response);
+    		    		$('#subscribeModal').modal('show');
+    		    	} else {
+    			    	var r = JSON.parse(response);	
+    				    $("#tituloplanta").html(r.titulo);   
+    				    $("#textoplanta").html(r.texto_descriptivo);    
+
+    				    $("#videoplanta").html('');
+    				    $("#videoplanta").prepend('<video class="img-responsive"  preload="auto" poster="'+dir+'/img/fondo_video_home.jpg" controls></video>');
+    					$("#videoplanta video").append('<source src="'+dir+r.video_link+'.mp4" type="video/mp4">"');
+    					$("#videoplanta video").append('<source src="'+dir+r.video_link+'.ogg" type="video/ogv">');
+    					$("#videoplanta video").append('<source src="'+dir+r.video_link+'.webm" type="video/webm">');
+
+    					$("#loader").addClass("hidden");
+    					$("#videoplanta").removeClass("hidden");
+    				}*/
+
+    			});
+            });
+
+
 			$("form").validate({
 			  	submitHandler: function(form) {
-			    	form.submit();
+			    	
 			  	}
 			});
 
