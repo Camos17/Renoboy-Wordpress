@@ -374,25 +374,25 @@ function getdisenos(){
 	$categoria = $_POST['categoria'];
 
 	 $query = "
-        SELECT  wp_posts.*, mt1.meta_value as categoria, mt2.meta_value as diseño_de_banda, mt3.meta_value as utilizacion_recomendada, mt4.meta_value as posicion_recomendada, (SELECT guid FROM wp_posts WHERE ID= mt5.meta_value) as imagen, mt7.meta_value as dimension
+        SELECT  wp_posts.*, mt1.meta_value as categoria, mt2.meta_value as diseño_de_banda, mt3.meta_value as utilizacion_recomendada, (SELECT guid FROM wp_posts WHERE ID= mt5.meta_value) as imagen, mt7.meta_value as dimension
 		FROM wp_posts  
 		LEFT JOIN wp_postmeta AS mt1 ON (wp_posts.ID = mt1.post_id AND mt1.meta_key='categoria')
 		LEFT JOIN wp_postmeta AS mt2 ON (wp_posts.ID = mt2.post_id  AND mt2.meta_key='diseño_de_banda') 
 		LEFT JOIN wp_postmeta AS mt3 ON (wp_posts.ID = mt3.post_id  AND mt3.meta_key='utilizacion_recomendada') 
-		LEFT JOIN wp_postmeta AS mt4 ON (wp_posts.ID = mt4.post_id  AND mt4.meta_key='posicion_recomendada') 
 		LEFT JOIN wp_postmeta AS mt5 ON (wp_posts.ID = mt5.post_id  AND mt5.meta_key='imagen')
 		LEFT JOIN wp_postmeta AS mt6 ON (mt2.meta_value = mt6.meta_value  AND mt6.meta_key='diseno_banda')
 		LEFT JOIN wp_postmeta AS mt7 ON (mt6.post_id = mt7.post_id  AND mt7.meta_key='p_dimension')
+		LEFT JOIN wp_postmeta AS mt8 ON (mt6.post_id = mt8.post_id  AND mt8.meta_key='posicion_aceptada')
 		WHERE (wp_posts.post_type = 'd_bandas')
 		AND (mt3.meta_value IN (".$replaced.")) 
-		AND (mt4.meta_value LIKE '".$posicion."')
 		AND (mt7.meta_value LIKE '".$dimension."')
 		AND (mt1.meta_value LIKE '".$categoria."')
+		AND (mt8.meta_value LIKE '".$posicion."')
 		AND (wp_posts.post_status = 'publish' OR wp_posts.post_status = 'private')  
 		GROUP BY wp_posts.ID ORDER BY wp_posts.post_date DESC";
 	 
-	/*$results = $wpdb->get_results($query);
-*/
+	$results = $wpdb->get_results($query);
+
     header("Content-type: application/json"); 
     echo json_encode( $results);
 
