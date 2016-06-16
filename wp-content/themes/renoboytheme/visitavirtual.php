@@ -117,19 +117,19 @@ Template Name: Visita Virtual a la planta
 	</div>
 	<!-- Registration Modal -->
 	<div class="modal fade" id="validationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog modal-lg" role="document">
+	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	        <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
-	        	<div class="col-sm-10 col-sm-offset-1">
-	        		<h4 class="modal-title"> <img src="<?php bloginfo('template_directory');?>/img/logorenoboy.svg" alt="Renoboy"/></h4>
-	        	</div>
+	        	
+	        	<h4 class="modal-title"> <img src="<?php bloginfo('template_directory');?>/img/logorenoboy.svg" alt="Renoboy"/></h4>
+	        	
 	        </div>
 	      </div>
 	      <div class="modal-body">
 	      	<div class="row">
-	      		<div id="validationsuccess" class="col-xs-12 col-md-6 col-md-offset-3 hidden">
+	      		<div id="validationsuccess" class="col-xs-12 col-md-8 col-md-offset-2 hidden">
 	      			<p class="text-center success-check">
 	      				<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
 	      				<br>
@@ -137,14 +137,14 @@ Template Name: Visita Virtual a la planta
 	      			</p>
 	      			<button id="closeSubscribe" type="button" class="btn btn-primary btn-lg center-block" data-dismiss="modal">Cerrar</button>
 	      		</div>
-	      		<div id="validationerror" class="col-xs-12 col-md-6 col-md-offset-3 hidden">
+	      		<div id="validationerror" class="col-xs-12 col-md-8 col-md-offset-2 hidden">
 	      			<p class="text-center error-check">
 	      				<i class="fa fa-lock" aria-hidden="true"></i>
 	      				<br>
 	      				Lo sentimos, tu link pudo haber caducado.
 	      				<br>
 	      				<br>
-	      				<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal">Click aqui para loggearse<span class="fa fa-long-arrow-left"></a>
+	      				<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal">Click aqui para loggearse <span class="fa fa-long-arrow-right"></a>
 	      				<br>
 	      				<a data-toggle="modal" data-target="#forgotPswdModal" href="/#" data-dismiss="modal">¿Olvidó su contraseña?</a>	      				
 	      			</p>
