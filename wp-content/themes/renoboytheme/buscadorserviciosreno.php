@@ -70,7 +70,7 @@ Template Name: Buscador Servicios
 							</li>
 							<li class="col-xs-10">
 								 <select id="posicionselect" class="col-xs-12">
-								 	<option value="EJE LIBRE / TRACCIÓN">Eje Libre / Tracción</option>
+								 	<option value="%">Eje Libre / Tracción</option>
 									<option value="TRACCIÓN">Tracción</option>
 									<option value="EJE LIBRE">Eje libre</option>
 								</select>

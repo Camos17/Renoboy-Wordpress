@@ -389,11 +389,10 @@ function getdisenos(){
 		AND (mt7.meta_value LIKE '".$dimension."')
 		AND (mt1.meta_value LIKE '".$categoria."')
 		AND (wp_posts.post_status = 'publish' OR wp_posts.post_status = 'private')  
-		GROUP BY wp_posts.ID ORDER BY wp_posts.post_date DESC
-		LIMIT 12";
+		GROUP BY wp_posts.ID ORDER BY wp_posts.post_date DESC";
 	 
-	$results = $wpdb->get_results($query);
-
+	/*$results = $wpdb->get_results($query);
+*/
     header("Content-type: application/json"); 
     echo json_encode( $results);
 
