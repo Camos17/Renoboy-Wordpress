@@ -100,8 +100,8 @@ Template Name: Buscador Servicios
 								CATEGORÍA
 							</li>
 							<li class="col-xs-12 no-padding">
-								<select id="categoriaselect" class="form-control">
-									<option value="TU LLANTA NUEVA DE NUEVO MICHELIN">TU LLANTA NUEVA DE NUEVO MICHELIN</option>
+								<select id="categoriaselect" multiple class="form-control">
+									<option value="TU LLANTA NUEVA DE NUEVO MICHELIN" selected="selected">TU LLANTA NUEVA DE NUEVO MICHELIN</option>
 									<option value="LÍNEA PREMIUM RECAMIC">LÍNEA PREMIUM RECAMIC</option>
 									<option value="LÍNEA PRE-Q">LÍNEA PRE-Q</option>
 								</select>
