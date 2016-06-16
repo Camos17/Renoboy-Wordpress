@@ -461,7 +461,7 @@ Template Name: Buscador Servicios
 		<script type="text/javascript">
 			(function($) {
 				
-				$(document).ready(function() { 		            
+				$(document).ready(function() {
 
 	            	var data = {
 					    'action': 'getdimensiones'
@@ -482,7 +482,6 @@ Template Name: Buscador Servicios
 						} 	
 
 	            	});
-
 		        });  
 
 				$("#iconos-servicios button").click(function(){
@@ -553,41 +552,41 @@ Template Name: Buscador Servicios
 						var	categoria = c.options[c.selectedIndex].value;			
 
 						if($("#btn-regional").hasClass("active") || $("#checkbox-1").is(':checked') ){
-							utilizacion="REGIONAL"; 
+							utilizacion="'REGIONAL'"; 
 						} 
 						if($("#btn-mixta").hasClass("active") || $("#checkbox-1").is(':checked')){
 							if(!utilizacion){
-								utilizacion = "MIXTA";
+								utilizacion = "'MIXTA'";
 							} else {
-								utilizacion += ",MIXTA" ;
+								utilizacion += ",'MIXTA'" ;
 							}
 						} 
 						if($("#btn-urbano").hasClass("active") || $("#checkbox-1").is(':checked')){
 							if(!utilizacion){
-								utilizacion = "URBANO,AUTOPISTA / REGIONAL / URBANO";
+								utilizacion = "'URBANO','AUTOPISTA / REGIONAL / URBANO'";
 							} else {
-								utilizacion += ",URBANO" ;
+								utilizacion += ",'URBANO'" ;
 							}
 						} 
 						if($("#btn-cantera").hasClass("active") || $("#checkbox-1").is(':checked')){
 							if(!utilizacion){
-								utilizacion = "CANTERA";
+								utilizacion = "'CANTERA'";
 							} else {
-								utilizacion += ",CANTERA";
+								utilizacion += ",'CANTERA'";
 							}
 						} 
 						if($("#btn-regional").hasClass("active") || $("#btn-urbano").hasClass("active") || $("#checkbox-1").is(':checked')){
 							if(!utilizacion){
-								utilizacion = "AUTOPISTA / REGIONAL / URBANO,REGIONAL / URBANO";
+								utilizacion = "'AUTOPISTA / REGIONAL / URBANO','REGIONAL / URBANO'";
 							} else {
-								utilizacion += ",AUTOPISTA / REGIONAL / URBANO,REGIONAL / URBANO" ;
+								utilizacion += ",'AUTOPISTA / REGIONAL / URBANO','REGIONAL / URBANO'" ;
 							}
 						} 
 						if($("#btn-mixta").hasClass("active") || $("#btn-cantera").hasClass("active") || $("#checkbox-1").is(':checked') ){
 							if(!utilizacion){
-								utilizacion = "MIXTA / CANTERA";
+								utilizacion = "'MIXTA / CANTERA'";
 							} else {
-								utilizacion += ",MIXTA / CANTERA" ;
+								utilizacion += ",'MIXTA / CANTERA'" ;
 							}
 						} 
 					   
@@ -644,22 +643,21 @@ Template Name: Buscador Servicios
 								}
 
 							    $("#cat-llantas").append('<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-diseno="' + r[i].diseño_de_banda + '" >'+
-							    							'<div class="col-xs-12 no-padding cat-llanta-wrapper">'+							    								
-							    								'<img class="img-responsive" src="'+r[i].imagen+'" alt="">'+
-							    								utilizacions+
-							    									'<div class="col-xs-12 no-padding">'+
-																		'<p class="titulo-layer-llanta">'+r[i].diseño_de_banda+'</p><br><br>'+
-																	'</div>'+	
-																	'<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>'+
-																	'<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'+	
-							    								'</div>'+
-							    							'</div>'+
+	    							'<div class="col-xs-12 no-padding cat-llanta-wrapper">'+							    								
+	    								'<img class="img-responsive" src="'+r[i].imagen+'" alt="">'+
+	    								utilizacions+
+	    									'<div class="col-xs-12 no-padding">'+
+												'<p class="titulo-layer-llanta">'+r[i].diseño_de_banda+'</p><br><br>'+
+											'</div>'+	
+											'<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>'+
+											'<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'+	
+	    								'</div>'+
+	    							'</div>'+
 
-							    							'<div class="col-xs-4 img-abajo-derecha">'+
-							    								imgutilizacion+
-							    							'</div>'+
-							    						'</a>');
-
+	    							'<div class="col-xs-4 img-abajo-derecha">'+
+	    								imgutilizacion+
+	    							'</div>'+
+	    						'</a>');
 							}
 
 							$("#loader").addClass("hidden");

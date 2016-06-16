@@ -151,7 +151,6 @@ function validate_token(){
 	}
     
 	wp_die();
-	
 }
 
 //LOGIN function
@@ -203,7 +202,6 @@ function login_planta(){
 	}
     
 	wp_die();
-	
 }
 
 // function to subscribe email 
