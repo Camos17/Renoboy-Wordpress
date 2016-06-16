@@ -23,7 +23,7 @@ Template Name: Buscador Servicios
 						<div class="col-xs-12 no-padding seccion-servicio-utilizacion">	
 							<div class="col-xs-12 no-padding">
 								<li class="col-xs-6 titulo-seccion">
-									UTILIZACIÓN
+									SELECCIONE UNA UTILIZACIÓN
 								</li>
 								<li class="col-xs-6 seleccionartodas">
 									<input id="checkbox-1" class="checkbox-custom" name="checkbox-1" type="checkbox" checked="">
@@ -65,39 +65,35 @@ Template Name: Buscador Servicios
 					</div>
 					<div class="col-sm-6 col-md-12 buscador-columna2">
 						<div class="col-xs-12 no-padding seccion-servicio-posicion">
-							<li class="col-xs-4 titulo-seccion">
-									POSICIÓN
+							<li class="col-xs-12 titulo-seccion form-group">
+									SELECCIONE UNA POSICIÓN
 							</li>
-							<li class="col-xs-4 col-xs-offset-1">
-								 <select id="posicionselect">
+							<li class="col-xs-10">
+								 <select id="posicionselect" class="col-xs-12">
 								 	<option value="EJE LIBRE / TRACCIÓN">Eje Libre / Tracción</option>
 									<option value="TRACCIÓN">Tracción</option>
 									<option value="EJE LIBRE">Eje libre</option>
 								</select>
 							</li>
-							<li class="col-xs-2 pull-right">
+							<li class="col-xs-2">
 								<a id="ayuda-posicion" href="#" title="" data-toggle="modal" data-target="#ayuda-modal2">
 									<i class="fa fa-question-circle"></i>
 								</a>
 							</li>
 						</div>
 						<div class="col-xs-12 no-padding seccion-servicio-dimension">
-							<li class="col-xs-4 titulo-seccion">
-								DIMENSIÓN
+							<li class="col-xs-12 titulo-seccion form-group">
+								SELECCIONE UNA DIMENSIÓN
 							</li>
-							<li class="col-xs-7 pull-right">
+							<li class="col-xs-12">
 								 <select id="dimensionselect" class="col-xs-12">
-									<option value="%">Todas</option>
-									<option value="295/80 R22.5">295/80 R22.5</option>
-									<option value="7.50-16">7.50-16</option>
-									<option value="mercedes">Mercedes</option>
-									<option value="audi">Audi</option>
+									<option value="%">Todas las dimensiones</option>
 								</select>
 							</li>
 						</div>
 						<div class="col-xs-12 no-padding seccion-servicio-categoria">
-							<li class="col-xs-4 titulo-seccion">
-								CATEGORÍA
+							<li class="col-xs-12 titulo-seccion">
+								SELECCIONE UNA CATEGORÍA
 							</li>
 							<li class="col-xs-12 no-padding">
 								<select id="categoriaselect" multiple class="form-control">
@@ -464,8 +460,30 @@ Template Name: Buscador Servicios
 		<?php include "footer.php";?>
 		<script type="text/javascript">
 			(function($) {
+				
+				$(document).ready(function() { 		            
 
-				console.log(document.cookie);
+	            	var data = {
+					    'action': 'getdimensiones'
+					};
+
+	            	$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
+
+	            		var options = response;
+
+	            		select = document.getElementById('dimensionselect');
+
+	            		var opt;
+						for (var i = 0; i<options.length; i++){
+						    opt = document.createElement('option');
+						    opt.value = options[i].dimension;
+						    opt.innerHTML = options[i].dimension;
+						    select.appendChild(opt);
+						} 	
+
+	            	});
+
+		        });  
 
 				$("#iconos-servicios button").click(function(){
 		
@@ -573,8 +591,7 @@ Template Name: Buscador Servicios
 							}
 						} 
 					   
-					   utilizacion = "'MIXTA','REGIONAL'";
-					
+					   					
 						var data = {
 						   'action': 'getdisenos',
 						   'utilizacion': utilizacion,
@@ -583,7 +600,7 @@ Template Name: Buscador Servicios
 						   'categoria': categoria
 						};
 
-									
+						console.log(data);			
 						$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
 
 						    var r = response;
@@ -627,9 +644,8 @@ Template Name: Buscador Servicios
 								}
 
 							    $("#cat-llantas").append('<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-diseno="' + r[i].diseño_de_banda + '" >'+
-							    							'<div class="col-xs-12 no-padding cat-llanta-wrapper">'+
-							    								
-							    								'<img class="img-responsive" src="'+r[i].imagen+'" alt="">";'+
+							    							'<div class="col-xs-12 no-padding cat-llanta-wrapper">'+							    								
+							    								'<img class="img-responsive" src="'+r[i].imagen+'" alt="">'+
 							    								utilizacions+
 							    									'<div class="col-xs-12 no-padding">'+
 																		'<p class="titulo-layer-llanta">'+r[i].diseño_de_banda+'</p><br><br>'+
@@ -637,8 +653,6 @@ Template Name: Buscador Servicios
 																	'<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>'+
 																	'<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'+	
 							    								'</div>'+
-
-
 							    							'</div>'+
 
 							    							'<div class="col-xs-4 img-abajo-derecha">'+

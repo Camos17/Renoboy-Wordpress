@@ -336,6 +336,28 @@ function filter_designs(){
 	wp_die();	
 }
 
+// GET ALL DIMENSIONES
+add_action("wp_ajax_getdimensiones", "getdimensiones");
+add_action("wp_ajax_nopriv_getdimensiones", "getdimensiones");
+
+function getdimensiones(){
+
+	global $wpdb;
+
+	$query = "
+		SELECT DISTINCT meta_value as dimension
+		FROM `wp_postmeta` 
+		WHERE meta_key='p_dimension' 
+		ORDER BY meta_value ASC";
+
+	$results = $wpdb->get_results($query);
+
+    header("Content-type: application/json"); 
+    echo json_encode( $results);
+
+    wp_die();
+}
+
 // GET DISENOS
 add_action("wp_ajax_getdisenos", "getdisenos");
 add_action("wp_ajax_nopriv_getdisenos", "getdisenos");
@@ -343,13 +365,6 @@ add_action("wp_ajax_nopriv_getdisenos", "getdisenos");
 function getdisenos(){
 
 	global $wpdb;
-	
-	/*$query = "
-	SELECT wp_posts.*, meta. AS url
-	FROM wp_posts
-	LEFT JOIN $wpdb->postmeta as meta ON ($wpdb->posts.ID = $wpdb->postmeta.post_id)
-	WHERE post_type = 'd_bandas'
-	LIMIT 10";*/
 
 	$key = ''; 
 	$type = 'd_bandas';
