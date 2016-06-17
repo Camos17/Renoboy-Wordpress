@@ -120,24 +120,19 @@ Template Name: Buscador Servicios
 								'post_type'			=> 'd_bandas',
 								'posts_per_page'   => 40,
 								'meta_query'	=> array(
-									
 									array(
 										'key'		=> 'categoria',
 										'value'		=> 'TU LLANTA NUEVA DE NUEVO MICHELIN',
 										'compare'	=> 'LIKE'
 									)
-			
 								)
 							)
 						);
 
 						if( $posts ): ?>
-							
 								
 							<?php foreach( $posts as $post ): 
-								
 								setup_postdata( $post )
-								
 								?>
 									
 								<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-diseno="<?php the_field("diseño_de_banda");?>">
@@ -180,8 +175,8 @@ Template Name: Buscador Servicios
 											<div class="col-xs-12 no-padding">
 												<p class="titulo-layer-llanta"><?php the_field("diseño_de_banda"); ?></p><br><br>
 											</div>			
-											<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>
-											<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
+											<p class="subtitulo-layer-llanta hidden">West Hauler <br> Lug</p>
+											<p class="texto-layer-llanta"><?php the_field("descripcion"); ?></p> 
 										</div>
 									</div>
 									<div class="col-xs-4 img-abajo-derecha">
@@ -211,7 +206,6 @@ Template Name: Buscador Servicios
 										?>
 									</div>					
 								</a>
-
 							
 							<?php endforeach; ?>
 							
@@ -508,7 +502,7 @@ Template Name: Buscador Servicios
 				$(document).on('click', '.cat-llanta', function(){
 
 					var diseno = $(this).data('diseno');
-					$("#loader").removeClass("hidden");
+					$(this).css("cursor", "wait");
 
 					var data = {
 					   'action': 'getproductos',
@@ -525,7 +519,7 @@ Template Name: Buscador Servicios
 					    	$("#llantas-body").append('<tr><td>' + r[i].p_dimension + '</td><td>' + r[i].ancho + '</td><td>' + r[i].profundidad + '</td><td>' + r[i].correspon + '</td></tr>')
 					    }
 
-					    $("#loader").addClass("hidden");
+					    $(this).css("cursor", "default");
 					    $('#modal-producto').modal('show');
 
 					});
@@ -642,15 +636,15 @@ Template Name: Buscador Servicios
 								    
 								}
 
-							    $("#cat-llantas").append('<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-diseno="' + r[i].diseño_de_banda + '" >'+
+							    $("#cat-llantas").appens('<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-diseno="' + r[i].diseño_de_banda + '" >'+
 	    							'<div class="col-xs-12 no-padding cat-llanta-wrapper">'+							    								
 	    								'<img class="img-responsive" src="'+r[i].imagen+'" alt="">'+
 	    								utilizacions+
 	    									'<div class="col-xs-12 no-padding">'+
 												'<p class="titulo-layer-llanta">'+r[i].diseño_de_banda+'</p><br><br>'+
 											'</div>'+	
-											'<p class="subtitulo-layer-llanta">West Hauler <br> Lug</p>'+
-											'<p class="texto-layer-llanta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'+	
+											'<p class="subtitulo-layer-llanta hidden">West Hauler <br> Lug</p>'+
+											'<p class="texto-layer-llanta">' + r[i].descripcion + '</p>'+	
 	    								'</div>'+
 	    							'</div>'+
 
@@ -668,7 +662,6 @@ Template Name: Buscador Servicios
 				});
 
 			})( jQuery );
-
 		</script>
 		
 	</body>	
