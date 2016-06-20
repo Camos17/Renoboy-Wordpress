@@ -139,7 +139,7 @@ function validate_token(){
 
 	    		unset( $_COOKIE['plantavirtual'] );
 				setcookie( 'plantavirtual', '', time() - ( 15 * 60 ) );
-				setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/?page_id=123");
+				setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/buscador-servicios");
 				
 				echo json_encode('match');	
 			} else {
@@ -190,7 +190,7 @@ function login_planta(){
 				if($wp_hasher->CheckPassword($password, $password_hashed)) {
 					unset( $_COOKIE['plantavirtual'] );
 				  	setcookie( 'plantavirtual', '', time() - ( 15 * 60 ) );
-					setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/?page_id=123");
+					setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/buscador-servicios/");
 				    echo json_encode("YES, Matched");
 				} else {
 				    echo json_encode("Lo sentimos, por favor verifique el email o la contraseña ingresadas.");

@@ -43,9 +43,6 @@ Template Name: Contacto
 										Información de Garantía
 									</option>
 									<option>
-										Contacto Súper Intendencia Industria y Comercio: http://www.sic.gov.co/drupal/proteccion-del-consumidor (este es un link al sitio de la SIC)3
-									</option>
-									<option>
 										Otros
 									</option>
 								</select>
@@ -84,6 +81,7 @@ Template Name: Contacto
 						<div class="col-xs-12 checkbox-promociones">
 							<input id="checkbox-5" class="col-xs-1 checkbox-buscar" name="ofertasnoticias" type="checkbox" checked="">
         					<label for="checkbox-5" class="col-xs-11 checkbox-custom-label">Deseo recibir, ofertas especiales y noticias <span class="span1">Renoboy</span>.<br>Tu información está protegida por la estricta Política de Privacidad <span class="span2">Renoboy S.A.</span> y no será entregada a terceros bajo ninguna circunstancia.</label>
+        					<label class="col-sm-11 col-sm-offset-1">Contacto Súper Intendencia Industria y Comercio: (Por favor dirijase a la parte inferior del sitio)</label>
         				</div>
         				<button id="btnenvio" type="submit" class="col-xs-4 col-xs-push-8 col-sm-3 col-sm-push-0 btn btn-default btn-enviar-formulario">
         					Enviar
@@ -125,9 +123,6 @@ Template Name: Contacto
 									</option>
 									<option>
 										Información de Garantía
-									</option>
-									<option>
-										Contacto Súper Intendencia Industria y Comercio: (Por favor dirijase a la parte inferior del sitio)
 									</option>
 									<option>
 										Otros
@@ -199,6 +194,7 @@ Template Name: Contacto
 						<div class="col-xs-12 checkbox-promociones">
 							<input id="checkbox-7" class="col-xs-1 checkbox-buscar" name="checkbox-7" type="checkbox" checked="">
         					<label for="checkbox-7" class="col-xs-11 checkbox-custom-label">Deseo recibir, ofertas especiales y noticias <span class="span1">Renoboy</span>.<br>Tu información está protegida por la estricta Política de Privacidad <span class="span2">Renoboy S.A.</span> y no será entregada a terceros bajo ninguna circunstancia.</label>
+        					<label class="col-sm-11 col-sm-offset-1">Contacto Súper Intendencia Industria y Comercio: (Por favor dirijase a la parte inferior del sitio)</label>
         				</div>
         				<button type="button" class="col-xs-4 col-xs-push-8 col-sm-3 col-sm-push-0 btn btn-default btn-enviar-formulario">
         					Enviar

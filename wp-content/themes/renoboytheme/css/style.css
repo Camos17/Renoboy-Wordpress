@@ -359,6 +359,7 @@ a, button{
 
 		#carousel-contenido .carousel-caption {
 			bottom: 30%;
+			z-index: 5;
 		}
 
 		#carousel-contenido .texto1 {
@@ -779,7 +780,7 @@ a, button{
 		}
 
 		.seccion-servicio-posicion select {
-			background-color: transparent;
+			background-color: rgba(59, 103, 138, 0.75);
 			border: none;
 			color: #FFF;
 		}
@@ -792,7 +793,7 @@ a, button{
 		}
 
 		.seccion-servicio-dimension select {
-			background-color: transparent;
+			background-color: rgba(59, 103, 138, 0.75);
 			border: none;
 			color: #FFF;
 		}
@@ -4484,7 +4485,7 @@ a, button{
 	*********************************************/
 
 		.contenido-contacto {
-			height: 480px;
+			height: 500px;
 		}
 
 		.contenido-contacto

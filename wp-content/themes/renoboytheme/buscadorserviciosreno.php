@@ -602,6 +602,7 @@ Template Name: Buscador Servicios
 						    var utilizacion = '';
 						    var utilizacions = '';
 						    var imgutilizacion = '';
+						    var descripcion = '';
 						  
 						    for (i = 0; i < r.length; i++) {
 
@@ -634,7 +635,14 @@ Template Name: Buscador Servicios
 								    
 								}
 
-							    $("#cat-llantas").appens('<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-diseno="' + r[i].diseño_de_banda + '" >'+
+
+								if(r[i].descripcion){
+									descripcion = r[i].descripcion;
+								} else {
+									descripcion = '';
+								}
+
+							    $("#cat-llantas").append('<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-diseno="' + r[i].diseño_de_banda + '" >'+
 	    							'<div class="col-xs-12 no-padding cat-llanta-wrapper">'+							    								
 	    								'<img class="img-responsive" src="'+r[i].imagen+'" alt="">'+
 	    								utilizacions+
@@ -642,7 +650,7 @@ Template Name: Buscador Servicios
 												'<p class="titulo-layer-llanta">'+r[i].diseño_de_banda+'</p><br><br>'+
 											'</div>'+	
 											'<p class="subtitulo-layer-llanta hidden">West Hauler <br> Lug</p>'+
-											'<p class="texto-layer-llanta">' + r[i].descripcion + '</p>'+	
+											'<p class="texto-layer-llanta">' + descripcion + '</p>'+	
 	    								'</div>'+
 	    							'</div>'+
 

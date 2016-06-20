@@ -346,7 +346,7 @@ Template Name: Visita Virtual a la planta
 					    $("#videoplanta").html('');
 					    $("#videoplanta").prepend('<video class="img-responsive"  preload="auto" poster="'+dir+r.video_link+'.jpg" controls></video>');
 						$("#videoplanta video").append('<source src="'+dir+r.video_link+'.mp4" type="video/mp4">"');
-						$("#videoplanta video").append('<source src="'+dir+r.video_link+'.ogg" type="video/ogv">');
+						$("#videoplanta video").append('<source src="'+dir+r.video_link+'.ogv" type="video/ogv">');
 						$("#videoplanta video").append('<source src="'+dir+r.video_link+'.webm" type="video/webm">');
 
 						$("#loader").addClass("hidden");
@@ -423,30 +423,12 @@ Template Name: Visita Virtual a la planta
     			};
 
     			$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
-    				if(response.trim() == '"YES, Matched"'){
+    				if(response.trim() == 'YES, Matched'){
     					$('#loginModal').modal('hide');
     				} else {
     					console.log(response);
     					$("#loginmessage").html("<p class='text-center text-danger form-group'>"+response+"</p>");
     				}
-
-    		    	/*if(response.trim() == '"The cookie is false."' || response.trim() == '"1:The cookie is not set."' || response.trim() == '"2:The cookie is not set."'){
-    		    		console.log(response);
-    		    		$('#subscribeModal').modal('show');
-    		    	} else {
-    			    	var r = JSON.parse(response);	
-    				    $("#tituloplanta").html(r.titulo);   
-    				    $("#textoplanta").html(r.texto_descriptivo);    
-
-    				    $("#videoplanta").html('');
-    				    $("#videoplanta").prepend('<video class="img-responsive"  preload="auto" poster="'+dir+'/img/fondo_video_home.jpg" controls></video>');
-    					$("#videoplanta video").append('<source src="'+dir+r.video_link+'.mp4" type="video/mp4">"');
-    					$("#videoplanta video").append('<source src="'+dir+r.video_link+'.ogg" type="video/ogv">');
-    					$("#videoplanta video").append('<source src="'+dir+r.video_link+'.webm" type="video/webm">');
-
-    					$("#loader").addClass("hidden");
-    					$("#videoplanta").removeClass("hidden");
-    				}*/
 
     			});
             });
