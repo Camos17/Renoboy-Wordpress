@@ -425,7 +425,7 @@ function getproductos(){
 		LEFT JOIN wp_postmeta AS mt3 ON (wp_posts.ID = mt3.post_id  AND mt3.meta_key='p_dimension') 
 		LEFT JOIN wp_postmeta AS mt4 ON (wp_posts.ID = mt4.post_id  AND mt4.meta_key='ancho') 
 		LEFT JOIN wp_postmeta AS mt5 ON (wp_posts.ID = mt5.post_id  AND mt5.meta_key='profundidad')
-		LEFT JOIN wp_postmeta AS mt6 ON (wp_posts.ID = mt6.post_id  AND mt5.meta_key='correspon')
+		LEFT JOIN wp_postmeta AS mt6 ON (wp_posts.ID = mt6.post_id  AND mt6.meta_key='correspon')
 		WHERE (wp_posts.post_type = 'productos')
 		AND (mt2.meta_value = '".$diseno."') 
 		AND (wp_posts.post_status = 'publish' OR wp_posts.post_status = 'private')  

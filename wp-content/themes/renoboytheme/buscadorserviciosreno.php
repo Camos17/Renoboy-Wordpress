@@ -172,11 +172,11 @@ Template Name: Buscador Servicios
 											}
 										?>
 
-											<div class="col-xs-12 no-padding">
+											<div class="col-xs-12 no-padding detail-layer-llanta">
 												<p class="titulo-layer-llanta"><?php the_field("diseño_de_banda"); ?></p><br><br>
+												<p class="subtitulo-layer-llanta hidden">West Hauler <br> Lug</p>
+												<p class="texto-layer-llanta"><?php the_field("descripcion"); ?></p> 
 											</div>			
-											<p class="subtitulo-layer-llanta hidden">West Hauler <br> Lug</p>
-											<p class="texto-layer-llanta"><?php the_field("descripcion"); ?></p> 
 										</div>
 									</div>
 									<div class="col-xs-4 img-abajo-derecha">
@@ -373,18 +373,12 @@ Template Name: Buscador Servicios
 				    					</div>
 									</div>
 
-				    					
-
 			    					<div class="col-xs-12 texto-modal-producto">
 				    					<h3>carácteristicas y beneficios</h3>
 				    					<div class="col-xs-12 no-padding">
 				    						<hr>
 				    					</div>
-						    			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						    			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						    			cillum dolore eu fugiat nulla pariatur.</p>
+						    			<p class='descripcion-llantas'></p>
 					    			</div>
 
 					    			<div class="col-sm-10 col-sm-offset-1 table-responsive tabla-modal-producto no-padding">	
@@ -464,7 +458,6 @@ Template Name: Buscador Servicios
 	            	$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
 
 	            		var options = response;
-
 	            		select = document.getElementById('dimensionselect');
 
 	            		var opt;
@@ -474,7 +467,6 @@ Template Name: Buscador Servicios
 						    opt.innerHTML = options[i].dimension;
 						    select.appendChild(opt);
 						} 	
-
 	            	});
 		        });  
 
@@ -511,17 +503,20 @@ Template Name: Buscador Servicios
 								
 					$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
 					    var r = response;
-					    console.log(r); 
+					    //console.log(r); 
 						
-						$("#llantas-body").html("");
+						var descripcion;
+						console.log('descripcion:' + descripcion);
+						$('#llantas-body').html('');
+
 					  
 					    for (i = 0; i < r.length; i++) {
-					    	$("#llantas-body").append('<tr><td>' + r[i].p_dimension + '</td><td>' + r[i].ancho + '</td><td>' + r[i].profundidad + '</td><td>' + r[i].correspon + '</td></tr>')
+					    	$('#descripcion-llantas').text(descripcion);
+					    	$("#llantas-body").append('<tr><td>' + r[i].p_dimension + '</td><td>' + r[i].ancho + '</td><td>' + r[i].profundidad + '</td><td>' + r[i].correspon + '</td></tr>');
 					    }
 
 					    $(this).css("cursor", "default");
 					    $('#modal-producto').modal('show');
-
 					});
 				});
 
