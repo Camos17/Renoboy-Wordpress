@@ -101,7 +101,7 @@ Template Name: Contacto
 					<div class="col-xs-12 col-sm-6 col-md-6 no-padding contenido-contacto-cliente1">
 						<div class="col-xs-12 no-padding dropdown filtro-asunto">
 							<div class="col-xs-12 select">
-								<select class="col-xs-6 form-control">
+								<select class="col-xs-6 form-control" name="asunto">
 									<option>
 										Asunto
 									</option>
@@ -137,34 +137,29 @@ Template Name: Contacto
 						</div>									
 						<div class="col-xs-12 no-padding formulario-contacto-cliente">
 							<div class="form-group">
-								<input type="" class="form-control" id="nombres" placeholder="Nombres*">
+								<input type="" class="form-control" id="nombres" placeholder="Nombres*" name="nombre" required>
 							</div>
 							<div class="form-group">
-								<input type="" class="form-control" id="apellidos" placeholder="Apellidos*">
+								<input type="" class="form-control" id="apellidos" placeholder="Apellidos*" name="apellido" required>
 							</div>
 							<div class="form-group">
-								 <div class="checkbox" >
-									<label>
-										<input type="checkbox" id="checkbox-empresas"> Empresa?
-									</label>
-								</div>	
-								<input type="text" class="form-control" id="nombre-empresa" placeholder="Nombre de la Empresa*">
+								<input type="text" class="form-control" id="nombre-empresa" placeholder="¿Es empresa?, en caso de que si colocar el nombre de la empresa" name="empresa">
 							</div>
 							<div class="form-group">
-								<input type="" class="form-control" id="direccion" placeholder="Dirección*">
+								<input type="" class="form-control" id="direccion" placeholder="Dirección*" name="direccion" required>
 							</div>
 							<div class="form-group">
-								<input type="" class="form-control" id="ciudad" placeholder="Ciudad*">
+								<input type="" class="form-control" id="ciudad" placeholder="Ciudad*" name="ciudad" required>
 							</div>
 							<div class="form-group">
-								<input type="" class="form-control" id="e-mail" placeholder="E-mail*">
+								<input type="" class="form-control" id="e-mail" placeholder="E-mail*" name="email" required>
 							</div>
 							<div class="form-group">
-								<input type="" class="form-control" id="telefono" placeholder="Número de Teléfono*">
+								<input type="" class="form-control" id="telefono" placeholder="Número de Teléfono*" name="telefono" required>
 							</div>
 						</div>
 						<div class="col-xs-12 filtro-numero-vehiculos select">
-							<select class="col-xs-6 form-control">
+							<select class="col-xs-6 form-control" name="numvehiculos" required>
 								<option>
 									Cuántos vehículos tiene?
 								</option>
@@ -177,7 +172,7 @@ Template Name: Contacto
 							</select>
 						</div>
 						<div class="col-xs-12 filtro-tipo-vehiculo select">
-							<select class="col-xs-6 form-control">
+							<select class="col-xs-6 form-control" name="tipovehiculos" required>
 								<option>
 									Tipo de Vehículo
 								</option>
@@ -192,11 +187,11 @@ Template Name: Contacto
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 no-padding contenido-contacto-cliente2">
 						<div class="col-xs-12 col-sm-10 no-padding">
-							<textarea id="mensaje" class="form-control" name="mensaje" rows="7" placeholder="MENSAJE"></textarea>
+							<textarea id="mensaje" class="form-control" name="mensaje" rows="7" placeholder="MENSAJE" required></textarea>
 						</div>
 						<p class="col-xs-12 parrafo1 no-padding">Limite de carácteres 0 a 250</p>		
 						<div class="col-xs-12 checkbox-terminos-condiciones">
-							<input id="checkbox-6" class="col-xs-1 checkbox-buscar" name="checkbox-6" type="checkbox" checked="">
+							<input id="checkbox-6" class="col-xs-1 checkbox-buscar" name="checkbox-6" type="checkbox" required>
 							<label for="checkbox-6" class="col-xs-11 checkbox-custom-label">
 								Aceptas los <a href="<?php echo get_page_link(21); ?>" title="">términos y condiciones</a></p>
 							</label>
@@ -279,7 +274,7 @@ Template Name: Contacto
 		*********************************************/
 
 
-			$("#checkbox-empresas").click( function(){
+			/*$("#checkbox-empresas").click( function(){
 			   if( $(this).is(':checked') ){
 			   	 $("#nombre-empresa").fadeIn(600);
 			   	 // $("#nombre-empresa").removeClass("hidden");
@@ -287,7 +282,7 @@ Template Name: Contacto
 			   	$("#nombre-empresa").fadeOut(600);
 			   	// $("#nombre-empresa").addClass("hidden");
 			   }
-			});
+			});*/
 
 			// $("checkbox-empresas").onchange = function() {
 			//     // Check if the checkbox is checked, and show/hide the text field.

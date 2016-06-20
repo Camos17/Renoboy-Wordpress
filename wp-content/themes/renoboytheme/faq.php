@@ -46,6 +46,7 @@ Template Name: Pensando en reencauchar
 	<?php include "footer.php";?>
 	<script type="text/javascript">
 		jQuery(function ($) {
+
 			$(".faq-q").click( function () {
 			  var container = $(this).parents(".faq-c");
 			  var answer = container.find(".faq-a");
@@ -77,10 +78,10 @@ Template Name: Pensando en reencauchar
 			 
 			  if (trigger.hasClass("faq-o")) {
 			    trigger.removeClass("faq-o");
-			  }
-			  else {
+			  } else {
 			    trigger.addClass("faq-o");
 			  }
+			  
 			});
 		});
 

@@ -2444,6 +2444,12 @@ a, button{
 			font-size: 1.3rem;
 			text-align: center;
 		}
+		
+		.btn-porque-confian a, .btn-porque-confian a:hover,
+		.btn-porque-confian a:focus, .btn-porque-confian a:active{
+			color:#FFF !important;
+			text-decoration: none;
+		}
 
 		.footer-quienes-confian p {
 			color: #FFF;

@@ -38,7 +38,7 @@
 					<div class="item">
 						<div class="col-xs-12">
 					 		<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 icono-iqnet">
-					 			<img class="va img-responsive" src="<?php bloginfo('template_directory');?>/img/ANRE.jpg" alt="ANRE">
+					 			<img class="va img-responsive" src="<?php bloginfo('template_directory');?>/img/anre.svg" alt="ANRE">
 					 		</div>
 					 	</div>
 					</div>

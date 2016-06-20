@@ -442,7 +442,7 @@ Template Name: Buscador Servicios
 									</div>
 
 									<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-5 col-lg-4 col-lg-offset-7 btn-modal-producto-comprar">
-										<a class="col-xs-12 btn btn-block no-padding" href="#" title="">
+										<a class="col-xs-12 btn btn-block no-padding" href="<?php echo get_page_link(11); ?>" title="quiero comprar">
 											<img class="va col-xs-2 no-padding" src="<?php bloginfo('template_directory');?>/img/carritodecompras.svg" alt="...">
 											<p class="va">Quiero Comprar</p>
 										</a>
@@ -598,12 +598,10 @@ Template Name: Buscador Servicios
 						   'dimension': dimension,
 						   'categoria': categoria
 						};
-
-						console.log(data);			
+		
 						$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
 
 						    var r = response;
-						    console.log(r); 
 							
 							$("#cat-llantas").html("");
 						    

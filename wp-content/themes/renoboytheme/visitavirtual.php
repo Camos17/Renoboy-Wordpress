@@ -202,7 +202,7 @@ Template Name: Visita Virtual a la planta
 				      	    <input type="text" class="form-control" id="nombresapellidos" placeholder="Nombres y Apellidos" name="nombresapellidos" required>
 				      	</div>
 				      	<div class="form-group">
-				      	    <label for="nombreempresa">¿Hace parte usted de alguna empresa?*</label>
+				      	    <label for="nombreempresa">¿Es empresa?, en caso de que si colocar el nombre de la empresa</label>
 				      	    <input type="text" class="form-control" id="nombreempresa" placeholder="Nombre Empresa [opcional]" name="empresa">
 				      	</div>
 				      	<div class="form-group">
@@ -287,8 +287,9 @@ Template Name: Visita Virtual a la planta
 			$(document).ready(function() { 
 	            emailparam = getParameterByName('email');
 	            tokenparam = getParameterByName('token');
-	            console.log(emailparam+"-"+tokenparam);
-	            if(tokenparam != '-' && emailparam != '-'){
+	            console.log("emailparam:"+emailparam+"- tokenparam:"+tokenparam);
+
+	            if(tokenparam.trim()!="" && tokenparam != '-' && emailparam.trim()!="" && emailparam != '-'){
 
 	            	var data = {
 					    'action': 'validate_token',
