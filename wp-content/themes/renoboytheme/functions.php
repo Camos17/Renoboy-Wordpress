@@ -139,7 +139,7 @@ function validate_token(){
 
 	    		unset( $_COOKIE['plantavirtual'] );
 				setcookie( 'plantavirtual', '', time() - ( 15 * 60 ) );
-				setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/?page_id=123");
+				setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/buscador-servicios");
 				
 				echo json_encode('match');	
 			} else {
@@ -190,7 +190,7 @@ function login_planta(){
 				if($wp_hasher->CheckPassword($password, $password_hashed)) {
 					unset( $_COOKIE['plantavirtual'] );
 				  	setcookie( 'plantavirtual', '', time() - ( 15 * 60 ) );
-					setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/?page_id=123");
+					setcookie('plantavirtual', "true", (time()+3600), "http://prueba.renoboy.com/buscador-servicios/");
 				    echo json_encode("YES, Matched");
 				} else {
 				    echo json_encode("Lo sentimos, por favor verifique el email o la contraseña ingresadas.");
@@ -201,6 +201,59 @@ function login_planta(){
 		echo json_encode('Verique que si se encuentra registrado.');		
 	}
     
+	wp_die();
+}
+
+// function to recover password
+add_action('wp_ajax_recoverpswd','recoverpswd');
+add_action('wp_ajax_nopriv_recoverpswd','recoverpswd');
+
+function recoverpswd(){
+	global $wpdb;
+	$data = $_POST['data']; 
+	parse_str($data);
+
+	header("Content-type: application/json"); 
+
+	$query = $wpdb->prepare( 
+		"
+			SELECT * 
+			FROM reno_subscribers
+			WHERE email = %s
+		", 
+	    $email
+	); 
+
+	$registered = $wpdb->query($query);
+
+	if($registered){
+
+		$subscribetoken = sha1(uniqid());
+		$query = $wpdb->prepare( 
+			"
+				UPDATE reno_subscribers
+				SET substoken = %s
+				WHERE email = %s 
+			", 
+			$substoken,
+		    $email
+		); 
+
+		$results = $wpdb->query($query);
+
+		$emailencoded = $wpdb->get_col_info('primary_key', 0);
+
+		$headers[] = 'Content-Type: text/html; charset=UTF-8';
+		$headers[] = 'From: Renoboy <noreply@renoboy.com>';			
+
+		/*$message = 'Hemos recibido una solicitud de cambio de clave para el ingreso a la visita a la planta virtual de Renoboy. Para modificar su contraseña por favor da click en el siguiente <a href="http://prueba.renoboy.com/?page_id=123&subsrecovery=%s&token=%s">link</a>. De lo contrario recomendamos eliminar este mensaje.';
+		wp_mail($email,'Recuperacion de Contraseña Renoboy', html_entity_decode(sprintf($message, $emailencoded,$token), ENT_QUOTES,'UTF-8'), $headers);
+*/		echo json_encode($emailencoded);		
+
+	} else {
+		echo json_encode("No existe ninguna cuenta registrada a ese correo");		
+	}
+	
 	wp_die();
 }
 

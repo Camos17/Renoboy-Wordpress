@@ -11,15 +11,23 @@
         // Get the form fields and remove whitespace.
         $asunto = strip_tags(trim($_POST["asunto"]));
                 $asunto = str_replace(array("\r","\n"),array(" "," "),$asunto);
-        $razonsocial = strip_tags(trim($_POST["razonsocial"]));
-				$razonsocial = str_replace(array("\r","\n"),array(" "," "),$razonsocial);
         $nombre = strip_tags(trim($_POST["nombre"]));
                 $nombre = str_replace(array("\r","\n"),array(" "," "),$nombre);
+        $apellido = strip_tags(trim($_POST["apellido"]));
+                $apellido = str_replace(array("\r","\n"),array(" "," "),$apellido);
+        $empresa = strip_tags(trim($_POST["empresa"]));
+                $empresa = str_replace(array("\r","\n"),array(" "," "),$empresa);   
+        $direccion = strip_tags(trim($_POST["direccion"]));
+                $direccion = str_replace(array("\r","\n"),array(" "," "),$direccion);   
         $ciudad = strip_tags(trim($_POST["ciudad"]));
-                $ciudad = str_replace(array("\r","\n"),array(" "," "),$ciudad);
+                $ciudad = str_replace(array("\r","\n"),array(" "," "),$ciudad);  
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
         $telefono = strip_tags(trim($_POST["telefono"]));
-                $phone = str_replace(array("\r","\n"),array(" "," "),$phone);
+                $telefono = str_replace(array("\r","\n"),array(" "," "),$telefono);
+        $numvehiculos = strip_tags(trim($_POST["numvehiculos"]));
+                $numvehiculos = str_replace(array("\r","\n"),array(" "," "),$numvehiculos);
+        $tipovehiculos = strip_tags(trim($_POST["tipovehiculos"]));
+                $tipovehiculos = str_replace(array("\r","\n"),array(" "," "),$tipovehiculos);       
         $mensaje = trim($_POST["mensaje"]);
 
         // Check that data was sent to the mailer.

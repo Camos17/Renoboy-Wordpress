@@ -114,7 +114,7 @@ Template Name: Quienes confian en nosotros
 							</div>
 						</div>
 						<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 hidden-xs hidden-sm hidden-md col-md-4 col-md-offset-4 col-lg-2 btn-porque-confian">
-							<!-- <a class="col-xs-6 btn btn-block" href="#" title=""> -->¿POR QUÉ <br> CONFIAN <br> EN RENOBOY?<!--  </a> -->
+							<a class="btn-quienesconfian" href="<?php echo get_page_link(89); ?>?q=92">¿POR QUÉ <br> CONFIAN <br> EN RENOBOY?</a> 
 						</div>
 					</div>
 				</div>

@@ -359,6 +359,7 @@ a, button{
 
 		#carousel-contenido .carousel-caption {
 			bottom: 30%;
+			z-index: 5;
 		}
 
 		#carousel-contenido .texto1 {
@@ -779,7 +780,7 @@ a, button{
 		}
 
 		.seccion-servicio-posicion select {
-			background-color: transparent;
+			background-color: rgba(59, 103, 138, 0.75);
 			border: none;
 			color: #FFF;
 		}
@@ -792,7 +793,7 @@ a, button{
 		}
 
 		.seccion-servicio-dimension select {
-			background-color: transparent;
+			background-color: rgba(59, 103, 138, 0.75);
 			border: none;
 			color: #FFF;
 		}
@@ -2443,6 +2444,12 @@ a, button{
 			color: #FFF;
 			font-size: 1.3rem;
 			text-align: center;
+		}
+		
+		.btn-porque-confian a, .btn-porque-confian a:hover,
+		.btn-porque-confian a:focus, .btn-porque-confian a:active{
+			color:#FFF !important;
+			text-decoration: none;
 		}
 
 		.footer-quienes-confian p {
@@ -4478,7 +4485,7 @@ a, button{
 	*********************************************/
 
 		.contenido-contacto {
-			height: 480px;
+			height: 500px;
 		}
 
 		.contenido-contacto

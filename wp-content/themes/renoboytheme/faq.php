@@ -46,6 +46,7 @@ Template Name: Pensando en reencauchar
 	<?php include "footer.php";?>
 	<script type="text/javascript">
 		jQuery(function ($) {
+
 			$(".faq-q").click( function () {
 			  var container = $(this).parents(".faq-c");
 			  var answer = container.find(".faq-a");
@@ -77,13 +78,22 @@ Template Name: Pensando en reencauchar
 			 
 			  if (trigger.hasClass("faq-o")) {
 			    trigger.removeClass("faq-o");
-			  }
-			  else {
+			  } else {
 			    trigger.addClass("faq-o");
 			  }
+			  
 			});
+		
+			function getParameterByName(name) {
+		        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+		            results = regex.exec(location.search);
+		        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+		    }
+	    
 		});
 
+		
 		
 	</script>
 	</body>	
