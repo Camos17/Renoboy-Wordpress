@@ -51,8 +51,7 @@ Template Name: Pensando en reencauchar
 			  var container = $(this).parents(".faq-c");
 			  var answer = container.find(".faq-a");
 			  var trigger = container.find(".faq-t");
-			  
-			  	answer.slideDown(500);
+			  		  	
 
 			  	$(document).mouseup(function (e)
 				{			    
@@ -79,6 +78,7 @@ Template Name: Pensando en reencauchar
 			  if (trigger.hasClass("faq-o")) {
 			    trigger.removeClass("faq-o");
 			  } else {
+			  	answer.slideDown(500);
 			    trigger.addClass("faq-o");
 			  }
 			  
