@@ -204,6 +204,62 @@ function login_planta(){
 	wp_die();
 }
 
+//LOGIN function
+add_action('wp_ajax_changepassword','changepassword');
+add_action('wp_ajax_nopriv_changepassword','changepassword');
+function changepassword(){
+	
+	global $wpdb;
+	header("Content-type: application/json"); 
+
+	$data = $_POST['data']; 
+	parse_str($data);
+
+
+	$query = $wpdb->prepare( 
+		"
+			SELECT *
+			FROM reno_subscribers
+			WHERE ID = %s
+		", 
+	    $userid
+	); 
+
+	$myresults = $wpdb->get_results($query);
+
+	if($myresults){
+		
+		foreach ($myresults as $row){
+	    	$tokenu = $row->recoverytoken;
+	    	if($token == $tokenu){
+	    		$subscribetoken = sha1(uniqid());
+	    		$hashedPassword = wp_hash_password($password);
+	    		$query = $wpdb->prepare( 
+					"
+						UPDATE reno_subscribers
+						SET recoverytoken = %s, usrpswd = %s
+						WHERE ID = %s 
+					", 
+					$subscribetoken,
+					$hashedPassword,
+				    $row->ID
+				); 
+
+				$results = $wpdb->query($query);
+				echo json_encode("La contraseña se ha modificado exitosamente."); 
+
+	    	} else {
+	   			echo json_encode("Lo sentimos, vuelve a recuperar contraseña, el link expiró"); 		
+	    	} 
+	    }
+	    
+	} else {
+		echo json_encode('Lo sentimos, este link a caducado.');		
+	}
+    
+	wp_die();
+}
+
 // function to recover password
 add_action('wp_ajax_recoverpswd','recoverpswd');
 add_action('wp_ajax_nopriv_recoverpswd','recoverpswd');
@@ -224,7 +280,7 @@ function recoverpswd(){
 	    $email
 	); 
 
-	$registered = $wpdb->query($query);
+	$registered = $wpdb->get_results($query);
 
 	if($registered){
 
@@ -232,26 +288,26 @@ function recoverpswd(){
 		$query = $wpdb->prepare( 
 			"
 				UPDATE reno_subscribers
-				SET substoken = %s
+				SET recoverytoken = %s
 				WHERE email = %s 
 			", 
-			$substoken,
+			$subscribetoken,
 		    $email
 		); 
 
 		$results = $wpdb->query($query);
 
-		$emailencoded = $wpdb->get_col_info('primary_key', 0);
+		$emailencoded = $registered[0]->ID;
 
 		$headers[] = 'Content-Type: text/html; charset=UTF-8';
 		$headers[] = 'From: Renoboy <noreply@renoboy.com>';			
 
-		/*$message = 'Hemos recibido una solicitud de cambio de clave para el ingreso a la visita a la planta virtual de Renoboy. Para modificar su contraseña por favor da click en el siguiente <a href="http://prueba.renoboy.com/?page_id=123&subsrecovery=%s&token=%s">link</a>. De lo contrario recomendamos eliminar este mensaje.';
-		wp_mail($email,'Recuperacion de Contraseña Renoboy', html_entity_decode(sprintf($message, $emailencoded,$token), ENT_QUOTES,'UTF-8'), $headers);
-*/		echo json_encode($emailencoded);		
-
+		$message = 'Hemos recibido una solicitud de cambio de clave para el ingreso a la visita a la planta virtual de Renoboy. Para modificar su contraseña por favor de clic en el siguiente <a href="http://prueba.renoboy.com/visita-virtual-a-la-planta?id=%s&recoverytoken=%s">link</a>. De lo contrario recomendamos eliminar este mensaje.';
+		wp_mail($email,'Recuperacion de Contraseña Renoboy', html_entity_decode(sprintf($message, $emailencoded ,$subscribetoken), ENT_QUOTES,'UTF-8'), $headers);
+		echo json_encode("Hemos enviado instrucciones a su correo para recuperar la contraseña.");	
+					
 	} else {
-		echo json_encode("No existe ninguna cuenta registrada a ese correo");		
+		echo json_encode("No existe ninguna cuenta registrada a ese correo, por favor verifique.");		
 	}
 	
 	wp_die();
@@ -285,6 +341,7 @@ function subscribe_planta(){
 
 		$hashedPassword = wp_hash_password($password);
 		$token = sha1(uniqid());
+		$recoverytoken = sha1(uniqid());
 		$wpdb->insert('reno_subscribers', array(		
 		    'email' => $email,
 		    'nombresapellidos' => $nombresapellidos,
@@ -295,7 +352,8 @@ function subscribe_planta(){
 		    'tipovehiculos' => $tipovehiculos,
 		    'token' => $token,
 		    'usrpswd' => $hashedPassword,
-		    'verificado' => 'NO'
+		    'verificado' => 'NO',
+		    'recoverytoken' => $recoverytoken
 		));
 
 		$headers[] = 'Content-Type: text/html; charset=UTF-8';
@@ -303,7 +361,7 @@ function subscribe_planta(){
 
 		$emailencoded = $wpdb->insert_id;
 
-		$message = 'Gracias por registrarte. Para continuar visitando nuestra planta virtual por favor da click en el siguiente <a href="http://prueba.renoboy.com/?page_id=123&email=%s&token=%s">link</a>.';
+		$message = 'Gracias por registrarte. Para continuar visitando nuestra planta virtual por favor da click en el siguiente <a href="http://prueba.renoboy.com/visita-virtual-a-la-planta?email=%s&token=%s">link</a>.';
 		wp_mail($email,'Registro Renoboy', html_entity_decode(sprintf($message, $emailencoded,$token), ENT_QUOTES,'UTF-8'), $headers);
 		echo json_encode("registro exitoso");
 	}

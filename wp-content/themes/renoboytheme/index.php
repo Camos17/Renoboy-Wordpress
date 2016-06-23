@@ -70,7 +70,7 @@ Template Name: Inicio
 							<strong><?php the_field("titulo_primer_slide"); ?></strong>	
 						</p>
 					</a>
-					<a class="col-xs-12 col-sm-4 col-md-4" href="<?php the_field("link_slide_2"); ?>" title="">
+					<a class="col-xs-12 col-sm-4 col-md-4" href="<?php the_field("link_slide_2"); ?>" target="_blank" title="">
 						<img class="img-responsive" src="<?php the_field("imagen_segundo_slide"); ?>" alt="">
 						<p class="text-center"><strong><?php the_field("titulo_segundo_slide"); ?></strong>
 						</p>

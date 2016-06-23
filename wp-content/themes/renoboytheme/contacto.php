@@ -75,13 +75,13 @@ Template Name: Contacto
 						<div class="col-xs-12 checkbox-terminos-condiciones">
 							<input id="checkbox-4" class="col-xs-1 checkbox-buscar" name="terminos" type="checkbox" checked="" required>
         					<label for="checkbox-4" class="col-xs-11 checkbox-custom-label">
-        						Aceptas los <a href="/terminos-y-condiciones" title="">terminos y condiciones</a></p>
+        						Aceptas los <a href="<?php echo get_page_link(21); ?>" target="_blank" title="">terminos y condiciones</a></p>
         					</label>
         				</div>
 						<div class="col-xs-12 checkbox-promociones">
 							<input id="checkbox-5" class="col-xs-1 checkbox-buscar" name="ofertasnoticias" type="checkbox" checked="">
         					<label for="checkbox-5" class="col-xs-11 checkbox-custom-label">Deseo recibir, ofertas especiales y noticias <span class="span1">Renoboy</span>.<br>Tu información está protegida por la estricta Política de Privacidad <span class="span2">Renoboy S.A.</span> y no será entregada a terceros bajo ninguna circunstancia.</label>
-        					<label class="col-sm-11 col-sm-offset-1">Contacto Súper Intendencia Industria y Comercio: (Por favor dirijase a la parte inferior del sitio)</label>
+        					<label class="col-sm-11 col-sm-offset-1">Contacto Súper Intendencia Industria y Comercio: (Por favor haga clic <a href="http://www.sic.gov.co" target="_blank">aquí</a>)</label>
         				</div>
         				<button id="btnenvio" type="submit" class="col-xs-4 col-xs-push-8 col-sm-3 col-sm-push-0 btn btn-default btn-enviar-formulario">
         					Enviar
@@ -188,13 +188,13 @@ Template Name: Contacto
 						<div class="col-xs-12 checkbox-terminos-condiciones">
 							<input id="checkbox-6" class="col-xs-1 checkbox-buscar" name="checkbox-6" type="checkbox" required>
 							<label for="checkbox-6" class="col-xs-11 checkbox-custom-label">
-								Aceptas los <a href="<?php echo get_page_link(21); ?>" title="">términos y condiciones</a></p>
+								Aceptas los <a href="<?php echo get_page_link(21); ?>" target="_blank" title="">términos y condiciones</a></p>
 							</label>
 						</div>
 						<div class="col-xs-12 checkbox-promociones">
 							<input id="checkbox-7" class="col-xs-1 checkbox-buscar" name="checkbox-7" type="checkbox" checked="">
         					<label for="checkbox-7" class="col-xs-11 checkbox-custom-label">Deseo recibir, ofertas especiales y noticias <span class="span1">Renoboy</span>.<br>Tu información está protegida por la estricta Política de Privacidad <span class="span2">Renoboy S.A.</span> y no será entregada a terceros bajo ninguna circunstancia.</label>
-        					<label class="col-sm-11 col-sm-offset-1">Contacto Súper Intendencia Industria y Comercio: (Por favor dirijase a la parte inferior del sitio)</label>
+        					<label class="col-sm-11 col-sm-offset-1">Contacto Súper Intendencia Industria y Comercio: (Por favor haga clic <a href="http://www.sic.gov.co" target="_blank">aquí</a>)</label>
         				</div>
         				<button type="button" class="col-xs-4 col-xs-push-8 col-sm-3 col-sm-push-0 btn btn-default btn-enviar-formulario">
         					Enviar
