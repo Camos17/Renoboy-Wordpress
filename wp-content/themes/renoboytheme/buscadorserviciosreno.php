@@ -496,7 +496,8 @@ Template Name: Buscador Servicios
 					var diseno = $(this).data('diseno');
 					var descripcion = $(this).data('descripcion');
 
-					$(this).css("cursor", "wait");
+					var anchor = $(this);
+					anchor.css("cursor", "wait");
 
 					var data = {
 					   'action': 'getproductos',
@@ -506,6 +507,7 @@ Template Name: Buscador Servicios
 					$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
 					    var r = response;
 					    //console.log(r); 
+					    anchor.css("cursor", "default");
 						
 						$('#llantas-body').html('');
 					  
@@ -513,8 +515,6 @@ Template Name: Buscador Servicios
 					    	$('#descripcion-llantas').text(descripcion);
 					    	$("#llantas-body").append('<tr><td>' + r[i].p_dimension + '</td><td>' + r[i].ancho + '</td><td>' + r[i].profundidad + '</td><td>' + r[i].correspon + '</td></tr>');
 					    }
-
-					    $(this).css("cursor", "default");
 					    $('#modal-producto').modal('show');
 					});
 				});
