@@ -378,7 +378,7 @@ Template Name: Buscador Servicios
 				    					<div class="col-xs-12 no-padding">
 				    						<hr>
 				    					</div>
-						    			<p class='descripcion-llantas'></p>
+						    			<p id='descripcion-llantas'></p>
 					    			</div>
 
 					    			<div class="col-sm-10 col-sm-offset-1 table-responsive tabla-modal-producto no-padding">	
