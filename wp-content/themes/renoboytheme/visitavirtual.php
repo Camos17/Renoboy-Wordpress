@@ -68,7 +68,7 @@ Template Name: Visita Virtual a la planta
 	                <a data-toggle="modal" data-target="#forgotPswdModal" href="/#" data-dismiss="modal">¿Olvidó su contraseña?</a>
 	              </div>
 	              <div class="input-group col-md-12">
-	                <input type="submit" value="Iniciar sesión" class="col-md-12 btn btn-primary btn-lg"/>
+	                <input type="submit" value="Ingresar" class="col-md-12 btn btn-primary btn-lg"/>
 	              </div>
 	            </div>
 	          </div>
@@ -91,7 +91,8 @@ Template Name: Visita Virtual a la planta
 	        </div>
 	      </div>
 	      <div class="modal-body">
-	        <form  method="post" role="form">
+	        <form  id="forgotform" class="form">
+	          <p id="forgotmessage" class="text-center"></p>
 	          <div class="form-group">
 	            <div class="row">
 	              <div class="col-md-10 col-md-offset-1">
@@ -144,12 +145,72 @@ Template Name: Visita Virtual a la planta
 	      				Lo sentimos, tu link pudo haber caducado.
 	      				<br>
 	      				<br>
-	      				<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal">Click aqui para loggearse <span class="fa fa-long-arrow-right"></a>
+	      				<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal">Click aqui para Ingresar<span class="fa fa-long-arrow-right"></a>
 	      				<br>
 	      				<a data-toggle="modal" data-target="#forgotPswdModal" href="/#" data-dismiss="modal">¿Olvidó su contraseña?</a>	      				
 	      			</p>
 					<button id="closeSubscribe" type="button" class="btn btn-default center-block" data-dismiss="modal">Cerrar</button>		        			
 	      		</div>		      	
+	      	</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- Change password Modal -->
+	<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+	        	
+	        	<h4 class="modal-title"> <img src="<?php bloginfo('template_directory');?>/img/logorenoboy.svg" alt="Renoboy"/></h4>
+	        	
+	        </div>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="row">
+	      		<div id="passwordsuccess" class="col-xs-12 col-md-8 col-md-offset-2 hidden">
+	      			<p class="text-center success-check">
+	      				<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+	      				<br>
+	      				Hemos modificado su constraseña de forma exitosa.
+	      			</p>
+	      			<button type="button" class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal">Click aqui para Ingresar</button>
+	      		</div>
+	      		<div id="passworderror" class="col-xs-12 col-md-8 col-md-offset-2 hidden">
+	      			<p class="text-center error-check">
+	      				<i class="fa fa-lock" aria-hidden="true"></i>
+	      				<br>
+	      				Lo sentimos, tu link pudo haber caducado.
+	      				<br>
+	      				<br>
+	      				<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal">Click aqui para Ingresar<span class="fa fa-long-arrow-right"></a>
+	      				<br>
+	      				<a data-toggle="modal" data-target="#forgotPswdModal" href="/#" data-dismiss="modal">¿Olvidó su contraseña?</a>	      				
+	      			</p>
+					<button  type="button" class="btn btn-default center-block" data-dismiss="modal">Cerrar</button>		        			
+	      		</div>	
+	      		<form id="changepasswordform" class="form">
+		      		<div class="col-xs-12">
+		      			<h5 class="text-center">A continuacion ingrese su nueva contraseña<br><br></h5>
+		      		</div>
+		      		<div class="col-sm-10 col-sm-offset-1">
+			      		<div class="form-group">
+				      	    <label for="contraseñac">Contraseña</label>
+				      	    <input type="password" class="form-control" id="contraseñac" placeholder="Contraseña" name="password" required>
+				      	</div>
+				      	<div class="form-group">
+				      	    <label for="ccontraseñac">Confirmar Contraseña</label>
+				      	    <input type="password" class="form-control" id="ccontraseñac" placeholder="Confirmar contraseña" name="ccontraseña">
+				      	    <input id="userid" class="form-control" name="userid" type="hidden" value="">
+                            <input id="recoverytoken" class="form-control" name="token" type="hidden" value="">  
+				      	</div>	  
+				      	<div class="pull-right">
+		        			<button type="submit" class="btn btn-primary btn-lg">Continuar</button>
+						</div>	    	
+	      			</div>
+	      		</form>
 	      	</div>
 	      </div>
 	    </div>
@@ -186,7 +247,7 @@ Template Name: Visita Virtual a la planta
 	      				<br>
 	      				<a id="backtoregistration" href="#"><span class="fa fa-long-arrow-left"></span> Regresar al formulario</a>
 	      				<br>
-	      				<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal">Click aqui para loggearse</a>
+	      				<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal">Click aqui para Ingresar</a>
 	      				<br>
 	      				<a data-toggle="modal" data-target="#forgotPswdModal" href="/#" data-dismiss="modal">¿Olvidó su contraseña?</a>	      				
 	      			</p>
@@ -203,7 +264,7 @@ Template Name: Visita Virtual a la planta
 				      	</div>
 				      	<div class="form-group">
 				      	    <label for="nombreempresa">¿Es empresa?, en caso de que si colocar el nombre de la empresa</label>
-				      	    <input type="text" class="form-control" id="nombreempresa" placeholder="Nombre Empresa [opcional]" name="empresa">
+				      	    <input type="text" class="form-control" id="nombreempresa" placeholder="Nombre Empresa" name="empresa">
 				      	</div>
 				      	<div class="form-group">
 				      	    <label for="ciudad">Ciudad</label>
@@ -271,7 +332,7 @@ Template Name: Visita Virtual a la planta
 	      	</div>
 	      </div>
 	      <div class="modal-footer">
-	        <div class="textleft">¿Ya se encuentra registrado?<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal"> Hacer click aqui para loggearse</a></div>
+	        <div class="textleft">¿Ya se encuentra registrado?<a data-toggle="modal" data-target="#loginModal" href="/#" data-dismiss="modal"> Hacer click aqui para Ingresar</a></div>
 	      </div>
 	    </div>
 	  </div>
@@ -287,6 +348,9 @@ Template Name: Visita Virtual a la planta
 			$(document).ready(function() { 
 	            emailparam = getParameterByName('email');
 	            tokenparam = getParameterByName('token');
+
+	            id = getParameterByName('id');
+	            recoverytoken = getParameterByName('recoverytoken');
 	            console.log("emailparam:"+emailparam+"- tokenparam:"+tokenparam);
 
 	            if(tokenparam.trim()!="" && tokenparam != '-' && emailparam.trim()!="" && emailparam != '-'){
@@ -310,6 +374,15 @@ Template Name: Visita Virtual a la planta
 	            	});
 	            	
 	            }
+
+	            if(id.trim()!="" && id != '-' && recoverytoken.trim()!="" && recoverytoken != '-'){
+
+	            	$('#passwordModal').modal('show');    	  
+	            	document.getElementById("userid").value = id;
+	            	document.getElementById("recoverytoken").value = recoverytoken;
+	            	
+	            }
+
 	        });
 
 	        function getParameterByName(name) {
@@ -412,6 +485,49 @@ Template Name: Visita Virtual a la planta
 				}
 
 			});
+
+			$('#forgotform').submit(function(evt) {
+            	evt.preventDefault();
+
+				var data = $( this ).serialize();
+				
+				var data = {
+				    'action': 'recoverpswd',
+				    'data': data
+				};
+
+				$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
+					
+				    if(response == "Hemos enviado instrucciones a su correo para recuperar la contraseña."){
+				    	$("#forgotmessage").html("<strong>"+response+"</strong>");
+				    } else if(response=="No existe ninguna cuenta registrada a ese correo"){
+				    	$("#forgotmessage").html("<strong>"+response+"</strong>");
+				    } else {
+
+				    }			    	
+			    			    	
+				});
+
+			});
+
+			$('#changepasswordform').submit(function(evt) {
+            	evt.preventDefault();
+
+				var data = $( this ).serialize();
+				
+				var data = {
+				    'action': 'changepassword',
+				    'data': data
+				};
+
+				$.post("<?php echo admin_url('admin-ajax.php'); ?>", data, function(response) {
+					
+				    console.log(response);		    	
+			    			    	
+				});
+
+			});
+			
 
 			$('#loginform').submit(function(evt) {
             	

@@ -19,6 +19,8 @@ Template Name: Pensando en reencauchar
 	                    'numberposts'       =>  24
 					));
 
+					$i = 0; 
+
 					if( $posts ): ?>
 						
 							
@@ -27,12 +29,27 @@ Template Name: Pensando en reencauchar
 							setup_postdata( $post )
 							
 							?>
+								
+								<?php
+								if($i == 0) {
+									echo '<div class="row">';
+								}
+								?>
+
 								<div class="faq-c col-xs-12 col-sm-6">
 								  <div class="faq-q"><span class="faq-t">+</span><?php the_field("pregunta"); ?></div>
 								  <div class="faq-a">
 								    <?php the_field("respuesta"); ?>
 								  </div>
 								</div>
+								
+								<?php
+								$i++;
+								if($i == 2) {
+									$i = 0;
+									echo '</div>';
+								}
+								?>
 						
 						<?php endforeach; ?>
 						
@@ -47,41 +64,58 @@ Template Name: Pensando en reencauchar
 	<script type="text/javascript">
 		jQuery(function ($) {
 
-			$(".faq-q").click( function () {
-			  var container = $(this).parents(".faq-c");
-			  var answer = container.find(".faq-a");
-			  var trigger = container.find(".faq-t");
-			  
-			  	answer.slideDown(500);
+			var qparam = '-'; 
+			$(document).ready(function() { 
+	            qparam = getParameterByName('q');
+	            
+	            if(qparam.trim()!="" && qparam != '-' && qparam=="92"){
+					$( ".faq-wrapper .row:nth-child(5) .faq-c:nth-child(1) .faq-a").slideDown(500);
+					$( ".faq-wrapper .row:nth-child(5) .faq-c:nth-child(1) .faq-q .faq-t").addClass("faq-o");
+	            }
+	        });
 
-			  	$(document).mouseup(function (e)
-				{			    
+	        var selected;
 
-				   if (!answer.is(e.target) // if the target of the click isn't the container...
-				        && answer.has(e.target).length === 0) // ... nor a descendant of the container
-				    {
-				        answer.slideUp(500);
-				    }
-				});
+			$(".faq-q").click( function (e) {
 
-				$(document).bind( "mouseup touchend", function(e) {
+				var container = $(this).parents(".faq-c");
+			  	var answer = container.find(".faq-a");
+			  	var trigger = container.find(".faq-t");
 
-					if (!answer.is(e.target) // if the target of the click isn't the container...
-				        && answer.has(e.target).length === 0) // ... nor a descendant of the container
-				    {
-				        answer.slideUp(500);
-				    }
-				});
+				if(!selected){					
+					answer.slideDown(500);
+			  	    trigger.addClass("faq-o");
+			  	    selected = $(this);
+				} else {
+					if(!selected.is(e.target)  && selected.has(e.target).length === 0){
+						
+						var selectedcontainer = selected.parents(".faq-c");
+			  			var selectedanswer = selectedcontainer.find(".faq-a");
+			  			var selectedtrigger = selectedcontainer.find(".faq-t");
 
-				
-			  // answer.slideToggle(200);
-			 
-			  if (trigger.hasClass("faq-o")) {
-			    trigger.removeClass("faq-o");
-			  } else {
-			    trigger.addClass("faq-o");
-			  }
-			  
+			  			//closes selected
+			  			selectedanswer.slideUp(500);
+			  	    	selectedtrigger.removeClass("faq-o");
+
+			  	    	//opens new one
+			  	    	answer.slideDown(500);
+				  		trigger.addClass("faq-o");
+
+				  		selected = $(this);
+
+					} else {
+
+						if (trigger.hasClass("faq-o")){
+							answer.slideUp(500);
+			  	    		trigger.removeClass("faq-o");
+						}else{
+							answer.slideDown(500);
+			  	    		trigger.addClass("faq-o");
+						}
+
+					}
+				}
+
 			});
 		
 			function getParameterByName(name) {
