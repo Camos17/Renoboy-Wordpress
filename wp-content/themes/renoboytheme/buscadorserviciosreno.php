@@ -135,7 +135,7 @@ Template Name: Buscador Servicios
 								setup_postdata( $post )
 								?>
 									
-								<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-diseno="<?php the_field("diseño_de_banda");?>">
+								<a href="#" class="col-xs-6 col-sm-4 col-md-3 cat-llanta" data-diseno="<?php the_field("diseño_de_banda");?>" data-descripcion="<?php the_field("descripcion");?>">
 									<div class="col-xs-12 no-padding cat-llanta-wrapper">
 										<?php 
 											$value = get_field( "imagen" );
@@ -494,6 +494,8 @@ Template Name: Buscador Servicios
 				$(document).on('click', '.cat-llanta', function(){
 
 					var diseno = $(this).data('diseno');
+					var descripcion = $(this).data('descripcion');
+
 					$(this).css("cursor", "wait");
 
 					var data = {
@@ -505,10 +507,7 @@ Template Name: Buscador Servicios
 					    var r = response;
 					    //console.log(r); 
 						
-						var descripcion;
-						console.log('descripcion:' + descripcion);
 						$('#llantas-body').html('');
-
 					  
 					    for (i = 0; i < r.length; i++) {
 					    	$('#descripcion-llantas').text(descripcion);
